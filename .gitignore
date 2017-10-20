@@ -1,0 +1,15 @@
+#npm-build
+node_modules
+npm-debug.log
+build
+
+#idea-generated
+.idea
+*.iml
+
+#eclipse-generated
+.settings/
+.classpath
+.project
+
+*.log
