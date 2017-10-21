@@ -14,6 +14,10 @@ BBS stands for Bulletin Board System
 
 ### Cloud Controller (CC)
 
+### CCDB
+
+Cloud Controller Database
+
 ### Nsync
 
 ### Cell Reps
@@ -38,7 +42,9 @@ The metrics collector gathers metrics and statistics from the components. Operat
 
 ### UAA
 
-The UAA is an OAuth2 server and stands for User Account and Authentication.
+The UAA stands for User Account and Authentication and is the central identity management service for Cloud Foundry and its various components. UAA acts as an OAuth2 Authorization Server and issues access tokens for applications that request platform resources. The tokens are based on the JSON Web Token and are digitally signed by UAA.
+
+UAA also supports connecting to external user stores through LDAP and SAML. Once an operator has configured the external user store, such as a corporate Microsoft Active Directory, users can use their LDAP credentials to gain access to the Cloud Foundry platform instead of registering a separate account. Alternatively, operators can use SAML to connect to an external user store and enable single sign-on for users into the Cloud Foundry platform.
 
 ### Stacks
 
@@ -65,3 +71,7 @@ The NATS wire protocol is a simple, text-based publish/subscribe style protocol.
 ### NAT
 
 NAT stands for "network address translation." It's a tool that many Internet routers use to allow every computer that they serve have its own Internet Protocol address while only using a limited number of actual IP addresses that the entire Internet can see.
+
+### RBAC
+
+role-based access control
