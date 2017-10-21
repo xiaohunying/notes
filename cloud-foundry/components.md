@@ -10,39 +10,28 @@ While BOSH was developed to deploy Cloud Foundry PaaS, it can also be used to de
 The router routes incoming traffic to the appropriate component, either a Cloud Controller component or a hosted application running on a Diego Cell. The router periodically queries the Diego Bulletin Board System (BBS) to determine which cells and containers each application currently runs on. Using this information, the router recomputes new routing tables based on the IP addresses of each cell virtual machine (VM) and the host-side port numbers for the cell’s containers.
 
 ### Gorouter
+
 The Gorouter routes traffic coming into Cloud Foundry to the appropriate component, whether it is an operator addressing the Cloud Controller or an application user accessing an app running on a Diego Cell. The router is implemented in Go. Implementing a custom router in Go gives the router full control over every connection, which simplifies support for WebSockets and other types of traffic (for example, through HTTP CONNECT). A single process contains all routing logic, removing unnecessary latency.
 
 
 # Authentication
 
-The OAuth2 server (the UAA) and Login Server work together to provide identity management. UAA stands for User Account and Authentication.
-
-- The OAuth2 server (the UAA)
-- Login Server
+The **OAuth2 server (the UAA)** and **Login Server** work together to provide identity management. UAA stands for User Account and Authentication.
 
 
 # Application Lifecycle
-
-- Cloud Controller
-- Diego Brain
-- nsync
-- Cell Reps
 
 ## Cloud Controller & Deigo Brain
 
 The Cloud Controller (CC) directs the deployment of applications. To push an app to Cloud Foundry, you target the Cloud Controller. The Cloud Controller then directs the Diego Brain through the CC-Bridge components to coordinate individual Diego cells to stage and run applications.
 
-### Blobstore
+The Cloud Controller maintains a database (CC_DB) with tables in Blobstore for orgs, spaces, services, user roles, and more. To stage and run apps, Cloud Foundry manages and stores the following types of binary large object (blob) files:
 
-The Cloud Controller maintains a database (CC_DB) with tables for orgs, spaces, services, 
-user roles, and more. To stage and run apps, Cloud Foundry manages and stores the following 
-types of binary large object (blob) files:
-
-- App Packages (/cc-packages): Full contents of app directories, including source code and resource files, zipped into single blob files.
-- Buildpacks (/cc-buildpacks): Buildpack directories, which Diego cells download to compile and stage apps with.
-- Resource Cache (/cc-resources): Large files from app packages that the Cloud Controller stores with a SHA for later re-use. To save bandwidth, the Cloud Foundry Command-Line Interface (cf CLI) only uploads large application files that the Cloud Controller has not already stored in the resource cache.
-- Buildpack Cache (/cc-droplets/buildpack_cache): Large files that buildpacks generate during staging, stored for later re-use. This cache lets buildpacks run more quickly when staging apps that have been staged previously.
-- Droplets (/cc-droplets): Staged apps packaged with everything needed to run in a container.
+- **App Packages (/cc-packages)**: Full contents of app directories, including source code and resource files, zipped into single blob files.
+- **Buildpacks (/cc-buildpacks)**: Buildpack directories, which Diego cells download to compile and stage apps with.
+- **Resource Cache (/cc-resources)**: Large files from app packages that the Cloud Controller stores with a SHA for later re-use. To save bandwidth, the Cloud Foundry Command-Line Interface (cf CLI) only uploads large application files that the Cloud Controller has not already stored in the resource cache.
+- **Buildpack Cache (/cc-droplets/buildpack_cache)**: Large files that buildpacks generate during staging, stored for later re-use. This cache lets buildpacks run more quickly when staging apps that have been staged previously.
+- **Droplets (/cc-droplets)**: Staged apps packaged with everything needed to run in a container.
 
 
 ## nsync & BBS & Cell Reps
