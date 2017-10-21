@@ -1,3 +1,16 @@
+# Table of Contents
+
+1. [BOSH](#bosh)
+2. [Router](#router)
+   2.1 [Gorouter](#gorouter)
+3. [Authentication](#authentication)
+4. [Application Lifecycle](#application-lifecycle)
+5. [App Storage and Execution](#app-storage-and-execution)
+6. [Services](#services)
+7. [Messaging](#messaging)
+8. [Metrics and Logging](#metrics-and-logging)
+
+
 # BOSH
 BOSH is a project that unifies release engineering, deployment, and lifecycle management of small and large-scale cloud software. BOSH can provision and deploy software over hundreds of VMs. It also performs monitoring, failure recovery, and software updates with zero-to-minimal downtime.
 
@@ -9,7 +22,7 @@ While BOSH was developed to deploy Cloud Foundry PaaS, it can also be used to de
 
 The router routes incoming traffic to the appropriate component, either a Cloud Controller component or a hosted application running on a Diego Cell. The router periodically queries the Diego Bulletin Board System (BBS) to determine which cells and containers each application currently runs on. Using this information, the router recomputes new routing tables based on the IP addresses of each cell virtual machine (VM) and the host-side port numbers for the cell’s containers.
 
-### Gorouter
+## Gorouter
 
 The Gorouter routes traffic coming into Cloud Foundry to the appropriate component, whether it is an operator addressing the Cloud Controller or an application user accessing an app running on a Diego Cell. The router is implemented in Go. Implementing a custom router in Go gives the router full control over every connection, which simplifies support for WebSockets and other types of traffic (for example, through HTTP CONNECT). A single process contains all routing logic, removing unnecessary latency.
 
