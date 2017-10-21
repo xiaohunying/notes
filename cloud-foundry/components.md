@@ -2,7 +2,6 @@
 
 1. [BOSH](#bosh)
 2. [Router](#router)
-   2.1 [Gorouter](#gorouter)
 3. [Authentication](#authentication)
 4. [Application Lifecycle](#application-lifecycle)
 5. [App Storage and Execution](#app-storage-and-execution)
