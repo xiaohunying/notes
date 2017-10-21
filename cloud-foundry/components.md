@@ -54,7 +54,7 @@ The nsync, BBS, and Cell Rep components work together along a chain to keep apps
 - **Cell Rep** monitors the containers and provides the `ActualLRP` value.
 
 
-#App Storage and Execution
+# App Storage and Execution
 
 ## Blobstore
 
@@ -80,7 +80,7 @@ Applications typically depend on services such as databases or third-party SaaS 
 
 # Messaging
 
-## Consul and BBS
+## Consul and BBS (Bulletin Board System)
 
 Cloud Foundry component VMs communicate with each other internally through HTTP and HTTPS protocols, sharing temporary messages and data stored in two locations:
 
