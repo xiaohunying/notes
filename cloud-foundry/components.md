@@ -46,7 +46,7 @@ The Cloud Controller maintains a database (CC_DB) with tables in Blobstore for o
 - **Droplets (/cc-droplets)**: Staged apps packaged with everything needed to run in a container.
 
 
-## nsync & BBS & Cell Reps
+## Nsync & BBS & Cell Reps
 
 The nsync, BBS, and Cell Rep components work together along a chain to keep apps running. At one end is the user. At the other end are the instances of applications running on widely-distributed VMs, which may crash or become unavailable. Here is how the components work together:
 
@@ -54,6 +54,7 @@ The nsync, BBS, and Cell Rep components work together along a chain to keep apps
 - **BBS** (Bulletin Board System) uses its convergence process to monitor the `DesiredLRP` and `ActualLRP` values. It launches or kills application instances as appropriate to ensure the `ActualLRP` count matches the `DesiredLRP` count.
 - **Cell Rep** monitors the containers and provides the `ActualLRP` value.
 
+> LRP stands for Long Running Process
 
 # App Storage and Execution
 
@@ -87,6 +88,8 @@ Cloud Foundry component VMs communicate with each other internally through HTTP 
 
 - A Consul server stores longer-lived control data, such as component IP addresses and distributed locks that prevent components from duplicating actions.
 - Diego’s Bulletin Board System (BBS) stores more frequently updated and disposable data such as cell and application status, unallocated work, and heartbeat messages. The BBS stores data in MySQL, using the Go MySQL Driver.
+
+> Consul is a tool for discovering and configuring services in your infrastructure. It provides several key features: **Service Discovery**, **Health Checking**, **Key/Value Store** and **Multi Datacenter**.
 
 ## NATS Message Bus
 
