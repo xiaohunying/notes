@@ -56,6 +56,13 @@ The certificates that developers must insert into their local truststore vary de
 
 - If the deployment uses a certificate that is signed by a self-signed certificate authority (CA), or a certificate signed by a certificate that’s signed by a self-signed CA, the developer must insert the self-signed certificate and any intermediate certificates into their local truststore.
 
+## Cf CLI Plugins
+
+The Cloud Foundry Command Line Interface (cf CLI) includes plugin functionality. These plugins enable developers to add custom commands to the cf CLI. You can install and use plugins that Cloud Foundry developers and third-party developers create. The cf CLI identifies a plugin by its binary filename, its developer-defined plugin name, and the commands that the plugin provides. You use the binary filename only to install a plugin. You use the plugin name or a command for any other action.
+
+> The cf CLI uses case-sensitive commands, but plugin management commands accept plugin and repository names irrespective of their casing.
+
+Refer to https://docs.cloudfoundry.org/cf-cli/use-cli-plugins.html
 
 ## Application SSH Commands
 
@@ -104,7 +111,7 @@ cf ssh-code
 
 Run your ssh or other command to connect to the application instance. Refer to https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html
 
-## cf CLI Return Codes
+## Cf CLI Return Codes
 
 The cf CLI uses exit codes, which help with scripting and confirming that a command has run successfully. For example, after you run a cf CLI command, you can retrieve its return code by running `echo $?` (on Windows, `echo %ERRORLEVEL%`). If the return code is `0`, the command was successful.
 
