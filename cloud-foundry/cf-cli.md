@@ -1,5 +1,43 @@
 
 
+~~~
+cf config --locale YOUR_LANGUAGE
+cf help
+cf login [-a API_URL] [-u USERNAME] [-p PASSWORD] [-o ORG] [-s SPACE]
+~~~
+
+# Users and Roles
+
+~~~
+cf org-users ORG
+cf space-users ORG SPACE
+cf set-org-role USERNAME ORG ROLE
+cf unset-org-role USERNAME ORG ROLE
+cf set-space-role USERNAME ORG SPACE ROLE
+cf unset-space-role USERNAME ORG SPACE ROLE
+~~~
+
+# Push
+
+~~~
+cf push APP_NAME [-b BUILDPACK_NAME] [-c COMMAND] [-f MANIFEST_PATH | --no-manifest] [--no-start] [-i NUM_INSTANCES] [-k DISK] [-m MEMORY] [-p PATH] [-s STACK] [-t HEALTH_TIMEOUT] [-u (process | port | http)] [--no-route | --random-route | --hostname HOST | --no-hostname] [-d DOMAIN] [--route-path ROUTE_PATH]
+~~~
+
+~~~
+cf push APP_NAME --docker-image [REGISTRY_HOST:PORT/]IMAGE[:TAG] [--docker-username USERNAME] [-c COMMAND] [-f MANIFEST_PATH | --no-manifest] [--no-start] [-i NUM_INSTANCES] [-k DISK] [-m MEMORY] [-t HEALTH_TIMEOUT] [-u (process | port | http)] [--no-route | --random-route | --hostname HOST | --no-hostname] [-d DOMAIN] [--route-path ROUTE_PATH]
+~~~
+
+~~~
+cf push -f MANIFEST_WITH_MULTIPLE_APPS_PATH [APP_NAME] [--no-start]
+~~~
+
+# User-Provided Service Instances
+
+~~~
+cf cups
+cf uups
+~~~
+
 # Application SSH Commands
 
 ## Enable and Disable SSH Access.
@@ -55,4 +93,8 @@ cf ssh-code
 ~~~
 
 Run your ssh or other command to connect to the application instance. Refer to https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html
+
+# cf CLI Return Codes
+
+The cf CLI uses exit codes, which help with scripting and confirming that a command has run successfully. For example, after you run a cf CLI command, you can retrieve its return code by running `echo $?` (on Windows, `echo %ERRORLEVEL%`). If the return code is `0`, the command was successful.
 
