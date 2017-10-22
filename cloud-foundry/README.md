@@ -75,3 +75,11 @@ NAT stands for "network address translation." It's a tool that many Internet rou
 ### RBAC
 
 role-based access control
+
+### trustStore
+
+TrustStore (as name suggest) is used to store certificates from trusted Certificate authorities(CA) which is used to verify certificate presented by Server in SSL Connection.
+
+### keyStore
+
+KeyStore is used to store private key and own identity certificate which program should present to other party (Server or client) to verify its identity.
