@@ -82,9 +82,13 @@ Remount on vm instance restart:
 
 # Stackdriver
 
+Stackdriver Monitoring provides dashboards and alerts so you can review performance metrics for cloud services, virtual machines, and common open source servers such as MongoDB, Apache, Nginx, Elasticsearch, and more. You configure Stackdriver Monitoring using the Stackdriver Monitoring Console.
+
 # Load Balancing
 
-- Network load balancer
+## Network load balancer
+
+Network load balancing allows you to balance the load of your systems based on incoming IP protocol data, such as address, port, and protocol type. You also get some options that are not available with HTTP(S) load balancing. For example, you can load balance additional TCP/UDP-based protocols such as SMTP traffic. And if your application is interested in TCP-connection-related characteristics, network load balancing allows your app to inspect the packets, where HTTP(S) load balancing does not.
 
 ~~~bash
 gcloud compute forwarding-rules create nginx-lb \
@@ -93,7 +97,9 @@ gcloud compute forwarding-rules create nginx-lb \
          --target-pool nginx-pool
 ~~~
 
-- HTTP(S) load balancer
+## HTTP(S) load balancer
+
+HTTP(S) load balancing provides global load balancing for HTTP(S) requests destined for your instances. You can configure URL rules that route some URLs to one set of instances and route other URLs to other instances. Requests are always routed to the instance group that is closest to the user, provided that group has enough capacity and is appropriate for the request. If the closest group does not have enough capacity, the request is sent to the closest group that does have capacity.
 
 ~~~bash
 gcloud compute forwarding-rules create http-content-rule \
