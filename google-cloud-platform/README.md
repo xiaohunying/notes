@@ -1,5 +1,7 @@
 # Cloud Shell
 
+Google Cloud Shell provides you with gcloud command-line access to computing resources hosted on Google Cloud Platform and available through the Google Cloud Platform Console. Cloud Shell is a Debian-based virtual machine with a persistent 5GB home directory, which makes it easy for you to manage your Cloud Platform projects and resources. With Cloud Shell, the Cloud SDK gcloud and other utilities you need are pre-installed and always available when you need them.
+
 ~~~bash
 gcloud auth list
 gcloud config list project
@@ -28,8 +30,13 @@ gsutil cp test.dat gs://my-bucket-555
 
 # Cloud Launcher
 
+Cloud Launcher provides a way to launch common software packages and stacks on Google Compute Engine with just a few clicks. Many common web frameworks, databases, CMSs, and CRMs are supported. This is one of the fastest ways to get up and running on Google Cloud Platform.
 
 # Persistent disks
+
+Google Compute Engine provides persistent disks for use as the primary storage for your virtual machine instances. Like physical hard drives, persistent disks exist independently of the rest of your machine – if a virtual machine instance is deleted, the attached persistent disk continues to retain its data and can be attached to another instance.
+
+There are 2 types of persistent disks:
 
 - Standard persistent disk
 - SSD Persistent disk
@@ -70,6 +77,8 @@ Remount on vm instance restart:
 ~~~
 
 # Container Engine (Kubernetes)
+
+![k8s](images/k8s.png)
 
 # Stackdriver
 
