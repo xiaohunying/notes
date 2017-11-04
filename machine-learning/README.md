@@ -6,6 +6,8 @@
 
 Hypothesis:   ![equation](http://latex.codecogs.com/gif.latex?h_%7B%5Ctheta%7D%28x%29%20%3D%20%5Ctheta_%7B0%7D%20&plus;%20%5Ctheta_%7B1%7Dx)
 
+Hypothesis:   ![equation2](images/equation1.gif)
+
 ### Polynomial Regression
 
 ## Classification Problem
