@@ -38,5 +38,5 @@ Reduce data from n-dimensions to k-dimensions
 
 ## [u, s, v] = svd(sigma)
 
-U_{reduce} = u(:, 1:k)
+\[U_{reduce} = u(:, 1:k)\]
 Z = U_{reduce}' * x; (~~x_{0}=1~~)
