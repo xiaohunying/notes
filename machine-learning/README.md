@@ -59,17 +59,14 @@ Z = U_{reduce}' * x; (~~x_{0}=1~~)
 # Optimization Algorithms
 
 - Gradient Descent
-- Conjugate Gradient 
-
-Pros: no need to pick $\alpha$, fast. Cons: complex
-
+- Conjugate Gradient (**Pros:** no need to pick $\alpha$, fast. **Cons:** complex)
 - BFGS (**Pros:** no need to pick $\alpha$, fast. **Cons:** complex)
-- L-BFGS (Pros: no need to pick $\alpha$, fast. Cons: complex)
-- Normal Equation (Too expensive: need to calculate matrix invertable)
+- L-BFGS (**Pros:** no need to pick $\alpha$, fast. **Cons:** complex)
+- Normal Equation (Too expensive: need to calculate invertable matrix)
 
 ## Gradient Descent
 
-Repeat until convergence: $\theta_{j}:=\theta_{j}-\alpha\frac{\partial}{\partial \theta_{j}}J(\theta)$
+Repeat until convergence: &nbsp; $\theta_{j}:=\theta_{j}-\alpha\frac{\partial}{\partial \theta_{j}}J(\theta)$
 
 Where $j$ represents the feature index number. $\alpha$ is called **Learning Rate**.
 
