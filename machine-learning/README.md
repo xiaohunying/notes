@@ -20,6 +20,16 @@ Hypothesis Function: &nbsp; $h_{\theta}(x)=\theta_{0}+\theta_{1}x_{1}+\theta_{2}
 
 ## Logistic Regression
 
+Hypothesis representation is **Sigmoid Function** which is also called **Logistic Function**.
+
+Hypothesis Functions: 
+
+$z=\theta^{T}x$
+
+$g(z)=\frac{1}{1+e^{-z}}~~~~~~~~~~~~~~~\Rightarrow~~~~~~h_{\theta }(x)=\frac{1}{1+e^{-\theta^{T}x}}$
+
+$h_{\theta}(x)=g(\theta^{T}x)$
+
 ### One-vs-All (One-vs-Rest)
 
 multi-class
