@@ -10,6 +10,8 @@ Cost Function: &nbsp; $J(\theta)=\frac{1}{2m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)})-
 
 Goal: &nbsp; $\underset{\theta}{minimize}~J(\theta)$
 
+<br />
+
 ## Polynomial Regression
 
 Hypothesis Function: &nbsp; $h_{\theta}(x)=\theta_{0}+\theta_{1}x_{1}+\theta_{2}x_{1}^{2}~~\Rightarrow ~~h_{\theta}(x)=\theta_{0}+\theta_{1}x_{1}+\theta_{2}x_{2}$ &nbsp;&nbsp; (where $x_{2}=x_{1}^{2}$)
@@ -35,6 +37,8 @@ The logistic hypothesis function $h_{\theta}(x)$ gives us the probability that t
 - $h_{\theta}(x)=P(y=1|x;\theta)=1-P(y=0|x;\theta)$.
 
 **Decision Boundary :** Decision boundary is the line that separates the area where $y=0$ and $y=1$. It is created by the hypothesis function. For logistic function, the decision boundary is $\theta^{T}x=0$.
+
+<br />
 
 ## Multiclass Classification
 
