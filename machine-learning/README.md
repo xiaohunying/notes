@@ -14,6 +14,8 @@ Goal: &nbsp; $\underset{\theta}{minimize}~J(\theta)$
 
 ### Polynomial Regression
 
+Hypothesis Function: &nbsp; $h_{\theta}(x)=\theta_{0}+\theta_{1}x_{1}+\theta_{2}x_{1}^{2}$
+
 ## Classification Problem
 
 ### Logistic Regression
@@ -73,3 +75,8 @@ Where $j$ represents the feature index number. $\alpha$ is called **Learning Rat
 - Batch Gradient Descent: uses all the training data at one time
 
 
+
+# Others
+
+- Feature Scaling
+- Mean Normalization
