@@ -32,9 +32,9 @@ cost Function: &nbsp; $J(\theta)=-\frac{1}{m}\sum_{i=1}^{m}[y^{(i)}log(h_{\theta
 
 ## Multiclass Classification
 
-Use One-vs-All (One-vs-Rest)
+Use **One-vs-All** (**One-vs-Rest**)
 
-$y\in \left \{ 0, 1,  ... , n\right \}$
+$y\in \{ 0, 1,  ... , n \}$
 
 $h_{\theta}^{(0)}(x)=P(y=0|x; \theta)$
 
