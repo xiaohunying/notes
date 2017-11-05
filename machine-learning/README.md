@@ -80,7 +80,7 @@ Unlike logistic, $h_{\theta}(x)$ doesn't give us a probability, but instead we g
 
 <br />
 
-**Large Margin intuition**: If you have a positive example, you only really need $\theta^{T}x to be greater or equal to 0. SVM wants a bit more than that - doesn't want to just get it right, but have the value be quite a bit bigger than zero. If $y=1$, we want $\theta^{T}x$ greater or equal to 1. If $y=0$, we want $\theta^{T}x$ less or equal to -1.
+**Large Margin intuition**: If you have a positive example, you only really need $\theta^{T}x$ to be greater or equal to 0. SVM wants a bit more than that - doesn't want to just get it right, but have the value be quite a bit bigger than zero. If $y=1$, we want $\theta^{T}x$ greater or equal to 1. If $y=0$, we want $\theta^{T}x$ less or equal to -1.
 
 <br />
 
