@@ -6,6 +6,10 @@
 
 Hypothesis: &nbsp;  ![equation2](images/equation1.gif)
 
+Hypothesis:
+$$a^2$$
+
+
 ### Polynomial Regression
 
 ## Classification Problem
@@ -44,10 +48,10 @@ Reduce data from n-dimensions to k-dimensions
 
 Z = U_{reduce}' * x; (~~x_{0}=1~~)
 
-~~~math
+```math
 Z = U_{reduce}
 $$a^2$$
-~~~
+```
 
 ~~~equation
 Z = U_{reduce}
