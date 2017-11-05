@@ -29,11 +29,15 @@ multi-class
 - activation units
 - bias nodes x_{0}
 
+
+
 # Unsupervised Learning
 
 ## Clustering
 
 ### K-Means
+
+
 
 # PCA: Principal Component Analysis
 
@@ -50,14 +54,22 @@ Reduce data from n-dimensions to k-dimensions
 
 Z = U_{reduce}' * x; (~~x_{0}=1~~)
 
-```math
-Z = U_{reduce}
-$$a^2$$
-```
 
-~~~equation
-Z = U_{reduce}
-$$a^2$$
-~~~
 
-$$a^2$$
+# Optimization Algorithms
+
+- Gradient Descent
+- Conjugate Gradient (Pros: no need to pick $\alpha$, fast. Cons: complex)
+- BFGS (Pros: no need to pick $\alpha$, fast. Cons: complex)
+- L-BFGS (Pros: no need to pick $\alpha$, fast. Cons: complex)
+- Normal Equation (Too expensive: need to calculate matrix invertable)
+
+## Gradient Descent
+
+Repeat until convergence: $\theta_{j}:=\theta_{j}-\alpha\frac{\partial}{\partial \theta_{j}}J(\theta)$
+
+Where $j$ represents the feature index number. $\alpha$ is called **Learning Rate**.
+
+- Batch Gradient Descent: uses all the training data at one time
+
+
