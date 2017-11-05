@@ -22,13 +22,9 @@ Hypothesis Function: &nbsp; $h_{\theta}(x)=\theta_{0}+\theta_{1}x_{1}+\theta_{2}
 
 Hypothesis representation is **Sigmoid Function** which is also called **Logistic Function**.
 
-Hypothesis Functions: 
+Hypothesis Function: &nbsp; $h_{\theta }(x)=\frac{1}{1+e^{-\theta^{T}x}}$
 
-$z=\theta^{T}x$
-
-$g(z)=\frac{1}{1+e^{-z}}~~~~~~~~~~~~~~~\Rightarrow~~~~~~h_{\theta }(x)=\frac{1}{1+e^{-\theta^{T}x}}$
-
-$h_{\theta}(x)=g(\theta^{T}x)$
+The decision boundary is the line that separates the area where $y=0$ and $y=1$. It is created by the hypothesis function. For logistic function, the decision boundary is $\theta^{T}x=0$.
 
 ### One-vs-All (One-vs-Rest)
 
