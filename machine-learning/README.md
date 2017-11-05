@@ -6,9 +6,7 @@
 
 Hypothesis: &nbsp;  ![equation2](images/equation1.gif)
 
-Hypothesis:
-$$a^2$$
-
+Hypothesis: $h_{\theta}(x)=\theta_{0}+\theta_{1}x$
 
 ### Polynomial Regression
 
