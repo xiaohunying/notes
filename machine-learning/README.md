@@ -55,9 +55,9 @@ Hypothesis Function:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![equation](images/equation1.gif)
 
-### Kernel: Similarity Function
+### Kernel: similarity function
 
-#### No kernel
+#### **No kernel**
 
 Also called **linear kernel**. Predict $y=1$ if $\theta^{T}x>=0$
 
