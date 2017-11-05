@@ -4,9 +4,7 @@
 
 ### Linear Regression
 
-Hypothesis: &nbsp;  ![equation2](images/equation1.gif)
-
-Hypothesis: $h_{\theta}(x)=\theta_{0}+\theta_{1}x$
+Hypothesis: &nbsp; $h_{\theta}(x)=\theta_{0}+\theta_{1}x$
 
 ### Polynomial Regression
 
