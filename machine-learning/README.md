@@ -4,7 +4,13 @@
 
 ### Linear Regression
 
-Hypothesis: &nbsp; $h_{\theta}(x)=\theta_{0}+\theta_{1}x$
+Hypothesis Function: &nbsp; $h_{\theta}(x)=\theta_{0}+\theta_{1}x$
+
+Parameters: &nbsp; $\theta_{0}$, $\theta_{1}$
+
+Cost Function: &nbsp; $J(\theta)=\frac{1}{2m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)})-y^{i})^{2}$
+
+Goal: &nbsp; $\underset{\theta}{minimize}\:J(\theta)$
 
 ### Polynomial Regression
 
