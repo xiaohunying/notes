@@ -59,8 +59,11 @@ Z = U_{reduce}' * x; (~~x_{0}=1~~)
 # Optimization Algorithms
 
 - Gradient Descent
-- Conjugate Gradient (Pros: no need to pick $\alpha$, fast. Cons: complex)
-- BFGS (Pros: no need to pick $\alpha$, fast. Cons: complex)
+- Conjugate Gradient 
+
+Pros: no need to pick $\alpha$, fast. Cons: complex
+
+- BFGS (**Pros:** no need to pick $\alpha$, fast. **Cons:** complex)
 - L-BFGS (Pros: no need to pick $\alpha$, fast. Cons: complex)
 - Normal Equation (Too expensive: need to calculate matrix invertable)
 
