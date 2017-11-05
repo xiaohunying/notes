@@ -46,4 +46,12 @@ Z = U_{reduce}' * x; (~~x_{0}=1~~)
 
 ~~~math
 Z = U_{reduce}
+$$a^2$$
 ~~~
+
+~~~equation
+Z = U_{reduce}
+$$a^2$$
+~~~
+
+$$a^2$$
