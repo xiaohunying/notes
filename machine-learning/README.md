@@ -24,6 +24,8 @@ Hypothesis representation is **Sigmoid Function** which is also called **Logisti
 
 Hypothesis Function: &nbsp; $h_{\theta }(x)=\frac{1}{1+e^{-\theta^{T}x}}$
 
+The logistic hypothesis function $h_{\theta}(x)$ gives us the probability that the output is 1. e.g. $h_{\theta}(x)=0.7 ~~\Rightarrow ~~ 70%$. $h_{\theta}(x)=P(y=1|x;\theta)=1-P(y=0|x;\theta)$.
+
 cost Function: &nbsp; $cost(h_{\theta}(x),y)=-y~log(h_{\theta}(x))-(1-y)~log(1-h_{\theta}(x))$ &nbsp;&nbsp;&nbsp;&nbsp; ($y=0$ or $y=1$)
 
 cost Function: &nbsp; $J(\theta)=-\frac{1}{m}\sum_{i=1}^{m}[y^{(i)}log(h_{\theta}(x^{i}))+(1-y^{i})log(1-h_{\theta}(x^{i}))]$
@@ -47,7 +49,7 @@ $prediction=\underset{i}{max}(h_{\theta}^{(i)}(x))$
 
 ## SVM: Support Vector Machine
 
-SVM is a convex function
+SVM is a convex function.
 
 Support Vector Machine Hypothesis: &nbsp; $\underset{\theta}{min}~C\sum_{i=1}^{m}[y^{(i)}cost_{1}(\theta^{T}x^{i})+(1-y^{(i)})cost_{0}(\theta^{T}x^{(i)})]+\frac{1}{2}\sum_{j=1}^{n}\theta_{j}^{2}$
 
