@@ -4,9 +4,7 @@
 
 ### Linear Regression
 
-Hypothesis:   ![equation](http://latex.codecogs.com/gif.latex?h_%7B%5Ctheta%7D%28x%29%20%3D%20%5Ctheta_%7B0%7D%20&plus;%20%5Ctheta_%7B1%7Dx)
-
-Hypothesis:   ![equation2](images/equation1.gif)
+Hypothesis: &nbsp;  ![equation2](images/equation1.gif)
 
 ### Polynomial Regression
 
@@ -45,3 +43,7 @@ Reduce data from n-dimensions to k-dimensions
 \[U_{reduce} = u(:, 1:k)\]
 
 Z = U_{reduce}' * x; (~~x_{0}=1~~)
+
+~~~math
+Z = U_{reduce}
+~~~
