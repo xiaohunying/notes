@@ -76,6 +76,8 @@ Hypothesis Function:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![equation](images/equation1.gif)
 
+Unlike logistic, $h_{\theta}(x)$ doesn't give us a probability, but instead we get a direct prediction of 1 or 0.
+
 SVM is a convex function.
 
 <br />
