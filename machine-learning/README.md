@@ -32,6 +32,8 @@ cost Function: &nbsp; $cost(h_{\theta}(x),y)=-y~log(h_{\theta}(x))-(1-y)~log(1-h
 
 cost Function: &nbsp; $J(\theta)=-\frac{1}{m}\sum_{i=1}^{m}[y^{(i)}log(h_{\theta}(x^{i}))+(1-y^{i})log(1-h_{\theta}(x^{i}))]$
 
+<br />
+
 The logistic hypothesis function $h_{\theta}(x)$ gives us the probability that the output is 1.
 - $h_{\theta}(x)=0.7 ~~\Rightarrow ~ $ 70%. 
 - $h_{\theta}(x)=P(y=1|x;\theta)=1-P(y=0|x;\theta)$.
