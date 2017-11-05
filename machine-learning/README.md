@@ -60,16 +60,25 @@ $h_{\theta}^{(n)}(x)=P(y=n|x; \theta)$
 
 $prediction=\underset{i}{max}(h_{\theta}^{(i)}(x))$
 
+<br />
 
 ## SVM: Support Vector Machine
 
-SVM is a convex function.
+SVM cost function from logistic regression cost function:
 
-Support Vector Machine Hypothesis: &nbsp; $\underset{\theta}{min}~C\sum_{i=1}^{m}[y^{(i)}cost_{1}(\theta^{T}x^{i})+(1-y^{(i)})cost_{0}(\theta^{T}x^{(i)})]+\frac{1}{2}\sum_{j=1}^{n}\theta_{j}^{2}$
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\underset{\theta}{min}~C\sum_{i=1}^{m}[y^{(i)}cost_{1}(\theta^{T}x^{(i)})+(1-y^{(i)})cost_{0}(\theta^{T}x^{(i)})]+\frac{1}{2}\sum_{j=1}^{n}\theta_{j}^{2}$
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $cost_{1}(\theta^{T}x^{(i)})=-log~h_{\theta}(x^{(i)}) ~~~$ (when $y=1$)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $cost_{0}(\theta^{T}x^{(i)})=-log~(1-h_{\theta}(x^{(i)})) ~~~$ (when $y=0$)
 
 Hypothesis Function: 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![equation](images/equation1.gif)
+
+SVM is a convex function.
+
+<br />
 
 ### Kernel: similarity function
 
