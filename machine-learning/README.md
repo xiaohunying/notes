@@ -16,6 +16,8 @@ Hypothesis Function: &nbsp; $h_{\theta}(x)=\theta_{0}+\theta_{1}x_{1}+\theta_{2}
 
 Hypothesis Function: &nbsp; $h_{\theta}(x)=\theta_{0}+\theta_{1}x_{1}+\theta_{2}\sqrt{x_{1}}~~\Rightarrow ~~h_{\theta}(x)=\theta_{0}+\theta_{1}x_{1}+\theta_{2}x_{2}$ &nbsp;&nbsp; (where $x_{2}=\sqrt{x_{1}}$)
 
+<br />
+
 # Supervised Learning - Classification Problem
 
 ## Logistic Regression
@@ -29,7 +31,7 @@ cost Function: &nbsp; $cost(h_{\theta}(x),y)=-y~log(h_{\theta}(x))-(1-y)~log(1-h
 cost Function: &nbsp; $J(\theta)=-\frac{1}{m}\sum_{i=1}^{m}[y^{(i)}log(h_{\theta}(x^{i}))+(1-y^{i})log(1-h_{\theta}(x^{i}))]$
 
 The logistic hypothesis function $h_{\theta}(x)$ gives us the probability that the output is 1.
-- $h_{\theta}(x)=0.7 ~~\Rightarrow ~~ $ 70%. 
+- $h_{\theta}(x)=0.7 ~~\Rightarrow ~ $ 70%. 
 - $h_{\theta}(x)=P(y=1|x;\theta)=1-P(y=0|x;\theta)$.
 
 **Decision Boundary :** Decision boundary is the line that separates the area where $y=0$ and $y=1$. It is created by the hypothesis function. For logistic function, the decision boundary is $\theta^{T}x=0$.
