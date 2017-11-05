@@ -51,7 +51,7 @@ SVM is a convex function
 
 Support Vector Machine Hypothesis: &nbsp; $\underset{\theta}{min}~C\sum_{i=1}^{m}[y^{(i)}cost_{1}(\theta^{T}x^{i})+(1-y^{(i)})cost_{0}(\theta^{T}x^{(i)})]+\frac{1}{2}\sum_{j=1}^{n}\theta_{j}^{2}$
 
-Hypothesis Function: &nbsp; $h_{\theta}(x)=\left\{\begin{matrix}1if \theta^{T}x\geqslant0\\0otherwise \end{matrix}\right$
+Hypothesis Function: &nbsp; $h_{\theta}(x)=\{\begin{matrix}1if \theta^{T}x\geqslant0\\0otherwise \end{matrix}\right$
 
 
 ## Neural Network
