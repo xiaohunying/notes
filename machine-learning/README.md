@@ -101,3 +101,6 @@ Where $j$ represents the feature index number. $\alpha$ is called **Learning Rat
 
 - Feature Scaling
 - Mean Normalization
+- Regularization: address overfitting (Regularization Parameter $\lambda$)
+- Convex Function: bowl-shaped function
+- Contour plot
