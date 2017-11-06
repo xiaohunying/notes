@@ -72,17 +72,13 @@ SVM cost function from logistic regression cost function:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; where &nbsp; $cost_{0}(\theta^{T}x^{(i)})=-log~(1-h_{\theta}(x^{(i)})) ~~~$ (when $y=0$)
 
-Hypothesis Function: 
+Unlike logistic, $h_{\theta}(x)$ doesn't give us a probability, but instead we get a direct prediction of 1 or 0. Hypothesis Function: 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![equation](images/equation1.gif)
 
-Unlike logistic, $h_{\theta}(x)$ doesn't give us a probability, but instead we get a direct prediction of 1 or 0.
+**Large Margin intuition**: If you have a positive example, you only really need $\theta^{T}x$ to be greater or equal to 0. SVM wants a bit more than that - doesn't want to just get it right, but have the value be quite a bit bigger than zero. If $y=1$, we want $\theta^{T}x$ greater or equal to 1. If $y=0$, we want $\theta^{T}x$ less or equal to -1.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![equation](images/equation2.gif)
-
-<br />
-
-**Large Margin intuition**: If you have a positive example, you only really need $\theta^{T}x$ to be greater or equal to 0. SVM wants a bit more than that - doesn't want to just get it right, but have the value be quite a bit bigger than zero. If $y=1$, we want $\theta^{T}x$ greater or equal to 1. If $y=0$, we want $\theta^{T}x$ less or equal to -1.
 
 **SVM is a convex function**.
 
@@ -95,7 +91,7 @@ Also called **linear kernel**. Predict $y=1$ if $\theta^{T}x>=0$
 #### Gaussian kernel
 
 
-
+<br />
 
 ## Neural Network
 
