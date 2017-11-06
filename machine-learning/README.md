@@ -157,7 +157,7 @@ Cost Function:
 
 **Backpropagation Algorithm**
 
-**Unrolling parameters**
+**Unrolling parameters**: In order to use optimizing functions such as *fminunc*, we will want to unrill all the elements and put them into one long vector.
 
 **Gradient Checking**: verify backpropagation algorithm correct. Only need to use it once. A small value for $\xi$ such as $\xi=10^{-4}$ guarantees that the math works out properly. But if the value for $\xi$ is too small, we can end up with numerical problems.
 
