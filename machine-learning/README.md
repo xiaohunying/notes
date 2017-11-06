@@ -111,11 +111,13 @@ Another way of writing this is that a hypothesis computes a decision boundary by
 
 **Gaussian Kernel**
 
-- Similarity Function: $k(x,l^{(i)})=exp(-\frac{\left \| x-l^{(i)}\right \|^{2}}{2\sigma^2})$
+Gaussian Similarity Function uses Gaussian distribution.
 
-- If $x\approx l^{(i)}$, &nbsp; $k(x,l^{(1)})\approx1$
+Similarity Function: $k(x,l^{(i)})=exp(-\frac{\left \| x-l^{(i)}\right \|^{2}}{2\sigma^2})$
 
-- If $x$ far from $l^{(i)}$, &nbsp; $k(x,l^{(1)})\approx0$
+- If $x\approx l^{(i)}$, &nbsp; $k(x,l^{(i)})\approx1$
+
+- If $x$ far from $l^{(i)}$, &nbsp; $k(x,l^{(i)})\approx0$
 
 <br />
 
