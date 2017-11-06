@@ -167,6 +167,17 @@ We measure the similarity of $x$ and $l$ by doing one of $(x^{T}l)^{2}$, $(x^{T}
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\Theta$ - random values in $[-\xi, \xi]$
 
+<br />
+
+## Choose Algorithm
+
+large $n$ relative to $m$: Logistic Regression, SVM without kernel.
+
+Small $n$, intermediate $m$: SVM with Gaussian kernel.
+
+Small $n$, large $m$: logistic regression (more features), SVM without kernel.
+
+Neural Network: for all, but slow to train.
 
 <br />
 
