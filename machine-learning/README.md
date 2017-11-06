@@ -185,6 +185,14 @@ Neural Network: for all, but slow to train.
 
 ## K-Means
 
+K is the number of clusters. The process is
+
+1. Randomly choose centroids $\mu$
+2. Group $x^{(i)}$ which is closest to $\mu^{(i)}$
+3. Calculate the average (mean) of $x$ in each group
+4. Compute cost function (distortion) $J=\frac{1}{m}\sum_{i=1}^{m}\left \| x^{(i)}-\mu_{c}^{(i)} \right \|^{2}$ .
+5. Repeat 2-4, pick clustering that gave lowest cost $J$.
+
 <br />
 
 # PCA: Principal Component Analysis
