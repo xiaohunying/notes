@@ -151,11 +151,11 @@ We measure the similarity of $x$ and $l$ by doing one of $(x^{T}l)^{2}$, $(x^{T}
 - Activation units
 - Bias nodes $x_{0}$
 
-Cost Function:
+**Cost Function**:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![equation](images/equation5.gif)
 
-**Backpropagation Algorithm**
+**Backpropagation Algorithm**: backpropagation is neural network termonology for minimizing cost function.
 
 **Unrolling parameters**: In order to use optimizing functions such as *fminunc*, we will want to unrill all the elements and put them into one long vector.
 
