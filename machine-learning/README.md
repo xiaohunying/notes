@@ -119,8 +119,7 @@ Gaussian similarity function uses Gaussian distribution. When use Gaussian Kerne
 
 - If $x$ far from $l^{(i)}$, &nbsp; $k(x,l^{(i)})\approx0$
 
-When use Gaussian Kernel, you need to choose $C$ which is equal to $\frac{1}{\lambda}$ and $\sigma^{2}$.
-
+When use Gaussian Kernel, you need to choose $C=\frac{1}{\lambda}$ and $\sigma^{2}$.
 Large $C$: Low bias, high variance.
 
 Small $C$: High bias, low variance.
@@ -153,6 +152,16 @@ Cost Function:
 
 - activation units
 - bias nodes $x_{0}$
+
+**Backpropagation Algorithm**
+
+**Unrolling parameters**
+
+**Gradient Checking**: verify backpropagation algorithm correct. Only need to use it once.
+
+$\frac{\partial}{\partial\Theta }J(\Theta )\approx \frac{J(\Theta+\xi)-J(\Theta-\xi)}{2\xi}$
+
+A small value for $\xi$ such as $\xi=10^{-4}$ guarantees that the math works out properly. But if the value for $\xi$ is too small, we can end up with numerical problems.
 
 <br />
 
