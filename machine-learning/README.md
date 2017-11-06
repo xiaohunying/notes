@@ -107,10 +107,17 @@ Another way of writing this is that a hypothesis computes a decision boundary by
 
 - The similarity function is called a **kernel**. Instead of writing *similarity*, we might write $f_{1}=k(x,l^{(1)})$
 
+<br />
 
-### **No kernel**
+**Gaussian Kernel**
 
-Also called **linear kernel**. Predict $y=1$ if $\theta^{T}x>=0$
+
+
+**Linear Kernel**
+
+Predict $y=1$ if $\theta^{T}x>=0$
+
+**Polynomial Kernel**
 
 
 
