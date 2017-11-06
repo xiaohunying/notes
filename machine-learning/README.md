@@ -62,9 +62,9 @@ $prediction=\underset{i}{max}(h_{\theta}^{(i)}(x))$
 
 <br />
 
-## SVM: Support Vector Machine
+## Linear SVM
 
-SVM cost function from logistic regression cost function:
+**SVM (Support Vector Machine)** cost function from logistic regression cost function:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\underset{\theta}{min}~C\sum_{i=1}^{m}[y^{(i)}cost_{1}(\theta^{T}x^{(i)})+(1-y^{(i)})cost_{0}(\theta^{T}x^{(i)})]+\frac{1}{2}\sum_{j=1}^{n}\theta_{j}^{2}$
 
@@ -82,13 +82,16 @@ Unlike logistic, $h_{\theta}(x)$ doesn't give us a probability, but instead we g
 
 **SVM is a convex function**.
 
-### Kernel: similarity function
+<br />
 
-#### **No kernel**
+## SVM for Non-Linear Classification (Kernel)
+
+### Gaussian kernel
+
+### **No kernel**
 
 Also called **linear kernel**. Predict $y=1$ if $\theta^{T}x>=0$
 
-#### Gaussian kernel
 
 
 <br />
