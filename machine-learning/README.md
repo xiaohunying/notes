@@ -105,8 +105,7 @@ Use **Kernel**:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![equation](images/equation4.gif)
 
-- The similarity function is called a **kernel**.
-- This function is a **Gaussian Kernel**. $f_{1}=k(x,l^{(1)})$
+- The similarity function is called a **kernel**. Instead of writing $similarity$, we might write $f_{1}=k(x,l^{(1)})$
 
 
 ### **No kernel**
