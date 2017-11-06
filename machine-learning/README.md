@@ -62,7 +62,7 @@ $prediction=\underset{i}{max}(h_{\theta}^{(i)}(x))$
 
 <br />
 
-## Linear SVM
+## Linear SVM (Support Vector Machine)
 
 **SVM (Support Vector Machine)** cost function from logistic regression cost function:
 
