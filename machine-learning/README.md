@@ -123,6 +123,8 @@ Similarity Function: $k(x,l^{(i)})=exp(-\frac{\left \| x-l^{(i)}\right \|^{2}}{2
 
 **Linear Kernel**
 
+Linear kernel is also no kernel.
+
 - Predict $y=1$, if $\theta^{T}x>=0$
 
 **Polynomial Kernel**
