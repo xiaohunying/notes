@@ -98,14 +98,14 @@ Another way of writing this is that a hypothesis computes a decision boundary by
 
 <br />
 
-Use **Kernel**:
+**Use Kernel**:
 
 - Manually choose **landmarks**, $l^{(1)},~l^{(2)},~l^{(3)},\cdots$. You can choose $l^{(1)}=x^{(1)},~l^{(2)}=x^{(2)},\cdots,~l^{(m)}=x^{(m)}$
 - Given $x$, define $f_{1}$ as the similarity between $x$ and $l^{(1)}$
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![equation](images/equation4.gif)
 
-- The similarity function is called a **kernel**. Instead of writing $similarity$, we might write $f_{1}=k(x,l^{(1)})$
+- The similarity function is called a **kernel**. Instead of writing *similarity*, we might write $f_{1}=k(x,l^{(1)})$
 
 
 ### **No kernel**
