@@ -129,7 +129,7 @@ Linear kernel is also no kernel.
 
 **Polynomial Kernel**
 
-
+We measure the similarity of $x$ and $l$ by doing one of $(x^{T}l)^{2}$, $(x^{T}l)^{3}$, $(x^{T}l+1)^{3}. The general form is $(x^{T}l+constant)^{D}$.
 
 <br />
 
