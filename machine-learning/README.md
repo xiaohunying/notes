@@ -111,9 +111,7 @@ Another way of writing this is that a hypothesis computes a decision boundary by
 
 **Gaussian Kernel**
 
-Gaussian Similarity Function uses Gaussian distribution.
-
-Similarity Function: $k(x,l^{(i)})=exp(-\frac{\left \| x-l^{(i)}\right \|^{2}}{2\sigma^2})$
+Gaussian Similarity Function uses Gaussian distribution: $k(x,l^{(i)})=exp(-\frac{\left \| x-l^{(i)}\right \|^{2}}{2\sigma^2})$
 
 - If $x\approx l^{(i)}$, &nbsp; $k(x,l^{(i)})\approx1$
 
@@ -126,6 +124,8 @@ Similarity Function: $k(x,l^{(i)})=exp(-\frac{\left \| x-l^{(i)}\right \|^{2}}{2
 Linear kernel is also no kernel.
 
 - Predict $y=1$, if $\theta^{T}x>=0$
+
+<br />
 
 **Polynomial Kernel**
 
