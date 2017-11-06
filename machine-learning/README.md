@@ -140,7 +140,7 @@ Cost Function:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![equation](images/equation5.gif)
 
-$J(\Theta)=-\frac{1}{m}\sum_{i=1}^{m}\sum_{k=1}^{k}[y_{k}^{(i)}]$
+$J(\Theta)=-\frac{1}{m}\sum_{i=1}^{m}\sum_{k=1}^{k}[y_{k}^{(i)}log((h(x^{(i)}))_{k})]$
 
 - activation units
 - bias nodes x_{0}
