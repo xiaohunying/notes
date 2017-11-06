@@ -96,7 +96,14 @@ Another way of writing this is that a hypothesis computes a decision boundary by
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; where &nbsp; $f_{1}=x_{1},~f_{2}=x_{2},~f_{3}=x_{1}x_{2},\cdots$
 
-### Gaussian kernel
+<br />
+
+- Manually choose **landmarks**, $l^{1},~l^{2},~l^{3},\cdots$.
+- Given $x$, define $f_{1}$ as the similarity between $x$ and $l^{1}.
+-- something
+- The similarity function is called a **kernel**.
+- This function is a **Gaussian Kernel**. $f_{1}=k(x,l^{1})$
+
 
 ### **No kernel**
 
