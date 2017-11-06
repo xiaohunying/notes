@@ -133,6 +133,10 @@ We measure the similarity of $x$ and $l$ by doing one of $(x^{T}l)^{2}$, $(x^{T}
 
 <br />
 
+Not all similarity functions make valid kernels. Need to satisfy technical condition "Mercer's Theorem" to make sure SVM packages' optimizations run correctly and do not diverge.
+
+<br />
+
 ## Neural Network
 
 - activation units
