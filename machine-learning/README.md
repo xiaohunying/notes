@@ -141,7 +141,7 @@ Cost Function:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![equation](images/equation5.gif)
 
 - activation units
-- bias nodes x_{0}
+- bias nodes $x_{0}$
 
 <br />
 
