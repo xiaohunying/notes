@@ -146,12 +146,14 @@ We measure the similarity of $x$ and $l$ by doing one of $(x^{T}l)^{2}$, $(x^{T}
 
 ## Neural Network
 
+- Number of input units: dimension of features $x^{(i)}
+- Number of output units: number of classes
+- Activation units
+- Bias nodes $x_{0}$
+
 Cost Function:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![equation](images/equation5.gif)
-
-- activation units
-- bias nodes $x_{0}$
 
 **Backpropagation Algorithm**
 
@@ -160,6 +162,11 @@ Cost Function:
 **Gradient Checking**: verify backpropagation algorithm correct. Only need to use it once. A small value for $\xi$ such as $\xi=10^{-4}$ guarantees that the math works out properly. But if the value for $\xi$ is too small, we can end up with numerical problems.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\frac{\partial}{\partial\Theta }J(\Theta )\approx \frac{J(\Theta+\xi)-J(\Theta-\xi)}{2\xi}$
+
+**Random Initialization**: symmetry breaking
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\Theta$ - random values in $[-\xi, \xi]$
+
 
 <br />
 
