@@ -157,11 +157,9 @@ Cost Function:
 
 **Unrolling parameters**
 
-**Gradient Checking**: verify backpropagation algorithm correct. Only need to use it once.
+**Gradient Checking**: verify backpropagation algorithm correct. Only need to use it once. A small value for $\xi$ such as $\xi=10^{-4}$ guarantees that the math works out properly. But if the value for $\xi$ is too small, we can end up with numerical problems.
 
-$\frac{\partial}{\partial\Theta }J(\Theta )\approx \frac{J(\Theta+\xi)-J(\Theta-\xi)}{2\xi}$
-
-A small value for $\xi$ such as $\xi=10^{-4}$ guarantees that the math works out properly. But if the value for $\xi$ is too small, we can end up with numerical problems.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\frac{\partial}{\partial\Theta }J(\Theta )\approx \frac{J(\Theta+\xi)-J(\Theta-\xi)}{2\xi}$
 
 <br />
 
