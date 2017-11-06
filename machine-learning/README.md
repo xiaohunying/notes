@@ -119,6 +119,8 @@ Gaussian similarity function uses Gaussian distribution. When use Gaussian Kerne
 
 - If $x$ far from $l^{(i)}$, &nbsp; $k(x,l^{(i)})\approx0$
 
+When use Gaussian Kernel, you need to choose $C$ which is equal to $\frac{1}{\lamda} and $\sigma^{2}.
+
 <br />
 
 **Linear Kernel**
