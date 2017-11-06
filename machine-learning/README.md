@@ -32,13 +32,13 @@ Hypothesis Function: &nbsp; $h_{\theta }(x)=\frac{1}{1+e^{-\theta^{T}x}}$
 
 cost Function: &nbsp; $cost(h_{\theta}(x),y)=-y~log(h_{\theta}(x))-(1-y)~log(1-h_{\theta}(x))$ &nbsp;&nbsp;&nbsp;&nbsp; ($y=0$ or $y=1$)
 
-cost Function: &nbsp; $J(\theta)=-\frac{1}{m}\sum_{i=1}^{m}[y^{(i)}log(h_{\theta}(x^{i}))+(1-y^{i})log(1-h_{\theta}(x^{i}))]$
+cost Function: &nbsp; $J(\theta)=-\frac{1}{m}\sum_{i=1}^{m}[y^{(i)}log(h_{\theta}(x^{(i)}))+(1-y^{(i)})log(1-h_{\theta}(x^{(i)}))]$
 
 <br />
 
 The logistic hypothesis function $h_{\theta}(x)$ gives us the probability that the output is 1.
-- $h_{\theta}(x)=0.7 ~~\Rightarrow ~ $ 70%. 
-- $h_{\theta}(x)=P(y=1|x;\theta)=1-P(y=0|x;\theta)$.
+- $h_{\theta}(x)=0.7 ~~\Rightarrow ~ $ 70% 
+- $h_{\theta}(x)=P(y=1|x;\theta)=1-P(y=0|x;\theta)$
 
 <br />
 
@@ -78,15 +78,13 @@ Hypothesis Function:
 
 Unlike logistic, $h_{\theta}(x)$ doesn't give us a probability, but instead we get a direct prediction of 1 or 0.
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![equation](images/equation2.gif)
+
 <br />
 
 **Large Margin intuition**: If you have a positive example, you only really need $\theta^{T}x$ to be greater or equal to 0. SVM wants a bit more than that - doesn't want to just get it right, but have the value be quite a bit bigger than zero. If $y=1$, we want $\theta^{T}x$ greater or equal to 1. If $y=0$, we want $\theta^{T}x$ less or equal to -1.
 
-<br />
-
-SVM is a convex function.
-
-<br />
+**SVM is a convex function**.
 
 ### Kernel: similarity function
 
