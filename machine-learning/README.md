@@ -149,7 +149,7 @@ Cost Function:
 
 ## K-Means
 
-
+<br />
 
 # PCA: Principal Component Analysis
 
