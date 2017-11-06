@@ -111,7 +111,7 @@ Another way of writing this is that a hypothesis computes a decision boundary by
 
 **Gaussian Kernel**
 
-Gaussian Similarity Function uses Gaussian distribution: $k(x,l^{(i)})=exp(-\frac{\left \| x-l^{(i)}\right \|^{2}}{2\sigma^2})$
+Gaussian similarity function uses Gaussian distribution. When use Gaussian Kernel, you need to choose $\sigma^2$. Gaussian Similarity function: $k(x,l^{(i)})=exp(-\frac{\left \| x-l^{(i)}\right \|^{2}}{2\sigma^2})$
 
 - If $x\approx l^{(i)}$, &nbsp; $k(x,l^{(i)})\approx1$
 
