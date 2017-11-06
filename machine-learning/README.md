@@ -86,6 +86,16 @@ Unlike logistic, $h_{\theta}(x)$ doesn't give us a probability, but instead we g
 
 ## SVM for Non-Linear Classification (Kernel)
 
+Hypothesis Function:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![equation](images/equation3.gif)
+
+Another way of writing this is that a hypothesis computes a decision boundary by taking the sum of the parameter vector multiplied by a new feature vector $f$, which simply contains the various high order $x$ terms.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $h_{\theta}(x)=\theta_{0}+\theta_{1}f_{1}+\theta_{2}f_{2}+\theta_{3}f_{3}+\cdots$
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; where &nbsp; $f_{1}=x_{1},~f_{2}=x_{1}x_{2},\cdots$
+
 ### Gaussian kernel
 
 ### **No kernel**
