@@ -138,6 +138,8 @@ We measure the similarity of $x$ and $l$ by doing one of $(x^{T}l)^{2}$, $(x^{T}
 
 Cost Function:
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![equation](images/equation5.gif)
+
 $J(\Theta)=-\frac{1}{m}\sum_{i=1}^{m}\sum_{k=1}^{k}[y_{k}^{(i)}log((h_{\Theta }(x^{(i)}))_{k})+(1-y_{k}^{(i)})log(1-(h_{\Theta}(x^{(i)}))_{k})]+\frac{\lambda}{2m}\sum_{l=1}^{L-1}\sum_{i=1}^{S_{l}}\sum_{j=1}^{S_{l}+1}(\Theta_{j,i}^{(l)})^{2}$
 
 - activation units
