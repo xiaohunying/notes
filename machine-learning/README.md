@@ -146,7 +146,7 @@ We measure the similarity of $x$ and $l$ by doing one of $(x^{T}l)^{2}$, $(x^{T}
 
 ## Neural Network
 
-- Number of input units: dimension of features $x^{(i)}
+- Number of input units: dimension of features $x^{(i)}$
 - Number of output units: number of classes
 - Activation units
 - Bias nodes $x_{0}$
