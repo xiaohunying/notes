@@ -235,9 +235,11 @@ Three broad categories of anomaly detection techniques: Unsupervised anomaly det
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Anomaly if $P(x)< \epsilon$
 
-**Multivariate Gaussian Distribution**: Don't model $P(x_{1})$, $P(x_{2})$ ..., etc. separately. Model $P(x)$ all in one go.
+**Multivariate Gaussian Distribution**: Don't model $P(x_{1})$, $P(x_{2})$ ..., separately. Model $P(x)$ all in one go.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $P(x)=\frac{1}{(2\pi)^{n/2}\left | \Sigma\right |^{1/2}}exp(-\frac{1}{2}(x-\mu)^{T}\Sigma ^{-1}(x-\mu))$
+
+<br />
 
 **Non-Gaussian**: *hist*, *log(x)*
 
