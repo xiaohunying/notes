@@ -247,6 +247,19 @@ Three broad categories of anomaly detection techniques: Unsupervised anomaly det
 
 **Applications of Anomaly Detection**: Anomaly detection is applicable in a variety of domains, such as intrusion detection, fraud detection, fault detection, system health monitoring, event detection in sensor networks, and detecting Eco-system disturbances. It is often used in preprocessing to remove anomalous data from the dataset.
 
+# Recommender System
+
+**Collaborative filtering algorithm**:
+
+1. Initialize $x^{(1)}\cdots x^{(n_{m})},\theta^{(1)}\cdots \theta^{(n_{u})}$ to small random values.
+2. Minimize $J(x^{(1)}\cdots x^{(n_{m})},\theta^{(1)}\cdots \theta^{(n_{u})})$ .
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; For every &nbsp; $j=1\cdots n_{u}, i=1\cdots n_{m}$
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![equation](images/equation6.gif)
+
+<br />
+
 # Optimization Algorithms
 
 - Gradient Descent
