@@ -260,7 +260,7 @@ Three broad categories of anomaly detection techniques: Unsupervised anomaly det
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\theta_{k}^{(j)}:=\theta_{k}^{(j)}-\alpha (\sum_{i:r(i,j)=1}^{ }((\theta^{(j)})^{T}x^{(i)}-y^{(i,j)})x_{k}^{(i)}+\lambda \theta_{k}^{(j)})$
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![equation](images/equation6.gif)
+3. For a user with parameters $\theta$ and a movie with (learned) features $x$, predict a rating of $\theta^{T}x$ .
 
 <br />
 
