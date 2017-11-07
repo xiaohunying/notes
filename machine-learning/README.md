@@ -270,6 +270,14 @@ Three broad categories of anomaly detection techniques: Unsupervised anomaly det
 
 # Optimization Algorithms
 
+| Algorithm | Pros | Cons |
+| --------- |:----:| ----:|
+| Gradient Descent | | |
+| Conjugate Gradient | No need to pick $\alpha$, fast | complex |
+| BFGS               | no need to pick $\alpha$, fast | complex |
+| L-BFGS             | no need to pick $\alpha$, fast | complex |
+| Normal Equation    |                                | Too expensive: need to calculate inverse of matrix|
+
 - Gradient Descent
 - Conjugate Gradient - **Pros:** no need to pick $\alpha$, fast. **Cons:** complex
 - BFGS - **Pros:** no need to pick $\alpha$, fast. **Cons:** complex
