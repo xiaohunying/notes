@@ -24,6 +24,14 @@ Hypothesis Function: &nbsp; $h_{\theta}(x)=\theta_{0}+\theta_{1}x_{1}+\theta_{2}
 
 # Supervised Learning - Classification Problem
 
+large *n* relative to *m*: **Logistic Regression**, **SVM without kernel**.
+
+Small *n*, intermediate *m*: **SVM with Gaussian kernel**.
+
+Small *n*, large *m*: **Logistic Regression** (more features), **SVM without kernel**.
+
+**Neural Network**: for all, but slow to train.
+
 ## Logistic Regression
 
 Hypothesis representation is **Sigmoid Function** which is also called **Logistic Function**.
