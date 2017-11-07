@@ -205,7 +205,7 @@ Reduce data from n-dimensions to k-dimensions
 
 **Choose K**: choose k to be the smallest so that "99% of variance is retained" (95-99% is commonly used).
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![equation](images/equation6.gif)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![equation](images/equation7.gif)
 
 <br />
 
