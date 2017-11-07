@@ -294,6 +294,9 @@ Gradient Descent with big datasets:
 
 Online learning setting allows us to model problems where we have a continuous flood or a continuous stream of data coming in and we would like an algorithm to learn from that.
 
+# Skewed Data
+
+Precision, Recall, F1 Score (F score)
 
 # Others
 
@@ -303,3 +306,6 @@ Online learning setting allows us to model problems where we have a continuous f
 - Convex Function: bowl-shaped function
 - Contour plot
 - Map Reduce and Data Parallelism: use map reduce when learning algorithms can be expressed as computing sums of functions over the training set.
+- Artificial Synthesized Data
+- Ceiling Analysis
+
