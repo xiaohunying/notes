@@ -201,7 +201,15 @@ Reduce data from n-dimensions to k-dimensions
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $U_{reduce}=u(:,1:k)$
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $Z=U_{reduce}'\times x$ &nbsp;&nbsp; ($Z\in R^{k}$, $x\in R^{n}$)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $z=U_{reduce}'\times x$ &nbsp;&nbsp; ($z\in R^{k}$, $x\in R^{n}$)
+
+**Choose K**: choose k to be the smallest so that "99% of variance is retained" (95-99% is commonly used).
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\frac{\frac{1}{2}\sum_{i=1}^{m}\left \| x^{(i)}-x_{approx}^{(i)} \right \|^{2}}{\frac{1}{m}\sum_{i=1}^{m}\left \| x^{(i)} \right \|^{2}}\leqslant 0.01$
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $x_{approx}=U_{reduce}\cdot z$ 
+
+<br />
 
 **Application of PCA**: Dimensionality Reduction
 
