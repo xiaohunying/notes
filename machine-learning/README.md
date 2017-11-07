@@ -177,18 +177,6 @@ We measure the similarity of $x$ and $l$ by doing one of $(x^{T}l)^{2}$, $(x^{T}
 
 <br />
 
-## Choose Algorithm
-
-large $n$ relative to $m$: Logistic Regression, SVM without kernel.
-
-Small $n$, intermediate $m$: SVM with Gaussian kernel.
-
-Small $n$, large $m$: logistic regression (more features), SVM without kernel.
-
-Neural Network: for all, but slow to train.
-
-<br />
-
 # Unsupervised Learning - Clustering
 
 ## K-Means
@@ -209,10 +197,11 @@ K is the number of clusters. The process is
 
 Reduce data from n-dimensions to k-dimensions
 
-## Application: Dimensionality Reduction
+**Application of PCA**: Dimensionality Reduction
 
-- Data Compression
-- Data Visualization
+- Data Compression: reduce memory/disk needed to store data, or speed up learning algorithm.
+- Data Visualization: reduce dimension to 2 or 3 so that we can plot 2D or 3D data.
+- Bad use of PCA: to prevent overfitting.
 
 ## [u, s, v] = svd(sigma)
 
