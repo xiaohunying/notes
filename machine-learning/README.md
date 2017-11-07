@@ -288,6 +288,11 @@ Gradient Descent with big datasets:
 - Stochastic Gradient Descent
 - Mini-batch Gradient Descent: 
 
+<br />
+
+# Online Learning
+
+Online learning setting allows us to model problems where we have a continuous flood or a continuous stream of data coming in and we would like an algorithm to learn from that.
 
 
 # Others
@@ -297,3 +302,4 @@ Gradient Descent with big datasets:
 - Regularization: address overfitting (Regularization Parameter $\lambda$)
 - Convex Function: bowl-shaped function
 - Contour plot
+- Map Reduce and Data Parallelism: use map reduce when learning algorithms can be expressed as computing sums of functions over the training set.
