@@ -254,7 +254,11 @@ Three broad categories of anomaly detection techniques: Unsupervised anomaly det
 1. Initialize $x^{(1)}\cdots x^{(n_{m})},\theta^{(1)}\cdots \theta^{(n_{u})}$ to small random values.
 2. Minimize $J(x^{(1)}\cdots x^{(n_{m})},\theta^{(1)}\cdots \theta^{(n_{u})})$ .
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; For every &nbsp; $j=1\cdots n_{u}, i=1\cdots n_{m}$
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; For every &nbsp; $j=1\cdots n_{u}, i=1\cdots n_{m}$
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $x_{k}^{(i)}:=x_{k}^{(i)}-\alpha (\sum_{j:r(i,j)=1}^{ }((\theta^{(j)})^{T}x^{(i)}-y^{(i,j)})\theta_{k}^{(j)}+\lambda x_{k}^{(i)})$
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\theta_{k}^{(j)}:=\theta_{k}^{(j)}-\alpha (\sum_{i:r(i,j)=1}^{ }((\theta^{(j)})^{T}x^{(i)}-y^{(i,j)})x_{k}^{(i)}+\lambda \theta_{k}^{(j)})$
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![equation](images/equation6.gif)
 
