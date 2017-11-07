@@ -229,6 +229,12 @@ Three broad categories of anomaly detection techniques: Unsupervised anomaly det
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\mu=\frac{1}{m}\sum_{m=1}^{m}x^{(i)}$ &nbsp;, &nbsp;&nbsp; $\sigma^{2}=\frac{1}{m}\sum_{m=1}^{m}(x^{(i)}-\mu)^{2}$
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Density Estimation: $P(x)=\prod_{j=1}^{n}P(x_{j};\mu_{j},\sigma_{j}^{2})$
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Anomaly if $P(x)< \epsilon$
+
+<br />
+
 **Applications of Anomaly Detection**: Anomaly detection is applicable in a variety of domains, such as intrusion detection, fraud detection, fault detection, system health monitoring, event detection in sensor networks, and detecting Eco-system disturbances. It is often used in preprocessing to remove anomalous data from the dataset.
 
 # Optimization Algorithms
