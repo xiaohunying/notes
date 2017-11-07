@@ -223,6 +223,8 @@ Reduce data from n-dimensions to k-dimensions
 
 Three broad categories of anomaly detection techniques: Unsupervised anomaly detection techniques, Supervised anomaly detection techniques and Semi-supervised anomaly detection techniques.
 
+<br />
+
 **Gaussian Distribution** (Normal Distribution): 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $P(x;\mu,\sigma^{2})=\frac{1}{\sqrt{2\pi}\cdot \sigma}exp(-\frac{(x-\mu)^{2}}{2\sigma ^{2}})$
@@ -232,6 +234,12 @@ Three broad categories of anomaly detection techniques: Unsupervised anomaly det
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Density Estimation: $P(x)=\prod_{j=1}^{n}P(x_{j};\mu_{j},\sigma_{j}^{2})$
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Anomaly if $P(x)< \epsilon$
+
+**Multivariate Gaussian Distribution**: Don't model $P(x_{1})$, $P(x_{2})$ ..., etc. separately. Model $P(x)$ all in one go.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $P(x)=\frac{1}{(2\pi)^{n/2}\left | \Sigma\right |^{1/2}}exp(-\frac{1}{2}(x-\mu)^{T}\Sigma ^{-1}(x-\mu))$
+
+**Non-Gaussian**: *hist*, *log(x)*
 
 <br />
 
