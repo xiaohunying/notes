@@ -280,11 +280,13 @@ Three broad categories of anomaly detection techniques: Unsupervised anomaly det
 
 ## Gradient Descent
 
-Repeat until convergence: &nbsp; $\theta_{j}:=\theta_{j}-\alpha\frac{\partial}{\partial \theta_{j}}J(\theta)$
+Repeat until convergence: &nbsp; $\theta_{j}:=\theta_{j}-\alpha\frac{\partial}{\partial \theta_{j}}J(\theta)$ . Where $j$ represents the feature index number. $\alpha$ is called **Learning Rate**.
 
-Where $j$ represents the feature index number. $\alpha$ is called **Learning Rate**.
+Gradient Descent with big datasets:
 
 - Batch Gradient Descent: uses all the training data at one time
+- Stochastic Gradient Descent
+- Mini-batch Gradient Descent: 
 
 
 
