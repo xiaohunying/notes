@@ -264,6 +264,10 @@ Three broad categories of anomaly detection techniques: Unsupervised anomaly det
 
 <br />
 
+**Find Related Movies**: Low related matrix factorization. Find five movies $j$ with smallest $\left \| x^{(i)}-x^{(j)} \right \|$ .
+
+<br />
+
 # Optimization Algorithms
 
 - Gradient Descent
