@@ -197,19 +197,19 @@ K is the number of clusters. The process is
 
 Reduce data from n-dimensions to k-dimensions
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $[u,s,v]=svd(sigma)$
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $U_{reduce}=u(:,1:k)$
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $Z=U_{reduce}'*x;$ &nbsp;&nbsp; (~$x_{0}=1$~, $Z\inR^{k}$, $x\inR^{n}$)
+
 **Application of PCA**: Dimensionality Reduction
 
 - Data Compression: reduce memory/disk needed to store data, or speed up learning algorithm.
 - Data Visualization: reduce dimension to 2 or 3 so that we can plot 2D or 3D data.
 - Bad use of PCA: to prevent overfitting.
 
-## [u, s, v] = svd(sigma)
-
-\[U_{reduce} = u(:, 1:k)\]
-
-Z = U_{reduce}' * x; (~~x_{0}=1~~)
-
-
+<br />
 
 # Optimization Algorithms
 
