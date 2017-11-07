@@ -207,8 +207,6 @@ Reduce data from n-dimensions to k-dimensions
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![equation](images/equation6.gif)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $x_{approx}=U_{reduce}\cdot z$ 
-
 <br />
 
 **Application of PCA**: Dimensionality Reduction
