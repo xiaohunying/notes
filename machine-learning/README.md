@@ -205,7 +205,7 @@ Reduce data from n-dimensions to k-dimensions
 
 **Choose K**: choose k to be the smallest so that "99% of variance is retained" (95-99% is commonly used).
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\frac{\frac{1}{2}\sum_{i=1}^{m}\left \| x^{(i)}-x_{approx}^{(i)} \right \|^{2}}{\frac{1}{m}\sum_{i=1}^{m}\left \| x^{(i)} \right \|^{2}}\leqslant 0.01$
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![equation](images/equation6.gif)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $x_{approx}=U_{reduce}\cdot z$ 
 
