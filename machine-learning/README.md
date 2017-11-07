@@ -201,7 +201,7 @@ Reduce data from n-dimensions to k-dimensions
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $U_{reduce}=u(:,1:k)$
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $Z=U_{reduce}'*x;$ &nbsp;&nbsp; (~$x_{0}=1$~, $Z\inR^{k}$, $x\inR^{n}$)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $Z=U_{reduce}'*x;$ &nbsp;&nbsp; (~$x_{0}=1$~, $Z\in R^{k}$, $x\in R^{n}$)
 
 **Application of PCA**: Dimensionality Reduction
 
