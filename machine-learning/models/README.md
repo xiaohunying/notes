@@ -18,3 +18,16 @@ The goal of SvM is to design a hyperplane that classifies all training vectors i
 ![svm_optimal_hyperplane](images/svm-optimal-hyperplane.png)
 
 
+# Logistic Regression
+
+# Naive Bayes classifier
+
+# Decision Tree
+
+# Random Forrest
+
+# Perceptron
+
+# Neural Network
+
+# RVM - Relevance Vector Machine
