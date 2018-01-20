@@ -143,7 +143,7 @@ K is the number of clusters. The process is
 
 ![equation](images/k-means.gif)
 
-**Choose $k$**: Sometimes you are running K-means to get clusters to use for some later/downstream purpose. Evaluate K-means based on a metric for how well it performs for that later purpose.
+**Choose k**: Sometimes you are running K-means to get clusters to use for some later/downstream purpose. Evaluate K-means based on a metric for how well it performs for that later purpose.
 
 <br />
 
