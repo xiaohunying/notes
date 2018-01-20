@@ -28,17 +28,9 @@ Small *n*, large *m*: **Logistic Regression** (more features), **SVM without ker
 
 Use **One-vs-All** (**One-vs-Rest**)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $y\in \{ 0, 1,  ... , n \}$
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![equation](images/one-vs-all-1.gif)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $h_{\theta}^{(0)}(x)=P(y=0|x; \theta)$
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\vdots$
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $h_{\theta}^{(n)}(x)=P(y=n|x; \theta)$
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $prediction=\underset{i}{max}(h_{\theta}^{(i)}(x))$
-
-<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![equation](images/one-vs-all-2.gif)
 
 ## Linear SVM (Support Vector Machine)
 
