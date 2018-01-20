@@ -2,7 +2,9 @@
 
 ## Linear Regression
 
-Hypothesis Function: &nbsp; $h_{\theta}(x)=\theta_{0}+\theta_{1}x$
+Hypothesis Function: ![equation](images/linear-regression-hypothesis-function.gif)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![equation](images/linear-regression-hypothesis-function.gif)
 
 Parameters: &nbsp; $\theta_{0}$, $\theta_{1}$
 
