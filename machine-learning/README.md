@@ -2,7 +2,7 @@
 
 ## Linear Regression
 
-
+|                     | Function                                                      |
 | ------------------- | ------------------------------------------------------------- |
 | Hypothesis Function | ![equation](images/linear-regression-hypothesis-function.gif) |
 | Parameters          | ![equation](images/linear-regression-parameters.gif)          |
