@@ -2,6 +2,12 @@
 
 ## Linear Regression
 
+| Hypothesis Function | ![equation](images/linear-regression-hypothesis-function.gif) |
+| Parameters          | ![equation](images/linear-regression-parameters.gif)          |
+| Cost Function       | ![equation](images/linear-regression-cost-function-1.gif)     |
+| Cost Function       | ![equation](images/linear-regression-cost-function-2.gif)     |
+| Goal                | ![equation](images/linear-regression-goal.gif)                |
+
 Hypothesis Function: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![equation](images/linear-regression-hypothesis-function.gif)
 
 Parameters: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![equation](images/linear-regression-parameters.gif)
