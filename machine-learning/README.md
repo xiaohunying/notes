@@ -155,17 +155,13 @@ K is the number of clusters. The process is
 
 Reduce data from n-dimensions to k-dimensions
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $[u,s,v]=svd(sigma)$
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $U_{reduce}=u(:,1:k)$
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $z=U_{reduce}'\times x$ &nbsp;&nbsp; ($z\in R^{k}$, $x\in R^{n}$)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![equation](images/pca.gif)
 
 <br />
 
 **Choose K**: choose k to be the smallest so that "**99% of variance is retained**" (95-99% is commonly used).
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![equation](images/equation7.gif)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![equation](images/equation7.gif)
 
 <br />
 
