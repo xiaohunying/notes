@@ -229,9 +229,9 @@ Three broad categories of anomaly detection techniques: Unsupervised anomaly det
 
 ## Gradient Descent
 
-Repeat until convergence: &nbsp; (where *j* represents the feature index number; α is called **Learning Rate**).
+Repeat until convergence: &nbsp; (where *j* represents the feature index number; α is called **Learning Rate**)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![equation](images/gradient-descent.gif)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![equation](images/gradient-descent.gif)
 
 Gradient Descent with big datasets:
 
