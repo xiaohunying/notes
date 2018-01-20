@@ -185,13 +185,7 @@ Three broad categories of anomaly detection techniques: Unsupervised anomaly det
 
 **Gaussian Distribution** (Normal Distribution): 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $P(x;\mu,\sigma^{2})=\frac{1}{\sqrt{2\pi}\cdot \sigma}exp(-\frac{(x-\mu)^{2}}{2\sigma ^{2}})$
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\mu=\frac{1}{m}\sum_{m=1}^{m}x^{(i)}$ &nbsp;, &nbsp;&nbsp; $\sigma^{2}=\frac{1}{m}\sum_{m=1}^{m}(x^{(i)}-\mu)^{2}$
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Density Estimation: $P(x)=\prod_{j=1}^{n}P(x_{j};\mu_{j},\sigma_{j}^{2})$
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Anomaly if $P(x)< \epsilon$
+![equation](images/anomaly-detection-gaussian-distribution.gif)
 
 **Multivariate Gaussian Distribution**: Don't model $P(x_{1})$, $P(x_{2})$ ..., separately. Model $P(x)$ all in one go.
 
