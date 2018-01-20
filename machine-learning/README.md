@@ -260,7 +260,7 @@ Precision, Recall, F1 Score (F score)
 
 - Feature Scaling
 - Mean Normalization
-- Regularization: address overfitting (Regularization Parameter $\lambda$)
+- Regularization: address overfitting (Regularization Parameter λ)
 - Convex Function: bowl-shaped function
 - Contour plot
 - Map Reduce and Data Parallelism: use map reduce when learning algorithms can be expressed as computing sums of functions over the training set.
