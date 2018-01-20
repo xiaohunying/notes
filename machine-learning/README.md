@@ -2,17 +2,15 @@
 
 ## Linear Regression
 
-Hypothesis Function: ![equation](images/linear-regression-hypothesis-function.gif)
+Hypothesis Function: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![equation](images/linear-regression-hypothesis-function.gif)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![equation](images/linear-regression-hypothesis-function.gif)
+Parameters: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![equation](images/linear-regression-parameters.gif)
 
-Parameters: &nbsp; $\theta_{0}$, $\theta_{1}$
+Cost Function: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![equation](images/linear-regression-cost-function-1.gif)
 
-Cost Function: &nbsp; $cost(h_{\theta}(x),y)=\frac{1}{2}(h_{\theta}(x)-y)^{2}$
+Cost Function: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![equation](images/linear-regression-cost-function-2.gif)
 
-Cost Function: &nbsp; $J(\theta)=\frac{1}{2m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)})-y^{i})^{2}$
-
-Goal: &nbsp; $\underset{\theta}{minimize}~J(\theta)$
+Goal: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![equation](images/linear-regression-goal.gif)
 
 <br />
 
