@@ -141,11 +141,7 @@ We measure the similarity of $x$ and $l$ by doing one of $(x^{T}l)^{2}$, $(x^{T}
 
 K is the number of clusters. The process is
 
-1. Randomly choose centroids $\mu$
-2. Group $x^{(i)}$ which is closest to $\mu^{(i)}$
-3. Calculate the average (mean) of $x$ in each group
-4. Compute cost function (distortion) $J=\frac{1}{m}\sum_{i=1}^{m}\left \| x^{(i)}-\mu_{c}^{(i)} \right \|^{2}$ .
-5. Repeat 2-4, pick clustering that gave lowest cost $J$.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![equation](images/k-means.gif)
 
 **Choose $k$**: Sometimes you are running K-means to get clusters to use for some later/downstream purpose. Evaluate K-means based on a metric for how well it performs for that later purpose.
 
