@@ -181,19 +181,17 @@ Reduce data from n-dimensions to k-dimensions
 
 Three broad categories of anomaly detection techniques: Unsupervised anomaly detection techniques, Supervised anomaly detection techniques and Semi-supervised anomaly detection techniques.
 
-<br />
-
 **Gaussian Distribution** (Normal Distribution): 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![equation](images/anomaly-detection-gaussian-distribution.gif)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![equation](images/anomaly-detection-gaussian-distribution.gif)
 
 **Multivariate Gaussian Distribution**: 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![equation](images/anomaly-detection-multivariate-gaussian-distribution.gif)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![equation](images/anomaly-detection-multivariate-gaussian-distribution.gif)
 
 **Non-Gaussian**: 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *hist*, *log(x)*
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *hist*, *log(x)*
 
 **Applications of Anomaly Detection**: Anomaly detection is applicable in a variety of domains, such as intrusion detection, fraud detection, fault detection, system health monitoring, event detection in sensor networks, and detecting Eco-system disturbances. It is often used in preprocessing to remove anomalous data from the dataset.
 
