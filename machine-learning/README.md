@@ -4,8 +4,6 @@
 
 ![equation](images/linear-regression.png)
 
-<br />
-
 ## Polynomial Regression
 
 ![equation](images/polynomial-regression.png)
@@ -24,25 +22,7 @@ Small *n*, large *m*: **Logistic Regression** (more features), **SVM without ker
 
 ## Logistic Regression
 
-Hypothesis representation is **Sigmoid Function** which is also called **Logistic Function**.
-
-Hypothesis Function: &nbsp; $h_{\theta }(x)=\frac{1}{1+e^{-\theta^{T}x}}$
-
-cost Function: &nbsp; $cost(h_{\theta}(x),y)=-y~log(h_{\theta}(x))-(1-y)~log(1-h_{\theta}(x))$ &nbsp;&nbsp;&nbsp;&nbsp; ($y=0$ or $y=1$)
-
-cost Function: &nbsp; $J(\theta)=-\frac{1}{m}\sum_{i=1}^{m}[y^{(i)}log(h_{\theta}(x^{(i)}))+(1-y^{(i)})log(1-h_{\theta}(x^{(i)}))]$
-
-<br />
-
-The logistic hypothesis function $h_{\theta}(x)$ gives us the probability that the output is 1.
-- $h_{\theta}(x)=0.7 ~~\Rightarrow ~ $ 70% 
-- $h_{\theta}(x)=P(y=1|x;\theta)=1-P(y=0|x;\theta)$
-
-<br />
-
-**Decision Boundary :** Decision boundary is the line that separates the area where $y=0$ and $y=1$. It is created by the hypothesis function. For logistic function, the decision boundary is $\theta^{T}x=0$.
-
-<br />
+![equation](images/logistic-regression.png)
 
 ## Multiclass Classification
 
