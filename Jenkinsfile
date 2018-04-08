@@ -1,1 +1,6 @@
-echo "test"
+node {
+	
+	stage 'test'
+	
+	echo "test"
+}
