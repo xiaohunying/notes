@@ -9,7 +9,7 @@ node {
 	
 	echo "master"
 	
-	def scmUrl = scm.getUserRemoteConfigs()[0].getUrl()
+	def url = sh(returnStdout: true, script: 'git config remote.origin.url').trim()
 	
-	echo "repo url: ${scmUrl}"
+	echo "repo url: ${url}"
 }
