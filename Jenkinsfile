@@ -5,5 +5,9 @@ node {
 	echo "test"
 	// honorRefspec=false
 	
-	bat 'git fetch'
+	checkout scm
+	
+	echo "master"
+	
+	sh 'git checkout master'
 }
