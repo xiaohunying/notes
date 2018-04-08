@@ -3,6 +3,7 @@ node {
 	stage 'test'
 	
 	echo "test"
-	scm.honorRefspec=false
-	checkout scm
+	// honorRefspec=false
+	
+	sh 'git branch'
 }
