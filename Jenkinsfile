@@ -3,5 +3,5 @@ node {
 	stage 'test'
 	
 	echo "test"
-	checkout scm
+	checkout scm honorRefspec=false
 }
