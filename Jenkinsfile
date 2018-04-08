@@ -5,5 +5,5 @@ node {
 	echo "test"
 	// honorRefspec=false
 	
-	bat 'git branch'
+	bat 'git fetch'
 }
