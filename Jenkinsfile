@@ -9,5 +9,5 @@ node {
 	
 	echo "master"
 	
-	sh 'git checkout master'
+	echo "scm: ${scm}"
 }
