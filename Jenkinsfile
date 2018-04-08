@@ -9,5 +9,7 @@ node {
 	
 	echo "master"
 	
-	sh 'git fetch +refs/heads/*:refs/remotes/origin/*'
+	def scmUrl = scm.getUserRemoteConfigs()[0].getUrl()
+	
+	echo "repo url: ${scmUrl}"
 }
