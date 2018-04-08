@@ -9,7 +9,9 @@ node {
 	
 	echo "master"
 	
-	def url = sh(returnStdout: true, script: 'git config remote.origin.url').trim()
+	def repoUrl = sh(returnStdout: true, script: 'git config remote.origin.url').trim()
 	
-	echo "repo url: ${url}"
+	echo "repo url: ${repoUrl}"
+	
+	sh "git.exe fetch --no-tags --progress ${repoUrl} +refs/heads/*:refs/remotes/origin/*"
 }
