@@ -9,5 +9,5 @@ node {
 	
 	echo "master"
 	
-	echo "scm: ${scm}"
+	sh 'git fetch +refs/heads/*:refs/remotes/origin/*'
 }
