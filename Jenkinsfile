@@ -14,4 +14,7 @@ node {
 	echo "repo url: ${repoUrl}"
 	
 	sh "git.exe fetch --no-tags --progress ${repoUrl} +refs/heads/*:refs/remotes/origin/*"
+	
+	echo 'test'
+
 }
