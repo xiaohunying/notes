@@ -1,5 +1,8 @@
 # Kubernetes
 
+- Desired State (Declarative Model: manifest file)
+- Actual State
+
 ## Kubernetes Architecture
 
 - Masters
@@ -53,23 +56,48 @@
 - Reports back to **master**
 - Exposes endpoint on :10255 (/spec /healthz /pods)
 
-**Container Engine
+**Container Engine**
 
-- Does container management: (Pulling images; Starting/stopping containers; ...)
+- Does container management: Pulling images; Starting/stopping containers; ...
 - Pluggable: Usually **Docker**; Can be **rkt**.
 
 **kube-proxy**
 
-- Kubernetes networking: 
--- Pod IP addresses (All containers in a pod share a single IP)
+- Kubernetes networking: Pod IP addresses (All containers in a pod share a single IP)
 - Load balances across all pods in a **service**
 
+### Pods
 
+Containers always run inside of pods. Pods can have multiple containers (advanced use-case).
 
+All containers in pod share the pod environment.
 
+![pod](images/k8s_pod.png)
 
+**Pods are atomic**: the pod is never declared up and available until the whole lot is up. Pods exist on a single node. You can't have a single pod spread over multiple nodes.
 
+Pod Lifecycle (mortal):
 
+- Phase: pending
+- Phase: running
+- Phase: succeeded/failed
+
+Deploying Pods: usually via higher level objects (Replication Controller)
+
+### Services
+
+![service](images/k8s_service.png)
+
+The way that a pod belongs to a service is via **labels**.
+
+![tag](images/k8s_tag.png)
+
+### Deployments
+
+Simple rolling updates and rollbacks.
+
+- Multiple concurrent versions (blue-green deployments; Canary releases)
+- Simple versioned rollbacks
 
 
 
