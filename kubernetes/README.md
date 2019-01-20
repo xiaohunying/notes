@@ -1,8 +1,6 @@
-# Kubernetes
+# Kubernetes Architecture
 
 **Desired State** (Declarative Model: manifest file) vs. **Actual State**
-
-## Kubernetes Architecture
 
 - [Masters](#Masters)
 - [Nodes](#Nodes)
@@ -10,8 +8,7 @@
 - [Services](#Services)
 - [Deployments](#Deployments)
 
-
-### Masters
+## Masters
 
 ![master](images/k8s_master.png)
 
@@ -42,7 +39,7 @@
 - Watches apiserver for new pods
 - Assigns work to nodes (affinity/anti-affinity, constraints, resources, ...)
 
-### Nodes
+## Nodes
 
 ![node](images/k8s_node.png)
 
@@ -65,7 +62,7 @@
 - Kubernetes networking: Pod IP addresses (All containers in a pod share a single IP)
 - Load balances across all pods in a **service**
 
-### Pods
+## Pods
 
 Containers always run inside of pods. Pods can have multiple containers (advanced use-case).
 
@@ -83,7 +80,7 @@ Pod Lifecycle (mortal):
 
 Deploying Pods: usually via higher level objects (Replication Controller)
 
-### Services
+## Services
 
 ![service](images/k8s_service.png)
 
@@ -91,7 +88,7 @@ The way that a pod belongs to a service is via **labels**.
 
 ![tag](images/k8s_tag.png)
 
-### Deployments
+## Deployments
 
 Simple rolling updates and rollbacks.
 
