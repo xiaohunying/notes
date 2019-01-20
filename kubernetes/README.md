@@ -99,12 +99,15 @@ Inter-pod communication (one pod one IP) | Intra-pod communication
   - **ClusterIP** (default): Stable internal cluster IP.
   - **NodePort**: Exposes the app outside of the cluster by adding a cluster-wide port on top of ClusterIP.
   - **LoadBalancer**: Integrates NodePort with cloud-based load balancers
+- Lables
+  - Inside/Outside cluster
 
-![service](images/k8s_service.png)
+    ![service](images/k8s_service.png)
+  
+  - Update application version using service label
+  
+    ![version](images/k8s_update_app_version.png)
 
-The way that a pod belongs to a service is via **labels**.
-
-![tag](images/k8s_tag.png)
 
 ## Deployments
 
