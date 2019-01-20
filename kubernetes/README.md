@@ -64,21 +64,26 @@
 
 ## Pods
 
-Containers always run inside of pods. Pods can have multiple containers (advanced use-case).
-
-All containers in pod share the pod environment.
+- A pod can have one or more containers. All containers in pod share the pod environment. 
+- Pod is the smallest/atomic unit of scheduling.
+- Pod is scheduled on nodes.
+- pod is declarative via manifest files.
 
 ![pod](images/k8s_pod.png)
 
-**Pods are atomic**: the pod is never declared up and available until the whole lot is up. Pods exist on a single node. You can't have a single pod spread over multiple nodes.
+**One pod one IP** (single network namespace)
 
-Pod Lifecycle (mortal):
+Inter-pod communication
+![inter](images/k8s_inter_pod_communication.png)
 
-- Phase: pending
-- Phase: running
-- Phase: succeeded/failed
+Intra-pod communication
+![intra](images/k8s_intra_pod_communication.png)
 
-Deploying Pods: usually via higher level objects (Replication Controller)
+**Pod Lifecycle** (mortal): no resurrection.
+![lifecycle](images/k8s_pod_lifecycle.png)
+
+**Deploying Pods**: usually via higher level objects (**Replication Controller**)
+
 
 ## Services
 
