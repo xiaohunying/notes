@@ -66,6 +66,8 @@
 
 ![pod](images/k8s_pod.png)
 
+A pod is a group of one or more containers, with shared storage/network, and a specification for how to run the containers. A pod’s contents are always co-located and co-scheduled, and run in a shared context. A pod models an application-specific “logical host” - it contains one or more application containers which are relatively tightly coupled
+
 - A pod can have one or more containers. All containers in pod share the pod environment. 
 - Pod is the smallest/atomic unit of scheduling.
 - Pod is scheduled on nodes.
