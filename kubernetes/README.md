@@ -1,4 +1,4 @@
-# Kubernetes Architecture
+# Kubernetes
 
 **Desired State** (Declarative Model: manifest file) vs. **Actual State**
 
