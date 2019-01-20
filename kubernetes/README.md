@@ -89,6 +89,17 @@ Inter-pod communication (one pod one IP) | Intra-pod communication
 
 ## Services
 
+- Label selector
+- Service Discovery
+  - DNS based (best)
+  - environment variables
+- Service ports are between 30000 and 32767
+- Service manifest file
+- Service types:
+  - **ClusterIP** (default): Stable internal cluster IP.
+  - **NodePort**: Exposes the app outside of the cluster by adding a cluster-wide port on top of ClusterIP.
+  - **LoadBalancer**: Integrates NodePort with cloud-based load balancers
+
 ![service](images/k8s_service.png)
 
 The way that a pod belongs to a service is via **labels**.
