@@ -64,24 +64,22 @@
 
 ## Pods
 
+![pod](images/k8s_pod.png)
+
 - A pod can have one or more containers. All containers in pod share the pod environment. 
 - Pod is the smallest/atomic unit of scheduling.
 - Pod is scheduled on nodes.
 - pod is declarative via manifest files.
 
-![pod](images/k8s_pod.png)
-
-### Inter-pod communication (One pod one IP)
-
-![inter](images/k8s_inter_pod_communication.png)
-
-### Intra-pod communication
-
-![intra](images/k8s_intra_pod_communication.png)
-
 ### Pod Lifecycle
 
 ![lifecycle](images/k8s_pod_lifecycle.png)
+
+### Pod Communication
+
+Inter-pod communication (one pod one IP) | Intra-pod communication
+---------------------------------------- | -----------------------
+![inter](images/k8s_inter_pod_communication.png) | ![intra](images/k8s_intra_pod_communication.png)
 
 ### Deploying Pods
 
