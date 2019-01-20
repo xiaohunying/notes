@@ -5,7 +5,7 @@
 
 ## Kubernetes Architecture
 
-- Masters
+- [Masters](#Masters)
 - Nodes
 - Pods
 - Services
