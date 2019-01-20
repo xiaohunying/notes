@@ -115,7 +115,9 @@ Simple rolling updates and rollbacks.
 
 - Multiple concurrent versions (blue-green deployments; Canary releases)
 - Simple versioned rollbacks
+- Replica sets (they stick around)
 
+![deployment](images/k8s_deployment.png)
 
 
 
