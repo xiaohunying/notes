@@ -70,21 +70,19 @@
 - Pod is the smallest/atomic unit of scheduling.
 - Pod is scheduled on nodes.
 - pod is declarative via manifest files.
+- Pod Lifecycle
 
-### Pod Lifecycle
+  ![lifecycle](images/k8s_pod_lifecycle.png)
 
-![lifecycle](images/k8s_pod_lifecycle.png)
+- Pod Communication
 
-### Pod Communication
+  Inter-pod communication (one pod one IP) | Intra-pod communication
+  ---------------------------------------- | -----------------------
+  ![inter](images/k8s_inter_pod_communication.png) | ![intra](images/k8s_intra_pod_communication.png)
 
-Inter-pod communication (one pod one IP) | Intra-pod communication
----------------------------------------- | -----------------------
-![inter](images/k8s_inter_pod_communication.png) | ![intra](images/k8s_intra_pod_communication.png)
-
-### Deploying Pods
-
-- Pod manifests (YAML or JSON)
-- Deploy via **Replication Controller** (Replication controllers implement desired state)
+- Deploying Pods
+  - Pod manifests (YAML or JSON)
+  - Deploy via **Replication Controller** (Replication controllers implement desired state)
 
 
 ## Services
