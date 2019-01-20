@@ -71,21 +71,22 @@
 
 ![pod](images/k8s_pod.png)
 
-**One pod one IP** (single network namespace)
-
-Inter-pod communication
+### Inter-pod communication (One pod one IP)
 
 ![inter](images/k8s_inter_pod_communication.png)
 
-Intra-pod communication
+### Intra-pod communication
 
 ![intra](images/k8s_intra_pod_communication.png)
 
-**Pod Lifecycle** (mortal): no resurrection.
+### Pod Lifecycle
 
 ![lifecycle](images/k8s_pod_lifecycle.png)
 
-**Deploying Pods**: usually via higher level objects (**Replication Controller**)
+### Deploying Pods
+
+- Pod manifests (YAML or JSON)
+- Deploy via **Replication Controller** (Replication controllers implement desired state)
 
 
 ## Services
