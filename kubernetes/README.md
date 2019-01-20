@@ -1,15 +1,14 @@
 # Kubernetes
 
-- Desired State (Declarative Model: manifest file)
-- Actual State
+**Desired State** (Declarative Model: manifest file) vs. **Actual State**
 
 ## Kubernetes Architecture
 
 - [Masters](#Masters)
-- Nodes
-- Pods
-- Services
-- Deployments
+- [Nodes](#Nodes)
+- [Pods](#Pods)
+- [Services](#Services)
+- [Deployments](#Deployments)
 
 
 ### Masters
