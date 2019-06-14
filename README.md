@@ -1,1 +1,7 @@
-# notes
+[Cloud Foundry](https://github.com/xiaohunying/notes/tree/develop/cloud-foundry)
+[Google Cloud Platform](https://github.com/xiaohunying/notes/tree/develop/google-cloud-platform)
+[Kafka](https://github.com/xiaohunying/notes/tree/develop/kafka)
+[Kubernetes](https://github.com/xiaohunying/notes/tree/develop/kubernetes)
+[Machine Learning](https://github.com/xiaohunying/notes/tree/develop/machine-learning)
+[Sleuth-Zipkin](https://github.com/xiaohunying/notes/tree/develop/sleuth-zipkin)
+[Python]()
