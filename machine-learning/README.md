@@ -1,8 +1,8 @@
 # Table of Contents
 
 - [Supervised Learning - Regression Problem](#supervised-learning-regression-problem)
--- [Linear Regression](#linear-regression)
--- [Polynomial Regression](#polynomial-regression)
+  - [Linear Regression](#linear-regression)
+  - [Polynomial Regression](#polynomial-regression)
 - [Supervised Learning - Classification Problem](#supervised-learning---classification-problem)
 -- [Logistic Regression](#logistic-regression)
 -- [Multiclass Classification](#multiclass-classification)
