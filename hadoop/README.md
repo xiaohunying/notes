@@ -1,9 +1,18 @@
 # Apache Hadoop
 
-the core of Apache Hadoop consiss of 
+the core of Apache Hadoop consiss of a story part (HDFS) and a processing part (a MapReduce programming model).
 
-- a story part: Hadoop Distributed File System **HDFS**
-- a processing part: a **MapReduce** programming model
+### HDFS
+
+Hadoop Distributed File System
+
+### MapReduce
+
+- map
+- shuffle
+- reduce
+
+## Hadoop modules
 
 The base Apache Hadoop framework is composed of the following modules:
 
@@ -13,12 +22,6 @@ The base Apache Hadoop framework is composed of the following modules:
 - Hadoop MapReduce: an implementation of the MapReduce programming model for large-scale data processing.
 
 The Hadoop framework itself is mostly written in the **Java** programming language, with some native code in C and command line utilities written as shell scripts.
-
-### MapReduce
-
-- map
-- shuffle
-- reduce
 
 
 # Apache Hive
