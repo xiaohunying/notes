@@ -4,13 +4,11 @@ the core of Apache Hadoop consiss of a story part (HDFS) and a processing part (
 
 ### HDFS
 
-Hadoop Distributed File System
+- Hadoop Distributed File System
 
 ### MapReduce
 
-- map
-- shuffle
-- reduce
+- map -> shuffle -> reduce
 
 ## Hadoop modules
 
