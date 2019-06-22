@@ -2,6 +2,7 @@
 
 - [Google Cloud Platform](pages/gcp.md)
 - [Kafka](pages/kafka.md)
-- [hadoop](pages/hadoop.md)
-- [python](pages/python.md)
+- [Hadoop](pages/hadoop.md)
+- [Python](pages/python.md)
+- [Sleuth Zipkin](pages/sleuth-zipkin.md)
 
