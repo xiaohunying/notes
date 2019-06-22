@@ -1,8 +1,5 @@
 # Python
-dynamic
-readability
-interpreted
-multi-paradigm
+dynamic; readability; interpreted; multi-paradigm
 
 PEPs - Python Enhancement Proposal
 
