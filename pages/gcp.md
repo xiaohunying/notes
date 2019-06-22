@@ -78,7 +78,7 @@ Remount on vm instance restart:
 
 # Container Engine (Kubernetes)
 
-![k8s](resources/gcp-k8s.png)
+![k8s](../resources/gcp-k8s.png)
 
 # Stackdriver
 
