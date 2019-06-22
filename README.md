@@ -16,4 +16,7 @@
   - [HTTP Routing](pages/cf-http-routing-gorouter.md)
   - [Security](pages/cf-security.md)
   - [Terms](pages/cf-terms.md)
+- [Machine Learning](pages/ml.md)
+  - [Models](pages/ml-models.md)
+
   
