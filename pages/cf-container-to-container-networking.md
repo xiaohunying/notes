@@ -6,15 +6,15 @@ When the Container-to-Container Networking feature is disabled, all app-to-app t
 
 Container-to-Container Networking integrates with Garden-runC in a Diego deployment. The Container-to-Container Networking BOSH release includes several core components, as well as swappable components.
 
-![c2c arch](images/c2c-arch.png)
+![c2c arch](../resources/images/cf-c2c-arch.png)
 
 ## Without Container-to-Container Networking
 
-![pre c2c](images/pre-c2c.png)
+![pre c2c](../resources/images/cf-pre-c2c.png)
 
 ## With Container-to-Container Networking
 
-![post c2c](images/post-c2c.png)
+![post c2c](../resources/images/cf-post-c2c.png)
 
 ## Container-to-Container Networking versus ASGs
 

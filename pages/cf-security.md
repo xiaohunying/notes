@@ -6,7 +6,7 @@ Refer to https://docs.cloudfoundry.org/concepts/security.html
 
 As the image below shows, in a typical deployment of Cloud Foundry, the components run on virtual machines (VMs) that exist within a VLAN. In this configuration, the only access points visible on a public network are a load balancer that maps to one or more Cloud Foundry routers and, optionally, a NAT VM and a jumpbox. Because of the limited number of contact points with the public internet, the surface area for possible security vulnerabilities is minimized.
 
-![sysbound1](images/sysbound1.png)
+![sysbound1](../resources/images/cf-sysbound1.png)
 
 ## Protocols
 
@@ -24,7 +24,7 @@ Isolation segments provide dedicated pools of resources to which apps can be dep
 
 You can designate isolation segments for exclusive use by orgs and spaces within CF. This guarantees that apps within the org or space use resources that are not also used by other orgs or spaces.
 
-![isolation-segments](images/isolation-segments.png)
+![isolation-segments](../resources/images/cf-isolation-segments.png)
 
 ## Authentication and Authorization
 

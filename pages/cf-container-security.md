@@ -24,7 +24,7 @@ A host VM has a single IP address. If you configure the deployment with the clus
 
 - **Outbound** traffic flows from the application container to the cell, then to the gateway on the cell’s virtual network interface. Depending on your IaaS, this gateway may be a NAT to external networks.
 
-![sysbound2](images/sysbound2.png)
+![sysbound2](../resources/images/cf-sysbound2.png)
 
 ## Network Traffic Rules
 
