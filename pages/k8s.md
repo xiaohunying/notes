@@ -10,7 +10,7 @@
 
 ## Masters
 
-![master](images/k8s_master.png)
+![master](../resources/images/k8s_master.png)
 
 **kube-apiserver**
 
@@ -41,7 +41,7 @@
 
 ## Nodes
 
-![node](images/k8s_node.png)
+![node](../resources/images/k8s_node.png)
 
 **kubelet**
 
@@ -64,7 +64,7 @@
 
 ## Pods
 
-![pod](images/k8s_pod.png)
+![pod](../resources/images/k8s_pod.png)
 
 A pod’s contents are always co-located and co-scheduled, and run in a shared context. A pod models an application-specific “logical host” - it contains one or more application containers which are relatively tightly coupled.
 
@@ -74,13 +74,13 @@ A pod’s contents are always co-located and co-scheduled, and run in a shared c
 - pod is declarative via manifest files
 - Pod Lifecycle
 
-  ![lifecycle](images/k8s_pod_lifecycle.png)
+  ![lifecycle](../resources/images/k8s_pod_lifecycle.png)
 
 - Pod Communication
 
   Inter-pod communication (one pod one IP) | Intra-pod communication
   ---------------------------------------- | -----------------------
-  ![inter](images/k8s_inter_pod_communication.png) | ![intra](images/k8s_intra_pod_communication.png)
+  ![inter](../resources/images/k8s_inter_pod_communication.png) | ![intra](../resources/images/k8s_intra_pod_communication.png)
 
 - Deploying Pods
   - Pod manifests (YAML or JSON)
@@ -102,11 +102,11 @@ A pod’s contents are always co-located and co-scheduled, and run in a shared c
 - Lables
   - Inside/Outside cluster
 
-    ![service](images/k8s_service.png)
+    ![service](../resources/images/k8s_service.png)
   
   - Update application version using service label
   
-    ![version](images/k8s_update_app_version.png)
+    ![version](../resources/images/k8s_update_app_version.png)
 
 
 ## Deployments
@@ -117,7 +117,7 @@ Simple rolling updates and rollbacks.
 - Simple versioned rollbacks
 - Replica sets (they stick around)
 
-![deployment](images/k8s_deployment.png)
+![deployment](../resources/images/k8s_deployment.png)
 
 
 
