@@ -4,7 +4,7 @@
 - [Kafka](pages/kafka.md)
 - [Hadoop](pages/hadoop.md)
 - [Python](pages/python.md)
-  - [Python with Spark](pages/python-spark.md)
+- [Spark](pages/spark.md)
 - [Sleuth Zipkin](pages/sleuth-zipkin.md)
 - [Kubernetes](pages/k8s.md)
   - [Installation](pages/k8s-installation.md)
