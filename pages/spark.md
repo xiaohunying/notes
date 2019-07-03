@@ -1,6 +1,8 @@
 # Spark
 
-Spark Web UI port is 4040.
+Spark Web UI port: 4040.
+
+Spark History Server port: 18089
 
 **Action:** Triggers the computation
 
@@ -32,7 +34,7 @@ is called. RDD operator graph or RDD dependency graph.
 
 ## SparkContext & SparkSession
 
-| SparkContext                            | SparkSession                           |
+| **SparkContext**                        | **SparkSession**                       |
 | --------------------------------------- | -------------------------------------- |
 | Located in the Spark Driver             | Merges SQLContext and HiveContext      |
 |                                         | Access SparkContext                    |
@@ -43,9 +45,9 @@ is called. RDD operator graph or RDD dependency graph.
 
 <br />
 
-# Map, Filter & Reduce
+## Map, Filter & Reduce
 
-## Map: apply a function to all items on a list
+### Map: apply a function to all items on a list
 
 ~~~
 def add_one(this_item):
@@ -58,7 +60,7 @@ map(add_one, numbers_list)
 
 output: [2, 3, 4, 5, 6]
 
-## Filter: create new list for items that meet certain criteria
+### Filter: create new list for items that meet certain criteria
 
 ~~~
 def is_even(this_item):
@@ -71,7 +73,7 @@ filter(is_even, numbers_list)
 
 output: [2, 4]
 
-## Reduce: perform a computation on a list
+### Reduce: perform a computation on a list
 
 ~~~
 def add_items(first, second):
