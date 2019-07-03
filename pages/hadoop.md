@@ -14,10 +14,10 @@ the core of Apache Hadoop consiss of a story part (HDFS) and a processing part (
 
 The base Apache Hadoop framework is composed of the following modules:
 
-- Hadoop Common: contains libraries and utilities needed by other Hadoop modules.
-- Hadoop Distributed File System (HDFS): a distributed file system that stores data on commodity machines, providing very high aggregate bandwidth across the cluster.
-- Hadoop YARN: introduced in 2012 is a platform responsible for managing computing resources in clusters and using them for scheduling users' applications.
-- Hadoop MapReduce: an implementation of the MapReduce programming model for large-scale data processing.
+- **Hadoop Common**: contains libraries and utilities needed by other Hadoop modules.
+- **Hadoop Distributed File System (HDFS)**: a distributed file system that stores data on commodity machines, providing very high aggregate bandwidth across the cluster.
+- **Hadoop YARN**: introduced in 2012 is a platform responsible for managing computing resources in clusters and using them for scheduling users' applications.
+- **Hadoop MapReduce**: an implementation of the MapReduce programming model for large-scale data processing.
 
 The Hadoop framework itself is mostly written in the **Java** programming language, with some native code in C and command line utilities written as shell scripts.
 
