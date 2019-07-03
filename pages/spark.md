@@ -90,6 +90,6 @@ reduce(add_items, numbers_list)
 
 output: 15
 
-
+![spark-libs](../resources/images/spark-libs.png)
 
 
