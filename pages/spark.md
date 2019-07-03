@@ -1,36 +1,40 @@
 # Spark
 
-Spark Web UI port: 4040.
+- Spark Web UI port: 4040.
 
-Spark History Server port: 18089
+- Spark History Server port: 18089
 
-**Action:** Triggers the computation
+- **Action:** Triggers the computation
 
-**Coarse Grained Transformations:** Operations that can be applied to the whole 
+- **Coarse Grained Transformations:** Operations that can be applied to the whole 
 dataset, like map, filter, group, reduce among others.
 
-**Closures:** Code and variables required to execute computation in each distributed
+- **Closures:** Code and variables required to execute computation in each distributed
 node over a partition of data.
 
-**Pipeline vs. Parallel**
+- **Stages**
 
-**Stages**
+- **Shuffle:** The process of moving the data between partitions 
 
-**Narrow Transformation vs. Wide Transformation**
+- **Shuffle Boundary**
+
+- **RDD Lineage**: Graph of transformation operations required to execute when an action
+is called. RDD operator graph or RDD dependency graph.
+
+- **DAG**: Directed Acyclic Graph.
+
+- **Pipeline vs. Parallel**
+
+- **Parent and Child RDD**
+
+<br />
+
+## Narrow Transformation & Wide Transformation
 
 - **Narrow Transformation**: There is no interaction or dependency or relationship with other lines.
 - **Wide Transformation**: There is an interaction or dependency or relationship across partitions.
 
-**Shuffle:** The process of moving the data between partitions 
-
-**Shuffle Boundary**
-
-**Parent and Child RDD**
-
-**RDD Lineage**: Graph of transformation operations required to execute when an action
-is called. RDD operator graph or RDD dependency graph.
-
-**DAG**: Directed Acyclic Graph.
+<br />
 
 ## SparkContext & SparkSession
 
