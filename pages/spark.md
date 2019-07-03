@@ -1,41 +1,6 @@
 # Spark
 
-## SparkContext & SparkSession
-
-### SparkContext
-
-- Located in the Spark Driver
-- Entry point for RDDs
-- The Spark application (One SparkContext per application)
-- Created for you in REPL
-- You need to create for spark2-submit
-
-### SparkSession
-
-- Entry point to Spark SQL
-- Merges SQLContext and HiveContext
-- Access SparkContext
-- Can have multiple SparkSession objects
-- Created for you in REPL
-- You need to create for spark2-submit
-
-## Spark Configuration
-
-Configuration Precedence:
-- Application (in code)
-- Flags passed to spark2-submit/pyspark2
-- spark-defaults.conf
-
-- Properties: Application parameters
-- Environment Vars: Per machine settings
-- Logging: In log4j.properties
-
-Step 1. Read data
-Step 2. Split: perform a `coarse grained` transformation
-Step 3. FlatMap: another transformation
-Step 4. Map
-Step 5. ReduceByKey
-
+Spark Web UI port is 4040.
 
 **Action:** Triggers the computation
 
@@ -64,6 +29,17 @@ node over a partition of data.
 is called. RDD operator graph or RDD dependency graph.
 
 **DAG**: Directed Acyclic Graph.
+
+## SparkContext & SparkSession
+
+| SparkContext                            | SparkSession                           |
+| --------------------------------------- | -------------------------------------- |
+| Located in the Spark Driver             | Merges SQLContext and HiveContext      |
+|                                         | Access SparkContext                    |
+| Entry point for RDDs                    | Entry point to Spark SQL               |
+| One SparkContext per application        | Can have multiple SparkSession objects |
+| Created for you in REPL                 | Created for you in REPL                |
+| You need to create for spark2-submit    | You need to create for spark2-submit   |
 
 <br />
 
