@@ -1,5 +1,7 @@
 # Spark
 
+- Lazy Execution, Lineage, Directed Acyclic Graph (DAG), Fault Tolerance
+
 - Spark Web UI port: 4040.
 
 - Spark History Server port: 18089
@@ -89,6 +91,54 @@ reduce(add_items, numbers_list)
 ~~~
 
 output: 15
+
+# RDD
+
+You can create RDDs using
+
+- Parallelize: in memory data
+- External Data
+- From another RDD
+
+## Create RDD using parallelize
+
+~~~
+list_one_to_five = sc.parallelize([1,2,3,4,5])
+list_one_to_five.collect()
+list_one_to_five.getNumPartitions()
+list_one_to_five.glom().collect()
+list_one_to_five.sum()   // in this partition
+list_one_to_five.min()   // in this partition
+list_one_to_five.first() // in this partition
+
+empty_rdd = sc.parallelize([])
+empty_rdd.isEmpty()
+other_empty = sc.emptyRDD()
+other_empty.isEmpty()
+
+big_rdd = sc.parallelize(range(1,1000))
+big_rdd.sum()
+big_rdd.count()
+
+big_rdd.take(10)
+big_rdd.first()
+big_rdd.takeOrdered(10)
+big_rdd.takeOrdered(10, key=lambda x: -x)
+
+tuple_map = tuple_rdd.collectAsMap()
+tuple_map.iteritems()
+~~~
+
+## PairRDD
+
+- RDDs of key/value pairs
+- Contain tuples
+- Useful for grouping or aggregating
+- Can use RDD transformations
+- PairRDD specific transformations available
+
+
+<br />
 
 ![spark-libs](../resources/images/spark-libs.png)
 
