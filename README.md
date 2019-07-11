@@ -1,5 +1,8 @@
 # Notes
 
+- [Machine Learning](pages/ml.md)
+  - [Models](pages/ml-models.md)
+  - [Active Learning](pages/ml-active-learning.md)
 - [Google Cloud Platform](pages/gcp.md)
 - [Kafka](pages/kafka.md)
 - [Hadoop](pages/hadoop.md)
@@ -17,7 +20,6 @@
   - [HTTP Routing](pages/cf-http-routing-gorouter.md)
   - [Security](pages/cf-security.md)
   - [Terms](pages/cf-terms.md)
-- [Machine Learning](pages/ml.md)
-  - [Models](pages/ml-models.md)
+
 
   
