@@ -21,5 +21,18 @@
   - [Security](pages/cf-security.md)
   - [Terms](pages/cf-terms.md)
 
+<br />
 
-  
+# Terms
+
+- Natural Language Processing (NLP)
+
+- Text Analysis conference (TAC)
+
+- Coreference Resolution
+
+- Knowledge Base Population (KBP)
+  - Slotfilling
+  - Entity Linking
+
+
