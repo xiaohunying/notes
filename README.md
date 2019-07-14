@@ -36,3 +36,4 @@
   - Entity Linking
 
 
+$y = sign(\beta \cdot \mathbf{x} + \beta_0)$
