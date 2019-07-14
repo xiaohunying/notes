@@ -60,7 +60,7 @@ Use **One-vs-All** (**One-vs-Rest**)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![equation](../resources/images/cf-svm-cost-function.gif)
 
-Unlike logistic, [itex]$h_{\theta}(x)$[/itex], [itex]h_{\theta}(x)[/itex] doesn't give us a probability, but instead we get a direct prediction of 1 or 0. Hypothesis Function: 
+Unlike logistic, $h_{\theta}(x)$ doesn't give us a probability, but instead we get a direct prediction of 1 or 0. Hypothesis Function: 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![equation](../resources/images/cf-equation1.gif)
 
