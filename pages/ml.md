@@ -20,6 +20,7 @@
 - [Skewed Data](#skewed-data)
 - [Others](#others)
 
+
 # Supervised Learning - Regression Problem
 
 ## Linear Regression
@@ -261,4 +262,6 @@ Precision, Recall, F1 Score (F score)
 - Map Reduce and Data Parallelism: use map reduce when learning algorithms can be expressed as computing sums of functions over the training set.
 - Artificial Synthesized Data
 - Ceiling Analysis
+- [Machine Learning Models]((pages/ml-models.md))
+- [Active Learning](pages/ml-active-learning.md)
 

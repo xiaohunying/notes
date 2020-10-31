@@ -2,6 +2,10 @@
 
 **Desired State** (Declarative Model: manifest file) vs. **Actual State**
 
+# Kubernetes Components
+
+Refer to https://kubernetes.io/docs/concepts/overview/components/
+
 - [Masters](#Masters)
 - [Nodes](#Nodes)
 - [Pods](#Pods)
@@ -120,7 +124,14 @@ Simple rolling updates and rollbacks.
 ![deployment](../resources/images/k8s_deployment.png)
 
 
+# Installation
 
+![installation](../resources/images/k8s_installation.png)
+
+
+## minikube
+
+![minikube](../resources/images/k8s_minikube.png)
 
 
 

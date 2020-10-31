@@ -1,14 +1,20 @@
 # Table of Contents
 
-1. [BOSH](#bosh)
-2. [Router](#router)
-3. [Authentication](#authentication)
-4. [Application Lifecycle](#application-lifecycle)
-5. [App Storage and Execution](#app-storage-and-execution)
-6. [Services](#services)
-7. [Messaging](#messaging)
-8. [Metrics and Logging](#metrics-and-logging)
-
+- [BOSH](#bosh)
+- [Router](#router)
+- [Authentication](#authentication)
+- [Application Lifecycle](#application-lifecycle)
+- [App Storage and Execution](#app-storage-and-execution)
+- [Services](#services)
+- [Messaging](#messaging)
+- [Metrics and Logging](#metrics-and-logging)
+- [Commands](pages/cf-cli.md)
+- [Container Security](pages/cf-container-security.md)
+- [Container-to-container Networking](pages/cf-container-to-container-networking.md)
+- [How App are Staged](pages/cf-how-app-are-staged.md)
+- [HTTP Routing](pages/cf-http-routing-gorouter.md)
+- [Security](pages/cf-security.md)
+- [Terms](pages/cf-terms.md)
 
 # BOSH
 BOSH is a project that unifies release engineering, deployment, and lifecycle management of small and large-scale cloud software. BOSH can provision and deploy software over hundreds of VMs. It also performs monitoring, failure recovery, and software updates with zero-to-minimal downtime.
@@ -19,7 +25,7 @@ While BOSH was developed to deploy Cloud Foundry PaaS, it can also be used to de
 
 # Router
 
-The router routes incoming traffic to the appropriate component, either a Cloud Controller component or a hosted application running on a Diego Cell. The router periodically queries the Diego Bulletin Board System (BBS) to determine which cells and containers each application currently runs on. Using this information, the router recomputes new routing tables based on the IP addresses of each cell virtual machine (VM) and the host-side port numbers for the cell’s containers.
+The router routes incoming traffic to the appropriate component, either a Cloud Controller component or a hosted application running on a Diego Cell. The router periodically queries the Diego Bulletin Board System (BBS) to determine which cells and containers each application currently runs on. Using this information, the router recomputes new routing tables based on the IP addresses of each cell virtual machine (VM) and the host-side port numbers for the cellï¿½s containers.
 
 ## Gorouter
 
@@ -87,7 +93,7 @@ Applications typically depend on services such as databases or third-party SaaS 
 Cloud Foundry component VMs communicate with each other internally through HTTP and HTTPS protocols, sharing temporary messages and data stored in two locations:
 
 - A Consul server stores longer-lived control data, such as component IP addresses and distributed locks that prevent components from duplicating actions.
-- Diego’s Bulletin Board System (BBS) stores more frequently updated and disposable data such as cell and application status, unallocated work, and heartbeat messages. The BBS stores data in MySQL, using the Go MySQL Driver.
+- Diegoï¿½s Bulletin Board System (BBS) stores more frequently updated and disposable data such as cell and application status, unallocated work, and heartbeat messages. The BBS stores data in MySQL, using the Go MySQL Driver.
 
 > Consul is a tool for discovering and configuring services in your infrastructure. It provides several key features: **Service Discovery**, **Health Checking**, **Key/Value Store** and **Multi Datacenter**.
 
