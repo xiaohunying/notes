@@ -52,6 +52,28 @@ mechanisms provided by EC2.
 
 ### S3: Simple Storage Service
 
+- Amazon S3 is a regional service.
+- Amazon S3 can be used for **static website hosting**. You need to (1) The bucket content 
+needs to be marked public access; (2) Index document is added to the bucket; (3) Add a 
+bucket policy to allow the public to be able to reach the bucket. It also support redirect 
+requests.
+- S3 bucket name needs to be unique globally.
+  - You can create a folder in a bucket, but S3 is not a file system.
+  - S3 bucket versioning: unversioned (default), versioning-enabled and versioning-suspended.
+  - S3 bucket **object level logging** is closely related to **AWS CloudTrail** service. S3 
+  data events includes GetObject, DeleteObject and PutObject.
+  - S3 bucket has two default encryption options: AES-256 (SSE-S3) and AWS-KMS (SSE-KMS).
+- S3 Storage Classes:
+  - S3 Standard
+  - S3 INT (Intelligent): frequent/infrequent accesses
+  - S3 S-IA (Standard infrequent access)
+  - S3 Z-IA (Single zone, infrequent access)
+  - S3 Glacier: long term, backup and archive
+  - S3 G_DA: S3 Glacier deep archive
+- S3 Glacier: 
+  - Move data into S3 Glacier using APIs or SDKs. Retrieval data using APIs, SDKs or CLI.
+  - Retrieval data options: Expedited (5 minutes, 250MB), Standard (3-5 hours) and Bulk (PB 
+  of data, 5-12 hours)
 
 <br />
 
