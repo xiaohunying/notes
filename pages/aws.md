@@ -56,6 +56,11 @@ not available within all regions.
 - Storage classes:
   - Standard
   - Infrequent Access (IA)
+- Performance modes:
+  - General Purpose: EFS provide a **CloudWatch** metric for general purpose mode.
+  - Max I/O
+  - Throughput modes: Bursting Throughput (default) and Provisioned Throughput.
+- EFS Lifestyle Management
 
 ## S3: Simple Storage Service
 
