@@ -1,13 +1,9 @@
 # AWS Data Storage
 
-On-premise Options:
+On-premise Options: SAN (Storage Area Network), NAS (Network Attached Storage), DAS (Directly
+Attached Storage) and Tape backup. 
 
-- SAN: Storage Area Network
-- NAS: Network Attached Storage 
-- DAS: Directly Attached Storage
-- Tape backup 
-
-AWS Options:
+**AWS Data Storage Options:**
 
 - Block Storage
   - [EBS: Elastic Block Store](#ebs-elastic-block-store)
