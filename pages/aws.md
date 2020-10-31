@@ -10,14 +10,17 @@ On-premise Options:
 AWS Options:
 
 - Block Storage (comparable to DAS)
-  - **EBS**: Elastic Block Store
-  - **EC2 Instance Storage**
+  - [EBS: Elastic Block Store](#ebs:-elastic-block-store)
+  - [EC2 Instance Storage](#ec2-instance-storage)
 - File Storage (comparable to NAS)
-  - **EFS**: Elastic File System
+  - [EFS: Elastic File System](#efs:-elastic-file-system)
 - Object Storage
-  - **S3**: Simple Storage Service
+  - [S3: Simple Storage Service](#s3:-simple-storage-service)
 
 <br />
+
+### EBS: Elastic Block Store
+
 
 ### EC2 Instance Storage
 
@@ -31,6 +34,11 @@ the fleet.
 - **No additional cost** for storage. It is included in the price of instance. The capacity of 
 instance storage volumes increases with the size of the EC2 instance. It has the same security
 mechanisms provided by EC2.
+
+### EFS: Elastic File System
+
+### S3: Simple Storage Service
+
 
 <br />
 
@@ -51,9 +59,9 @@ RPO is the acceptable amount of data loss measured in time.
 
 There are many ways to move data: direct connect, VPN connect and internet connect.
 Amazon provides:
-- **AWS Snowball** (direct connect)
-- **AWS Snowmobile** (direct connect)
-- **AWS Storage Gateway** (internet connect)
+- [AWS Snowball](#aws-snowball) (direct connect)
+- [AWS Snowmobile](#aws-snowmobile) (direct connect)
+- [AWS Storage Gateway](#aws-storage-gateway) (internet connect)
 
 <br />
 
