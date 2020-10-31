@@ -50,6 +50,13 @@ mechanisms provided by EC2.
 
 ## EFS: Elastic File System
 
+- EFS is a regional service. Apps across multiple AZ can all access the same file systems. It is 
+not available within all regions.
+- Two things to consider while choosing EFS: Storage classes and performance options.
+- Storage classes:
+  - Standard
+  - Infrequent Access (IA)
+
 ## S3: Simple Storage Service
 
 - Amazon S3 is a **regional** service.
