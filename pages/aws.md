@@ -52,28 +52,48 @@ mechanisms provided by EC2.
 
 ### S3: Simple Storage Service
 
-- Amazon S3 is a regional service.
+- Amazon S3 is a **regional** service.
 - Amazon S3 can be used for **static website hosting**. You need to (1) The bucket content 
 needs to be marked public access; (2) Index document is added to the bucket; (3) Add a 
 bucket policy to allow the public to be able to reach the bucket. It also support redirect 
 requests.
-- S3 bucket name needs to be unique globally.
-  - You can create a folder in a bucket, but S3 is not a file system.
-  - S3 bucket versioning: unversioned (default), versioning-enabled and versioning-suspended.
-  - S3 bucket **object level logging** is closely related to **AWS CloudTrail** service. S3 
-  data events includes GetObject, DeleteObject and PutObject.
-  - S3 bucket has two default encryption options: AES-256 (SSE-S3) and AWS-KMS (SSE-KMS).
-- S3 Storage Classes:
+- **S3 bucket**:
+  - **Bucket name** needs to be unique globally. You can create a **folder** in a bucket, but S3 
+  is not a file system.
+  - **Versioning**: unversioned (default), versioning-enabled and versioning-suspended.
+  - **Events**: You can monitor events occured to the bucket. Any events which are recorded can 
+  then be sent to an SNS topic or an SQS queue or a lambda function. 
+  - **Object Level Logging**: AWS S3 bucket Object level logging is closely related to 
+  **AWS CloudTrail** service. S3 data events includes GetObject, DeleteObject and PutObject.
+  - **Encryption**: S3 bucket has two default encryption options: AES-256 (SSE-S3) and AWS-KMS 
+  (SSE-KMS).
+  - **Object Lock** on a bucket can only be achieved at the time of the creation of the bucket.
+  Versioning needs to be enabled. Once object lock is enabled, it is permanent and cannot be 
+  disabled. There are two retention modes: Governance mode and Compliance mode. No users (includes
+  root users) can override the retention periods set or delete an object for compliance mode. 
+  Legal hold on an object has no retention period.
+  - **Tags** in S3 bucket is known as S3 cost allocation tags. they are key-value pairs.
+  - **Transfer Acceleration** is to speed up data transfer. It uses Amazon **CloudFront** service, 
+  which is a Content Delivery Network (CDN) service that essentially provides a means of 
+  distributing traffic worldwide via edge locations.
+- **Requester Pays**: When this feature is enabled, any cost associated with requests and 
+data transfer becomes the responsibilities of the requester instead of the bucket owner. The
+bucket owner still pays the storage of the objects in the bucket. Authenticating requests allow
+AWS trace back to the identity and to which AWS account that identity is originating from.
+And the cost is then transfered to that account.
+- **S3 Storage Classes**:
   - S3 Standard
   - S3 INT (Intelligent): frequent/infrequent accesses
   - S3 S-IA (Standard infrequent access)
   - S3 Z-IA (Single zone, infrequent access)
   - S3 Glacier: long term, backup and archive
   - S3 G_DA: S3 Glacier deep archive
-- S3 Glacier: 
-  - Move data into S3 Glacier using APIs or SDKs. Retrieval data using APIs, SDKs or CLI.
-  - Retrieval data options: Expedited (5 minutes, 250MB), Standard (3-5 hours) and Bulk (PB 
+- **S3 Glacier**: 
+  - Move data into S3 Glacier using APIs or SDKs. 
+  - Retrieval data using APIs, SDKs or CLI. Retrieval data options: Expedited (5 minutes, 250MB), Standard (3-5 hours) and Bulk (PB 
   of data, 5-12 hours)
+
+  
 
 <br />
 
