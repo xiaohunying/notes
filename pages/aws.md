@@ -57,6 +57,16 @@ mechanisms provided by EC2.
 needs to be marked public access; (2) Index document is added to the bucket; (3) Add a 
 bucket policy to allow the public to be able to reach the bucket. It also support redirect 
 requests.
+- **Server-Access Logging**: 
+  - When the target bucket is for logs, the source bucket and target bucket should be in the 
+  same region.
+  - The permissions of logs are controlled using **Log Delivery Group**. (1) If server-access 
+  logging is enabled through AWS console, the Log Delivery Group is automatically added to 
+  the ACL (Access Control List) of the target bucket; (2) If it is through AWS S3 API or AWS 
+  SDK, you need to manually configure this access. Permissions of the S3 access log group can 
+  only be assigned via ACL.
+  - If encryption is enabled on your target bucket, access logs will only be delivered if 
+  this is set to SSE-S3 because encryption with KMS is not supported.
 - **S3 bucket**:
   - **Bucket name** needs to be unique globally. You can create a **folder** in a bucket, but S3 
   is not a file system.
