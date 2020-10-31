@@ -39,3 +39,37 @@ Amazon provides:
 - **AWS Snowball** (direct connect)
 - **AWS Snowmobile** (direct connect)
 - **AWS Storage Gateway** (internet connect)
+
+## AWS Snowball
+
+It is used to move data either from your on-premise data center to Amazon
+S3 or from Amazon S3 back to your data center using a **physical appliance**, 
+known as a snowball. The snowball appliance comes as either a **50 TB or 80 TB** 
+device. It is dust, water and tamper resistant. It is built for high speed
+data transfer: RJ45 (CAT6), SFP+ Copper and SFP+ Optical.
+
+## AWS Snowmobile
+
+**To migrate large datasets of 10PB or more in a single location**, you should
+use Snowmobile. For datasets less than 10PB or distributed in multiple locations,
+you should use Snowball. In addition, you should evaluate the amount of available 
+bandwidth in your network backbone. If you have a high speed backbone with hundreds 
+of Gb/s of spare throughput, then you can use Snowmobile to migrate the large datasets 
+all at once. If you have limited bandwidth on your backbone, you should consider using 
+multiple Snowballs to migrate the data incrementally. Each Snowmobile has **a total 
+capacity of up to 100 petabytes** and multiple Snowmobiles can be used in parallel to 
+transfer exabytes of data. 
+
+## AWS Storage Gateway
+
+Storage Gateway allows you to provide a gateway between your own data center's storage
+systems such as your SAN, NAS or DAS and Amazon S3 and Glacier on AWS. It is a **software
+appliance** that can be stored within your own data center which allows integration
+between your on-premise storage and that of AWS. This connectivity can allow you scale
+your storage requirements both securely and cost efficiently.
+
+- File Gateway
+- Volume Gateway
+  - Stored volume gateway
+  - Cached volume gateway
+- Tape Gateway
