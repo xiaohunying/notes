@@ -10,12 +10,12 @@ On-premise Options:
 AWS Options:
 
 - Block Storage (comparable to DAS)
-  - [EBS: Elastic Block Store](#ebs:-elastic-block-store)
+  - [EBS: Elastic Block Store](#ebs-elastic-block-store)
   - [EC2 Instance Storage](#ec2-instance-storage)
 - File Storage (comparable to NAS)
-  - [EFS: Elastic File System](#efs:-elastic-file-system)
+  - [EFS: Elastic File System](#efs-elastic-file-system)
 - Object Storage
-  - [S3: Simple Storage Service](#s3:-simple-storage-service)
+  - [S3: Simple Storage Service](#s3-simple-storage-service)
 
 <br />
 
