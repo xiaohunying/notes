@@ -16,7 +16,9 @@ AWS Options:
   - **EFS**: Elastic File System
 - Object Storage
   - **S3**: Simple Storage Service
-  
+
+<br />
+
 ### EC2 Instance Storage
 
 - EC2 instance storage volumes provide ephemeral storage (temporary). It is not recommended for 
@@ -52,6 +54,8 @@ Amazon provides:
 - **AWS Snowball** (direct connect)
 - **AWS Snowmobile** (direct connect)
 - **AWS Storage Gateway** (internet connect)
+
+<br />
 
 ### AWS Snowball
 
