@@ -9,10 +9,10 @@ On-premise Options:
 
 AWS Options:
 
-- Block Storage (comparable to DAS)
+- Block Storage
   - [EBS: Elastic Block Store](#ebs-elastic-block-store)
   - [EC2 Instance Storage](#ec2-instance-storage)
-- File Storage (comparable to NAS)
+- File Storage
   - [EFS: Elastic File System](#efs-elastic-file-system)
 - Object Storage
   - [S3: Simple Storage Service](#s3-simple-storage-service)
@@ -21,6 +21,23 @@ AWS Options:
 
 ### EBS: Elastic Block Store
 
+- EBS operates as a separate service to EC2. **Each EBS volume can ONLY be attached to ONE EC2 instance.**
+Mulitple EBS volumns can be attached to a single EC2 instance. Data is retained if the EC2 instance
+is stopped, restarted or terminated.
+- **EBS Snapshot**: An EBS snapshot is a point-in-time copy of your EBS volume, which is lazily
+copied to Amazon S3. EBS snapshots are incremental copies of data. This means that only unique blocks
+of EBS volume data that have changed since the last EBS snapshot are stored in the next EBS snapshot.
+- EBS offers **encryption at rest and in transit**. Encryption is managed by the EBS service it self.
+It can be enabled with a checkbox. The encryption is only available in selective instances.
+- **SSD (Solid State Drive) backed storage** (EBS volume type): It is suited for work with smaller blocks, 
+databases using transactional workloads. It is often used for boot volumes on EC2 instances.
+  - General Purpose SSD (GP2)
+  - Provisioned IOPS (IO1)
+- **HDD (Hard Disk Drive) backed storage** (EBS volume type): It is designed for workloads requires
+a high rate of throughput (MB/s). It process larger blocks of data. For example, big data processing
+and logging information.
+  - Cold HDD (SC1)
+  - Throughput Optimized HDD (ST1)
 
 ### EC2 Instance Storage
 
