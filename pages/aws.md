@@ -15,7 +15,7 @@ Attached Storage) and Tape backup.
 
 <br />
 
-### EBS: Elastic Block Store
+## EBS: Elastic Block Store
 
 - EBS operates as a separate service to EC2. **Each EBS volume can ONLY be attached to ONE EC2 instance.**
 Mulitple EBS volumns can be attached to a single EC2 instance. Data is retained if the EC2 instance
@@ -35,7 +35,7 @@ and logging information.
   - Cold HDD (SC1)
   - Throughput Optimized HDD (ST1)
 
-### EC2 Instance Storage
+## EC2 Instance Storage
 
 - EC2 instance storage volumes provide ephemeral storage (temporary). It is not recommended for 
 critical or valuable data. **Your data is lost if the instance is stopped or terminated. 
@@ -48,9 +48,9 @@ the fleet.
 instance storage volumes increases with the size of the EC2 instance. It has the same security
 mechanisms provided by EC2.
 
-### EFS: Elastic File System
+## EFS: Elastic File System
 
-### S3: Simple Storage Service
+## S3: Simple Storage Service
 
 - Amazon S3 is a **regional** service.
 - Amazon S3 can be used for **static website hosting**. You need to (1) The bucket content 
@@ -103,8 +103,6 @@ And the cost is then transfered to that account.
   - Retrieval data using APIs, SDKs or CLI. Retrieval data options: Expedited (5 minutes, 250MB), Standard (3-5 hours) and Bulk (PB 
   of data, 5-12 hours)
 
-  
-
 <br />
 
 # Backup and DR strategies
@@ -127,8 +125,6 @@ Amazon provides:
 - [AWS Snowball](#aws-snowball) (direct connect)
 - [AWS Snowmobile](#aws-snowmobile) (direct connect)
 - [AWS Storage Gateway](#aws-storage-gateway) (internet connect)
-
-<br />
 
 ### AWS Snowball
 
