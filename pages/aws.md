@@ -192,21 +192,39 @@ S3 Glacier | <ul><li>Storage cost - Per month per GB (a flat rate)</li><li>Reque
 S3 Glacier deep archive | <ul><li>Storage cost - Per month per GB (a flat rate)</li><li>Request cost - per 1000 requests (Based on request type; DELETE and CANCEL requests are free)</li><li>Data retrieval cost - Per GB (based on retrieval method)</li></ul>
 Provisioned Capacity Unit | <ul><li>Data retrieval cost - Per unit</li></ul>
 
-**Cost of Data transfer**: Data Transfer is charged Per GB. Data transfer is free when 
-- Data is transferred into S3 from internet
-- Data is transferred out to Amazon CloudFront
-- Data is transferred out to EC2 instances in the same region
+**Cost of Data transfer**: 
+- Data Transfer is charged Per GB. Data transfer is free when (1) Data is transferred into 
+S3 from internet; (2) Data is transferred out to Amazon CloudFront; (3) Data is transferred out to EC2 instances 
+in the same region.
+- Transfer Acceleration:
+  - When we look at Transfer acceleration, the pricing structure for transfer costs changes and this is largely 
+  due to the fact that your data is routed through an optimized network path to Amazon S3 via CloudFront edge 
+  locations.
+  - Whereas normal data transfer into amazon S3 is free from the internet, with transfer acceleration, this is 
+  a cost associated per gigabyte dependant on which edge location is used. Also, there is an increased cost for 
+  any data transferred OUT of S3, either to the internet or to another Region, again due to the edge location 
+  acceleration involved.
 
-**Cost of Transfer acceleration**
-- When we look at Transfer acceleration, the pricing structure for transfer costs changes and this is largely due 
-to the fact that your data is routed through an optimized network path to Amazon S3 via CloudFront edge locations.
-- Whereas normal data transfer into amazon S3 is free from the internet, with transfer acceleration, this is a 
-cost associated per gigabyte dependant on which edge location is used. Also, there is an increased cost for any 
-data transferred OUT of S3, either to the internet or to another Region, again due to the edge location acceleration 
-involved.
-
-### Management and replication costs
-
-
-
-
+**Cost of Management and replication**
+- Features that have associated cost:
+  - S3 Inventory (Per million objects listed)
+  - S3 Analytics Storage Class Analysis (Per million objects monitored per month)
+  - S3 Object Tagging (Per 10,000 tags applied per month)
+- S3 Batch Operations: Pricing for this feature has two price points, firstly on per batch job, and secondly 
+per million object operations performed.
+- S3 and Glacier Select: There are 2 price points related to Select: data scanned (per GB) and data returned 
+(per GB). And much like when we looked at retrieval costs, Glacier is broken down into the 3 different 
+retrieval modes: Expedited, Standard and Bulk.
+- S3 Replication: 
+  - There are no specific costs for the use of the S3 replication feature itself, instead, you are simply 
+  charged for the cost for the storage class in your destination where your replicated objects will reside.
+  - Two replication modes: (1) CRR - Cross-Region Replication between 2 different buckets and (2) SRR - 
+  Same-Region Replication between 2 different buckets.
+  - You will also incur costs for any COPY and PUT requests which will also be based upon the rates of 
+  the destination region. 
+  - When using Cross-Region replication, there will also be the addition of the inter-region data transfer fees, 
+  which will be priced upon the source region.
+- S3 Replication Time Control: the cost to use S3-RTC is currently set at a flat rate across all regions.
+- Versioning: cost is added to you as you are storing multiple versions of the same object and as we know, 
+the Amazon S3 cost model is based on actual usage of storage.
+- Lifecycle Policies
