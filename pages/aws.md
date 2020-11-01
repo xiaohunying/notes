@@ -224,7 +224,7 @@ retrieval modes: Expedited, Standard and Bulk.
   the destination region. 
   - When using Cross-Region replication, there will also be the addition of the inter-region data transfer fees, 
   which will be priced upon the source region.
-- S3 Replication Time Control: the cost to use S3-RTC is currently set at a flat rate across all regions.
+  - S3 Replication Time Control: the cost to use S3-RTC is currently set at a flat rate across all regions.
 - Versioning: cost is added to you as you are storing multiple versions of the same object and as we know, 
 the Amazon S3 cost model is based on actual usage of storage.
 - Lifecycle Policies
