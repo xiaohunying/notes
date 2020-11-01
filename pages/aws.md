@@ -114,6 +114,10 @@ And the cost is then transfered to that account.
   - Move data into S3 Glacier using APIs or SDKs. 
   - Retrieval data using APIs, SDKs or CLI. Retrieval data options: Expedited (5 minutes, 250MB), Standard (3-5 hours) and Bulk (PB 
   of data, 5-12 hours)
+  - Retrieval data method: Expedited, Standard and Bulk.
+  - Provisioned Capacity Unit
+- **S3 Glacier Deep Archive**:
+  - Retrieval data method: Standard and Bulk
 
 <br />
 
@@ -171,3 +175,29 @@ your storage requirements both securely and cost efficiently.
   - Stored volume gateway
   - Cached volume gateway
 - Tape Gateway
+
+<br />
+
+# Costs With AWS Storage Services
+
+- Request costs
+- Data retrieval costs
+- Data transfer costs
+- Management and replication costs
+
+## Cost of S3 and Glacier
+
+S3 Storage Class | Cost
+--- | ---
+S3 Standard | <ul><li>Storage cost - Per month per GB (price is reduced as you add more data)</li><li>Request cost - per 1000 requests (Based on request type; DELETE and CANCEL requests are free)</li></ul>
+S3 Intelligent | <ul><li>Storage cost:<ul><li>Frequent access tier - per month per GB (price is reduced as you add more data)</li><li>Infrequent access tier - per month per GB (a flat rate)</li></ul></li><li>Request cost - per 1000 requests (Based on request type; DELETE and CANCEL requests are free)</li><li>Monitoring and automation fee - per month</li></ul>
+S3 Standard, Infrequent Access | <ul><li>Storage cost - Per month per GB (a flat rate)</li><li>Request cost - per 1000 requests (Based on request type; DELETE and CANCEL requests are free)</li><li>Data retrieval cost - Per GB (a flat rate)</li></ul>
+S3 Single Zone, Infrequent Access | <ul><li>Storage cost - Per month per GB (a flat rate)</li><li>Request cost - per 1000 requests (Based on request type; DELETE and CANCEL requests are free)</li><li>Data retrieval cost - Per GB (a flat rate)</li></ul>
+S3 Glacier | <ul><li>Storage cost - Per month per GB (a flat rate)</li><li>Request cost - per 1000 requests (Based on request type; DELETE and CANCEL requests are free)</li><li>Data retrieval cost - Per GB (based on retrieval method)</li></ul>
+S3 Glacier deep archive | <ul><li>Storage cost - Per month per GB (a flat rate)</li><li>Request cost - per 1000 requests (Based on request type; DELETE and CANCEL requests are free)</li><li>Data retrieval cost - Per GB (based on retrieval method)</li></ul>
+Provisioned Capacity Unit | <ul><li>Data retrieval cost - Per unit</li></ul>
+
+
+
+
+
