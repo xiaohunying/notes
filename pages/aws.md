@@ -180,11 +180,6 @@ your storage requirements both securely and cost efficiently.
 
 # Costs With AWS Storage Services
 
-- Request costs
-- Data retrieval costs
-- Data transfer costs
-- Management and replication costs
-
 ## Cost of S3 and Glacier
 
 S3 Storage Class | Cost
@@ -197,6 +192,20 @@ S3 Glacier | <ul><li>Storage cost - Per month per GB (a flat rate)</li><li>Reque
 S3 Glacier deep archive | <ul><li>Storage cost - Per month per GB (a flat rate)</li><li>Request cost - per 1000 requests (Based on request type; DELETE and CANCEL requests are free)</li><li>Data retrieval cost - Per GB (based on retrieval method)</li></ul>
 Provisioned Capacity Unit | <ul><li>Data retrieval cost - Per unit</li></ul>
 
+**Cost of Data transfer**: Data Transfer is charged Per GB. Data transfer is free when 
+- Data is transferred into S3 from internet
+- Data is transferred out to Amazon CloudFront
+- Data is transferred out to EC2 instances in the same region
+
+**Cost of Transfer acceleration**
+- When we look at Transfer acceleration, the pricing structure for transfer costs changes and this is largely due 
+to the fact that your data is routed through an optimized network path to Amazon S3 via CloudFront edge locations.
+- Whereas normal data transfer into amazon S3 is free from the internet, with transfer acceleration, this is a 
+cost associated per gigabyte dependant on which edge location is used. Also, there is an increased cost for any 
+data transferred OUT of S3, either to the internet or to another Region, again due to the edge location acceleration 
+involved.
+
+### Management and replication costs
 
 
 
