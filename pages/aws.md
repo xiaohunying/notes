@@ -263,5 +263,9 @@ of the volumes at EBS snapshot costings.
 - Tape Gateway: Additional complexity due to range of storage classes. Understand the retrieval times for 
 your data based on the S3 Glacier and Deep Archive classes, as you might be able to save a considerable amount.
 
+## Cost of AWS Backup Service
 
+AWS Backup is a great way to centralize the view of backups. It implements lifecycle rules to help optimize costs
+through warm and cold storage. It is backed by Amazon S3 and Glacier. Pricing points are Backup Storage and
+Restoration.
 
