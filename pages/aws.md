@@ -240,3 +240,20 @@ the Amazon S3 cost model is based on actual usage of storage.
 - AWS DataSync: this is a managed service which helps you manage the transfer of data into and out of EFS. It 
 is charged at a flat per GB rate.
 
+
+## Cost of Amazon FSx
+
+Amazon FSx comes in 2 forms: Amazon FSx for Windows File Server and Amazon FSx for Lustre. 
+
+- Amazon FSx for Windows File Server:
+  - Flexibility cost based on Capacity, Throughput and Backups.
+  - Data Deduplication is recommended to reduce cost. No additional cost.
+  - Cost is associated with throughput
+- Amazon FSx for Lustre: 
+  - Charged for Storage capacity.
+  - Data transfer between AZ will incur standard transfer costs for associated region.
+  - No cost is associated with throughput
+  - No setup fee.
+
+
+
