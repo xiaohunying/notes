@@ -255,5 +255,13 @@ Amazon FSx comes in 2 forms: Amazon FSx for Windows File Server and Amazon FSx f
   - No cost is associated with throughput
   - No setup fee.
 
+## Cost of AWS Storage Gateway
+
+- File Gateway: Pricing follows Amazon S3 pricing metrics, but a per GB request for data writes.
+- Volume Gateway: Simple pricing structure; But uses a per-GB metric for volumes in addition to any snapshots
+of the volumes at EBS snapshot costings.
+- Tape Gateway: Additional complexity due to range of storage classes. Understand the retrieval times for 
+your data based on the S3 Glacier and Deep Archive classes, as you might be able to save a considerable amount.
+
 
 
