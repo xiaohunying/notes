@@ -52,6 +52,7 @@ mechanisms provided by EC2.
 
 - EFS is a regional service. Apps across multiple AZ can all access the same file systems. It is 
 not available within all regions.
+- EFS supports both NFS version 4.1 and 4.0.
 - Two things to consider while choosing EFS: Storage classes and performance options.
 - Storage classes:
   - Standard
@@ -228,3 +229,14 @@ retrieval modes: Expedited, Standard and Bulk.
 - Versioning: cost is added to you as you are storing multiple versions of the same object and as we know, 
 the Amazon S3 cost model is based on actual usage of storage.
 - Lifecycle Policies
+
+## Cost of EFS
+
+- EFS charges based on storage classes: EFS Standard and EFS IA (Infrequent Access).
+  - EFS Standard: charge storage by month.
+  - EFS IA: EFS IA is cheaper than standard storage, but it charges for ready and write.
+- EFS Lifecycle management: use this feature to reduce cost.
+- EFS throughput modes: Bursting throughput (default) and Provisioned throughput. No addition charges.
+- AWS DataSync: this is a managed service which helps you manage the transfer of data into and out of EFS. It 
+is charged at a flat per GB rate.
+
