@@ -4,13 +4,13 @@
 
 CIDR (Classless Inter-Domain Routing) Block range
 
+<br />
 
 # Subnet
 
-Private subnet: inaccessable by default from internet.
-
 Every time you create a subnet, it is a private subnet to begin with and that is until you attach an Internet 
-Gateway (IGW) to your VPC and then add the additional route to the IGW.
+Gateway (IGW) to your VPC and then add the additional route to the IGW. Private subnet: inaccessable by 
+default from internet.
 
 When you create a subnet, you need to define a CIDR block range that fits within the VPC CIDR block.
 
