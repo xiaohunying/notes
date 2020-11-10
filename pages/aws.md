@@ -52,8 +52,29 @@ acros different services.
 IAM is used as your certificate manager when deploying your ELBs in regions that are not supported by ACM. (Third
 party certificate)
 
-
+<br />
 
 # EC2 Auto Scaling
+
+Auto scaling is a mechanism that automatically allows you to increase or decrease your EC2 resources to meet
+the demand based off of custom defined metrics and thresholds.
+
+Amazon offers:
+- Amazon EC2 Auto Scaling: scale your EC2 fleet.
+- AWS Auto Scaling Service: scale Amazon ECS tasks, DynamoDB tables and indexes and Amazon Aurora replicas.
+
+## Auto Scaling Group
+
+The auto scaling group defines (1) the desired capacity and other limitations of the group using scaling policies;
+(2) where the group should scale resources, such as which availability zone.
+
+Before you create your auto scaling group, you need to have your **launch configuration** defined using either
+Launch Template (prefered) or Launch Configuration.
+
+**Combining an ELB and Auto Scaling** helps you to manage and automatically scale your EC2 Compute resources both
+in and out. When you attach an ELB to an auto scaling group, the ELB will automatically detect the instances 
+and start to distribute all traffic to the resources in the auto scaling group. To associate an ALB or NLB, you
+must **associate the auto scaling group with the ELB target group.**
+
 
 
