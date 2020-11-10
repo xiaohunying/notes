@@ -9,6 +9,6 @@
   - [EC2 (Elastic Compute Cloud)](./aws-compute.md#ec2-elastic-compute-cloud)
   - [ELB (Elastic Load Balancer)](./aws-compute.md#elb-elastic-load-balancer)
   - [EC2 Auto Scaling](./aws-compute.md#ec2-auto-scaling)
-- [AWS Database](aws-database.md)
 - [AWS Network](aws-network.md)
+- [AWS Database](aws-database.md)
 
