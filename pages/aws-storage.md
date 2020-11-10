@@ -1,9 +1,9 @@
 # AWS Storage
 
-[AWS Data Storage](#aws-data-storage)
-[Backup and DR strategies](#backup-and-dr-strategies)
-[Data Transfer in/out of AWS](#data-transfer-in-out-of-aws)
-[Costs With AWS Storage Services](#costs-with-aws-storage-services)
+- [AWS Data Storage](#aws-data-storage)
+- [Backup and DR strategies](#backup-and-dr-strategies)
+- [Data Transfer in/out of AWS](#data-transfer-in-out-of-aws)
+- [Costs With AWS Storage Services](#costs-with-aws-storage-services)
 
 <br />
 
