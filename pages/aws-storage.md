@@ -1,3 +1,12 @@
+# AWS Storage
+
+[AWS Data Storage](#aws-data-storage)
+[Backup and DR strategies](#backup-and-dr-strategies)
+[Data Transfer in/out of AWS](#data-transfer-in-out-of-aws)
+[Costs With AWS Storage Services](#costs-with-aws-storage-services)
+
+<br />
+
 # AWS Data Storage
 
 On-premise Options: SAN (Storage Area Network), NAS (Network Attached Storage), DAS (Directly
