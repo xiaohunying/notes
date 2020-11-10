@@ -1,7 +1,7 @@
 # AWS Compute
 
 - [EC2 (Elastic Compute Cloud)](#ec2-elastic-compute-cloud)
-- [ELB Elastic Load Balancer](#elb-elastic-load-balancer)
+- [ELB (Elastic Load Balancer)](#elb-elastic-load-balancer)
 - [EC2 Auto Scaling](#ec2-auto-scaling)
 
 <br />
@@ -64,7 +64,7 @@ EC2 service can be broken down into the following components:
 
 <br />
 
-# ELB Elastic Load Balancer
+# ELB (Elastic Load Balancer)
 
 The main function of an ELB is to help manage and control the flow of inbound requests destined to a group of targets
 by distributing these requests evenly across the targeted resource group. 
