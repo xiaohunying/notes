@@ -18,7 +18,10 @@ When you create a subnet, you need to define a CIDR block range that fits within
 
 ## Public subnet: 
 
-Public subnet is a subnet that has (1) accessable from internet; and (2) public IP address. 
+Public subnet is a subnet that has 
+- accessable from internet
+- public IP address
+ 
 To make a subnet public, you need to 
 - add an internet gateway (IGW)
   - IGW is attached to your VPC and acts as a gateway between your VPC and the outside world.
@@ -28,7 +31,7 @@ To make a subnet public, you need to
 ![subnet](../resources/images/aws-subnet-2.png)
 
 
-### Route Table
+## Route Table
 
 - you can have the same route table associated to multiple subnets.
 - you can NOT associate more than one route table to a single subnet.
