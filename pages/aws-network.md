@@ -6,7 +6,7 @@ CIDR (Classless Inter-Domain Routing) Block range
 
 <br />
 
-# Subnet
+## Subnet
 
 Every time you create a subnet, it is a private subnet to begin with and that is until you attach an Internet 
 Gateway (IGW) to your VPC and then add the additional route to the IGW. Private subnet: inaccessable by 
@@ -37,6 +37,24 @@ To make a subnet public, you need to
 - you can NOT associate more than one route table to a single subnet.
 - route table contains a destination field (destination) and a target field (route to the destination).
 
+<br />
+
+# VPC Security and Control
+
+## NACLs (Network Access Control Lists)
+
+NACLs are essentially virtual **network-level** firewalls that are associated to each and every subnet and 
+they help to control both ingress and egress traffic moving in and out of your VPC and between your 
+subnets.
+
+- You can have the same NACL applied to a number of subnets.
+- Only a single NACL can be associated to one subnet.
+
+![nacl](../resources/images/aws-vpc-nacl.png)
+
+## Security Groups
+
+**Instance-level**
 
 
 
