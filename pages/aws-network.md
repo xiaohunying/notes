@@ -54,7 +54,11 @@ subnets.
 
 ## Security Groups
 
-**Instance-level**
+The security groups are used at the **Instance layer**. With Security Group, if there is a rule in there 
+then it's considered allowed, if there's no rule, then all traffic is dropped by default.
+
+![sg](../resources/images/aws-vpc-sg.png)
+
 
 
 
