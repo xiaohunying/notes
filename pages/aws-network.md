@@ -74,4 +74,10 @@ NAT gateway within that subnet as well.
 
 ![nat_gateway](../resources/images/aws-vpc-nat-gateway.png)
 
+## Bastion Hosts
+
+How do engineers access an instance in a private subnet? One of the ways to do it is
+via a bastion host (used as a jump server).
+
+![bastion_host](../resources/images/aws-vpc-bastion-host.png)
 
