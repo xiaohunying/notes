@@ -59,9 +59,19 @@ then it's considered allowed, if there's no rule, then all traffic is dropped by
 
 ![sg](../resources/images/aws-vpc-sg.png)
 
+## NAT Gateway
 
+A NAT Gateway allows private instances to be able to access the internet while blocking connections 
+initiated from the internet. For example, we are responsible to update and patch the operating 
+systems running on each of our EC2 instances. Then we need to be able to download updates as and when 
+we need to. Private subnet has no access to the internet gateway and therefore the internet.
 
+- Because **NAT Gateway sits in a public subnet**, it has to have a public IP address in the form of an EIP
+which is an Elastic IP address and this is assigned to the instance itself.
+- The **route table** needs to be updated to provide a route to the NAT gateway.
+- If you have multiple public subnets in different availability zones, you will need to set up another 
+NAT gateway within that subnet as well.
 
-
+![nat_gateway](../resources/images/aws-vpc-nat-gateway.png)
 
 
