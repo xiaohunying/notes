@@ -2,7 +2,8 @@
 
 # VPC (Virtual Private Cloud)
 
-CIDR (Classless Inter-Domain Routing) Block range
+When specify a CIDR (Classless Inter-Domain Routing) block address for your VPC, the range of the netmasks allowed is 
+from a /16 netmask to a /28 netmask.
 
 <br />
 
@@ -80,6 +81,10 @@ How do engineers access an instance in a private subnet? One of the ways to do i
 via a bastion host (used as a jump server).
 
 ![bastion_host](../resources/images/aws-vpc-bastion-host.png)
+
+SSH agent forwarding:
+- it stores EC2 private keys on the local client.
+- you use it to access instances through a bastion host.
 
 
 <br />
