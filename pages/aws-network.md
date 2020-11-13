@@ -94,11 +94,11 @@ VPN is essentially a secure way of connecting two remote networks across the int
 
 If the customer gateway (CGW) supports Border Gateway Protocol (BGP), then this supports 
 dynamic routing. so this will populate all the routes for the VPN connection for you, 
-which means you won't have to implement any static routing
+which means you won't have to implement any static routing.
 
 ## Direct Connect
 
-This is not using internet. This is totally isolated infrastructure.
+Direct Connect does not use internet. It is totally isolated infrastructure.
 
 ![direct_connect](../resources/images/aws-vpc-direct-connect.png)
 
@@ -106,19 +106,22 @@ This is not using internet. This is totally isolated infrastructure.
 
 - VPC peering connection is a one to one connection.
 - When you create VPC peering connections, each VPC cannot have an IP address overlap
-between themm.
+between them.
+- We need to make sure that the CIDR blocks of the VPCs do not overlap.
 - You can have VPC peering configured between the same region or between different
 regions.
-- We need to make sure that the CIDR blocks of the VPCs do not overlap.
-- Each VPC needs to update their routing tables to allow the traffic from VPC-1 to
-get to the destination of VPC-2.
+- Each VPC needs to update their routing tables to allow the traffic from one VPC to
+get to the destination of another VPC.
 
 # Transit Gateway
 
-Transit gateway is essentially a development on from the VPC peering. The AWS Transit 
+Transit gateway is essentially a development from the VPC peering. The AWS Transit 
 Gateway simplifies your whole network connectivity. It allows all your VPCs to easily 
 communicate with one another and also communicate with your remote locations as well.
 All the routing is managed centrally within that hub and when any new remote
 locations or VPCs are created, for example, you might have another two VPCs created. 
 All you'd need to do is to connect it to the AWS Transit Gateway and each of these new 
 VPCs can then communicate with the entire rest of your infrastructure.
+
+![transit_gateway](../resources/images/aws-vpc-transit-gateway.png)
+
