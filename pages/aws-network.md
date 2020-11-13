@@ -113,7 +113,7 @@ regions.
 - Each VPC needs to update their routing tables to allow the traffic from one VPC to
 get to the destination of another VPC.
 
-# Transit Gateway
+## Transit Gateway
 
 Transit gateway is essentially a development from the VPC peering. The AWS Transit 
 Gateway simplifies your whole network connectivity. It allows all your VPCs to easily 
