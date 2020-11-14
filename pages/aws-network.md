@@ -1,5 +1,22 @@
 # AWS Network
 
+- [VPC (Virtual Private Cloud)](#vpc-virtual-private-cloud)
+  - [Subnet](#subnet)
+  - [Public Subnet](#public-subnet)
+  - [Route Table](#route-table)
+- [VPC Security and Control](#vpc-security-and-control)
+  - [NACLs (Network Access Control Lists)](#nacls-network-access-control-lists)
+  - [Security Groups](#security-groups)
+  - [NAT Gateway](#nat-gateway)
+  - [Bastion Hosts](#bastion-hosts)
+- [VPC Connectivity](#vpc-connectivity)
+  - [VPN (Virtual Private Networks)](#vpn-virtual-private-networks)
+  - [Direct Connect](#direct-connect)
+  - [VPC Peering](#vpc-peering)
+  - [Transit Gateway](#transit-gateway)
+
+<br />
+
 # VPC (Virtual Private Cloud)
 
 When specify a CIDR (Classless Inter-Domain Routing) block address for your VPC, the range of the netmasks allowed is 
@@ -17,7 +34,7 @@ When you create a subnet, you need to define a CIDR block range that fits within
 
 ![subnet](../resources/images/aws-subnet-1.png)
 
-## Public subnet: 
+## Public Subnet
 
 Public subnet is a subnet that has 
 - accessable from internet
