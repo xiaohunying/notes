@@ -24,5 +24,10 @@
     - [Direct Connect](./aws-network.md#direct-connect)
     - [VPC Peering](./aws-network.md#vpc-peering)
     - [Transit Gateway](./aws-network.md#transit-gateway)
+  - [EIPs (Elastic IP Addresses)](./aws-network.md#eips-elastic-ip-addresses)
+  - [ENIs (Elastic Network Interfaces)](./aws-network.md#enis-elastic-network-interfaces)
+  - [ENA (Elastic Network Adaptor)](./aws-network.md#ena-elastic-network-adaptor)
+  - [VPC Endpoints](./aws-network.md#vpc-endpoints)
+  - [AWS Global Accelerator](./aws-network.md#aws-global-accelerator)
 - [AWS Database](aws-database.md)
 
