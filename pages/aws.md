@@ -31,3 +31,49 @@
   - [AWS Global Accelerator](./aws-network.md#aws-global-accelerator)
 - [AWS Database](aws-database.md)
 
+
+# Design A Multi-Tier Solution
+  
+What is Multi-Tier Architecture
+- A design doesn't have to have three tiers. They can be more or less.
+   - Presentation tier
+   - Logic tier
+   - Data tier (Amazon Aurora, Amazon ElastiCache)
+- It common to have web applications to have two tiers. 
+- Multi-tier architecture provides a general framework to ensure decoupled and independently
+scalable application components can be developed, managed and maintained separately. 
+- In multi-tier architecture, each layer (tier) is independent of the other layers. Each layer can be scaled up
+or down to meet specific demand.
+
+Common multi-tier solution design patterns:
+- LAMP
+  - LAMP is a common tool stack used for building web services
+  - **L**inux operation system
+  - **A**pache web server
+  - **M**ySQL database
+  - **P**HP programming languange
+- MEAN
+  - MEAN is an evolving stack pattern
+  - **M**ongo DB (database layer)
+  - **E**xpressJS (javascript framework)
+  - **A**ngularJS (javascript framework)
+  - **N**odeJS (javascript framework)
+- SERVERLESS
+  - Serverless is very beneficial in multi-tiered designs.
+  - Generally use **Amazon API Gateway** and **AWS Lambda** to replace logic tier.
+  - Generally one lambda function per API or one Lambda function per API method
+- MICROSERVICES
+  - Microservices is not so tied to the notion of tiers.
+  - With microservice architecture patterns each of the application components is decoupled and independently
+  deployed and operated.
+
+
+
+
+
+
+
+
+
+
+
