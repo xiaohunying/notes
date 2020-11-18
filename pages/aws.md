@@ -30,11 +30,14 @@
   - [VPC Endpoints](./aws-network.md#vpc-endpoints)
   - [AWS Global Accelerator](./aws-network.md#aws-global-accelerator)
 - [AWS Database](aws-database.md)
+- [Design A Multi-Tier Solution](#design-a-multi-tier-solution)
 
+<br />
 
 # Design A Multi-Tier Solution
   
-What is Multi-Tier Architecture
+### What is Multi-Tier Architecture
+
 - A design doesn't have to have three tiers. They can be more or less.
    - Presentation tier
    - Logic tier
@@ -45,7 +48,8 @@ scalable application components can be developed, managed and maintained separat
 - In multi-tier architecture, each layer (tier) is independent of the other layers. Each layer can be scaled up
 or down to meet specific demand.
 
-Common multi-tier solution design patterns:
+### Common Multi-Tier Solution Design Patterns
+
 - LAMP
   - LAMP is a common tool stack used for building web services
   - **L**inux operation system
