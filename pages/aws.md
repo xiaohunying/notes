@@ -31,6 +31,9 @@
   - [AWS Global Accelerator](./aws-network.md#aws-global-accelerator)
 - [AWS Database](aws-database.md)
 - [Design A Multi-Tier Solution](#design-a-multi-tier-solution)
+- [DNS and Content Delivery](#dns-and-content-delivery)
+  - [Amazon Route 53](#amazon-route-53)
+  - [Amazon CloudFront](#amazon-cloudfront)
 
 <br />
 
@@ -70,6 +73,14 @@ or down to meet specific demand.
   - Microservices is not so tied to the notion of tiers.
   - With microservice architecture patterns each of the application components is decoupled and independently
   deployed and operated.
+
+<br />
+
+# DNS and Content Delivery
+
+## Amazon Route 53
+
+## Amazon CloudFront
 
 
 
