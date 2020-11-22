@@ -130,6 +130,32 @@ then determines how Route 53 will respond to these queries.
 
 ## Amazon CloudFront
 
+Amazon CloudFront is AWS's fault-tolerant and globally scalable **content delivery network (CDN)service**. It 
+provides seamless integration with other Amazon Web Services to provide an easy way to distribute content. When using 
+CloudFront, content requests are **routed to the closest edge** to the user's location which provides the lowest 
+latency to deliver the best performance **through cached data**.
+
+When configuring your **distribtions**, you will be required to enter your origin information which is essentially
+where the distribution is going to get the data to distribute across edge locations and it will be the DNS names
+of the S3 bucket or the HTTP server. 
+
+- Web distribution
+- RTMP distribution: Distribute streaming media with the Adobe Flash media service RTMP protocol. Source can only be 
+located in S3 bucket and not in a EC2 web server.
+
+If using an S3 bucket as your origin, then for additional security you can create a CloudFront user 
+called an **origin access identity (OAI)**. This ensures that only this OAI can access and serve content 
+from your bucket and therefore preventing anyone circumventing your CloudFront distribution by accessing
+the files directly in the bucket using the object URL.
+
+**Caching behavior options** defines how you want the data at the edge location to be cached via
+various methods and policies.
+
+You can also define if you want your distribution to be **associated to a web application firewall access
+control list** for additional security and web application protection.
+
+In addition to using a web application firewall access control list, you can also **implement additional 
+encryption security by specifying an SSL certificate** that must be used with a distribution.
 
 
 
