@@ -34,6 +34,13 @@
 - [DNS and Content Delivery](#dns-and-content-delivery)
   - [Amazon Route 53](#amazon-route-53)
   - [Amazon CloudFront](#amazon-cloudfront)
+- [Simple Queue Service (SQS)](#simple-queue-service-sqs)
+- [Simple Notification Service (SNS)](#simple-notification-service-sns)
+- [Amazon Kinesis](#amazon-kinesis)
+  - [Amazon Kinesis Streams](#amazon-kinesis-streams)
+  - [Amazon Kinesis Data Firehose](#amazon-kinesis-data-firehose)
+  - [Amazon Kinesis Analytics](#amazon-kinesis-analytics)
+- [AWS Lambda](#aws-lambda)
 
 <br />
 
