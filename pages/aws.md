@@ -78,7 +78,55 @@ or down to meet specific demand.
 
 # DNS and Content Delivery
 
+DNS (Domain Name System) is a hierarchical distributed naming system for computers, services or any resource
+connected to the internet or a private network. It is responsible of the translation of domain 
+names (ex. amazon.com) to IP addresses.
+
 ## Amazon Route 53
+
+Amazon Route 53 is Amazon's highly available and scalable domain name system (DNS). It provides secure and 
+reliable routing of requests, both for services within AWS and infrastructure that is outside of AWS. It provides
+this service through its global network of authoritative DNS servers that reduce latency and can be managed via 
+the management console and API.
+
+### Hosted Zones
+
+A hosted zone is a container that holds information about how you want to route traffic for a domain such as
+amazon.com. Route 53 supports the following type of zones:
+
+- Public Hosted Zone: This zone determines how traffic is routed on the internet and can be created when you
+register your domain with Route 53.
+- Private Hosted Zone: For Amazon VPC, this zone determines how traffic is routed within the Amazon VPC. If your
+resources are not accessible outside of the VPC you can use any domain name you wish.
+
+### Domains
+
+There are different domains that are supported by Route 53:
+
+- Generic Top-Level Domains (TLDs): .watch .clothing
+- Geographic Domains: .com.au .uk
+
+### Resource Record Types
+
+Route 53 supports the most common Resource Record types: A, AAAA, CAA, CNAME, MX, NAPTR, NS, PTR, SOA, SPF, SRV, TXT.
+
+In addition to these record types, Route 53 also uses **alias records**, which are a Route 53 specific extension to DNS.
+These alias records which act like a CNAME record allow you to route your traffic to other AWS resources, such as
+Elastic load balancers, Elastic Beanstalk environments, CloudFront distributions, VPC interface endpoints, or S3
+buckets configured as static websites.
+
+### Routing Policies
+
+When you create a resource record set, you must choose a routing policy that will be applied to it, and this
+then determines how Route 53 will respond to these queries. 
+
+- Simple Routing Policy (default)
+- Failover Routing Policy
+- Geo-Location Routing Policy (based on the users)
+- Geoproximity Routing Policy (based on both the users and the resources)
+- Latency Routing Policy
+- Multivalue Answer Routing Policy
+- Weighted Routing Policy
 
 ## Amazon CloudFront
 
