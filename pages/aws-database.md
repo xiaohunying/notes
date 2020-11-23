@@ -14,16 +14,22 @@
 # Amazon RDS
 
 Available database engines for Amazon Relational Database Service:
-- MySQL
-- MariaDB
-- PostgreSQL
-- Amazon Aurora
-- Oracle
-- SQL Server
+- MySQL (EBS)
+- MariaDB (EBS)
+- PostgreSQL (EBS)
+- Amazon Aurora (Shared Cluster Storage)
+- Oracle (EBS)
+- SQL Server (EBS)
 
 <br />
 
 # Amazon DynamoDB
+
+Amazon DynamoDB is NoSQL DB (key-value stores). DynamoDB tables are schemaless.
+
+Secondary Indexes:
+- Global: lets you query across the entire table to find any record that matches a particular value.
+- Local: can only help find data within a single partition key.
 
 <br />
 
