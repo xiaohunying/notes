@@ -68,6 +68,25 @@ Memcached Cluster: a collection of one or more cache nodes.
 
 # Amazon Neptune
 
+Amazon Neptune is a fast, reliable, secure, and fully-managed **graph database** service. It is used to help you 
+both store and navigate relationships between highly connected data which could contain billions of separate 
+relationships. Graph databases are ideal if their focus is on being able to identify these relationships of 
+interconnected data, rather than the actual data itself.
+
+Use Cases:
+- Social Media
+- Fraud Detection
+- Recommendation Engines
+
+Query Languages:
+- Apache Tinkerpop Gremlin
+- World Wide Web Consortium SPASQL
+
+Connect to Neptune Database:
+- Cluster endpoints
+- Reader endpoints
+- Instance endpoints
+
 <br />
 
 # Amazon Redshift
