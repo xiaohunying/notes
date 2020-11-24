@@ -113,6 +113,20 @@ differences from PostgreSQL.
 
 # Amazon Quantum Ledger Database (QLDB)
 
+Amazon QLDB is a fully managed and serverless database service, which has been designed as a **ledger** database.
+One quick example of the use cases would be for recording financial data over a period of time. QLDB would 
+allow to maintain a complete history of accounting and transactional data between multiple parties in an 
+immutable, transparent and cryptographic way through the use of the cryptographic algorithm, SHA-256, making 
+it highly secure. (Other use cases: audit, insurance, etc.)
+
+This may sound similar to **blockchain** technology where a ledger is also used. However, in blockchain, 
+that ledger is distributed across multiple hosts in a decentralized environment, whereas QLDB is owned and 
+managed by a central and trusted authority.
+
+Amazon QLDB is maintaining an immutable ledger with cryptographic abilities to enable the verifiable tracking
+of changes over time.
+
+
 <br />
 
 # Amazon DocumentDB
