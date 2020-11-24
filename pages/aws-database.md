@@ -5,7 +5,7 @@
 - [Amazon ElasticCache](#amazon-elasticcache)
 - [Amazon Neptune](#amazon-neptune)
 - [Amazon Redshift](#amazon-redshift)
-- [Amazon QLDB](#amazon-qldb)
+- [Amazon QLDB](#amazon-quantum-ledger-database-qldb)
 - [Amazon DocumentDB](#amazon-documentdb)
 - [Amazon Keyspaces](#amazon-keyspaces)
 
@@ -91,9 +91,27 @@ Connect to Neptune Database:
 
 # Amazon Redshift
 
+Amazon Redshift is a fast, fully-managed, petabyte-scale data warehouse. And it's designed for 
+high performance and **analysis** of information capable of storing and processing petabytes of data and 
+provide access to this data, using your existing **business intelligence tools**, using standard SQL. 
+It operates as a relational database management system, and therefore is compatible with other 
+RDBMS applications. Redshift itself is based upon PostgreSQL 8.0.2, but it contains a number of 
+differences from PostgreSQL.
+
+### Cluster, Compute Node, Leader Node, Node Slice
+
+- A Cluster is a grouping of Compute Nodes.
+- A Node Slice is a partition of a Compute Node where the node memory and disk space split.
+
+### Performance Features
+
+- Massively Parallel Processing (MPP)
+- Columnar Data Storage
+- Result Caching
+
 <br />
 
-# Amazon QLDB
+# Amazon Quantum Ledger Database (QLDB)
 
 <br />
 
