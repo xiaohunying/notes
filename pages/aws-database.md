@@ -7,7 +7,7 @@
 - [Amazon Redshift](#amazon-redshift)
 - [Amazon QLDB](#amazon-quantum-ledger-database-qldb)
 - [Amazon DocumentDB](#amazon-documentdb)
-- [Amazon Keyspaces](#amazon-keyspaces)
+- [Amazon Keyspaces](#amazon-keyspaces-for-apache-cassandra)
 
 <br />
 
@@ -161,6 +161,13 @@ Automatic backup (Amazon S3)and retention policy.
 
 <br />
 
-# Amazon Keyspaces
+# Amazon Keyspaces for Apache Cassandra
+
+Keyspace is a grouping of tables Keyspaces offers two different throughput capacity modes when 
+working with your read and writes to and from your tables:
+- On-demand throughput (default)
+- Provisioned throughput
+
+CQL - Cassandra Query Language
 
 <br />
