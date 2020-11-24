@@ -13,7 +13,7 @@
 
 # Amazon RDS
 
-Available database engines for Amazon Relational Database Service:
+Available database engines for Amazon **Relational** Database Service:
 - MySQL (EBS)
 - MariaDB (EBS)
 - PostgreSQL (EBS)
@@ -25,7 +25,7 @@ Available database engines for Amazon Relational Database Service:
 
 # Amazon DynamoDB
 
-Amazon DynamoDB is NoSQL DB (key-value stores). DynamoDB tables are schemaless.
+Amazon DynamoDB is **NoSQL** DB (key-value stores). DynamoDB tables are schemaless.
 
 Secondary Indexes:
 - Global: lets you query across the entire table to find any record that matches a particular value.
@@ -36,7 +36,7 @@ Secondary Indexes:
 # Amazon ElasticCache
 
 Amazon ElastiCache is a service that makes it easy to deploy, operate, and scale open-source, 
-in-memory data stores in the cloud. This service improves the performance through caching, 
+**in-memory** data stores in the cloud. This service improves the performance through caching, 
 where web applications allow you to retrieve information from fast managed in-memory data stores 
 instead of relying entirely on slower disk-based solutions.
 
@@ -130,6 +130,34 @@ of changes over time.
 <br />
 
 # Amazon DocumentDB
+
+DocumentDB is a **document** database, which provides the ability to quickly and easily store any 
+**JSON-like document data** which can then be queried and indexed. **Indexing** enhances the speed of 
+retrieving data within a database thanks to an indexing data structure stored within the database.
+
+DocumentDB has the ability to scale both its **compute and storage separately** from each other.
+
+Amazon DocumentDB has full compatibility with **MongoDB**, which again is another document database, 
+meaning that if required, you can easily migrate any existing MongoDB databases you might have into 
+Amazon DocumentDB using the **Database Migration Service (DMS)**.
+
+Components: 
+- Cluster
+- DB Instance (read only)
+- Primary DB instance (read and write)
+- Endpoints
+
+An endpoint is a URL address with an identified port that points to your infrastructure. There are three 
+types of endpoints:
+- cluster endpoint: points directly to the current primary DB instance of a cluster. It should be used
+by applications that require both read and write access to the database.
+- Reader endpoint: used to connect to read replicas and allows applications to access your databaes for 
+read requests. Only a single reader endpoint exists, even if you have multiple read replicas
+- Instance endpoint: every instance within your cluster will have a unique instance endpoint. It allows
+you to direct certain traffic to specific instances within the cluster. You might want to do this
+for load balancing reasons across your applications reading from your replicas.
+
+Automatic backup (Amazon S3)and retention policy.
 
 <br />
 
