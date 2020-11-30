@@ -132,6 +132,22 @@ Will be charged for data transfer:
 - Data transferred between an EC2 instance and an RDS instance in different AZs of the same region.
 - Data transferred when a snapshot copy is transferred to a different region.
 
+## Amazon Aurora
+
+- Separate the compute layer and storage layer from each other.
+- Aurora uses a **quorum** and **gossip protocol** baked within the storage layer to ensure that the 
+data remains consistent.
+- Aurora in general, regardless of the compute layer setup, always provides 6 way replicated storage
+across 3 AZs. Aurora is only supported in regions that have 3 or more AZs.
+- There are 4 different connection endpoint types:
+  - Cluster endpoint
+  - Reader endpoint
+  - Custom endpoint
+  - Instance endpoint
+- Connection endpoint load balancing is implemented internally using Route 53 DNS.
+- Be careful in the client layer **not to cache** the connection endpoint lookups longer than 
+their specified TTLs.
+
 <br />
 
 # Amazon DynamoDB
