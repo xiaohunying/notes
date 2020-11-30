@@ -56,6 +56,82 @@ and MariaDB. Since the release of MySQL 5.5.5 in 2010, it replaced MyISAM as MyS
 InnoDB is transactional storage engine. MyISAM is non-transactional storage engine.)
 - Read Replicas can be promoted to "standalone" DB instances.
 
+## Costs Associated with Amazon RDS
+
+**RDS Instance Purchasing Options**
+
+| DB          | On-demand Instances | On-demand Instances (BYOL) | Reserved Instances | Reserved Instances (BYOL) | Serverless |
+|-------------|:-------------------:|---------------------------:|-------------------:|--------------------------:|-----------:|
+| MySQL       | Y                   |                            | Y                  |                           |            |
+| PostgresSQL | Y                   |                            | Y                  |                           |            |
+| MariaDB     | Y                   |                            | Y                  |                           |            |
+| Aurora      | Y                   |                            | Y                  |                           | Y          |
+| Oracle      | Y                   | Y                          | Y                  | Y                         |            |
+| SQL Server  | Y                   |                            | Y                  |                           |            |
+
+**On-Demand Instance** Pricing:
+- Any partial DB instance hours used are cost on per second increments.
+- For any database changes that alter the running costs, such as modifying the instance or creating the DB
+instance, then a minimum of a 10-minute charge will be applied even if the DB is terminated or altered again
+before 10 minutes has passed.
+- Serverless pricing is measured in Aurora Capacity Units (ACU). Each ACU consists of 2 GB of memory & any
+associated CPU and networking requirements.
+
+**Reserved Instances** allow you to purchase a discount for an instance type with set criteria for a 
+set period of time in return for a reduced cost compared to on-demand instances. Further reductions with
+reserved instances is depending on which **Payment Method** you choose. Payment method: 
+- All Upfront
+- Partial Upfront
+- No Upfront
+
+### Database Storage and I/O Pricing
+
+RDS Supports:
+- General Purpose SSD storage
+- Provisioned IOPS (SSD) storage
+- Magnetic storage
+
+### Backup Storage pricing
+
+Amazon RDS **does NOT charge any Backup Storage costs** that equate to the total sum of provisioned storage
+used with your databases within a specific region. Any backup storage used over this "free" tier is charged.
+
+- Any automated backups taken use backup storage.
+- Any manual snapshots that are taken of your database will also use backup storage.
+- By extending your backup retention periods (how long you'd like to keep your backups for) will increase
+the amount of storage required for backups.
+- Backup storage is calculated based upon the total amount of backup storage consumed within a specific 
+region across all your RDS databases.
+- If you copy your backups to another region, this will also increase the amount of backup storage used 
+within that new region.
+
+### Backtrack Storage Pricing
+
+Backtrack allows you to go back in time on the database to recover from an error or incident without to
+perform a restore or create another DB cluster.
+
+### Snapshot Export Pricing
+
+Snapshots in RDS are your backups of your database tables and instances. They can then be exported out of
+Amazon RDS to Amazon S3. You may want to do this perform analysis of the data held within your database
+using more specific tools, for example Amazon Athena, Amazon SageMaker and Amazon EMR (Elastic MapReduce).
+During an export of a snapshot, you can decide through filtering to simply export specific databases, tables
+or even schemas.
+
+### Data Transfer Pricing
+
+Will NOT be charged for data transfer:
+- Any data that is transferred IN to your RDS database from the internet.
+- Any data that is transferred OUT to Amazon CloudFront.
+- Any data that is transferred OUT to EC2 instances in the same AZ.
+- Data transferred between AZs for Multi-AZ.
+
+Will be charged for data transfer:
+- Data transferred OUT from your RDS database to the internet.
+- Data transferred out to another AWS regions.
+- Data transferred between an EC2 instance and an RDS instance in different AZs of the same region.
+- Data transferred when a snapshot copy is transferred to a different region.
+
 <br />
 
 # Amazon DynamoDB
