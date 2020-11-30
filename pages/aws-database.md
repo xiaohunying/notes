@@ -21,6 +21,41 @@ Available database engines for Amazon **Relational** Database Service:
 - Oracle (EBS)
 - SQL Server (EBS)
 
+## RDS Multi-AZ
+
+- It is used to help with resilience and business continuity.
+- Multi-AZ configures a secondary RDS instance (replica) within a different AZ in the same region as the primary
+instance.
+- The only purpose of Multi-AZ is to provide a failover option for a primary RDS instance. It's not to be used
+as a secondary replica to offload read-only traffic to.
+- The replication of data happens synchronously.
+- RDS uses a Failover mechanism on Oracle, MySQL, MariaDB and PostgreSQL instances. The failover process
+happens automatically and is managed by AWS. RDS updates the DNS record to point to the secondary instance
+within 60-120 seconds.
+- SQL Server Multi-AZ is achieved through the use of **SQL Server Mirroring**.
+- Amazon Aurora DB clusters are fault tolerant by default and it is achieved within the cluster by replicating
+the data across different instances in different AZs. The automatic provision launches a new primary instance
+in the event of a failure which can take up to 10 minutes. This time can be reduced when you enable Multi-AZ on
+Aurora cluster which allows RDS to provision a replica within a different AZ automatically. 
+
+## Read Replicas
+
+Read Replicas are available for MySQL, MariaDB, PostgreSQL, Amazon Aurora, Oracle, and SQL Server.
+
+- Read Replicas are NOT used for resiliency or as secondary instance in the event of a failover.
+- Read Replicas are used to serve read-only access to your database data via a separate instance.
+- It is possible to deploy more than one read replica for a primary DB.
+- Adding more replicas allows you to scale your read performance to a wider range of applications.
+- You are able to deploy read replicas in different regions.
+- It is also possible to promote an existing read replica to replace the primary DB in the event 
+of an incident.
+- During any maintenance of the primary instance, read traffic can be served via your read replicas.
+- Amazon RDS for MySQL Read Replicas require a transactional storage engine and are only supported
+for the InnoDB storage engine. (**InnoDB** is a storage engine for the database management system MySQL
+and MariaDB. Since the release of MySQL 5.5.5 in 2010, it replaced MyISAM as MySQL's default table type.
+InnoDB is transactional storage engine. MyISAM is non-transactional storage engine.)
+- Read Replicas can be promoted to "standalone" DB instances.
+
 <br />
 
 # Amazon DynamoDB
