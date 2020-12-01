@@ -219,6 +219,45 @@ for anytime between the current time and the last 35 days. This feature needs to
 disabled by default. The restoration will always be performed into a new table. Table restoration can
 be performed in the same region as the original table or into a different region all together.
 
+## DynamoDB Accelerator (DAX)
+
+Downside of DynamoDB:
+- Your data is automatically replicated to different AZs and that replication usually happens quickly
+in milliseconds. But sometimes it can take longer. This is known as **eventual consistency**.
+- There are certain kinds of queries and table scans that may return older versions of data before
+the most recent copy.
+- You might have a requirement where you need microsecond response times in read-heavy workloads and 
+this is where DAX comes in to play.
+
+DAX is an **in-memory cache** delivering a significant performance enhancement up to 10 times as fast
+as the default DynamoDB settings allowing response times to decrease from milliseconds to microseconds.
+It is a fully managed feature offered by AWS and as a result is also highly available. DAX is also 
+highly scalable making it capable of handling millions of requests per second without any requirement
+for you to modify any logic to your applications or solutions.
+
+Your DAX deployment can start with a multi-node cluster containing a minimum of 3 nodes which you can 
+quickly and easily modify and expand reaching a maximum of 10 nodes with 1 primary and 9 read replicas.
+It can also enable you to reduce your provisioned read capacity within DynamoDB. Reducing the provisioned
+requirements on your DynamoDB will also reduce your overall costs.
+
+From a security perspective, DAX also support encryption at rest. This ensures that any cached data is 
+encrypted using the 256-bit Advanced Encryption Standard algorithm with the integration of the Key
+Management Service (KMS) to manage the encryption keys.
+
+DAX is a separate entity to DynamoDB and so architecturally it sits outside of DynamoDB and is placed 
+within your VPC where as DynamoDB sits outside of your VPC and is accessed via an endpoint. DAX will deploy
+a node in each of the subnets of the subnet group with one of those nodes being the primary and the remaining
+nodes will act as read replicas.
+
+To allow your EC3 instances to interact with DAX you will need to install a DAX client on those EC2 instances.
+This client then intercepts with and directs all DynamoDB API calls made from your client to your new
+DAX cluster endpoint, where the incoming request is then load balanced across all the nodes in teh cluster.
+You must ensure that the security group associated with your DAX cluster is open to TCP port 8111 on the 
+inbound rule set.
+
+DAX does not process any requests relating to table operations and management, for example, create,
+update or delete tables.
+
 <br />
 
 # Amazon ElasticCache
