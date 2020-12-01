@@ -181,11 +181,43 @@ period. Restores are performed to a **new serverless database cluster**.
 
 # Amazon DynamoDB
 
-Amazon DynamoDB is **NoSQL** DB (key-value stores). DynamoDB tables are schemaless.
+## Architecture
 
-Secondary Indexes:
+Amazon DynamoDB is **NoSQL** DB (key-value stores). DynamoDB tables are schemaless. It is designed 
+internally to automatically partition data and incoming traffic across **multiple partitions**.
+Partitions are stored on **numerous backend servers** distributed across **three AZs** within 
+a single region. A DynamoDB partition is a dedicated area of SSd storage allocated to a table and for 
+which is automatically replicated synchronously across 3 AZs within a particular region. 
+
+## Global Tables
+
+DynamoDB provides a secondary layer of availability in the form of cross region (Global Tables). A
+Global table gives you the capability to replicate a single table across one or many alternate regions.
+A Global table elevates the availability of your data and enables applications to take advantage of 
+data locality. Users can be served data directly from the closest geographically located table replica.
+Existing DynamoDB tables can be converted into global tables either by using the **relevant configuration
+options** exposed within the AWS DynamoDB console or by using the AWS CLI and executing this command:
+`aws dynamodb update-table`.
+
+## Secondary Indexes
 - Global: lets you query across the entire table to find any record that matches a particular value.
 - Local: can only help find data within a single partition key.
+
+## On Demand Backups
+
+On demand backups allow you to request a full backup of a table, as it is at the very moment of the 
+backup request is made. On demand backups are manually requested and can be performed either through
+the AWS DynamoDB console or by using the AWS CLI. Scheduling on demand backups provides you with
+the ability to restore table data back to a point in time. On demand backups remain in the account
+until they are explicitly requested to be deleted by an administrator. Backups typically finish
+within seconds and have zero impact on the table performance and availability.
+
+## Point In Time Recovery (PITR)
+
+PITR operates at the table level and provides you with the ability to perform a point in time recovery
+for anytime between the current time and the last 35 days. This feature needs to be enabled as it is 
+disabled by default. The restoration will always be performed into a new table. Table restoration can
+be performed in the same region as the original table or into a different region all together.
 
 <br />
 
