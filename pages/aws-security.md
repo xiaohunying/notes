@@ -97,8 +97,11 @@ statement with this structure:
 }
 ~~~
 
-There are two types of IAM Policies: Managed Policies and In-line Policies. Managed Policies are AWS Managed Policies
-and Customer Managed Policies.
+There are two types of IAM Policies: 
+- Managed Policies 
+- In-line Policies
+  - AWS Managed Policies
+  - Customer Managed Policies
   
 
 ## Multi-Factor Authentication (MFA)
