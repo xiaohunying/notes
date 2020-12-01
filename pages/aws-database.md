@@ -148,6 +148,35 @@ across 3 AZs. Aurora is only supported in regions that have 3 or more AZs.
 - Be careful in the client layer **not to cache** the connection endpoint lookups longer than 
 their specified TTLs.
 
+### Single Master, Multiple Read Replicas
+
+A single master instance can be configured with up to 15 read replicas when using Aurora.
+
+### Multi Master
+
+An Aurora multi master setup leverages 2 compute instances configured in active-active read write configuration.
+If an instance outage occurs in one AZ, all database writes can be redirected to the remaining active instance - 
+all without the need to perform a failover. 
+- A maximum of 2 compute instances can be configured as masters in a multi-master cluster. 
+- You can not add read replicas to a multi master cluster.
+- Incoming database connections to an Aurora multi master cluster are not load balanced by the service.
+Load balancing connection logic must be implemented and performed within the client.
+
+### Aurora Serverless
+
+An Aurora Serverless database is configured with a **single connection endpoint** which makes sense - given
+that it it designed to be serverless - this endpoint is obviously used for all read and writes.
+
+An option to consider is the **Web Service Data API feature** - available only on Aurora Serverless databases. It
+makes implementing Lambda functions which need to perform data lookups and/or mutations within an Aurora
+serverless database a breeze. The AWS CLI has been updated to allow you to execute queries through it from
+the command line.
+
+Aurora Serverless performs a **continuous automatic backup** of the database with a default retention period
+of 1 day - which can be manually increased to a maximum retention period of 35 days. This style of backup
+gives you the capability of **restoring to a point in time** within the currently configured backup retention
+period. Restores are performed to a **new serverless database cluster**.
+
 <br />
 
 # Amazon DynamoDB
