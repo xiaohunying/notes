@@ -73,6 +73,32 @@ There are currently 4 different types of Roles:
   Markup Language (SAML) provider.
   - Grant API access to SAML Providers - Allows access from SAML provider via the AWS CLI, SDKs or API calls. 
 
+### Policies
+
+IAM Policies are used to assign permissions. They are formatted as a JSON document and have at least one 
+statement with this structure:
+
+~~~json
+{
+    "Version": "2020-12-25",
+    "Statement": [
+      {
+        "Sid": "Stmt123456789012",
+        "Action": "cloudtrail:*",
+        "Effect": "Allow",
+        "Resource": "*",
+        "Condition": {
+          "IpAddress": {
+            "aws:SourceIp": "10.10.0.0/16"
+          }
+        }
+      }
+    ]
+}
+~~~
+
+There are two types of IAM Policies: Managed Policies and In-line Policies. Managed Policies are AWS Managed Policies
+and Customer Managed Policies.
   
 
 ## Multi-Factor Authentication (MFA)
