@@ -219,6 +219,12 @@ for anytime between the current time and the last 35 days. This feature needs to
 disabled by default. The restoration will always be performed into a new table. Table restoration can
 be performed in the same region as the original table or into a different region all together.
 
+## Scan And Query
+
+DynamoDB provides two commands for searching data on the table: scan and query. A scan operation examines 
+every item on the table and returns all the data attributes for each one of them. When you initially navigate 
+to the Items tab for a table, a scan is performed by default.
+
 ## DynamoDB Accelerator (DAX)
 
 Downside of DynamoDB:
