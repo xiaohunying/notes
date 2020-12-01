@@ -126,6 +126,8 @@ resources on a SSO approach.
 
 **Security Token Service (STS)** allows you to gain temporary security credentials for federated users via IAM.
 
+An example:
+
 1. The user initiates a request to authenticate against the **ADFS server** via a web browser using a **SSO URL**.
 2. If the authentication is successful by the AD credentials, SAML will then issues a **successful authentication
 assertion** back to the users' client requesting federated access.
