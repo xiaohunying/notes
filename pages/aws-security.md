@@ -102,6 +102,11 @@ There are two types of IAM Policies:
   - AWS Managed Policies
   - Customer Managed Policies
 - In-line Policies
+  - They are directly embedded into a specific user, group or role.
+  - If there are conflicting permissions assigned to the same user, follow:
+    - By default, all access is denied.
+    - Access will only be allowed if an explicit "Allow" has been specified.
+    - A single "Deny" will overrule any "Allow".
   
 
 ## Multi-Factor Authentication (MFA)
