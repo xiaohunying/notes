@@ -8,12 +8,6 @@ IAM is to manage, control and govern authentication, authorization and access co
 identities of your resources within your AWS Account. Identities are required to authenticate AWS accounts.
 Access Management relates to authorization and access control. IAM is a global service.
 
-Authorization:
-- S3 CreateBucket
-- RDS Read Only
-- EC2 Full Access
-- CloudTrail Full Access
-
 Access control:
 - username and password 
 - multi-factor authentication (MFA) 
