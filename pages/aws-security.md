@@ -17,7 +17,7 @@ IAM components:
 - [Users](#users)
 - [Groups](#groups)
 - [Roles](#roles)
-- Policy Permissions
+- [Policy Permissions](#policies)
 - Access Control Mechanisms
 
 ### Users
