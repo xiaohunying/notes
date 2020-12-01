@@ -136,5 +136,11 @@ assertion** back to the users' client requesting federated access.
 role and associated permissions.
 5. The user then has federated access to the necessary AWS services as per the role permissions.
 
+## Features of IAM
+
+- Account settings - password policy and security token service regions.
+- Credential Report - a list of all your IAM users and credentials. The report will only be generated once in 4 hours.
+- Key Management Service (KMS)
+
 <br />
 
