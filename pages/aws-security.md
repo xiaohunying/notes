@@ -98,10 +98,10 @@ statement with this structure:
 ~~~
 
 There are two types of IAM Policies: 
-- Managed Policies 
-- In-line Policies
+- Managed Policies
   - AWS Managed Policies
   - Customer Managed Policies
+- In-line Policies
   
 
 ## Multi-Factor Authentication (MFA)
