@@ -1,5 +1,7 @@
 # Security
 
+- [Identity And Access Management (IAM)](#identity-and-access-management-iam)
+
 # Identity And Access Management (IAM)
 
 IAM is to manage, control and govern authentication, authorization and access control mechanisms of 
@@ -18,15 +20,13 @@ Access control:
 - federated access
 
 IAM components:
-- Users
-- Groups
-- Roles
+- [Users](#users)
+- [Groups](#groups)
+- [Roles](#roles)
 - Policy Permissions
 - Access Control Mechanisms
 
-## Users, Groups and Roles
-
-### User
+### Users
 
 A user can represent a real person who requires access to operate and maintain your AWS environment or
 it can be an account used by an application that requires permissions to access your AWS resources
@@ -56,11 +56,9 @@ and Get objects using the relevant API calls. You can assign an IAM Role to the 
 always associate a role to an EC2 instance for accessing AWS resources over storing local credentials
 on the instance itself.
 
-Advantages of IAM Roles:
-- Roles don't have any access keys or credentials associated with them. The credentials are dynamically 
-assigned by AWS.
-- You can alter the permissions assigned to the Role and all the EC2 instance associated will have
-the correct access.
+Roles don't have any access keys or credentials associated with them. The credentials are dynamically 
+assigned by AWS. You can alter the permissions assigned to the Role and all the EC2 instance associated 
+will have the correct access.
 
 There are currently 4 different types of Roles:
 - AWS Service Role
