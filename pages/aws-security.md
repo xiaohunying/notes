@@ -1,7 +1,7 @@
 # AWS Security
 
 - [Identity And Access Management (IAM)](#identity-and-access-management-iam)
-- [Service Control Policies (SCPs)](#service-control-policies-scps)
+- [AWS Organization](#aws-organization)
 
 <br />
 
@@ -147,6 +147,13 @@ role and associated permissions.
 
 <br />
 
-# Service Control Policies (SCPs)
+# AWS Organization
+
+AWS Organizations uses the following components to help you manage your accounts
+- Organizations
+- Root
+- Organizational Units
+- Accounts
+- Service Control Policies (SCPs)
 
 <br />
