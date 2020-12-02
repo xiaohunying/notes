@@ -195,6 +195,13 @@ actions can either be Allow, Block or Count. **Rules are executed in the order**
 Web ACL. As soon as the request matches all the conditions within a rule it will be associated with that rule
 regardless of if there is another rule further down that would also be a match.
 
+WAF integrated with CloudWatch allowing you to monitor set metrics for the service. WAF CloudWatch metrics are 
+reported in one minute intervals by default and are kept for a 2 week period. The metrics monitored are:
+- AllowedRequests
+- BlockedRequests
+- CountedRequests
+- PassedRequests
+
 <br />
 
 # AWS Firewall Manager
