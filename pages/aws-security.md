@@ -215,6 +215,12 @@ rules to be propagated. When a request is blocked by WAF, CloudFront is notified
 forbidden and returns a 403 error to their browser. You can create your own custom 403 error to guide 
 the user to other useful links and provide a polite reason as to why they may have experienced the error. 
 
+AWS WAF Pricing: there are three chargeable elements of AWS WAF. You will not be charged extra for assigning
+the same Web ACL to multiple distributions.
+- the number of incoming requests
+- the number of web ACLs that you have
+- the number of Rules within each of the Web ACL
+
 <br />
 
 # AWS Firewall Manager
