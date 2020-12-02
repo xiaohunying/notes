@@ -202,6 +202,12 @@ reported in one minute intervals by default and are kept for a 2 week period. Th
 - CountedRequests
 - PassedRequests
 
+WAF limitations
+- 100 conditions of each type except Regex which allows only 10 conditions
+- 100 rules and 50 Web ACLs per account
+- 5 rate-based-rules per account
+- 10,000 requests per second for WAF with your ALB 
+
 <br />
 
 # AWS Firewall Manager
