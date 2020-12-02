@@ -171,3 +171,15 @@ your identity-based or resource-based policies to identities granting permission
 within your accounts.
 
 <br />
+
+# AWS WAF
+
+<br />
+
+# AWS Firewall Manager
+
+<br />
+
+# AWS Shield
+
+<br />
