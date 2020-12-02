@@ -149,11 +149,19 @@ role and associated permissions.
 
 # AWS Organization
 
-AWS Organizations uses the following components to help you manage your accounts
+AWS Organizations uses the following components to help you manage your accounts.
 - Organizations
 - Root
 - Organizational Units
 - Accounts
 - Service Control Policies (SCPs)
+
+**Master account** is a standard AWS account that you have chosen to create the AWS organization. The best 
+practice to use this account solely as a master account and not to use it to provision any other resources.
+This allows you to restrict to the master account at a greater level. The fewer users who need access to it,
+the better. The master account carries certain administrative level capabilities, such as being able to
+create additional AWS accounts within your organization, invite other accounts to join your organization,
+remove AWS accounts from your organization and apply security features via policies to different levels within 
+your organization.
 
 <br />
