@@ -172,7 +172,28 @@ within your accounts.
 
 <br />
 
-# AWS WAF
+# AWS Web Application Firewall (WAF)
+
+AWS WAF helps to prevent web sites and web applications from being maliciously attacked by common web
+attack patterns. It is used to identify how Amazon CloudFront distributions and application load
+balancers respond to web requests. It filters both HTTP and HTTPS request distinguishing between
+legitimate and harmful inbound requests.
+
+WAF Componnets:
+- Conditions - conditions allow you to specify what elements of the incoming HTTP or HTTPS request you want WAF to be 
+  monitoring for.
+  - Cross-site scripting
+  - Geo match
+  - IP addresses
+  - Size constraints
+  - SQL injection attacks
+  - String and regex matching
+- Rules - a WAF rule allows you to compile one or more of these conditions into a list which acts as a rule
+where each condition is ANDed to form the complete rule.
+- Web ACLs - rules can be added to Web ACLs. Within the web ACL, an action is applied for each rule. These
+actions can either be Allow, Block or Count. **Rules are executed in the order** that they are listed within a 
+Web ACL. As soon as the request matches all the conditions within a rule it will be associated with that rule
+regardless of if there is another rule further down that would also be a match.
 
 <br />
 
