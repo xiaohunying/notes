@@ -277,11 +277,11 @@ subscribed to either the business or enterprise support plans.
 
 # AWS CloudTrail
 
-AWS CloudTrail records and tracks all API requests in your AWS account. These requests can be initiated 
-from SDKs, AWS CLI, AWS management console or another AWS service. CloudTrail is a global service supporting
+AWS CloudTrail **records and tracks all API requests** in your AWS account. These requests can be initiated 
+from SDKs, AWS CLI, AWS management console or another AWS service. CloudTrail is a **global** service supporting
 all regions.
 
-Use cases:
+### Use Cases
 - effective for security analysis
   - monitor restricted API calls
   - notification of threshold breaches
@@ -296,7 +296,7 @@ Use cases:
   - FedRamp
 - Security at Scale
 
-Core features and services
+### Core Features and Services
 - Trails
 - Simple Storage Service (S3)
 - Logs (created every 5 mins)
@@ -312,7 +312,7 @@ Core features and services
 
 # AWS Config
 
-What can AWS Config do?
+### What Can AWS Config Do
 - Capture resource changes
 - Act as a resource inventory
 - Store configuration history
@@ -322,17 +322,16 @@ What can AWS Config do?
 - Use rules to check compliancy
 - Perform security analysis
 - Identify relationships between resources
+- Config is **region** specific
 
-AWS Config is region specific.
-
-AWS Config Key Components:
+### AWS Config Key Components
 - AWS Resources
 - Configuration Item (CI) - Configuration information, relationship information and other metadata in JSON.
 - Configuration Stream
 - Configuration History - delivered every 6 hours.
 - Configuration Snapshot
 - Configuration Recorder - is responsible for recording all the changes and generating the CIs
-- Config Rules - a great way to help you enforce specific compliance controls. Each rule is a Lambda function 
+- Config Rules - a great way to help you **enforce specific compliance controls**. Each rule is a Lambda function 
 which notify you the non-compliant changes. 
 - Resource Relationship - identifies relationships between resources.
 - SNS Topic - is used as a Configuration Stream for notifications.
