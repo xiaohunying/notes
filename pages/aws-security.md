@@ -130,8 +130,6 @@ relationship between the IdP and your AWS account. AWS supports two types of IdP
 - **SAML (Security Assertion Markup Language)** - allows your existing MS-AD users to authenticate to your AWS
 resources on a SSO approach.
 
-> **Security Token Service (STS)** allows you to gain temporary security credentials for federated users via IAM.
-
 An example:
 
 1. The user initiates a request to authenticate against the **ADFS server** via a web browser using a **SSO URL**.
@@ -141,6 +139,8 @@ Assertion** back to the users' client requesting federated access.
 4. **STS** responds to the user requesting federated access with **temporary security credentials** with an assumed
 role and associated permissions.
 5. The user then has **federated access** to the necessary AWS services as per the role permissions.
+
+> **Security Token Service (STS)** allows you to gain temporary security credentials for federated users via IAM.
 
 ## Features of IAM
 
