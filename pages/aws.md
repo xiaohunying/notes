@@ -35,5 +35,6 @@
   - [AWS Shield](./aws-security.md#aws-shield)
   - [AWS CloudTrail](./aws-security.md#aws-cloudtrail)
   - [AWS Config](./aws-security.md#aws-config)
+  - [CloudWatch](./aws-security.md#cloudwatch)
 
 

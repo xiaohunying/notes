@@ -7,6 +7,7 @@
 - [AWS Shield](#aws-shield)
 - [AWS CloudTrail](#aws-cloudtrail)
 - [AWS Config](#aws-config)
+- [CloudWatch](#cloudwatch)
 
 <br />
 
@@ -341,6 +342,15 @@ to interact with other services.
 
 <br />
 
+# CloudWatch
 
+CloudWatch is a comprehensive monitoring tool that allows you to monitor your services and applications
+in the cloud. It also allows you to react to events and even prevent service interruptions and outages.
+CloudWatch will monitor and create trend reports for services and resources you're probably already using.
+CloudWatch also provides a repository for logging.
 
+- Basic Monitoring - Included with all resources in all regions. 3 dashboard / 50 metrics / 5 minute refresh rate
+- Enhanced Monitoring - Priced per resource by region. 1 minute refresh rate 
+
+<br />
 
