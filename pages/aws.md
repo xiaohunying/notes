@@ -39,5 +39,10 @@
   - [Amazon DocumentDB](./aws-database.md#amazon-documentdb)
   - [Amazon Keyspaces](./aws-database.md#amazon-keyspaces)
 - [AWS Security](aws-security.md)
+  - [Identity And Access Management (IAM)](./ws-security.md#identity-and-access-management-iam)
+  - [AWS Organization](./ws-security.md#aws-organization)
+  - [AWS Web Application Firewall (WAF)](./ws-security.md#aws-web-application-firewall-waf)
+  - [AWS Firewall Manager](./ws-security.md#aws-firewall-manager)
+  - [AWS Shield](./ws-security.md#aws-shield)
 
 
