@@ -16,17 +16,15 @@ IAM is to manage, control and govern authentication, authorization and access co
 identities of your resources within your AWS Account. Identities are required to authenticate AWS accounts.
 Access Management relates to authorization and access control. IAM is a global service.
 
-Access control:
-- username and password 
-- [multi-factor authentication (MFA)](#multi-factor-authentication-mfa) 
-- [federated access](#identity-federation)
-
 IAM components:
 - [Users](#users)
 - [Groups](#groups)
 - [Roles](#roles)
 - [Policy Permissions](#policies)
 - Access Control Mechanisms
+  - username and password 
+  - [multi-factor authentication (MFA)](#multi-factor-authentication-mfa) 
+  - [federated access](#identity-federation)
 
 ### Users
 
@@ -171,7 +169,7 @@ your organization.
 
 ## Security Control Policies (SCP)
 
-An SCP does NOT grant access, they add a guardrail to define what is allowed. You will still need to configure
+An SCP does NOT grant access, they add a **guardrail** to define what is allowed. You will still need to configure
 your identity-based or resource-based policies to identities granting permission to carry out actions
 within your accounts.
 
