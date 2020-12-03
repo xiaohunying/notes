@@ -251,4 +251,17 @@ only have 2 rule groups per policy: one customer created rule group, one AWS Mar
 
 # AWS Shield
 
+**AWS Shield** has been designed to protect your infrastructure against DDoS attacks. AWS Shield itself is 
+available at two different levels of features: **AWS Shield Standard** (free)and **AWS Shield Advanced**
+(additional cost).
+
+> **DDoS attack** target a web host and it receives a huge number of requests simultaneously from multiple
+> distributed sources. It prevent legitmate requests getting through whilst at the same time severely
+> hindering the performance of the application or website.
+> Types of DDoS attacks:
+> - SYN flood
+> - DNS query flood
+> - HTTP flood/Cache-busting
+
+
 <br />
