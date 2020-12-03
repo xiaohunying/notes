@@ -167,9 +167,7 @@ create additional AWS accounts within your organization, invite other accounts t
 remove AWS accounts from your organization and apply security features via policies to different levels within 
 your organization.
 
-## Security Control Policies (SCP)
-
-An SCP does NOT grant access, they add a **guardrail** to define what is allowed. You will still need to configure
+An **Security Control Policies (SCP)** does NOT grant access, they add a **guardrail** to define what is allowed. You will still need to configure
 your identity-based or resource-based policies to identities granting permission to carry out actions
 within your accounts.
 
