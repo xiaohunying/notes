@@ -214,11 +214,11 @@ regardless of if there is another rule further down that would also be a match.
 - 10,000 requests per second for WAF with your ALB 
 
 ### AWS WAF Pricing 
-- There are three chargeable elements of AWS WAF. You will not be charged extra for assigning the 
+There are three chargeable elements of AWS WAF. You will not be charged extra for assigning the 
 same Web ACL to multiple distributions.
-  - the number of incoming requests
-  - the number of web ACLs that you have
-  - the number of Rules within each of the Web ACL
+- the number of incoming requests
+- the number of web ACLs that you have
+- the number of Rules within each of the Web ACL
 
 <br />
 
