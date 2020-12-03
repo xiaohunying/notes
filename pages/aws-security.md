@@ -318,6 +318,19 @@ Core features and services
 
 # AWS Config
 
+What can AWS Config do?
+- Capture resource changes
+- Act as a resource inventory
+- Store configuration history
+- Provide a snapshot of configurations
+- Enable notifications about changes
+- Provide AWS CloudTrail integration
+- Use rules to check compliancy
+- Perform security analysis
+- Identify relationships between resources
+
+AWS Config is region specific.
+
 <br />
 
 
