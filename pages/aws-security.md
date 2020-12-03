@@ -248,10 +248,10 @@ only have 2 rule groups per policy: one customer created rule group, one AWS Mar
 
 # AWS Shield
 
-**AWS Shield** has been designed to protect your infrastructure against DDoS attacks. AWS Shield itself is 
+**AWS Shield** has been designed to protect your infrastructure **against DDoS attacks**. AWS Shield itself is 
 available at two different levels of features: 
 - **AWS Shield Standard** (free) for network and transport layers.
-- **AWS Shield Advanced** (additional cost) for network, transport and application layers.
+- **AWS Shield Advanced** (additional cost) for network, transport and **application** layers.
 
 > **DDoS attack** target a web host and it receives a huge number of requests simultaneously from multiple
 > distributed sources. It prevent legitmate requests getting through whilst at the same time severely
@@ -263,13 +263,13 @@ available at two different levels of features:
 
 <br />
 
-When activating AWS Shield Advanced, 
-- you need to manually select the resources needing protection. You can select the resources using 
+### Activate AWS Shield Advanced
+- you need to manually **select the resources** needing protection. You can select the resources using 
 ARNs. You must associate an EIP address to your EC2 instance for it to be protected.
-- you must add rate-based rules. These rate-based rules are only associated with CloudFront distribution
+- you must add **rate-based rules**. These rate-based rules are only associated with CloudFront distribution
 and application load balancers. For each supported resource in the list, it is recommended you associate 
 a Web ACL with a rate-based rule.
-- you may or may not authorize the AWS DRT (the AWS DDoS Response Team) to review, update and modify your Web
+- you may or may not authorize **the AWS DRT (the AWS DDoS Response Team)** to review, update and modify your Web
 ACLs and Shield configurations during an attack. If you want the assistance of the DRT team, you must be 
 subscribed to either the business or enterprise support plans.
 
