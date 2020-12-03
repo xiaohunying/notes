@@ -2,6 +2,8 @@
 
 - [Identity And Access Management (IAM)](#identity-and-access-management-iam)
 - [AWS Organization](#aws-organization)
+- [AWS Web Application Firewall (WAF)](#aws-web-application-firewall-waf)
+- [AWS Firewall Manager](#aws-firewall-manager)
 
 <br />
 
@@ -180,7 +182,7 @@ balancers respond to web requests. It filters both HTTP and HTTPS request distin
 legitimate and harmful inbound requests.
 
 AWS WAF Componnets:
-- Conditions - conditions allow you to specify what elements of the incoming HTTP or HTTPS request you want WAF to be 
+- **Conditions** - conditions allow you to specify what elements of the incoming HTTP or HTTPS request you want WAF to be 
   monitoring for.
   - Cross-site scripting
   - Geo match
@@ -188,9 +190,9 @@ AWS WAF Componnets:
   - Size constraints
   - SQL injection attacks
   - String and regex matching
-- Rules - a WAF rule allows you to compile one or more of these conditions into a list which acts as a rule
+- **Rules** - a WAF rule allows you to compile one or more of these conditions into a list which acts as a rule
 where each condition is ANDed to form the complete rule.
-- Web ACLs - rules can be added to Web ACLs. Within the web ACL, an action is applied for each rule. These
+- **Web ACLs** - rules can be added to Web ACLs. Within the web ACL, an action is applied for each rule. These
 actions can either be Allow, Block or Count. **Rules are executed in the order** that they are listed within a 
 Web ACL. As soon as the request matches all the conditions within a rule it will be associated with that rule
 regardless of if there is another rule further down that would also be a match.
@@ -224,6 +226,26 @@ the same Web ACL to multiple distributions.
 <br />
 
 # AWS Firewall Manager
+
+AWS Firewall Manager has been designed to help you manage WAF in a multi-account environment with simplicity
+and control. It allows you to protect your vulnerable resources across all of your AWS accounts within your 
+AWS Organization. It can group and protect specific resources together, e.g. all resources with a particular
+tag or all of your CloudFront distributions. It automatically protects certain resources that are
+added to your account as they become active. 
+
+Before using the Firewall Manager, there are some prerequisites:
+- ensure your AWS account is a part of an AWS Organization which much have been configured with all features.
+- define which AWS account will act as the **Firewall Manager Admin**.
+- ensure you have **AWS Config** enabled.
+
+Components of AWS Firewall Manager:
+- **WAF Rules** - contain conditions.
+- Rule Groups **- allow you to group together one or more WAF rules that will have the same action applied. You 
+ca**n create your own rule group and add your own WAF rules, or purchase existing rule groups via the AWS
+Marketplace. Rule Groups can only contain 1 of 2 actions, these being either Block or Count. You can only have 
+10 rules per group which can not be increased.
+- **Firewall Manager Policies** - contain the rule groups that you want to assign to your AWS resources. You can
+only have 2 rule groups per policy: one customer created rule group, one AWS Marketplace rule group.
 
 <br />
 
