@@ -224,18 +224,18 @@ same Web ACL to multiple distributions.
 
 # AWS Firewall Manager
 
-AWS Firewall Manager has been designed to help you manage WAF in a multi-account environment with simplicity
+AWS Firewall Manager has been designed to help you manage WAF in a **multi-account** environment with simplicity
 and control. It allows you to protect your vulnerable resources across all of your AWS accounts within your 
 AWS Organization. It can group and protect specific resources together, e.g. all resources with a particular
 tag or all of your CloudFront distributions. It automatically protects certain resources that are
 added to your account as they become active. 
 
-Before using the Firewall Manager, there are some prerequisites:
+### Prerequisites of Using Firewall Manager
 - ensure your AWS account is a part of an AWS Organization which much have been configured with all features.
 - define which AWS account will act as the **Firewall Manager Admin**.
 - ensure you have **AWS Config** enabled.
 
-Components of AWS Firewall Manager:
+### Components of AWS Firewall Manager
 - **WAF Rules** - contain conditions.
 - Rule Groups **- allow you to group together one or more WAF rules that will have the same action applied. You 
 ca**n create your own rule group and add your own WAF rules, or purchase existing rule groups via the AWS
