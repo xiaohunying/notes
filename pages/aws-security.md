@@ -302,6 +302,18 @@ Use cases:
   - FedRamp
 - Security at Scale
 
+Core features and services
+- Trails
+- Simple Storage Service (S3)
+- Logs (created every 5 mins)
+- Key Management Service (KMS)
+- Simple Notification Service (SNS)
+- CloudWatch Logs
+- Event Selectors
+- Tags
+- Events
+- API Activity Filters
+
 <br />
 
 # AWS Config
