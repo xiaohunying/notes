@@ -4,6 +4,7 @@
 - [AWS Organization](#aws-organization)
 - [AWS Web Application Firewall (WAF)](#aws-web-application-firewall-waf)
 - [AWS Firewall Manager](#aws-firewall-manager)
+- [AWS Shield](#aws-shield)
 
 <br />
 
@@ -263,5 +264,14 @@ available at two different levels of features: **AWS Shield Standard** (free)and
 > - DNS query flood
 > - HTTP flood/Cache-busting
 
+When activating AWS Shield Advanced, 
+- you need to manually select the resources needing protection. You can select the resources using 
+ARNs. You must associate an EIP address to your EC2 instance for it to be protected.
+- you must add rate-based rules. These rate-based rules are only associated with CloudFront distribution
+and application load balancers. For each supported resource in the list, it is recommended you associate 
+a Web ACL with a rate-based rule.
+- you may or may not authorize the AWS DRT (the AWS DDoS Response Team) to review, update and modify your Web
+ACLs and Shield configurations during an attack. If you want the assistance of the DRT team, you must be 
+subscribed to either the business or enterprise support plans.
 
 <br />
