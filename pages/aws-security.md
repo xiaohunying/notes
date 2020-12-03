@@ -5,6 +5,8 @@
 - [AWS Web Application Firewall (WAF)](#aws-web-application-firewall-waf)
 - [AWS Firewall Manager](#aws-firewall-manager)
 - [AWS Shield](#aws-shield)
+- [AWS CloudTrail](#aws-cloudtrail)
+- [AWS Config](#aws-config)
 
 <br />
 
@@ -279,7 +281,11 @@ subscribed to either the business or enterprise support plans.
 
 <br />
 
-# 
+# AWS CloudTrail
+
+<br />
+
+# AWS Config
 
 <br />
 

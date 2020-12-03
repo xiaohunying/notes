@@ -33,5 +33,7 @@
   - [AWS Web Application Firewall (WAF)](./ws-security.md#aws-web-application-firewall-waf)
   - [AWS Firewall Manager](./ws-security.md#aws-firewall-manager)
   - [AWS Shield](./ws-security.md#aws-shield)
+  - [AWS CloudTrail](./ws-security.md#aws-cloudtrail)
+  - [AWS Config](./ws-security.md#aws-config)
 
 
