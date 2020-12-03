@@ -331,6 +331,21 @@ What can AWS Config do?
 
 AWS Config is region specific.
 
+AWS Config Key Components:
+- AWS Resources
+- Configuration Item (CI) - Configuration information, relationship information and other metadata in JSON.
+- Configuration Stream
+- Configuration History - delivered every 6 hours
+- Configuration Snapshot
+- Configuration Recorder - is responsible for recording all the changes and generating the CIs
+- Config Rules - a great way to help you enforce specific compliance controls. Each rule is a Lambda function 
+which notify you the non-compliancy. 
+- Resource Relationship - identifies relationships between resources.
+- SNS Topic - is used as a Configuration Stream for notifications.
+- S3 Bucket - is used to store all the Configuration History files and Snapshots.
+- AWS Config Permissions - The IAM role is required to allow AWS Config to obtain the correct permissions
+to interact with other services.
+
 <br />
 
 
