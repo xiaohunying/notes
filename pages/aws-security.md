@@ -283,6 +283,25 @@ subscribed to either the business or enterprise support plans.
 
 # AWS CloudTrail
 
+AWS CloudTrail records and tracks all API requests in your AWS account. These requests can be initiated 
+from SDKs, AWS CLI, AWS management console or another AWS service. CloudTrail is a global service supporting
+all regions.
+
+Use cases:
+- effective for security analysis
+  - monitor restricted API calls
+  - notification of threshold breaches
+- resolve day to day operational issues
+  - filtering mechanisms for isolating data
+  - quicker root cause identification
+  - speedy resolution
+- able to track changes to your AWS infrastructure
+- CloudTrail logs can be used as evidence for various compliance and governance controls
+  - ISO
+  - PCI DSS
+  - FedRamp
+- Security at Scale
+
 <br />
 
 # AWS Config
