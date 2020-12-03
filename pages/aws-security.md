@@ -264,6 +264,7 @@ available at two different levels of features: **AWS Shield Standard** (free)and
 > - DNS query flood
 > - HTTP flood/Cache-busting
 
+
 When activating AWS Shield Advanced, 
 - you need to manually select the resources needing protection. You can select the resources using 
 ARNs. You must associate an EIP address to your EC2 instance for it to be protected.
