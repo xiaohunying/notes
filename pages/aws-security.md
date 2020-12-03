@@ -191,7 +191,7 @@ rules to be propagated. When a request is blocked by WAF, CloudFront is notified
 forbidden and returns a **403 error** to their browser. You can create your own custom 403 error to guide 
 the user to other useful links and provide a polite reason as to why they may have experienced the error. 
 
-**AWS WAF Componnets:**
+### AWS WAF Componnets
 - **Conditions** - conditions allow you to specify what elements of the incoming HTTP or HTTPS request you want WAF to be 
   monitoring for.
   - Cross-site scripting
@@ -207,13 +207,13 @@ actions can either be Allow, Block or Count. **Rules are executed in the order**
 Web ACL. As soon as the request matches all the conditions within a rule it will be associated with that rule
 regardless of if there is another rule further down that would also be a match.
 
-**AWS WAF Limitations:**
+### AWS WAF Limitations
 - 100 conditions of each type except Regex which allows only 10 conditions
 - 100 rules and 50 Web ACLs per account
 - 5 rate-based-rules per account
 - 10,000 requests per second for WAF with your ALB 
 
-**AWS WAF Pricing:** 
+### AWS WAF Pricing 
 - There are three chargeable elements of AWS WAF. You will not be charged extra for assigning the 
 same Web ACL to multiple distributions.
   - the number of incoming requests
