@@ -39,5 +39,6 @@
   - [Logging in AWS](./aws-security.md#logging-in-aws)
   - [VPC Flow Logs](./aws-security.md#vpc-flow-logs)
   - [Key Management Service (KMS)](./aws-security.md#key-management-service-kms)
+  - [S3 Encryption Mechanisms](./aws-security.md#s3-encryption-mechanisms)
 
 
