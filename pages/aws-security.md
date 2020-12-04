@@ -472,7 +472,7 @@ You can also assign permission using Grants alongside key policies.
   - All existing backing keys are retained during and after rotation.
   - Automatic key rotation is not possible with imported key material.
   - CMKs in the state of disabled or pending deletion will not be rotated.
-  - It's not possible to manage the key rotation for any AWS managed CMKs, these are rotated every 3 years.
+  - It's not possible to manage the key rotation for any **AWS managed CMKs**, these are rotated every **3 years**.
   - Manual key rotation is the process of replacing the current CMK with a new CMK.
 - Import key material from an existing KMS outside of AWS
 - Deletion of CMKs
