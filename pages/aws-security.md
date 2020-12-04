@@ -478,6 +478,7 @@ You can also assign permission using Grants alongside key policies.
 - Deletion of CMKs
 
 > backing key: it is the cryptographic element that is used in the encryption process.
+>
 > key material: it is essentially the backing key.
 
 <br />
