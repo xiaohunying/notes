@@ -8,6 +8,9 @@
 - [AWS CloudTrail](#aws-cloudtrail)
 - [AWS Config](#aws-config)
 - [CloudWatch](#cloudwatch)
+- [Logging in AWS](#logging-in-aws)
+- [VPC Flow Logs](#vpc-flow-logs)
+- [Key Management Service (KMS)](#key-management-service-kms)
 
 <br />
 
@@ -399,6 +402,9 @@ You can set up and create a Flow Log against these resources:
   - Traffic relating to an Amazon Windows activation license from a Window instance.
   - Traffic between a Network Load Balancer Network Interface and an Endpoint Network Interface.
 
+<br />
+
+# Key Management Service (KMS)
 
 <br />
 

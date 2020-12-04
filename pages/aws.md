@@ -36,5 +36,8 @@
   - [AWS CloudTrail](./aws-security.md#aws-cloudtrail)
   - [AWS Config](./aws-security.md#aws-config)
   - [CloudWatch](./aws-security.md#cloudwatch)
+  - [Logging in AWS](./aws-security.md#logging-in-aws)
+  - [VPC Flow Logs](./aws-security.md#vpc-flow-logs)
+  - [Key Management Service (KMS)](./aws-security.md#key-management-service-kms)
 
 
