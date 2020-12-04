@@ -483,3 +483,16 @@ You can also assign permission using Grants alongside key policies.
 
 <br />
 
+# S3 Encryption Mechanisms
+
+Server-Side Encryption
+- with S3 Managed Keys (SSE-S3)
+- with KMS Managed Keys (SSe-KMS)
+- with Customer Provided Keys (SSE-C)
+
+Client-Side Encryption
+- with KMS Managed Keys (CSE-KMS)
+- with Customer Provided Keys (CSE-C)
+
+<br />
+
