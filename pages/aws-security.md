@@ -406,5 +406,22 @@ You can set up and create a Flow Log against these resources:
 
 # Key Management Service (KMS)
 
+KMS is a managed service used to store and generate encryption keys that are used by other AWS services
+and applications. It is region specific service.
+
+### Key Componnets of KMS
+
+- **Customer Master Keys (CMK)**
+  - AWS managed CMKs
+  - Customer managed CMKs
+- **Data Encryption Keys (DEK)**
+- **Key Policies** - The key policies allow you to define who can use and access a key in KMS. These policies
+are tied to the CMKs, they are resource based policies. Different key policies can be created for 
+different CMKs. These permissions are defined within a key policy JSON document.
+- **Grants** - Grants are another method of controlling access and use of the CMKs held within KMS. They allow
+you to delegate a subset of your own access to a CMK for principals. There is less risk of someone altering
+the access control permissions for that CMK. Grants eliminates the possibility of anyone using the permission
+_kms:PutKeyPolicy_.
+
 <br />
 
