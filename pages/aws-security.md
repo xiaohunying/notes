@@ -365,6 +365,12 @@ addition to interacting with **AWS systems manager SSM**.
 - Configure and start the CloudWatch agent. (Configuration file is copied to **the SSM parameter store**.)
 
 
+### Amazon CloudFront Access Logs
+
+Log files capture data over a period of time and the amount of log files generated depend on 
+the amount of requests received. CloudFront retains logs until they are ready to be delivered to S3.
+This delivery can take between 1 and 24h.
+
 
 <br />
 
