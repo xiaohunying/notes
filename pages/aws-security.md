@@ -371,6 +371,34 @@ Log files capture data over a period of time and the amount of log files generat
 the amount of requests received. CloudFront retains logs until they are ready to be delivered to S3.
 This delivery can take between 1 and 24h.
 
+<br />
+
+# VPC Flow Logs
+
+Within your VPC you could potentially have hundreds or even thousands of resources all communicating together.
+VPC Flow Logs allows you to capture IP traffic information that flows between your network interfaces of
+your resources within your VPC. this data is useful for a number of reasons, largely to help you resolve 
+incidents with network communication and traffic flow in addition to beting used for security purposes to
+help spot traffic reaching a destination that should be prohibited.
+
+You can set up and create a Flow Log against these resources:
+- A Network interface on one of your instances
+- A Subnet within your VPC
+- Your VPC itself
+
+### Limitations of VPC Flow Logs
+
+- For VPC peered connections, you can only see flow logs of peered VPCs within the same account.
+- You are not able to retrieve information from resources within the EC2-Classic environment.
+- Once a VPC Flow Log has been cresated it can't be changed.
+- The following traffic is not captured by the logs:
+  - DHCP Traffic within the VPC.
+  - Traffic from instances destined for Amazon DNS Servers.
+  - Traffic destined to the IP addresses for the VPC default router.
+  - Traffic to and from 169.254.169.254 (instance metadata) and 169.254.169.123 (Time Sync Service).
+  - Traffic relating to an Amazon Windows activation license from a Window instance.
+  - Traffic between a Network Load Balancer Network Interface and an Endpoint Network Interface.
+
 
 <br />
 
