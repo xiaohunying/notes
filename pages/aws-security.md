@@ -354,3 +354,17 @@ CloudWatch also provides a repository for logging.
 
 <br />
 
+# Logging in AWS
+
+The Unified CloudWatch Agent allows the collection of logs from EC2 instances as well from on-premise server.
+
+### CloudWatch Agent Installation
+- Create a role and attach it to the instance with permissions to collect data from the instances in
+addition to interacting with **AWS systems manager SSM**.
+- Download and install the agent onto the EC2 instance.
+- Configure and start the CloudWatch agent. (Configuration file is copied to **the SSM parameter store**.)
+
+
+
+<br />
+
