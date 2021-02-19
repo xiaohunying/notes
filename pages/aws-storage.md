@@ -129,10 +129,13 @@ And the cost is then transfered to that account.
   - S3 G_DA: S3 Glacier deep archive
 - **S3 Glacier**: 
   - Move data into S3 Glacier using APIs or SDKs. 
-  - Retrieval data using APIs, SDKs or CLI. Retrieval data options: Expedited (5 minutes, 250MB), Standard (3-5 hours) and Bulk (PB 
-  of data, 5-12 hours)
+  - Retrieval data using APIs, SDKs or CLI. Retrieval data options: Expedited (5 minutes, 250MB), 
+  Standard (3-5 hours) and Bulk (PB of data, 5-12 hours)
   - Retrieval data method: Expedited, Standard and Bulk.
-  - Provisioned Capacity Unit
+  - Provisioned Capacity Unit: You can pay a fixed up-front fee for a given month to ensure the 
+  availability of retrieval capacity for expedited retrievals from Amazon S3 Glacier vaults. You 
+  can purchase multiple provisioned capacity units per month to increase the amount of data you 
+  can retrieve.
 - **S3 Glacier Deep Archive**:
   - Retrieval data method: Standard and Bulk
 
