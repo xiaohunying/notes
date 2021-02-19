@@ -74,7 +74,7 @@ not available within all regions.
 
 ## S3: Simple Storage Service
 
-- Amazon S3 is a <span style="color:yellow">regional service</span>.
+- Amazon S3 is a **<span style="color:yellow">regional service</span>**.
 - Amazon S3 can be used for **static website hosting**. You need to (1) The bucket content 
 needs to be marked public access; (2) Index document is added to the bucket; (3) Add a 
 bucket policy to allow the public to be able to reach the bucket. It also support redirect 
