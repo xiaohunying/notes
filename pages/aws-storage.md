@@ -32,7 +32,7 @@ is stopped, restarted or terminated.
 - **EBS Snapshot**: An EBS snapshot is a point-in-time copy of your EBS volume, which is lazily
 copied to Amazon S3. EBS snapshots are incremental copies of data. This means that only unique blocks
 of EBS volume data that have changed since the last EBS snapshot are stored in the next EBS snapshot.
-- EBS offers **encryption at rest and in transit**. Encryption is managed by the EBS service it self.
+- EBS offers **encryption at rest and in transit**. Encryption is managed by the EBS service itself.
 It can be enabled with a checkbox. The encryption is only available in selective instances.
 - **SSD (Solid State Drive) backed storage** (EBS volume type): It is suited for work with smaller blocks, 
 databases using transactional workloads. It is often used for boot volumes on EC2 instances.
@@ -88,7 +88,7 @@ requests.
   SDK, you need to manually configure this access. Permissions of the S3 access log group can 
   only be assigned via ACL.
   - If encryption is enabled on your target bucket, access logs will only be delivered if 
-  this is set to SSE-S3 because encryption with KMS is not supported.
+  this is set to **SSE-S3** because encryption with KMS is not supported.
 - **S3 bucket**:
   - **Bucket name** needs to be unique globally. You can create a **folder** in a bucket, but S3 
   is not a file system.
