@@ -101,9 +101,16 @@ requests.
   (SSE-KMS).
   - **Object Lock** on a bucket can only be achieved at the time of the creation of the bucket.
   Versioning needs to be enabled. Once object lock is enabled, it is permanent and cannot be 
-  disabled. There are two retention modes: Governance mode and Compliance mode. No users (includes
-  root users) can override the retention periods set or delete an object for compliance mode. 
-  Legal hold on an object has no retention period.
+  disabled. There are two retention modes: Governance mode and Compliance mode. 
+    - **Governance mode**: Users can't overwrite or delete an object version or alter its lock 
+    settings unless they have special permissions. With governance mode, you protect objects 
+    against being deleted by most users.
+    - **Compliance mode**: No users (includes root users) can override the retention periods set 
+    or delete an object. 
+    - **Legal hold**: Object Lock also enables you to place a legal hold on an object version. 
+    Like a retention period, a legal hold prevents an object version from being overwritten or 
+    deleted. However, a legal hold doesn't have an associated retention period and remains in 
+    effect until removed.
   - **Tags** in S3 bucket is known as S3 cost allocation tags. they are key-value pairs.
   - **Transfer Acceleration** is to speed up data transfer. It uses Amazon **CloudFront** service, 
   which is a Content Delivery Network (CDN) service that essentially provides a means of 
