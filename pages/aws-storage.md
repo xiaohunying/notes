@@ -1,3 +1,5 @@
+[Amazon Web Services](pages/aws.md)
+
 # AWS Storage
 
 - [AWS Data Storage](#aws-data-storage)
