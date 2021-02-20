@@ -43,12 +43,20 @@ EC2 service can be broken down into the following components:
     - data file systems
     - log processing applications
 - Instance Purchasing Options
-  - On-demand instances
-  - Reserved instances
-  - Scheduled instances
-  - Spot instances: only useful for processing data that can be suddenly interrupted, such as batch jobs and 
-  background processing of data.
-  - On-demand Capacity Reservations
+  - **On-demand instances**: Pay, by the second, for the instances that you launch.
+  - **Savings Plans**: Reduce your Amazon EC2 costs by making a commitment to a consistent amount of 
+  usage, in USD per hour, for a term of 1 or 3 years.
+  - **Reserved instances**: Reduce your Amazon EC2 costs by making a commitment to a consistent instance 
+  configuration, including instance type and Region, for a term of 1 or 3 years.
+  - **Scheduled instances**
+  - **Spot instances**: Request unused EC2 instances, which can reduce your Amazon EC2 costs significantly. 
+  Only useful for processing data that can be suddenly interrupted, such as batch jobs and background 
+  processing of data.
+  - **Dedicated Hosts**: Pay for a physical host that is fully dedicated to running your instances, and
+  bring your existing per-socket, per-core, or per-VM software licenses to reduce costs.
+  - **Dedicated Instances**: Pay, by the hour, for instances that run on single-tenant hardware.
+  - **On-Demand Capacity Reservations**: Reserve capacity for your EC2 instances in a specific AZ for 
+  any duration.
 - Tenancy
   - Shared tenancy
   - Dedicated instances: hosted on hardware that no other customer can access
