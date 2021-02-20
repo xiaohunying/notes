@@ -1,3 +1,5 @@
+<sub>[Amazon Web Services](../pages/aws.md)</sub>
+
 # AWS Compute
 
 - [EC2 (Elastic Compute Cloud)](#ec2-elastic-compute-cloud)
