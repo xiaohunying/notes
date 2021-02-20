@@ -1,4 +1,4 @@
-[Amazon Web Services](pages/aws.md)
+([Amazon Web Services](pages/aws.md))
 
 # AWS Storage
 
