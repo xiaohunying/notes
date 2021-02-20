@@ -43,7 +43,7 @@ EC2 service can be broken down into the following components:
     - data file systems
     - log processing applications
 - Instance Purchasing Options
-  - **On-demand instances**: Pay, by the second, for the instances that you launch.
+  - _**On-demand instances**_: Pay, by the second, for the instances that you launch.
   - **Savings Plans**: Reduce your Amazon EC2 costs by making a commitment to a consistent amount of 
   usage, in USD per hour, for a term of 1 or 3 years.
   - **Reserved instances**: Reduce your Amazon EC2 costs by making a commitment to a consistent instance 
