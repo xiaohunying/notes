@@ -15,7 +15,7 @@
   
 ### Machine Learning
 - [Machine Learning](pages/ml.md)
-- [Code Basics](https://www.kaggle.com/xiaohunying/basics)
+- [Code Basics: Python, Numpy, Pandas](https://www.kaggle.com/xiaohunying/basics)
 <br />
 
 ---
