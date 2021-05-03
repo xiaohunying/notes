@@ -1,14 +1,14 @@
 # Amazon Web Services
 
+- [AWS Compute](aws-compute.md)
+  - [Elastic Compute Cloud (EC2)](./aws-compute.md#ec2-elastic-compute-cloud)
+  - [Elastic Load Balancer (ELB)](./aws-compute.md#elb-elastic-load-balancer)
+  - [EC2 Auto Scaling](./aws-compute.md#ec2-auto-scaling)
 - [AWS Storage](aws-storage.md)
   - [AWS Data Storage](./aws-storage.md#aws-data-storage)
   - [Backup and DR strategies](./aws-storage.md#backup-and-dr-strategies)
   - [Data Transfer in/out of AWS](./aws-storage.md#data-transfer-in-out-of-aws)
   - [Costs With AWS Storage Services](./aws-storage.md#costs-with-aws-storage-services)
-- [AWS Compute](aws-compute.md)
-  - [Elastic Compute Cloud (EC2)](./aws-compute.md#ec2-elastic-compute-cloud)
-  - [Elastic Load Balancer (ELB)](./aws-compute.md#elb-elastic-load-balancer)
-  - [EC2 Auto Scaling](./aws-compute.md#ec2-auto-scaling)
 - [AWS Network](aws-network.md)
   - [Virtual Private Cloud (VPC)](./aws-network.md#vpc-virtual-private-cloud)
   - [VPC Security and Control](./aws-network.md#vpc-security-and-control)
