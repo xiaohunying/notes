@@ -90,6 +90,19 @@ Working with EKS
 
 <br />
 
+# AWS Batch
+
+AWS Batch is used to manage and run batch computing workloads within AWS.
+
+There are 5 components:
+- Jobs: A job is classed as the unit of work that is to be run by AWS Batch.
+- Job Definitions
+- Job Queues
+- Job Scheduling
+- Compute Environments
+
+<br />
+
 # ELB (Elastic Load Balancer)
 
 The main function of an ELB is to help manage and control the flow of inbound requests destined to a group of targets
