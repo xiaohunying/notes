@@ -71,10 +71,22 @@ EC2 service can be broken down into the following components:
 
 ECS allows you to run Docker-enabled application packaged as containers across a cluster of EC2 instances without requiring you to manage a complex and administratively heavy cluster management system. The burden of managing your own cluster management system is abstracted with the ECS service by passing that responsibility over to AWS, specifically through the use of **AWS Fargate**.
 
-**Launching an ECS cluster**
+**Launching an ECS cluster**: (1) Fargate Launch; (2) EC2 Launch.
 
-- Fargate Launch
-- EC2 Launch
+<br />
+
+# EKS (ECS for Kubernetes)
+
+AWS provides a managed service allowing you to run Kubernetes across your AWS infrastructure without having to take care of provisioning and running the Kubernetes management infrastructure in what's referred to as **the control plane**. You ONLY need to provision and maintain the **worker nodes**.
+
+Working with EKS
+1. Configure and create an IAM service role that allows EKS to provision and configure specific resources. The role has to have the following permission policies: AmazonEKSClusterPolicy and AmazonEKSServicePolicy. (One time task)
+2. Create an EKS Cluster VPC.
+3. Install kubectl and the AWS-IAM-Authenticator.
+4. Create EKS Cluster.
+5. Configure kubectl for EKS.
+6. Provision and configure Worker Nodes.
+7. Configure the Worker Node to join the EKS Cluster.
 
 <br />
 
