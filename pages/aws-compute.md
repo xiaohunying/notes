@@ -71,6 +71,10 @@ EC2 service can be broken down into the following components:
 
 ECS allows you to run Docker-enabled application packaged as containers across a cluster of EC2 instances without requiring you to manage a complex and administratively heavy cluster management system. The burden of managing your own cluster management system is abstracted with the ECS service by passing that responsibility over to AWS, specifically through the use of **AWS Fargate**.
 
+**Launching an ECS cluster**
+
+- Fargate Launch
+- EC2 Launch
 
 <br />
 
