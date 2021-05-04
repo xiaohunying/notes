@@ -54,8 +54,7 @@ EC2 service can be broken down into the following components:
 - Tenancy
   - Shared tenancy
   - Dedicated instances: hosted on hardware that no other customer can access
-  - Dedicated hosts: additional visibility and control on the physical host; allow to 
-  use the same host for a number of instances
+  - Dedicated hosts: additional visibility and control on the physical host; allow to use the same host for a number of instances
 - User Data
   - User data allows you to enter commands that will run during hte first boot cycle of that instance.
 - Storage options
@@ -65,6 +64,13 @@ EC2 service can be broken down into the following components:
   - ingress and egress traffic
   - security groups: instance associated with security group to set inbound and outbound rules
   - key Pair for login
+
+<br />
+
+# ECS (EC2 Container Service)
+
+ECS allows you to run Docker-enabled application packaged as containers across a cluster of EC2 instances without requiring you to manage a complex and administratively heavy cluster management system. The burden of managing your own cluster management system is abstracted with the ECS service by passing that responsibility over to AWS, specifically through the use of **AWS Fargate**.
+
 
 <br />
 
