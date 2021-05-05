@@ -103,6 +103,12 @@ There are 5 components:
 
 <br />
 
+# Auto Scaling in AWS
+
+There are two ways for auto scaling in AWS: (1) Amazon EC2 Auto Scaling; (2) AWS Auto Scaling Service.
+
+<br />
+
 # ELB (Elastic Load Balancer)
 
 The main function of an ELB is to help manage and control the flow of inbound requests destined to a group of targets
