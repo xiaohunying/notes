@@ -126,10 +126,12 @@ by distributing these requests evenly across the targeted resource group.
   - operates at the request level
   - advanced routing
 - network load balancer
-  - operates at layer 4 of the OSI model: transport
+  - operates at layer 4 of the OSI model: transport and enabling you to balance requests purely based on TCP and UDP protocols.
+  - The listener supported by the NLB include TCP, TLS and UDP.
   - ultra-high performance while maintaining very low latencies
   - operates at the connection level, routing traffic to targets within your VPC
-  - handles millions of requests
+  - handles millions of requests.
+  - If your application logic requires a static IP address, then the NLB will need be your choice of elastic load balancer.
 - classic load balancer
   - used for applications that were built in the existing EC2 classic environment
   - operates at both the connection and request level
