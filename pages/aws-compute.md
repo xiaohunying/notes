@@ -8,6 +8,7 @@
 - [AWS Batch](#aws-batch)
 - [ELB (Elastic Load Balancer)](#elb-elastic-load-balancer)
 - [EC2 Auto Scaling](#ec2-auto-scaling)
+- [AWS Lambda](#aws-lambda)
 
 <br />
 
@@ -111,7 +112,7 @@ There are 5 components:
 The main function of an ELB is to help manage and control the flow of inbound requests destined to a group of targets
 by distributing these requests evenly across the targeted resource group. 
 
-## Load Balancer Types
+### Load Balancer Types
 
 - application load balanccer
   - operates at layer 7 of the OSI model: application
@@ -127,7 +128,7 @@ by distributing these requests evenly across the targeted resource group.
   - used for applications that were built in the existing EC2 classic environment
   - operates at both the connection and request level
 
-## ELB Components
+### ELB Components
 
 - Target Groups: A target group is a group of your resources that you want your ELB to route requests to. You can configure your ELB with a number of different target groups, each associated with a different listener configuration and associated rules.
 - Listeners: The listener defines how your inbound connections are routed to your target groups based on ports and protocols set as conditions. For every load balancer, you must configure at least one listeners.
@@ -144,7 +145,7 @@ more conditions, and all conditions in the rule equal a single action.
 - ELB Nodes
 - Cross-Zone Load Balancing
 
-## Server Certificates (SSL/TLS)
+### Server Certificates (SSL/TLS)
 
 The server certificate used by the ALB is an X.509 certificate, which is a digital ID provisioned 
 by a Certificate Authority such as the AWS Certificate Manager (ACM)
@@ -167,7 +168,7 @@ There are two ways for auto scaling in AWS:
 - **EC2 Auto Scaling**: scale your EC2 fleet.
 - **AWS Auto Scaling Service**: scale Amazon ECS tasks, DynamoDB tables and indexes and Amazon Aurora replicas.
 
-## Auto Scaling Group
+### Auto Scaling Group
 
 The auto scaling group defines:
 
