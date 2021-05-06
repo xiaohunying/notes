@@ -132,9 +132,9 @@ by distributing these requests evenly across the targeted resource group.
 
 ## ELB Components
 
-- Listeners
-- Target Groups
-- Rules
+- Listeners: The listener defines how your inbound connections are routed to your target groups based on ports and protocols set as conditions. For every load balancer, you must configure at least one listeners.
+- Target Groups: A target group is a group of your resources that you want your ELB to route requests to. You can configure your ELB with a number of different target groups, each associated with a different listener configuration and associated rules.
+- Rules: Rules are associated to each listener that you have configured within your ELB. They help to define how an incoming request gets routed to which target group.
 
 Your ELB can contain 1 or more listeners, each listener can contain 1 or more rules and each rule can contain 1 or 
 more conditions, and all conditions in the rule equal a single action.
