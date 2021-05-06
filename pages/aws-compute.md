@@ -103,12 +103,6 @@ There are 5 components:
 
 <br />
 
-# Auto Scaling in AWS
-
-There are two ways for auto scaling in AWS: (1) Amazon EC2 Auto Scaling; (2) AWS Auto Scaling Service.
-
-<br />
-
 # ELB (Elastic Load Balancer)
 
 The main function of an ELB is to help manage and control the flow of inbound requests destined to a group of targets
@@ -160,19 +154,22 @@ party certificate)
 
 <br />
 
-# EC2 Auto Scaling
+# Auto Scaling
 
 Auto scaling is a mechanism that automatically allows you to increase or decrease your EC2 resources to meet
 the demand based off of custom defined metrics and thresholds.
 
-Amazon offers:
-- Amazon EC2 Auto Scaling: scale your EC2 fleet.
-- AWS Auto Scaling Service: scale Amazon ECS tasks, DynamoDB tables and indexes and Amazon Aurora replicas.
+
+There are two ways for auto scaling in AWS: 
+- **EC2 Auto Scaling**: scale your EC2 fleet.
+- **AWS Auto Scaling Service**: scale Amazon ECS tasks, DynamoDB tables and indexes and Amazon Aurora replicas.
 
 ## Auto Scaling Group
 
-The auto scaling group defines (1) the desired capacity and other limitations of the group using scaling policies;
-(2) where the group should scale resources, such as which availability zone.
+The auto scaling group defines:
+
+- the desired capacity and other limitations of the group using scaling policies.
+- where the group should scale resources, such as which availability zone.
 
 Before you create your auto scaling group, you need to have your **launch configuration** defined using either
 Launch Template (prefered) or Launch Configuration.
