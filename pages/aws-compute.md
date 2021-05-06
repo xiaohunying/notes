@@ -181,3 +181,24 @@ Launch Template (prefered) or Launch Configuration.
 in and out. When you attach an ELB to an auto scaling group, the ELB will automatically detect the instances 
 and start to distribute all traffic to the resources in the auto scaling group. To associate an ALB or NLB, you
 must **associate the auto scaling group with the ELB target group.**
+
+<br />
+
+# AWS Lambda
+
+AWS Lambda is a serverless compute service that allows you to run your application code without having to manage EC2 instances.
+
+You only ever have to pay for compute power when Lambda is in use via Lambda functions. AWS Lambda charges compute power per 100ms of use only when your code is running, in addition to the number of times your code runs.
+
+### Components of AWS Lambda
+
+- **Lambda function**:  A Lambda function is compiled of your own code that you want Lambda to invoke.
+- **Events sources**: Events sources are AWS services that can be used to trigger your Lambda functions.
+- **Downstream resources**: Downstream resources are resources that are required during the execution of your Lambda function.
+- **Log streams**: Log streams help to identity issues and troubleshoot issues whith your Lambda function.
+
+
+
+
+
+<br />
