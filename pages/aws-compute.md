@@ -198,8 +198,21 @@ You only ever have to pay for compute power when Lambda is in use via Lambda fun
 - **Downstream resources**: Downstream resources are resources that are required during the execution of your Lambda function.
 - **Log streams**: Log streams help to identity issues and troubleshoot issues whith your Lambda function.
 
+### Event Source Mapping
 
+An event source mapping is the configuration that links your event source to your Lambda function.
 
+For push-based services:
+- The mapping is maintained within the event source.
+- By using the appropriate API calls for the event source service, you are able to create and configure the relevant mappings.
+- This will require specific access to allow your event source to invoke the function.
+- The invocation type varies on the service. It could be Synchronous or Asynchronous.
+
+For poll-based services:
+- The configuration of the mappings are held within your lambda function.
+- With the CreateEventSourceMapping API you can set up the relevant event source mapping for your poll-based service.
+- The permission is required in the execution role policy.
+- The invocation type is always synchronous.
 
 
 <br />
