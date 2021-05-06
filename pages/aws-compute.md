@@ -66,10 +66,14 @@ EC2 service can be broken down into the following components:
 - Storage options
   - Persistent storage: attaching EBS volumes
   - Ephemeral storage: instance store volume
+    - Data is lost when the instance stops or terminates.
+    - Data is NOT lost when the instance reboots.
 - Security
   - ingress and egress traffic
   - security groups: instance associated with security group to set inbound and outbound rules
-  - key Pair for login
+  - Key Pair (public key and private key):
+    - For connecting to EC2 instances. Key pairs are used to encrypt the credentials to the instance.
+    - To encrypt the login information for Linux and Windows EC2 instances, and then decrypt the same information allowing you to authenticate into the instance.
 
 <br />
 
