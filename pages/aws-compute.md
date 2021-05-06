@@ -3,6 +3,9 @@
 # AWS Compute
 
 - [EC2 (Elastic Compute Cloud)](#ec2-elastic-compute-cloud)
+- [ECS (EC2 Container Service)](#ecs-ec2-container-service)
+- [EKS (ECS for Kubernetes)](#eks-ecs-for-kubernetes)
+- [AWS Batch](#aws-batch)
 - [ELB (Elastic Load Balancer)](#elb-elastic-load-balancer)
 - [EC2 Auto Scaling](#ec2-auto-scaling)
 
