@@ -8,7 +8,7 @@
 
 <br />
 
-### On-premise Options:
+### On-Premise Options:
 - SAN (Storage Area Network)
 - NAS (Network Attached Storage)
 - DAS (Directly Attached Storage)
@@ -27,69 +27,65 @@
 
 # S3: Simple Storage Service
 
-- Amazon S3 is a **<span style="color:yellow">regional service</span>**.
-- Amazon S3 can be used for **static website hosting**. You need to (1) The bucket content 
-needs to be marked public access; (2) Index document is added to the bucket; (3) Add a 
-bucket policy to allow the public to be able to reach the bucket. It also support redirect 
-requests.
-- **Server-Access Logging**: 
-  - When the target bucket is for logs, the source bucket and target bucket should be in the 
-  same region.
-  - The permissions of logs are controlled using **Log Delivery Group**. (1) If server-access 
-  logging is enabled through AWS console, the Log Delivery Group is automatically added to 
-  the ACL (Access Control List) of the target bucket; (2) If it is through AWS S3 API or AWS 
-  SDK, you need to manually configure this access. Permissions of the S3 access log group can 
-  only be assigned via ACL.
-  - If encryption is enabled on your target bucket, access logs will only be delivered if 
-  this is set to **SSE-S3** because encryption with KMS is not supported.
-- **S3 bucket**:
-  - **Bucket name** needs to be unique globally. You can create a **folder** in a bucket, but S3 
-  is not a file system.
-  - **Versioning**: unversioned (default), versioning-enabled and versioning-suspended.
-  - **Events**: You can monitor events occured to the bucket. Any events which are recorded can 
-  then be sent to an SNS topic or an SQS queue or a lambda function. 
-  - **Object Level Logging**: AWS S3 bucket Object level logging is closely related to 
-  **AWS CloudTrail** service. S3 data events includes GetObject, DeleteObject and PutObject.
-  - **Encryption**: S3 bucket has two default encryption options: AES-256 (SSE-S3) and AWS-KMS 
-  (SSE-KMS).
-  - **Object Lock** on a bucket can only be achieved at the time of the creation of the bucket.
-  Versioning needs to be enabled. Once object lock is enabled, it is permanent and cannot be 
-  disabled. There are two retention modes: Governance mode and Compliance mode. 
-    - **Governance mode**: Users can't overwrite or delete an object version or alter its lock 
-    settings unless they have special permissions. With governance mode, you protect objects 
-    against being deleted by most users.
-    - **Compliance mode**: No users (includes root users) can override the retention periods set 
-    or delete an object. 
-    - **Legal hold**: Object Lock also enables you to place a legal hold on an object version. 
-    Like a retention period, a legal hold prevents an object version from being overwritten or 
-    deleted. However, a legal hold doesn't have an associated retention period and remains in 
-    effect until removed.
-  - **Tags** in S3 bucket is known as S3 cost allocation tags. they are key-value pairs.
-  - **Transfer Acceleration** is to speed up data transfer. It uses Amazon **CloudFront** service, 
-  which is a Content Delivery Network (CDN) service that essentially provides a means of 
-  distributing traffic worldwide via edge locations.
-- **Requester Pays**: When this feature is enabled, any cost associated with requests and 
-data transfer becomes the responsibilities of the requester instead of the bucket owner. The
-bucket owner still pays the storage of the objects in the bucket. Authenticating requests allow
-AWS trace back to the identity and to which AWS account that identity is originating from.
-And the cost is then transfered to that account.
-- **S3 Storage Classes**:
-  - S3 Standard
-  - S3 INT (Intelligent): frequent/infrequent accesses
-  - S3 S-IA (Standard infrequent access)
-  - S3 Z-IA (Single zone, infrequent access)
-  - S3 Glacier: long term, backup and archive
-  - S3 G_DA: S3 Glacier deep archive
-- **S3 Glacier**: 
+Amazon S3 is a **regional service**.
+
+### S3 Storage Classes
+- S3 Standard
+- S3 INT (Intelligent): frequent/infrequent accesses
+- S3 S-IA (Standard infrequent access)
+- S3 Z-IA (Single zone, infrequent access)
+- S3 Glacier: long term, backup and archive
   - Move data into S3 Glacier using APIs or SDKs. 
-  - Retrieval data using APIs, SDKs or CLI. Retrieval data options: Expedited (5 minutes, 250MB), 
-  Standard (3-5 hours) and Bulk (PB of data, 5-12 hours).
-  - **Provisioned Capacity Unit**: You can pay a fixed up-front fee for a given month to ensure the 
-  availability of retrieval capacity for expedited retrievals from Amazon S3 Glacier vaults. You 
-  can purchase multiple provisioned capacity units per month to increase the amount of data you 
-  can retrieve.
-- **S3 Glacier Deep Archive**:
-  - Retrieval data method: Standard and Bulk
+  - Retrieval data using APIs, SDKs or CLI. Retrieval data options: 
+    - Expedited (5 minutes, 250MB)
+      - **Provisioned Capacity Unit**: You can pay a fixed up-front fee for a given month to ensure the availability of retrieval capacity for expedited retrievals from Amazon S3 Glacier vaults. You can purchase multiple provisioned capacity units per month to increase the amount of data you can retrieve.
+    - Standard (3-5 hours)
+    - Bulk (PB of data, 5-12 hours)
+- S3 G_DA: S3 Glacier deep archive
+  - Retrieval data method: 
+    - Standard
+    - Bulk
+
+### Static Website Hosting
+Amazon S3 can be used for **static website hosting**. You need to
+1. The bucket content needs to be marked public access
+2. Index document is added to the bucket.
+3. Add a bucket policy to allow the public to be able to reach the bucket. It also support redirect requests.
+
+### Server-Access Logging 
+- When the target bucket is for logs, the source bucket and target bucket should be in the same region.
+- The permissions of logs are controlled using **Log Delivery Group**. (1) If server-access logging is enabled through AWS console, the Log Delivery Group is automatically added to the ACL (Access Control List) of the target bucket; (2) If it is through AWS S3 API or AWS SDK, you need to manually configure this access. Permissions of the S3 access log group can only be assigned via ACL.
+- If encryption is enabled on your target bucket, access logs will only be delivered if this is set to **SSE-S3** because encryption with KMS is not supported.
+
+### S3 bucket
+- **Bucket name** needs to be unique globally. You can create a **folder** in a bucket, but S3 
+is not a file system.
+- **Versioning**: unversioned (default), versioning-enabled and versioning-suspended.
+- **Events**: You can monitor events occured to the bucket. Any events which are recorded can 
+then be sent to an SNS topic or an SQS queue or a lambda function. 
+- **Object Level Logging**: AWS S3 bucket Object level logging is closely related to 
+**AWS CloudTrail** service. S3 data events includes GetObject, DeleteObject and PutObject.
+- **Encryption**: S3 bucket has two default encryption options: AES-256 (SSE-S3) and AWS-KMS 
+(SSE-KMS).
+- **Object Lock** on a bucket can only be achieved at the time of the creation of the bucket.
+Versioning needs to be enabled. Once object lock is enabled, it is permanent and cannot be 
+disabled. There are two retention modes: Governance mode and Compliance mode. 
+  - **Governance mode**: Users can't overwrite or delete an object version or alter its lock 
+  settings unless they have special permissions. With governance mode, you protect objects 
+  against being deleted by most users.
+  - **Compliance mode**: No users (includes root users) can override the retention periods set 
+  or delete an object. 
+  - **Legal hold**: Object Lock also enables you to place a legal hold on an object version. 
+  Like a retention period, a legal hold prevents an object version from being overwritten or 
+  deleted. However, a legal hold doesn't have an associated retention period and remains in 
+  effect until removed.
+- **Tags** in S3 bucket is known as S3 cost allocation tags. they are key-value pairs.
+- **Transfer Acceleration** is to speed up data transfer. It uses Amazon **CloudFront** service, 
+which is a Content Delivery Network (CDN) service that essentially provides a means of 
+distributing traffic worldwide via edge locations.
+
+### Requester Pays
+When this feature is enabled, any cost associated with requests and data transfer becomes the responsibilities of the requester instead of the bucket owner. The bucket owner still pays the storage of the objects in the bucket. Authenticating requests allow AWS trace back to the identity and to which AWS account that identity is originating from. And the cost is then transfered to that account.  
 
 <br />
 
