@@ -1,9 +1,13 @@
 # Amazon Web Services
 
 - [AWS Compute](aws-compute.md)
-  - [Elastic Compute Cloud (EC2)](./aws-compute.md#ec2-elastic-compute-cloud)
-  - [Elastic Load Balancer (ELB)](./aws-compute.md#elb-elastic-load-balancer)
+  - [EC2 (Elastic Compute Cloud)](./aws-compute.md#ec2-elastic-compute-cloud)
+  - [ECS (EC2 Container Service)](./aws-compute.md#ecs-ec2-container-service)
+  - [EKS (ECS for Kubernetes)](./aws-compute.md#eks-ecs-for-kubernetes)
+  - [AWS Batch](./aws-compute.md#aws-batch)
+  - [ELB (Elastic Load Balancer)](./aws-compute.md#elb-elastic-load-balancer)
   - [EC2 Auto Scaling](./aws-compute.md#ec2-auto-scaling)
+  - [AWS Lambda](./aws-compute.md#aws-lambda)
 - [AWS Storage](aws-storage.md)
   - [AWS Data Storage](./aws-storage.md#aws-data-storage)
   - [Backup and DR strategies](./aws-storage.md#backup-and-dr-strategies)
