@@ -2,20 +2,19 @@
 
 # AWS Storage
 
-- [AWS Data Storage](#aws-data-storage)
 - [Backup and DR strategies](#backup-and-dr-strategies)
 - [Data Transfer in/out of AWS](#data-transfer-in-out-of-aws)
 - [Costs With AWS Storage Services](#costs-with-aws-storage-services)
 
 <br />
 
-# AWS Data Storage
+### On-premise Options:
+- SAN (Storage Area Network)
+- NAS (Network Attached Storage)
+- DAS (Directly Attached Storage)
+- Tape backup
 
-On-premise Options: SAN (Storage Area Network), NAS (Network Attached Storage), DAS (Directly
-Attached Storage) and Tape backup. 
-
-**AWS Data Storage Options:**
-
+### AWS Data Storage Options:
 - Block Storage
   - [EBS: Elastic Block Store](#ebs-elastic-block-store)
   - [EC2 Instance Storage](#ec2-instance-storage)
@@ -26,7 +25,7 @@ Attached Storage) and Tape backup.
 
 <br />
 
-## EBS: Elastic Block Store
+# EBS: Elastic Block Store
 
 - EBS operates as a separate service to EC2. **Each EBS volume can ONLY be attached to ONE EC2 instance.**
 Mulitple EBS volumns can be attached to a single EC2 instance. Data is retained if the EC2 instance
