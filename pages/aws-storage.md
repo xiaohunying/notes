@@ -25,55 +25,7 @@
 
 <br />
 
-# EBS: Elastic Block Store
-
-- EBS operates as a separate service to EC2. **Each EBS volume can ONLY be attached to ONE EC2 instance.**
-Mulitple EBS volumns can be attached to a single EC2 instance. Data is retained if the EC2 instance
-is stopped, restarted or terminated.
-- **EBS Snapshot**: An EBS snapshot is a point-in-time copy of your EBS volume, which is lazily
-copied to Amazon S3. EBS snapshots are incremental copies of data. This means that only unique blocks
-of EBS volume data that have changed since the last EBS snapshot are stored in the next EBS snapshot.
-- EBS offers **encryption at rest and in transit**. Encryption is managed by the EBS service itself.
-It can be enabled with a checkbox. The encryption is only available in selective instances.
-- **SSD (Solid State Drive) backed storage** (EBS volume type): It is suited for work with smaller blocks, 
-databases using transactional workloads. It is often used for boot volumes on EC2 instances.
-  - General Purpose SSD (GP2)
-  - Provisioned IOPS (IO1)
-- **HDD (Hard Disk Drive) backed storage** (EBS volume type): It is designed for workloads requires
-a high rate of throughput (MB/s). It process larger blocks of data. For example, big data processing
-and logging information.
-  - Cold HDD (SC1)
-  - Throughput Optimized HDD (ST1)
-
-## EC2 Instance Storage
-
-- EC2 instance storage volumes provide ephemeral storage (temporary). It is not recommended for 
-critical or valuable data. **Your data is lost if the instance is stopped or terminated. 
-Your data will remain in tact if your instance is rebooted**. Instance storage volumes are not
-available for all instances.
-- It is ideal as a cache or buffer for rapidly changing data without the need for retention.
-It is often used within a load balancing group where data is replicated and pooled between 
-the fleet.
-- **No additional cost** for storage. It is included in the price of instance. The capacity of 
-instance storage volumes increases with the size of the EC2 instance. It has the same security
-mechanisms provided by EC2.
-
-## EFS: Elastic File System
-
-- EFS is a regional service. Apps across multiple AZ can all access the same file systems. It is 
-not available within all regions.
-- EFS supports both NFS version 4.1 and 4.0.
-- Two things to consider while choosing EFS: Storage classes and performance options.
-- Storage classes:
-  - Standard
-  - Infrequent Access (IA)
-- Performance modes:
-  - General Purpose: EFS provide a **CloudWatch** metric for general purpose mode.
-  - Max I/O
-  - Throughput modes: Bursting Throughput (default) and Provisioned Throughput.
-- EFS Lifestyle Management
-
-## S3: Simple Storage Service
+# S3: Simple Storage Service
 
 - Amazon S3 is a **<span style="color:yellow">regional service</span>**.
 - Amazon S3 can be used for **static website hosting**. You need to (1) The bucket content 
@@ -138,6 +90,60 @@ And the cost is then transfered to that account.
   can retrieve.
 - **S3 Glacier Deep Archive**:
   - Retrieval data method: Standard and Bulk
+
+<br />
+
+# EBS: Elastic Block Store
+
+- EBS operates as a separate service to EC2. **Each EBS volume can ONLY be attached to ONE EC2 instance.**
+Mulitple EBS volumns can be attached to a single EC2 instance. Data is retained if the EC2 instance
+is stopped, restarted or terminated.
+- **EBS Snapshot**: An EBS snapshot is a point-in-time copy of your EBS volume, which is lazily
+copied to Amazon S3. EBS snapshots are incremental copies of data. This means that only unique blocks
+of EBS volume data that have changed since the last EBS snapshot are stored in the next EBS snapshot.
+- EBS offers **encryption at rest and in transit**. Encryption is managed by the EBS service itself.
+It can be enabled with a checkbox. The encryption is only available in selective instances.
+- **SSD (Solid State Drive) backed storage** (EBS volume type): It is suited for work with smaller blocks, 
+databases using transactional workloads. It is often used for boot volumes on EC2 instances.
+  - General Purpose SSD (GP2)
+  - Provisioned IOPS (IO1)
+- **HDD (Hard Disk Drive) backed storage** (EBS volume type): It is designed for workloads requires
+a high rate of throughput (MB/s). It process larger blocks of data. For example, big data processing
+and logging information.
+  - Cold HDD (SC1)
+  - Throughput Optimized HDD (ST1)
+
+<br />
+
+# EC2 Instance Storage
+
+- EC2 instance storage volumes provide ephemeral storage (temporary). It is not recommended for 
+critical or valuable data. **Your data is lost if the instance is stopped or terminated. 
+Your data will remain in tact if your instance is rebooted**. Instance storage volumes are not
+available for all instances.
+- It is ideal as a cache or buffer for rapidly changing data without the need for retention.
+It is often used within a load balancing group where data is replicated and pooled between 
+the fleet.
+- **No additional cost** for storage. It is included in the price of instance. The capacity of 
+instance storage volumes increases with the size of the EC2 instance. It has the same security
+mechanisms provided by EC2.
+
+<br />
+
+# EFS: Elastic File System
+
+- EFS is a regional service. Apps across multiple AZ can all access the same file systems. It is 
+not available within all regions.
+- EFS supports both NFS version 4.1 and 4.0.
+- Two things to consider while choosing EFS: Storage classes and performance options.
+- Storage classes:
+  - Standard
+  - Infrequent Access (IA)
+- Performance modes:
+  - General Purpose: EFS provide a **CloudWatch** metric for general purpose mode.
+  - Max I/O
+  - Throughput modes: Bursting Throughput (default) and Provisioned Throughput.
+- EFS Lifestyle Management
 
 <br />
 
