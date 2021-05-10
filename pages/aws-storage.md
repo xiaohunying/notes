@@ -63,6 +63,20 @@ Amazon S3 can be used for static website hosting. It does NOT support HTTPS. The
 - The permissions of logs are controlled using **Log Delivery Group**. (1) If server-access logging is enabled through AWS console, the Log Delivery Group is automatically added to the ACL (Access Control List) of the target bucket; (2) If it is through AWS S3 API or AWS SDK, you need to manually configure this access. Permissions of the S3 access log group can only be assigned via ACL.
 - If encryption is enabled on your target bucket, access logs will only be delivered if this is set to **SSE-S3** because encryption with KMS is not supported.
 
+### Access Control
+
+- IAM Permissions Policies
+  - This is identity-based Policies.
+  - Attached to the IAM identity requiring access, using IAM permissions policies, either in-line or managed.
+  - Associated to the user, to a group that the user belongs to, or via a role that the user has permission to assuem.
+  - Defines the resource in the policy, ex. the bucket name.
+- Bucket Policies
+  - This is resource-based Policies. This policy is associated with the resource, rather than the identity.
+- Access Control Lists (ACL)
+  - You need to define who will be allowed or denied access.
+
+**Principle of least-priviledged**: By default, AWS states that access is denied to an object, even without an explicit Deny within any policy. To gain access, there has to be an Allow within a policy that the principal is associated to or defined by within a bucket policy or ACL.
+
 ### S3 bucket
 - **Bucket name** needs to be unique globally. You can create a **folder** in a bucket, but S3 
 is not a file system.
