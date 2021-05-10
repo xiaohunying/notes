@@ -139,18 +139,23 @@ mechanisms provided by EC2.
 
 # EFS: Elastic File System
 
-- EFS is a regional service. Apps across multiple AZ can all access the same file systems. It is 
-not available within all regions.
-- EFS supports both NFS version 4.1 and 4.0.
-- Two things to consider while choosing EFS: Storage classes and performance options.
+EFS is a regional service. Apps across multiple AZ can all access the same file systems. It is 
+not available within all regions. EFS supports both NFS version 4.1 and 4.0.
+
+### Two things to consider while choosing EFS: Storage classes and performance options.
 - Storage classes:
   - Standard
   - Infrequent Access (IA)
+  - EFS Lifestyle Management
+    - The only exceptions to data not being moved to the IA storage class is for any files that are below 128K in size and any metadata of your files, which will all remain in the Standard storage class. 
 - Performance modes:
   - General Purpose: EFS provide a **CloudWatch** metric for general purpose mode.
   - Max I/O
-  - Throughput modes: Bursting Throughput (default) and Provisioned Throughput.
-- EFS Lifestyle Management
+  - Throughput modes: 
+    - Bursting Throughput (default) 
+    - Provisioned Throughput.
+
+### EFS Mount Helper
 
 <br />
 
