@@ -46,6 +46,13 @@ Amazon S3 is a **regional service**.
     - Standard
     - Bulk
 
+### Versioning
+Versioning is not enabled by default, however, once you have enabled it, you can't disable it, instead, you can only suspend it on the bucket which will prevent any further versions from being created of your objects, but it will keep all existing versions of objects up to the point of suspension. 
+Bucket versioning states:
+- Unversioned (default)
+- Versioning-enabled
+- Versioning-suspended
+
 ### Static Website Hosting
 Amazon S3 can be used for **static website hosting**. You need to
 1. The bucket content needs to be marked public access
