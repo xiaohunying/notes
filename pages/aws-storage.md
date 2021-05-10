@@ -46,7 +46,7 @@ Amazon S3 is a **regional service**.
     - Standard
     - Bulk
 
-### Versioning
+### S3 Bucket Versioning
 Versioning is not enabled by default, however, once you have enabled it, you can't disable it, instead, you can only suspend it on the bucket which will prevent any further versions from being created of your objects, but it will keep all existing versions of objects up to the point of suspension. 
 Bucket versioning states:
 - Unversioned (default)
@@ -54,10 +54,9 @@ Bucket versioning states:
 - Versioning-suspended
 
 ### Static Website Hosting
-Amazon S3 can be used for **static website hosting**. You need to
-1. The bucket content needs to be marked public access
-2. Index document is added to the bucket.
-3. Add a bucket policy to allow the public to be able to reach the bucket. It also support redirect requests.
+Amazon S3 can be used for static website hosting. It does NOT support HTTPS. The bucket content needs to be marked public access. It does NOT support Requester pays.
+- Host website: You need to add an index document the bucket. It is the home page of your static website. Add a bucket policy to allow the public to be able to reach the bucket.
+- Redirect requests
 
 ### Server-Access Logging 
 - When the target bucket is for logs, the source bucket and target bucket should be in the same region.
