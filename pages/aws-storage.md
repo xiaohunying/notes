@@ -63,8 +63,13 @@ Amazon S3 can be used for static website hosting. It does NOT support HTTPS. The
 - The permissions of logs are controlled using **Log Delivery Group**. (1) If server-access logging is enabled through AWS console, the Log Delivery Group is automatically added to the ACL (Access Control List) of the target bucket; (2) If it is through AWS S3 API or AWS SDK, you need to manually configure this access. Permissions of the S3 access log group can only be assigned via ACL.
 - If encryption is enabled on your target bucket, access logs will only be delivered if this is set to **SSE-S3** because encryption with KMS is not supported.
 
-### Access Control
+### Object Level Logging
+AWS S3 bucket Object level logging is closely related to **AWS CloudTrail** service. S3 data events includes GetObject, DeleteObject and PutObject.
 
+### Transfer Acceleration
+Transfer Acceleration is to speed up data transfer. It uses Amazon **CloudFront** service, which is a Content Delivery Network (CDN) service that essentially provides a means of distributing traffic worldwide via edge locations.
+
+### Access Control
 - IAM Permissions Policies
   - This is identity-based Policies.
   - Attached to the IAM identity requiring access, using IAM permissions policies, either in-line or managed.
@@ -77,32 +82,18 @@ Amazon S3 can be used for static website hosting. It does NOT support HTTPS. The
 
 **Principle of least-priviledged**: By default, AWS states that access is denied to an object, even without an explicit Deny within any policy. To gain access, there has to be an Allow within a policy that the principal is associated to or defined by within a bucket policy or ACL.
 
+### CORS (Cross Origin Resource Sharing)
+At a high level, CORS allows specific resources on a webpage to be requested from a different domain than its own. And this allows you to build client-side web applications. And then if required, you can utilize CORS support to access resources stored in S3.
+
 ### S3 bucket
-- **Bucket name** needs to be unique globally. You can create a **folder** in a bucket, but S3 
-is not a file system.
-- **Versioning**: unversioned (default), versioning-enabled and versioning-suspended.
-- **Events**: You can monitor events occured to the bucket. Any events which are recorded can 
-then be sent to an SNS topic or an SQS queue or a lambda function. 
-- **Object Level Logging**: AWS S3 bucket Object level logging is closely related to 
-**AWS CloudTrail** service. S3 data events includes GetObject, DeleteObject and PutObject.
-- **Encryption**: S3 bucket has two default encryption options: AES-256 (SSE-S3) and AWS-KMS 
-(SSE-KMS).
-- **Object Lock** on a bucket can only be achieved at the time of the creation of the bucket.
-Versioning needs to be enabled. Once object lock is enabled, it is permanent and cannot be 
-disabled. There are two retention modes: Governance mode and Compliance mode. 
-  - **Governance mode**: Users can't overwrite or delete an object version or alter its lock 
-  settings unless they have special permissions. With governance mode, you protect objects 
-  against being deleted by most users.
-  - **Compliance mode**: No users (includes root users) can override the retention periods set 
-  or delete an object. 
-  - **Legal hold**: Object Lock also enables you to place a legal hold on an object version. 
-  Like a retention period, a legal hold prevents an object version from being overwritten or 
-  deleted. However, a legal hold doesn't have an associated retention period and remains in 
-  effect until removed.
+**Bucket name** needs to be unique globally. You can create a **folder** in a bucket, but S3 is not a file system.
+- **Events**: You can monitor events occured to the bucket. Any events which are recorded can then be sent to an SNS topic or an SQS queue or a lambda function. 
 - **Tags** in S3 bucket is known as S3 cost allocation tags. they are key-value pairs.
-- **Transfer Acceleration** is to speed up data transfer. It uses Amazon **CloudFront** service, 
-which is a Content Delivery Network (CDN) service that essentially provides a means of 
-distributing traffic worldwide via edge locations.
+- **Encryption**: S3 bucket has two default encryption options: AES-256 (SSE-S3) and AWS-KMS (SSE-KMS).
+- **Object Lock** on a bucket can only be achieved at the time of the creation of the bucket. Versioning needs to be enabled. Once object lock is enabled, it is permanent and cannot be disabled. There are two retention modes: Governance mode and Compliance mode. 
+  - **Governance mode**: Users can't overwrite or delete an object version or alter its lock settings unless they have special permissions. With governance mode, you protect objects against being deleted by most users.
+  - **Compliance mode**: No users (includes root users) can override the retention periods set or delete an object. 
+  - **Legal hold**: Object Lock also enables you to place a legal hold on an object version. Like a retention period, a legal hold prevents an object version from being overwritten or deleted. However, a legal hold doesn't have an associated retention period and remains in effect until removed.
 
 ### Requester Pays
 When this feature is enabled, any cost associated with requests and data transfer becomes the responsibilities of the requester instead of the bucket owner. The bucket owner still pays the storage of the objects in the bucket. Authenticating requests allow AWS trace back to the identity and to which AWS account that identity is originating from. And the cost is then transfered to that account.  
