@@ -2,26 +2,13 @@
 
 # AWS Storage
 
-- [Backup and DR strategies](#backup-and-dr-strategies)
-- [Data Transfer in/out of AWS](#data-transfer-in-out-of-aws)
-- [Costs With AWS Storage Services](#costs-with-aws-storage-services)
-
-<br />
-
-On-Premise Options:
-- SAN (Storage Area Network)
-- NAS (Network Attached Storage)
-- DAS (Directly Attached Storage)
-- Tape backup
-
-AWS Data Storage Options:
-- Block Storage
-  - [EBS: Elastic Block Store](#ebs-elastic-block-store)
-  - [EC2 Instance Storage](#ec2-instance-storage)
-- File Storage
-  - [EFS: Elastic File System](#efs-elastic-file-system)
-- Object Storage
-  - [S3: Simple Storage Service](#s3-simple-storage-service)
+- [S3: Simple Storage Service (File Storage)](#s3-simple-storage-service)
+- [EBS: Elastic Block Store (Block Storage)](#ebs-elastic-block-store)
+- [EC2 Instance Storage (Block Storage)](#ec2-instance-storage)
+- [EFS: Elastic File System (File Storage)](#efs-elastic-file-system)
+- [Amazon FSx](#amazon-fsx)
+- [AWS Storage Gateway](#aws-storage-gateway)
+- [AWS Backup](#aws-backup)
 
 <br />
 
