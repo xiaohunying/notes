@@ -164,6 +164,33 @@ You can use **AWS DataSync** to import data into your EFS file system. AWS DataS
 
 <br />
 
+# Amazon FSx
+
+### Amazon FSx for Windows File Server
+- Provides a fully managed native Microsoft Windows file system on AWS.
+- Easily move and migrate your windows-based workloads requiring file storage.
+- The solution is built on Windows Server.
+- Operates as shared file storage.
+- Full support for SMB protocol, Windows NTFS, Active Directory (AD) integration and Distributed File System (DFS).
+- Uses SSD storage for enhanced performance and throughput providing sub-millisecond latencies.
+- Data Deduplication (no additional cost)
+- Pricing:
+  - Capacity
+  - Throughput
+  - Backups (Data Deduplication)
+
+### Amazon FSx for Lustre
+- Afully managed file system designed for compute-intensive workloads, for example Machine Learning and HPC.
+- Ability to process massive data sets.
+- Performance can run up to hundreds of GB per second of throughput, millions of IOPS and sub-millisecond latencies.
+- Integration with Amazon S3.
+- Supports could-bursting workloads from on-premises over Direct Connect and VPN connections.
+- Pricing:
+  - Capacity
+  - Data transfer between AZs will incur standard transfer costs for the associated regions.
+
+<br />
+
 # Backup and DR strategies
 
 When designing backup and DR strategies for business continuity plan, we need to
