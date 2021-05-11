@@ -174,11 +174,10 @@ You can use **AWS DataSync** to import data into your EFS file system. AWS DataS
 - Operates as shared file storage.
 - Full support for SMB protocol, Windows NTFS, Active Directory (AD) integration and Distributed File System (DFS).
 - Uses SSD storage for enhanced performance and throughput providing sub-millisecond latencies.
-- Data Deduplication (no additional cost)
 - Pricing:
-  - Capacity
-  - Throughput
-  - Backups (Data Deduplication)
+  - Flexibility cost based on Capacity, Throughput and Backups.
+  - Data Deduplication is recommended to reduce cost. No additional cost.
+  - Cost is associated with throughput
 
 ### Amazon FSx for Lustre
 - Afully managed file system designed for compute-intensive workloads, for example Machine Learning and HPC.
@@ -224,136 +223,17 @@ AWS Storage Gateway allows you to provide a gateway between your own data center
 
 <br />
 
-# Backup and DR strategies
+# AWS Backup
 
-When designing backup and DR strategies for business continuity plan, we need to
-considering **RTO** (Recovery Time Objective) and **RPO** (Recovery Point Objective). 
-RPO is the acceptable amount of data loss measured in time.
+- Centralized view of backups
+- Lifecycle rules to help optimize costs
+- Warm and cold storage options
+- It is backed by Amazon S3 and Glacier
+- Pricing points for Backup Storage and restoration
 
-- **Backup and restore**
-- **Pilot light**: The amount of DR resources are reserved as Prod.
-- **Warm standby**: The minimum DR resources are reserved and can be scaled up when used. 
-- **Multi-sites** 
-
-<br />
-
-# Data Transfer in/out of AWS
-
-There are many ways to move data: direct connect, VPN connect and internet connect.
-Amazon provides:
-- [AWS Snowball](#aws-snowball) (direct connect)
-- [AWS Snowmobile](#aws-snowmobile) (direct connect)
-- [AWS Storage Gateway](#aws-storage-gateway) (internet connect)
-
-### AWS Snowball
-
-It is used to move data either from your on-premise data center to Amazon
-S3 or from Amazon S3 back to your data center using a **physical appliance**, 
-known as a snowball. The snowball appliance comes as either a **50 TB or 80 TB** 
-device. It is dust, water and tamper resistant. It is built for high speed
-data transfer: RJ45 (CAT6), SFP+ Copper and SFP+ Optical.
-
-### AWS Snowmobile
-
-**To migrate large datasets of 10PB or more in a single location**, you should
-use Snowmobile. For datasets less than 10PB or distributed in multiple locations,
-you should use Snowball. In addition, you should evaluate the amount of available 
-bandwidth in your network backbone. If you have a high speed backbone with hundreds 
-of Gb/s of spare throughput, then you can use Snowmobile to migrate the large datasets 
-all at once. If you have limited bandwidth on your backbone, you should consider using 
-multiple Snowballs to migrate the data incrementally. Each Snowmobile has **a total 
-capacity of up to 100 petabytes** and multiple Snowmobiles can be used in parallel to 
-transfer exabytes of data. 
-
-<br />
-
-# Costs With AWS Storage Services
-
-## Cost of S3 and Glacier
-
-S3 Storage Class | Cost
---- | ---
-S3 Standard | <ul><li>Storage cost - Per month per GB (price is reduced as you add more data)</li><li>Request cost - per 1000 requests (Based on request type; DELETE and CANCEL requests are free)</li></ul>
-S3 Intelligent | <ul><li>Storage cost:<ul><li>Frequent access tier - per month per GB (price is reduced as you add more data)</li><li>Infrequent access tier - per month per GB (a flat rate)</li></ul></li><li>Request cost - per 1000 requests (Based on request type; DELETE and CANCEL requests are free)</li><li>Monitoring and automation fee - per month</li></ul>
-S3 Standard, Infrequent Access | <ul><li>Storage cost - Per month per GB (a flat rate)</li><li>Request cost - per 1000 requests (Based on request type; DELETE and CANCEL requests are free)</li><li>Data retrieval cost - Per GB (a flat rate)</li></ul>
-S3 Single Zone, Infrequent Access | <ul><li>Storage cost - Per month per GB (a flat rate)</li><li>Request cost - per 1000 requests (Based on request type; DELETE and CANCEL requests are free)</li><li>Data retrieval cost - Per GB (a flat rate)</li></ul>
-S3 Glacier | <ul><li>Storage cost - Per month per GB (a flat rate)</li><li>Request cost - per 1000 requests (Based on request type; DELETE and CANCEL requests are free)</li><li>Data retrieval cost - Per GB (based on retrieval method)</li></ul>
-S3 Glacier deep archive | <ul><li>Storage cost - Per month per GB (a flat rate)</li><li>Request cost - per 1000 requests (Based on request type; DELETE and CANCEL requests are free)</li><li>Data retrieval cost - Per GB (based on retrieval method)</li></ul>
-Provisioned Capacity Unit | <ul><li>Data retrieval cost - Per unit</li></ul>
-
-**Cost of Data transfer**: 
-- Data Transfer is charged Per GB. Data transfer is free when (1) Data is transferred into 
-S3 from internet; (2) Data is transferred out to Amazon CloudFront; (3) Data is transferred out to EC2 instances 
-in the same region.
-- Transfer Acceleration:
-  - When we look at Transfer acceleration, the pricing structure for transfer costs changes and this is largely 
-  due to the fact that your data is routed through an optimized network path to Amazon S3 via CloudFront edge 
-  locations.
-  - Whereas normal data transfer into amazon S3 is free from the internet, with transfer acceleration, this is 
-  a cost associated per gigabyte dependant on which edge location is used. Also, there is an increased cost for 
-  any data transferred OUT of S3, either to the internet or to another Region, again due to the edge location 
-  acceleration involved.
-
-**Cost of Management and replication**
-- Features that have associated cost:
-  - S3 Inventory (Per million objects listed)
-  - S3 Analytics Storage Class Analysis (Per million objects monitored per month)
-  - S3 Object Tagging (Per 10,000 tags applied per month)
-- S3 Batch Operations: Pricing for this feature has two price points, firstly on per batch job, and secondly 
-per million object operations performed.
-- S3 and Glacier Select: There are 2 price points related to Select: data scanned (per GB) and data returned 
-(per GB). And much like when we looked at retrieval costs, Glacier is broken down into the 3 different 
-retrieval modes: Expedited, Standard and Bulk.
-- S3 Replication: 
-  - There are no specific costs for the use of the S3 replication feature itself, instead, you are simply 
-  charged for the cost for the storage class in your destination where your replicated objects will reside.
-  - Two replication modes: (1) CRR - Cross-Region Replication between 2 different buckets and (2) SRR - 
-  Same-Region Replication between 2 different buckets.
-  - You will also incur costs for any COPY and PUT requests which will also be based upon the rates of 
-  the destination region. 
-  - When using Cross-Region replication, there will also be the addition of the inter-region data transfer fees, 
-  which will be priced upon the source region.
-  - S3 Replication Time Control: the cost to use S3-RTC is currently set at a flat rate across all regions.
-- Versioning: cost is added to you as you are storing multiple versions of the same object and as we know, 
-the Amazon S3 cost model is based on actual usage of storage.
-- Lifecycle Policies
-
-## Cost of EFS
-
-- EFS charges based on storage classes: EFS Standard and EFS IA (Infrequent Access).
-  - EFS Standard: charge storage by month.
-  - EFS IA: EFS IA is cheaper than standard storage, but it charges for ready and write.
-- EFS Lifecycle management: use this feature to reduce cost.
-- EFS throughput modes: Bursting throughput (default) and Provisioned throughput. No addition charges.
-- AWS DataSync: this is a managed service which helps you manage the transfer of data into and out of EFS. It 
-is charged at a flat per GB rate.
-
-
-## Cost of Amazon FSx
-
-Amazon FSx comes in 2 forms: Amazon FSx for Windows File Server and Amazon FSx for Lustre. 
-
-- Amazon FSx for Windows File Server:
-  - Flexibility cost based on Capacity, Throughput and Backups.
-  - Data Deduplication is recommended to reduce cost. No additional cost.
-  - Cost is associated with throughput
-- Amazon FSx for Lustre: 
-  - Charged for Storage capacity.
-  - Data transfer between AZ will incur standard transfer costs for associated region.
-  - No cost is associated with throughput
-  - No setup fee.
-
-## Cost of AWS Storage Gateway
-
-- File Gateway: Pricing follows Amazon S3 pricing metrics, but a per GB request for data writes.
-- Volume Gateway: Simple pricing structure; But uses a per-GB metric for volumes in addition to any snapshots
-of the volumes at EBS snapshot costings.
-- Tape Gateway: Additional complexity due to range of storage classes. Understand the retrieval times for 
-your data based on the S3 Glacier and Deep Archive classes, as you might be able to save a considerable amount.
-
-## Cost of AWS Backup Service
-
-AWS Backup is a great way to centralize the view of backups. It implements lifecycle rules to help optimize costs
-through warm and cold storage. It is backed by Amazon S3 and Glacier. Pricing points are Backup Storage and
-Restoration.
-
+### Resource Type
+- Amazon EFS File System Backup
+- Amazon EFS Volume Snapshot
+- Amazon RDS Database Snapshot
+- Amazon DynamoDB Table Backup
+- AWS Storage Gateway Volume Backup
