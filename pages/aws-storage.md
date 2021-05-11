@@ -8,13 +8,13 @@
 
 <br />
 
-### On-Premise Options:
+On-Premise Options:
 - SAN (Storage Area Network)
 - NAS (Network Attached Storage)
 - DAS (Directly Attached Storage)
 - Tape backup
 
-### AWS Data Storage Options:
+AWS Data Storage Options:
 - Block Storage
   - [EBS: Elastic Block Store](#ebs-elastic-block-store)
   - [EC2 Instance Storage](#ec2-instance-storage)
@@ -69,7 +69,10 @@ AWS S3 bucket Object level logging is closely related to **AWS CloudTrail** serv
 ### Transfer Acceleration
 Transfer Acceleration is to speed up data transfer. It uses Amazon **CloudFront** service, which is a Content Delivery Network (CDN) service that essentially provides a means of distributing traffic worldwide via edge locations.
 
-### Access Control
+### S3 Access Control
+
+**Principle of least-priviledged**: By default, AWS states that access is denied to an object, even without an explicit Deny within any policy. To gain access, there has to be an Allow within a policy that the principal is associated to or defined by within a bucket policy or ACL.
+
 - IAM Permissions Policies
   - This is identity-based Policies.
   - Attached to the IAM identity requiring access, using IAM permissions policies, either in-line or managed.
@@ -79,8 +82,6 @@ Transfer Acceleration is to speed up data transfer. It uses Amazon **CloudFront*
   - This is resource-based Policies. This policy is associated with the resource, rather than the identity.
 - Access Control Lists (ACL)
   - You need to define who will be allowed or denied access.
-
-**Principle of least-priviledged**: By default, AWS states that access is denied to an object, even without an explicit Deny within any policy. To gain access, there has to be an Allow within a policy that the principal is associated to or defined by within a bucket policy or ACL.
 
 ### CORS (Cross Origin Resource Sharing)
 At a high level, CORS allows specific resources on a webpage to be requested from a different domain than its own. And this allows you to build client-side web applications. And then if required, you can utilize CORS support to access resources stored in S3.
@@ -110,7 +111,7 @@ EBS operates as a separate service to EC2. **Each EBS volume can ONLY be attache
 ### EBS Snapshot
 An EBS snapshot is a point-in-time copy of your EBS volume, which is lazily copied to Amazon S3. EBS snapshots are incremental copies of data. This means that only unique blocks of EBS volume data that have changed since the last EBS snapshot are stored in the next EBS snapshot.
 
-### Encryption
+### EBS Encryption
 EBS offers **encryption at rest and in transit**. Encryption is managed by the EBS service itself. It can be enabled with a checkbox. The encryption is only available in selective instances.
 
 ### EBS Volume Types
@@ -121,7 +122,7 @@ EBS offers **encryption at rest and in transit**. Encryption is managed by the E
   - Cold HDD (SC1)
   - Throughput Optimized HDD (ST1)
 
-### EBS Not For
+### EBS Is Not For
 - Temporary storage
 - Multi-instance storage access
 - Very high durability and availability
@@ -141,7 +142,7 @@ EBS offers **encryption at rest and in transit**. Encryption is managed by the E
 EFS is a regional service. Apps across multiple AZ can all access the same file systems. It is 
 not available within all regions. EFS supports both NFS version 4.1 and 4.0.
 
-### Two things to consider while choosing EFS: Storage classes and performance options.
+### Things to consider while choosing EFS:
 - Storage classes:
   - Standard
   - Infrequent Access (IA)
@@ -191,6 +192,38 @@ You can use **AWS DataSync** to import data into your EFS file system. AWS DataS
 
 <br />
 
+# AWS Storage Gateway
+
+AWS Storage Gateway allows you to provide a gateway between your own data center's storage systems such as your SAN, NAS or DAS and Amazon S3 and Glacier. The Storage Gateway itself can either be installed as software or physical hardware appliance that can be stored within your own data center which allows integration between your on-premise storage and that of AWS. This connectivity can allow you to scale your storage requirements both securely and cost-efficiently.
+
+### Configurations
+- File Gateway
+  - Mount or map drives as if they were local shares.
+  - On-premise cache is provisioned for to optimize latency.
+  - This service is largely integrated with S3.
+  - Pricing: 
+    - Follows Amazon S3 pricing mechanism
+    - A per GB request for data writes
+- Volume Gateway
+  - Stored Volume Gateway
+    - Your data libary is still on-premise for low latency access
+    - Volumes are backed by S3 and mounted as iSCSI devices
+  - Cached Volume Gateway
+    - Primary data storage is on Amazon S3
+    - Local volumes act as buffer and cache for low latency
+  - Pricing:
+    - Uses a per-GB metric for volumes
+    - Snapshots of the volumnes at EBS snapshot
+- Tape Gateway
+  - Backup data to S3 and leverage S3 Glacier storage classes
+  - Lower cost than S3
+  - Cloud based virtual tape backup solution
+  - Backed by AWS S3/Glacier
+  - Pricing:
+    - Additional complexity due to range of storage classes. Understand the retrieval times for your data based on the S3 Glacier and Deep Archive classes, as you might be able to save a considerable amount.
+
+<br />
+
 # Backup and DR strategies
 
 When designing backup and DR strategies for business continuity plan, we need to
@@ -231,20 +264,6 @@ all at once. If you have limited bandwidth on your backbone, you should consider
 multiple Snowballs to migrate the data incrementally. Each Snowmobile has **a total 
 capacity of up to 100 petabytes** and multiple Snowmobiles can be used in parallel to 
 transfer exabytes of data. 
-
-### AWS Storage Gateway
-
-Storage Gateway allows you to provide a gateway between your own data center's storage
-systems such as your SAN, NAS or DAS and Amazon S3 and Glacier on AWS. It is a **software
-appliance** that can be stored within your own data center which allows integration
-between your on-premise storage and that of AWS. This connectivity can allow you scale
-your storage requirements both securely and cost efficiently.
-
-- File Gateway
-- Volume Gateway
-  - Stored volume gateway
-  - Cached volume gateway
-- Tape Gateway
 
 <br />
 
