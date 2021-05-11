@@ -151,11 +151,17 @@ not available within all regions. EFS supports both NFS version 4.1 and 4.0.
 - Performance modes:
   - General Purpose: EFS provide a **CloudWatch** metric for general purpose mode.
   - Max I/O
-  - Throughput modes: 
-    - Bursting Throughput (default) 
-    - Provisioned Throughput.
+- Throughput modes: 
+  - Bursting Throughput (default) 
+  - Provisioned Throughput.
 
 ### EFS Mount Helper
+
+EFS Mount Helper is a utility installed on your EC2 instances. 
+
+### Importing Data
+
+You can use **AWS DataSync** to import data into your EFS file system. AWS DataSync is designed to securely move and migrate and synchronize data from your existing on-premises site into AWS storage services. Data transfer can be completed over a Direct Connect link or over the internet. To sync files from your on-premises environment, you must download the DataSync agent. You then need to configure the agent with a source and destination target. DataSync can also transfer files between EFS file systems.
 
 <br />
 
