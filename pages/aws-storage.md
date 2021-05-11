@@ -90,10 +90,13 @@ At a high level, CORS allows specific resources on a webpage to be requested fro
 - **Events**: You can monitor events occured to the bucket. Any events which are recorded can then be sent to an SNS topic or an SQS queue or a lambda function. 
 - **Tags** in S3 bucket is known as S3 cost allocation tags. they are key-value pairs.
 - **Encryption**: S3 bucket has two default encryption options: AES-256 (SSE-S3) and AWS-KMS (SSE-KMS).
-- **Object Lock** on a bucket can only be achieved at the time of the creation of the bucket. Versioning needs to be enabled. Once object lock is enabled, it is permanent and cannot be disabled. There are two retention modes: Governance mode and Compliance mode. 
-  - **Governance mode**: Users can't overwrite or delete an object version or alter its lock settings unless they have special permissions. With governance mode, you protect objects against being deleted by most users.
-  - **Compliance mode**: No users (includes root users) can override the retention periods set or delete an object. 
-  - **Legal hold**: Object Lock also enables you to place a legal hold on an object version. Like a retention period, a legal hold prevents an object version from being overwritten or deleted. However, a legal hold doesn't have an associated retention period and remains in effect until removed.
+
+### Object Lock
+**Object Lock** on a bucket can only be achieved at the time of the creation of the bucket. Versioning needs to be enabled. Once object lock is enabled, it is permanent and cannot be disabled. There are two retention modes: Governance mode and Compliance mode. 
+- **Governance mode**: Users can't overwrite or delete an object version or alter its lock settings unless they have special permissions. With governance mode, you protect objects against being deleted by most users.
+- **Compliance mode**: No users (includes root users) can override the retention periods set or delete an object. 
+
+**Legal hold**: Object Lock also enables you to place a legal hold on an object version. Like a retention period, a legal hold prevents an object version from being overwritten or deleted. However, a legal hold doesn't have an associated retention period and remains in effect until removed.
 
 ### Requester Pays
 When this feature is enabled, any cost associated with requests and data transfer becomes the responsibilities of the requester instead of the bucket owner. The bucket owner still pays the storage of the objects in the bucket. Authenticating requests allow AWS trace back to the identity and to which AWS account that identity is originating from. And the cost is then transfered to that account.  
