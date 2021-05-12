@@ -37,26 +37,18 @@
 
 # VPC (Virtual Private Cloud)
 
-When specify a CIDR (Classless Inter-Domain Routing) block address for your VPC, the range of the netmasks allowed is 
-from a /16 netmask to a /28 netmask.
+When specify a CIDR (Classless Inter-Domain Routing) block address for your VPC, the range of the netmasks allowed is from a /16 netmask to a /28 netmask.
 
-<br />
-
-## Subnet
-
-Every time you create a subnet, it is a private subnet to begin with and that is until you attach an Internet 
-Gateway (IGW) to your VPC and then add the additional route to the IGW. Private subnet: inaccessable by 
-default from internet.
+### Private Subnet
+Private subnet is inaccessable by default from internet. Every time you create a subnet, it is a private subnet to begin with and that is until you attach an Internet Gateway (IGW) to your VPC and then add the additional route to the IGW. 
 
 When you create a subnet, you need to define a CIDR block range that fits within the VPC CIDR block.
 
 ![subnet](../resources/images/aws-subnet-1.png)
 
-## Public Subnet
+### Public Subnet
 
-Public subnet is a subnet that has 
-- accessable from internet
-- public IP address
+Public subnet is a subnet that is accessable from internet and has public IP address.
  
 To make a subnet public, you need to 
 - add an internet gateway (IGW)
@@ -66,8 +58,7 @@ To make a subnet public, you need to
 
 ![subnet](../resources/images/aws-subnet-2.png)
 
-
-## Route Table
+### Route Table
 
 - you can have the same route table associated to multiple subnets.
 - you can NOT associate more than one route table to a single subnet.
