@@ -4,7 +4,6 @@
 
 - [VPC (Virtual Private Cloud)](#vpc-virtual-private-cloud)
   - [Subnet](#subnet)
-  - [Public Subnet](#public-subnet)
   - [Route Table](#route-table)
 - [VPC Security and Control](#vpc-security-and-control)
   - [NACLs (Network Access Control Lists)](#nacls-network-access-control-lists)
@@ -62,25 +61,41 @@ When specify a CIDR (Classless Inter-Domain Routing) block address for your VPC,
 
 # VPC Security and Control
 
-## NACLs (Network Access Control Lists)
+NACLs are stateless. Security Groups are stateful.
 
-NACLs are essentially virtual **network-level** firewalls that are associated to each and every subnet and 
-they help to control both ingress and egress traffic moving in and out of your VPC and between your 
-subnets.
+### NACLs (Subnet Level)
 
-- You can have the same NACL applied to a number of subnets.
-- Only a single NACL can be associated to one subnet.
+NACLs (Network Access Control Lists) are essentially virtual **network-level** firewalls that are associated to each and every subnet and they help to control both ingress and egress traffic moving in and out of your VPC and between your subnets. By default, NACL allows all traffic both inbound and outbound. You can have the same NACL applied to a number of subnets. But only a single NACL can be associated to one subnet.
+
+Inbound:
+- Rule number
+- Type: HTTP, HTTPS, All Traffic, etc.
+- Protocol: TCP, etc.
+- Port Range
+- Source
+- Allow / Deny
+
+Outbound:
+- Rule number
+- Type: HTTPS, All Traffic, etc.
+- Protocol: TCP, etc.
+- Port Range
+- Destination
+- Allow / Deny
 
 ![nacl](../resources/images/aws-vpc-nacl.png)
 
-## Security Groups
+### Security Groups (Instance Level)
+The security groups are used at the **Instance layer**. With Security Group, if there is a rule in there then it's considered allowed, if there's no rule, then all traffic is dropped by default.
 
-The security groups are used at the **Instance layer**. With Security Group, if there is a rule in there 
-then it's considered allowed, if there's no rule, then all traffic is dropped by default.
+- Type
+- Protocol: TCP, etc.
+- Port Range
+- Source: 10.0.1.0/24, etc.
 
 ![sg](../resources/images/aws-vpc-sg.png)
 
-## NAT Gateway
+### NAT Gateway
 
 A NAT Gateway allows private instances to be able to access the internet while blocking connections 
 initiated from the internet. For example, we are responsible to update and patch the operating 
