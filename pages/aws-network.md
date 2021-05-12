@@ -105,14 +105,13 @@ A NAT Gateway allows private instances to be able to access the internet while *
 ![nat_gateway](../resources/images/aws-vpc-nat-gateway.png)
 
 ### Bastion Hosts
-How do engineers access an instance in a private subnet? One of the ways to do it is via a bastion host (used as a jump server).
+How do engineers access an instance in a private subnet? One of the ways to do it is via a bastion host (used as a jump server). The bastion host sits within hte public subnet and it is just another EC2 instance. This instance needs to be very secure and it needs to be hardened and very robust. It needs to remove any kind of vulnerabilities and loose access controls.
 
 ![bastion_host](../resources/images/aws-vpc-bastion-host.png)
 
 SSH agent forwarding:
 - it stores EC2 private keys on the local client.
 - you use it to access instances through a bastion host.
-
 
 <br />
 
