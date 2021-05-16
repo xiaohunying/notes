@@ -193,23 +193,16 @@ The Elastic network Adapter (ENA) is a custom interface used to optimize network
 VPC endpoints allow you to privately access AWS services using the AWS internal network instead of connecting to such services via the internet using public DNS endpoints. This means that you can connect to the supported services without configuring an Internet Gateway, NAT Gateway, a Virtual Private Network or a Direct Connect connection.
 
 There are two types of VPC Endpoints: Interface Endpoints and Gateway Endpoints.
-  - **Interface Endpoints** are essentially ENIs that are placed within a subnet that act as a target for any traffic that is being sent to a supported services and operates through the use of PrivateLink. (**PrivateLink** allows a private and secure connection between VPCs, AWS services, and on-premises applications, via the AWS internal network.)
+  - **Interface Endpoints** are essentially ENIs that are placed within a subnet that act as a target for any traffic that is being sent to a supported services and operates through the use of PrivateLink.
+    - **PrivateLink** allows a private and secure connection between VPCs, AWS services, and on-premises applications, via the AWS internal network.
     - When an interface endpoint is configured within your chosen subnet, the service that it is associated with is NOT able to initiate a connection through to your VPC, communication across this interface HAS to originate from within your VPC first before a response can be made by the service.
   - A **Gateway Endpoint** is a target that is used within your route tables to allow you to reach supported services, currently the only supported services using a Gateway Endpoint are Amazon S3 and DynamoDB, but this like is likely to change over time to please ensure you check the latest supported services.
 
-<br />
-
-# AWS Global Accelerator
-
-- The ultimate aim of the AWS Global Accelerator is to get UDP and TCP traffic from your end user clients 
-to your applications faster and quicker and more reliably, through the use of the AWS global infrastructure 
-and specified endpoints, instead of having to traverse the public internet, which is not as reliable and 
+### AWS Global Accelerator
+The ultimate aim of the AWS Global Accelerator is to get UDP and TCP traffic from your end user clients to your applications faster and quicker and more reliably, through the use of the AWS global infrastructure and specified endpoints, instead of having to traverse the public internet, which is not as reliable and 
 carries a higher security risk.
-- Global Accelerator uses two static IP addresses associated with a DNS name which is used as a fixed 
-source to gain access to your application which could be sitting behind a load balancer, such as a network 
-or application load balancer, or directly connected to your EC2 instance or the Elastic IP address. These 
-IP addresses can be mapped to multiple different endpoints, each operating in a different region if a 
-multi-region application is deployed to enhance performance of routing choices.
+
+Global Accelerator uses two static IP addresses associated with a DNS name which is used as a fixed source to gain access to your application which could be sitting behind a load balancer, such as a network or application load balancer, or directly connected to your EC2 instance or the Elastic IP address. These IP addresses can be mapped to multiple different endpoints, each operating in a different region if a multi-region application is deployed to enhance performance of routing choices.
 
 <br />
 
