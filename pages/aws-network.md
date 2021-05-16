@@ -7,7 +7,7 @@
   - [Route Table](#route-table)
 - [VPC Security and Control](#vpc-security-and-control)
   - [NACLs (Network Access Control Lists)](#nacls-subnet-level)
-  - [Security Groups](#security-groups-instance-level))
+  - [Security Groups](#security-groups-instance-level)
   - [NAT Gateway](#nat-gateway)
   - [Bastion Hosts](#bastion-hosts)
 - [VPC Connectivity](#vpc-connectivity)
