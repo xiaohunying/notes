@@ -1,6 +1,6 @@
 # AWS Database
 
-- [Amazon RDS](#amazon-rds)
+- [Amazon RDS](#amazon-rds-relational-database-service)
 - [Amazon DynamoDB](#amazon-dynamodb)
 - [Amazon ElasticCache](#amazon-elasticcache)
 - [Amazon Neptune](#amazon-neptune)
@@ -11,7 +11,7 @@
 
 <br />
 
-# Amazon RDS
+# Amazon RDS (Relational Database Service)
 
 Available database engines for Amazon **Relational** Database Service:
 - MySQL (EBS)
@@ -21,7 +21,7 @@ Available database engines for Amazon **Relational** Database Service:
 - Oracle (EBS)
 - SQL Server (EBS)
 
-## RDS Multi-AZ
+### RDS Multi-AZ
 
 - It is used to help with resilience and business continuity.
 - Multi-AZ configures a secondary RDS instance (replica) within a different AZ in the same region as the primary
@@ -38,7 +38,7 @@ the data across different instances in different AZs. The automatic provision la
 in the event of a failure which can take up to 10 minutes. This time can be reduced when you enable Multi-AZ on
 Aurora cluster which allows RDS to provision a replica within a different AZ automatically. 
 
-## Read Replicas
+### Read Replicas
 
 Read Replicas are available for MySQL, MariaDB, PostgreSQL, Amazon Aurora, Oracle, and SQL Server.
 
