@@ -6,8 +6,8 @@
   - [Subnet](#subnet)
   - [Route Table](#route-table)
 - [VPC Security and Control](#vpc-security-and-control)
-  - [NACLs (Network Access Control Lists)](#nacls-network-access-control-lists)
-  - [Security Groups](#security-groups)
+  - [NACLs (Network Access Control Lists)](#nacls-subnet-level)
+  - [Security Groups](#security-groups-instance-level))
   - [NAT Gateway](#nat-gateway)
   - [Bastion Hosts](#bastion-hosts)
 - [VPC Connectivity](#vpc-connectivity)
@@ -57,7 +57,6 @@ When specify a CIDR (Classless Inter-Domain Routing) block address for your VPC,
 NACLs are stateless. Security Groups are stateful.
 
 ### NACLs (Subnet Level)
-
 NACLs (Network Access Control Lists) are essentially virtual **network-level** firewalls that are associated to each and every subnet and they help to control both ingress and egress traffic moving in and out of your VPC and between your subnets. By default, NACL allows all traffic both inbound and outbound. You can have the same NACL applied to a number of subnets. But only a single NACL can be associated to one subnet.
 
 Inbound:
