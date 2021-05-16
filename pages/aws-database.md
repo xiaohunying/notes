@@ -181,88 +181,42 @@ period. Restores are performed to a **new serverless database cluster**.
 
 # Amazon DynamoDB
 
-## Architecture
+Amazon DynamoDB is **NoSQL** DB (key-value stores). DynamoDB tables are schemaless. It is designed internally to automatically partition data and incoming traffic across **multiple partitions**. Partitions are stored on **numerous backend servers** distributed across **three AZs** within a single region. A DynamoDB partition is a dedicated area of SSD storage allocated to a table and for which is automatically replicated synchronously across 3 AZs within a particular region. 
 
-Amazon DynamoDB is **NoSQL** DB (key-value stores). DynamoDB tables are schemaless. It is designed 
-internally to automatically partition data and incoming traffic across **multiple partitions**.
-Partitions are stored on **numerous backend servers** distributed across **three AZs** within 
-a single region. A DynamoDB partition is a dedicated area of SSd storage allocated to a table and for 
-which is automatically replicated synchronously across 3 AZs within a particular region. 
-
-## Global Tables
-
-DynamoDB provides a secondary layer of availability in the form of cross region (Global Tables). A
-Global table gives you the capability to replicate a single table across one or many alternate regions.
-A Global table elevates the availability of your data and enables applications to take advantage of 
-data locality. Users can be served data directly from the closest geographically located table replica.
-Existing DynamoDB tables can be converted into global tables either by using the **relevant configuration
-options** exposed within the AWS DynamoDB console or by using the AWS CLI and executing this command:
+### Global Tables
+DynamoDB provides a secondary layer of availability in the form of cross region (Global Tables). A Global table gives you the capability to replicate a single table across one or many alternate regions. A Global table elevates the availability of your data and enables applications to take advantage of data locality. Users can be served data directly from the closest geographically located table replica. Existing DynamoDB tables can be converted into global tables either by using the **relevant configuration options** exposed within the AWS DynamoDB console or by using the AWS CLI and executing this command:
 `aws dynamodb update-table`.
 
-## Secondary Indexes
+### Secondary Indexes
 - Global: lets you query across the entire table to find any record that matches a particular value.
 - Local: can only help find data within a single partition key.
 
-## On Demand Backups
+### On Demand Backups
+On demand backups allow you to request a full backup of a table, as it is at the very moment of the backup request is made. On demand backups are manually requested and can be performed either through the AWS DynamoDB console or by using the AWS CLI. Scheduling on demand backups provides you with the ability to restore table data back to a point in time. On demand backups remain in the account until they are explicitly requested to be deleted by an administrator. Backups typically finish within seconds and have zero impact on the table performance and availability.
 
-On demand backups allow you to request a full backup of a table, as it is at the very moment of the 
-backup request is made. On demand backups are manually requested and can be performed either through
-the AWS DynamoDB console or by using the AWS CLI. Scheduling on demand backups provides you with
-the ability to restore table data back to a point in time. On demand backups remain in the account
-until they are explicitly requested to be deleted by an administrator. Backups typically finish
-within seconds and have zero impact on the table performance and availability.
+### Point In Time Recovery (PITR)
+PITR operates at the table level and provides you with the ability to perform a point in time recovery for anytime between the current time and the last 35 days. This feature needs to be enabled as it is disabled by default. The restoration will always be performed into a new table. Table restoration can be performed in the same region as the original table or into a different region all together.
 
-## Point In Time Recovery (PITR)
+### Scan And Query
+DynamoDB provides two commands for searching data on the table: scan and query. A scan operation examines every item on the table and returns all the data attributes for each one of them. When you initially navigate to the Items tab for a table, a scan is performed by default.
 
-PITR operates at the table level and provides you with the ability to perform a point in time recovery
-for anytime between the current time and the last 35 days. This feature needs to be enabled as it is 
-disabled by default. The restoration will always be performed into a new table. Table restoration can
-be performed in the same region as the original table or into a different region all together.
-
-## Scan And Query
-
-DynamoDB provides two commands for searching data on the table: scan and query. A scan operation examines 
-every item on the table and returns all the data attributes for each one of them. When you initially navigate 
-to the Items tab for a table, a scan is performed by default.
-
-## DynamoDB Accelerator (DAX)
-
+### DynamoDB Accelerator (DAX)
 Downside of DynamoDB:
-- Your data is automatically replicated to different AZs and that replication usually happens quickly
-in milliseconds. But sometimes it can take longer. This is known as **eventual consistency**.
-- There are certain kinds of queries and table scans that may return older versions of data before
-the most recent copy.
-- You might have a requirement where you need microsecond response times in read-heavy workloads and 
-this is where DAX comes in to play.
+- Your data is automatically replicated to different AZs and that replication usually happens quickly in milliseconds. But sometimes it can take longer. This is known as **eventual consistency**.
+- There are certain kinds of queries and table scans that may return older versions of data before the most recent copy.
+- You might have a requirement where you need microsecond response times in read-heavy workloads and this is where DAX comes in to play.
 
-DAX is an **in-memory cache** delivering a significant performance enhancement up to 10 times as fast
-as the default DynamoDB settings allowing response times to decrease from milliseconds to microseconds.
-It is a fully managed feature offered by AWS and as a result is also highly available. DAX is also 
-highly scalable making it capable of handling millions of requests per second without any requirement
-for you to modify any logic to your applications or solutions.
+DAX is an **in-memory cache** delivering a significant performance enhancement up to 10 times as fast as the default DynamoDB settings allowing response times to decrease from milliseconds to microseconds. It is a fully managed feature offered by AWS and as a result is also highly available. DAX is also highly scalable making it capable of handling millions of requests per second without any requirement for you to modify any logic to your applications or solutions.
 
-Your DAX deployment can start with a multi-node cluster containing a minimum of 3 nodes which you can 
-quickly and easily modify and expand reaching a maximum of 10 nodes with 1 primary and 9 read replicas.
-It can also enable you to reduce your provisioned read capacity within DynamoDB. Reducing the provisioned
-requirements on your DynamoDB will also reduce your overall costs.
+Your DAX deployment can start with a multi-node cluster containing a minimum of 3 nodes which you can quickly and easily modify and expand reaching a maximum of 10 nodes with 1 primary and 9 read replicas. It can also enable you to reduce your provisioned read capacity within DynamoDB. Reducing the provisioned requirements on your DynamoDB will also reduce your overall costs.
 
-From a security perspective, DAX also support encryption at rest. This ensures that any cached data is 
-encrypted using the 256-bit Advanced Encryption Standard algorithm with the integration of the Key
-Management Service (KMS) to manage the encryption keys.
+From a security perspective, DAX also support encryption at rest. This ensures that any cached data is encrypted using the 256-bit Advanced Encryption Standard algorithm with the integration of the Key Management Service (KMS) to manage the encryption keys.
 
-DAX is a separate entity to DynamoDB and so architecturally it sits outside of DynamoDB and is placed 
-within your VPC where as DynamoDB sits outside of your VPC and is accessed via an endpoint. DAX will deploy
-a node in each of the subnets of the subnet group with one of those nodes being the primary and the remaining
-nodes will act as read replicas.
+DAX is a separate entity to DynamoDB and so architecturally it sits outside of DynamoDB and is placed within your VPC where as DynamoDB sits outside of your VPC and is accessed via an endpoint. DAX will deploy a node in each of the subnets of the subnet group with one of those nodes being the primary and the remaining nodes will act as read replicas.
 
-To allow your EC3 instances to interact with DAX you will need to install a DAX client on those EC2 instances.
-This client then intercepts with and directs all DynamoDB API calls made from your client to your new
-DAX cluster endpoint, where the incoming request is then load balanced across all the nodes in teh cluster.
-You must ensure that the security group associated with your DAX cluster is open to TCP port 8111 on the 
-inbound rule set.
+To allow your EC3 instances to interact with DAX you will need to install a DAX client on those EC2 instances. This client then intercepts with and directs all DynamoDB API calls made from your client to your new DAX cluster endpoint, where the incoming request is then load balanced across all the nodes in teh cluster. You must ensure that the security group associated with your DAX cluster is open to TCP port 8111 on the inbound rule set.
 
-DAX does not process any requests relating to table operations and management, for example, create,
-update or delete tables.
+DAX does not process any requests relating to table operations and management, for example, create, update or delete tables.
 
 <br />
 
