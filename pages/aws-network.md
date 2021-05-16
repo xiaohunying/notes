@@ -20,7 +20,7 @@
   - [ENIs (Elastic Network Interfaces)](#enis-elastic-network-interfaces)
   - [ENA (Elastic Network Adaptor)](#ena-elastic-network-adaptor)
   - [VPC Endpoints](#vpc-endpoints)
-- [AWS Global Accelerator](#aws-global-accelerator)
+  - [AWS Global Accelerator](#aws-global-accelerator)
 - [Design A Multi-Tier Solution](#design-a-multi-tier-solution)
 - [DNS and Content Delivery](#dns-and-content-delivery)
   - [Amazon Route 53](#amazon-route-53)
