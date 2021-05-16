@@ -190,11 +190,11 @@ The Elastic network Adapter (ENA) is a custom interface used to optimize network
   - To check the ENA support attribute is set, you can use the AWS CLI command.
 
 ### VPC Endpoints
+VPC endpoints allow you to privately access AWS services using the AWS internal network instead of connecting to such services via the internet using public DNS endpoints. This means that you can connect to the supported services without configuring an Internet Gateway, NAT Gateway, a Virtual Private Network or a Direct Connect connection.
 
-- VPC endpoints allow you to privately access AWS services using the AWS internal network instead of connecting to such services via the internet using public DNS endpoints. This means that you can connect to the supported services without configuring an Internet Gateway, NAT Gateway, a Virtual Private Network or a Direct Connect connection.
-- There are two types of VPC Endpoints: Interface Endpoints and Gateway Endpoints.
-  - **Interface Endpoints** are essentially ENIs that are placed within a subnet that act as a target for any traffic that is being sent to a supported services and operates through the use of PrivateLink. **PrivateLink** allows a private and secure connection between VPCs, AWS services, and on-premises applications, via the AWS internal network.
-  - When an interface endpoint is configured within your chosen subnet, the service that it is associated with is NOT able to initiate a connection through to your VPC, communication across this interface HAS to originate from within your VPC first before a response can be made by the service.
+There are two types of VPC Endpoints: Interface Endpoints and Gateway Endpoints.
+  - **Interface Endpoints** are essentially ENIs that are placed within a subnet that act as a target for any traffic that is being sent to a supported services and operates through the use of PrivateLink. (**PrivateLink** allows a private and secure connection between VPCs, AWS services, and on-premises applications, via the AWS internal network.)
+    - When an interface endpoint is configured within your chosen subnet, the service that it is associated with is NOT able to initiate a connection through to your VPC, communication across this interface HAS to originate from within your VPC first before a response can be made by the service.
   - A **Gateway Endpoint** is a target that is used within your route tables to allow you to reach supported services, currently the only supported services using a Gateway Endpoint are Amazon S3 and DynamoDB, but this like is likely to change over time to please ensure you check the latest supported services.
 
 <br />
