@@ -15,10 +15,11 @@
   - [Direct Connect](#direct-connect)
   - [VPC Peering](#vpc-peering)
   - [Transit Gateway](#transit-gateway)
-- [EIPs (Elastic IP Addresses)](#eips-elastic-ip-addresses)
-- [ENIs (Elastic Network Interfaces)](#enis-elastic-network-interfaces)
-- [ENA (Elastic Network Adaptor)](#ena-elastic-network-adaptor)
-- [VPC Endpoints](#vpc-endpoints)
+- [Basic Networking Concepts](#basic-networking-concepts)
+  - [EIPs (Elastic IP Addresses)](#eips-elastic-ip-addresses)
+  - [ENIs (Elastic Network Interfaces)](#enis-elastic-network-interfaces)
+  - [ENA (Elastic Network Adaptor)](#ena-elastic-network-adaptor)
+  - [VPC Endpoints](#vpc-endpoints)
 - [AWS Global Accelerator](#aws-global-accelerator)
 - [Design A Multi-Tier Solution](#design-a-multi-tier-solution)
 - [DNS and Content Delivery](#dns-and-content-delivery)
@@ -178,8 +179,12 @@ VPCs can then communicate with the entire rest of your infrastructure.
 
 ### ENA (Elastic Network Adaptor)
 
+The Elastic network Adapter (ENA) is a custom interface used to optimize network performance
+
+- If you are looking to enable enhanced networking features to reach speeds of up to 100 Gbps for your linux compute instances, then you can do so using an ENA.
 - In addition to 100 Gbps speeds, **EC2 Enhanced Networking with ENA** offers higher bandwith with increased packet per second (PPS) performance.
 - It is offered at no extra cost.
+- When launching an instance using Amazon Linux 2 or iwht the latest version of Amazon Linux AMI, then the instance will have **enhanced networking** enabled by default.
 - Enhanced networking is enabled when the ENA module is installed on your instance and the ENA support attribute is set. 
   - To confirm the ENA module is installed, you can run modinfo ena from the terminal prompt.
   - To check the ENA support attribute is set, you can use the AWS CLI command.
