@@ -30,7 +30,7 @@
   - [Amazon Kinesis Streams](#amazon-kinesis-streams)
   - [Amazon Kinesis Data Firehose](#amazon-kinesis-data-firehose)
   - [Amazon Kinesis Analytics](#amazon-kinesis-analytics)
-- [AWS Lambda](#aws-lambda)
+
 
 <br />
 
@@ -159,61 +159,38 @@ VPCs can then communicate with the entire rest of your infrastructure.
 
 ![transit_gateway](../resources/images/aws-vpc-transit-gateway.png)
 
-# EIPs (Elastic IP Addresses)
+<br />
 
-- Pooled public IP address is not persistent. The pooled public IP address will change will you 
-stop and start your instance. 
-- When you create a persistent elastic IP address, the IP address is associated with your 
-account rather than an instance. This means you can attach an EIP address to an instance 
-or an Elastic Network Interface (ENI) and even if you stop the instance its associated 
-with, the same EIP will remain in place.
-- When you detach an EIP and it's not associated with a running instance, then you will 
-incur a cost for it. When you don't need a EIP, you need to detach it from the instance
-and release it back to AWS.
+# Basic Networking Concepts
+
+### EIPs (Elastic IP Addresses)
+
+- Pooled public IP address is not persistent. The pooled public IP address will change will you stop and start your instance. 
+- When you create a persistent elastic IP address, the IP address is associated with your account rather than an instance. This means you can attach an EIP address to an instance or an Elastic Network Interface (ENI) and even if you stop the instance its associated with, the same EIP will remain in place.
+- When you detach an EIP and it's not associated with a running instance, then you will incur a cost for it. When you don't need a EIP, you need to detach it from the instance and release it back to AWS.
 - You can't convert an existing pooled public IP address to an EIP.
 
-<br />
+### ENIs (Elastic Network Interfaces)
 
-# ENIs (Elastic Network Interfaces)
-
-- ENIs are logical virtual network cards within your VPC that you can create, configure and attach
-to your EC2 instances. The configuration is bound to the ENI and not the instance that it is attached
-to. 
-- When you create an instance you EC2 instance comes configured with a primary network interface
-that is already bound to your instance. And this can't be removed or detached. It is labeled Eth0.
+- ENIs are logical virtual network cards within your VPC that you can create, configure and attach to your EC2 instances. The configuration is bound to the ENI and not the instance that it is attached to. 
+- When you create an instance you EC2 instance comes configured with a primary network interface that is already bound to your instance. And this can't be removed or detached. It is labeled Eth0.
 - VPC flow logs capture all traffic originating from or being sent to an ENI like your Eth0 interface.
 
-<br />
+### ENA (Elastic Network Adaptor)
 
-# ENA (Elastic Network Adaptor)
-
-- In addition to 100 Gbps speeds, enhanced networking offers higher bandwith with increased packet
-per second (PPS) performance.
+- In addition to 100 Gbps speeds, **EC2 Enhanced Networking with ENA** offers higher bandwith with increased packet per second (PPS) performance.
 - It is offered at no extra cost.
-- Enhanced networking is enabled when the ENA module is installed on your instance and the ENA support
-attribute is set. 
+- Enhanced networking is enabled when the ENA module is installed on your instance and the ENA support attribute is set. 
   - To confirm the ENA module is installed, you can run modinfo ena from the terminal prompt.
   - To check the ENA support attribute is set, you can use the AWS CLI command.
 
-<br />
+### VPC Endpoints
 
-# VPC Endpoints
-
-- VPC endpoints allow you to privately access AWS services using the AWS internal network instead of 
-connecting to such services via the internet using public DNS endpoints. This means that you can connect
-to the supported services without configuring an Internet Gateway, NAT Gateway, a Virtual Private
-Network or a Direct Connect connection.
+- VPC endpoints allow you to privately access AWS services using the AWS internal network instead of connecting to such services via the internet using public DNS endpoints. This means that you can connect to the supported services without configuring an Internet Gateway, NAT Gateway, a Virtual Private Network or a Direct Connect connection.
 - There are two types of VPC Endpoints: Interface Endpoints and Gateway Endpoints.
-  - **Interface Endpoints** are essentially ENIs that are placed within a subnet that act as a target for 
-  any traffic that is being sent to a supported services and operates through the use of PrivateLink. 
-  **PrivateLink** allows a private and secure connection between VPCs, AWS services, and on-premises 
-  applications, via the AWS internal network.
-  - When an interface endpoint is configured within your chosen subnet, the service that it is associated 
-  with is NOT able to initiate a connection through to your VPC, communication across this interface HAS 
-  to originate from within your VPC first before a response can be made by the service.
-  - A **Gateway Endpoint** is a target that is used within your route tables to allow you to reach supported 
-  services, currently the only supported services using a Gateway Endpoint are Amazon S3 and DynamoDB, but 
-  this like is likely to change over time to please ensure you check the latest supported services.
+  - **Interface Endpoints** are essentially ENIs that are placed within a subnet that act as a target for any traffic that is being sent to a supported services and operates through the use of PrivateLink. **PrivateLink** allows a private and secure connection between VPCs, AWS services, and on-premises applications, via the AWS internal network.
+  - When an interface endpoint is configured within your chosen subnet, the service that it is associated with is NOT able to initiate a connection through to your VPC, communication across this interface HAS to originate from within your VPC first before a response can be made by the service.
+  - A **Gateway Endpoint** is a target that is used within your route tables to allow you to reach supported services, currently the only supported services using a Gateway Endpoint are Amazon S3 and DynamoDB, but this like is likely to change over time to please ensure you check the latest supported services.
 
 <br />
 
@@ -431,29 +408,6 @@ and improve business processes.
 - Create an output stream: to hold intermediate results that are used to feed into other queries or be used to 
 stream out the final results.
 
-<br />
-
-# AWS Lambda
-
-You only ever have to pay for compute power when lambda is in use via Lambda Functions. AWS Lambda charges
-compute power per 100ms of use only when your code is running, in addition to the number of times your code
-runs.
-
-There are essentially four steps to its operations:
-- upload your code to lambda or write it within the code editors that Lambda 
-provides. (Node.js, Java, C#, Python, Go, PowerShell and Ruby)
-- Configure your Lambda functions to execute upon specific triggers from supported event sources.
-- Once the specific trigger is initiated, Lambda will run your code (as per your lambda function) using
-only the required compute power as defined.
-- AWS records the compute time in Milliseconds and the quantity of Lambda functions run to ascertain the 
-cost of the service.
-
-The following elements form the key constructs of a Lambda Application:
-- Lambda function
-- Event resources
-- Trigger
-- Downsteam resources
-- Log streams
 
 
 
