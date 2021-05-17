@@ -34,6 +34,7 @@
   - [Amazon QLDB](./aws-database.md#amazon-qldb)
   - [Amazon DocumentDB](./aws-database.md#amazon-documentdb)
   - [Amazon Keyspaces](./aws-database.md#amazon-keyspaces-for-apache-cassandra)
+- [AWS High Availability](aws-ha.md)
 - [AWS Security](aws-security.md)
   - [Identity And Access Management (IAM)](./aws-security.md#identity-and-access-management-iam)
   - [AWS Organization](./aws-security.md#aws-organization)
