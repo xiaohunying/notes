@@ -222,7 +222,14 @@ Currently, only the Oracle database engine uses the BYOL (Bring Your Own License
 
 ### Backup Storage Pricing
 - Amazon RDS does not charge any backup storage costs that equate to the total sum of provisioned storage used with your databases within a specific region.
-- Any backup storage used over this 'free' tier is charged at $0.10 per GiB-month for MySQL, PostgreSQL, MariaDB, Oracle, SQL Server and $0.022 per GiB-month for Aurora.
+- Any backup storage used over this 'free' tier is charged
+
+What is Backup Storage:
+- Any automated backups taken use backup storage.
+- Any manual snapshots that are taken of your database will also use backup storage.
+- By extending your backup retention periods (how long you'd like to keep your backups for) will increase the amount of storage required for backups.
+- Backup storage is calculated based upon the total amount of backup storage consumed within a specific region across all your RDS databases.
+- If you copy your backups to another region, this will also increase the amount of backup storage used within that new region.
 
 ### Backtrack Storage Pricing
 Backtrack is a feature that is only currently available for a MySQL-compatible Aurora database, which allows you to go back in time on the database to recover from an error or incident.
