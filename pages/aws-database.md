@@ -51,6 +51,18 @@ Available database engines for Amazon **Relational** Database Service:
   - An option to consider is the **Web Service Data API feature** which is available only on Aurora Serverless databases. It makes implementing Lambda functions which need to perform data lookups and/or mutations within an Aurora serverless database a breeze. The AWS CLI has been updated to allow you to execute queries through it from the command line.
   - Aurora Serverless performs a **continuous automatic backup** of the database with a default retention period of 1 day - which can be manually increased to a maximum retention period of 35 days. This style of backup gives you the capability of **restoring to a point in time** within the currently configured backup retention period. Restores are performed to a **new serverless database cluster**.
 
+### Read Replicas
+- Read Replicas are available for MySQL, MariaDB, PostgreSQL, Amazon Aurora, Oracle, and SQL Server.
+- Read Replicas are NOT used for resiliency or as secondary instance in the event of a failover.
+- Read Replicas are used to serve read-only access to your database data via a separate instance.
+- It is possible to deploy more than one read replica for a primary DB.
+- Adding more replicas allows you to scale your read performance to a wider range of applications.
+- You are able to deploy read replicas in different regions.
+- It is also possible to promote an existing read replica to replace the primary DB in the event of an incident.
+- During any maintenance of the primary instance, read traffic can be served via your read replicas.
+- Amazon RDS for MySQL Read Replicas require a transactional storage engine and are only supported for the InnoDB storage engine. (**InnoDB** is a storage engine for the database management system MySQL and MariaDB. Since the release of MySQL 5.5.5 in 2010, it replaced MyISAM as MySQL's default table type. InnoDB is transactional storage engine. MyISAM is non-transactional storage engine.)
+- Read Replicas can be promoted to "standalone" DB instances.
+
 <br />
 
 # Amazon DynamoDB
