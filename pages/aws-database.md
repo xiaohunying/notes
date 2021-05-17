@@ -197,11 +197,19 @@ Currently, only the Oracle database engine uses the BYOL (Bring Your Own License
 | Oracle      | Y                   | Y                          | Y                  | Y                         |            |
 | SQL Server  | Y                   |                            | Y                  |                           |            |
 
-Amazon Aurora Serverless:
-- No instances to manage
-- On-demand pricing not applicable; Serverless pricing is measured in **Aurora Capacity Units (ACU)**
-- Each ACU consists of 2GB of memory & any associated CPU and networking requirements
-
+- **On-Demand Instance**:
+  - Any partial DB instance hours used are cost on per second increments.
+  - For any database changes that alter the running costs, such as modifying the instance or creating the DB instance, then a minimum of a 10-minute charge will be applied even if the DB is terminated or altered again before 10 minutes has passed.
+- **Reserved Instances**:
+  - allow you to purchase a discount for an instance type with set criteria for a set period of time in return for a reduced cost compared to on-demand instances. Further reductions with reserved instances is depending on which **Payment Method** you choose. 
+  - Payment method: 
+    - All Upfront
+    - Partial Upfront
+    - No Upfront
+- **Amazon Aurora Serverless**:
+  - No instances to manage
+  - On-demand pricing not applicable; Serverless pricing is measured in **Aurora Capacity Units (ACU)**
+  - Each ACU consists of 2GB of memory & any associated CPU and networking requirements
 
 <br />
 
