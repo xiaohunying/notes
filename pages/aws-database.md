@@ -62,12 +62,13 @@ PITR operates at the table level and provides you with the ability to perform a 
 ### Scan And Query
 DynamoDB provides two commands for searching data on the table: scan and query. A scan operation examines every item on the table and returns all the data attributes for each one of them. When you initially navigate to the Items tab for a table, a scan is performed by default.
 
-### DynamoDB Accelerator (DAX)
-Downside of DynamoDB:
+
+### Downside of DynamoDB:
 - Your data is automatically replicated to different AZs and that replication usually happens quickly in milliseconds. But sometimes it can take longer. This is known as **eventual consistency**.
 - There are certain kinds of queries and table scans that may return older versions of data before the most recent copy.
 - You might have a requirement where you need microsecond response times in read-heavy workloads and this is where DAX comes in to play.
 
+### DynamoDB Accelerator (DAX)
 DAX is an **in-memory cache** delivering a significant performance enhancement up to 10 times as fast as the default DynamoDB settings allowing response times to decrease from milliseconds to microseconds. It is a fully managed feature offered by AWS and as a result is also highly available. DAX is also highly scalable making it capable of handling millions of requests per second without any requirement for you to modify any logic to your applications or solutions.
 
 Your DAX deployment can start with a multi-node cluster containing a minimum of 3 nodes which you can quickly and easily modify and expand reaching a maximum of 10 nodes with 1 primary and 9 read replicas. It can also enable you to reduce your provisioned read capacity within DynamoDB. Reducing the provisioned requirements on your DynamoDB will also reduce your overall costs.
