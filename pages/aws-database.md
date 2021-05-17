@@ -211,5 +211,41 @@ Currently, only the Oracle database engine uses the BYOL (Bring Your Own License
   - On-demand pricing not applicable; Serverless pricing is measured in **Aurora Capacity Units (ACU)**
   - Each ACU consists of 2GB of memory & any associated CPU and networking requirements
 
+### Database Storage and I/O Pricing
+- General Purpose SSD storage
+  - When using SSD, you are charged for the amount of storage provisioned and not for the number of I/Os processed.
+- Provisioned IOPS (SSD) storage
+  - The charges for this option are based upon the amount of storage provisioned in addition to the IOPS throughput selected, again, you are charged not for the total number of I/Os processed.
+- Magnetic storage
+- Amazon Aurora
+  - The pricing metric used is **GB-month**, in addition to **the actual number of I/Os processed**, which are billed per million requests. 
+
+### Backup Storage Pricing
+- Amazon RDS does not charge any backup storage costs that equate to the total sum of provisioned storage used with your databases within a specific region.
+- Any backup storage used over this 'free' tier is charged at $0.10 per GiB-month for MySQL, PostgreSQL, MariaDB, Oracle, SQL Server and $0.022 per GiB-month for Aurora.
+
+### Backtrack Storage Pricing
+Backtrack is a feature that is only currently available for a MySQL-compatible Aurora database, which allows you to go back in time on the database to recover from an error or incident.
+
+### Snapshot Export Pricing
+Snapshots in RDS are your backups of your database tables and instances, and these snapshots can then be exported out of Amazon RDS, to Amazon S3. The cost associated with performing snapshot exports are based on region by region basis.
+
+### Data Transfer Pricing
+You are charged, when
+- Data transferred IN to your RDS database from the internet
+- Data transferred OUT from your RDS database to the internet
+- Data transferred OUT to Amazon CloudFront
+- Data transferred OUT to AWS Regions
+- Data transferred OUT to EC2 instances in the same availability zone
+- Data transferred between availability zones for multi-az replication
+- Data transferred between an EC2 instance and an RDS instance in different availability zones of the same region
+- Data transferred when a snapshot copy is transferred to a different region
+
+You will NOT be charged, when
+- Any data that is transferred IN to your RDS database from the internet
+- Any Data that is transferred OUT to Amazon CloudFront
+- Any data that is transferred OUT to EC2 instances in the same availability zone
+- Data transferred between availability zones for multi-az replication
+
 <br />
 
