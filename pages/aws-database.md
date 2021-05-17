@@ -5,9 +5,7 @@
 - [Amazon ElasticCache](#amazon-elasticcache)
 - [Amazon Neptune (Graph Database)](#amazon-neptune)
 - [Amazon Redshift](#amazon-redshift)
-- [Amazon QLDB](#amazon-quantum-ledger-database-qldb)
-- [Amazon DocumentDB](#amazon-documentdb)
-- [Amazon Keyspaces](#amazon-keyspaces-for-apache-cassandra)
+- [Amazon RDS Costs](#amazon-rds-costs)
 
 <br />
 
@@ -168,6 +166,10 @@ ODBC and JDBC drivers
 - Columnar Data Storage
 - Result Caching
 - Integrates with Amazon CloudWatch
+
+<br />
+
+# Amazon RDS Costs
 
 <br />
 
