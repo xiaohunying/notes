@@ -77,7 +77,7 @@ From a security perspective, DAX also support encryption at rest. This ensures t
 
 DAX is a separate entity to DynamoDB and so architecturally it sits outside of DynamoDB and is placed within your VPC where as DynamoDB sits outside of your VPC and is accessed via an endpoint. DAX will deploy a node in each of the subnets of the subnet group with one of those nodes being the primary and the remaining nodes will act as read replicas.
 
-To allow your EC3 instances to interact with DAX you will need to install a DAX client on those EC2 instances. This client then intercepts with and directs all DynamoDB API calls made from your client to your new DAX cluster endpoint, where the incoming request is then load balanced across all the nodes in teh cluster. You must ensure that the security group associated with your DAX cluster is open to TCP port 8111 on the inbound rule set.
+To allow your EC2 instances to interact with DAX you will need to install a DAX client on those EC2 instances. This client then intercepts with and directs all DynamoDB API calls made from your client to your new DAX cluster endpoint, where the incoming request is then load balanced across all the nodes in the cluster. You must ensure that the security group associated with your DAX cluster is open to TCP port 8111 on the inbound rule set.
 
 DAX does not process any requests relating to table operations and management, for example, create, update or delete tables.
 
