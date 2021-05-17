@@ -2,7 +2,7 @@
 
 - [Amazon RDS (Relational Database Service)](#amazon-rds-relational-database-service)
 - [Amazon DynamoDB (NoSQL Database)](#amazon-dynamodb)
-- [Amazon ElasticCache](#amazon-elasticcache)
+- [Amazon ElasticCache (In-Memory Data Store)](#amazon-elasticcache)
 - [Amazon Neptune (Graph Database)](#amazon-neptune)
 - [Amazon Redshift](#amazon-redshift)
 - [Amazon RDS Costs](#amazon-rds-costs)
