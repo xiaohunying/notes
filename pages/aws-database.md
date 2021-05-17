@@ -26,7 +26,30 @@ Available database engines for Amazon **Relational** Database Service:
 - The replication of data happens synchronously.
 - RDS uses a Failover mechanism on Oracle, MySQL, MariaDB and PostgreSQL instances. The failover process happens automatically and is managed by AWS. RDS updates the DNS record to point to the secondary instance within 60-120 seconds.
 - SQL Server Multi-AZ is achieved through the use of **SQL Server Mirroring**.
-- Amazon Aurora DB clusters are fault tolerant by default and it is achieved within the cluster by replicating the data across different instances in different AZs. The automatic provision launches a new primary instance in the event of a failure which can take up to 10 minutes. This time can be reduced when you enable Multi-AZ on Aurora cluster which allows RDS to provision a replica within a different AZ automatically. 
+- Amazon Aurora DB clusters are fault tolerant by default and it is achieved within the cluster by replicating the data across different instances in different AZs. The automatic provision launches a new primary instance in the event of a failure which can take up to 10 minutes. This time can be reduced when you enable Multi-AZ on Aurora cluster which allows RDS to provision a replica within a different AZ automatically.
+
+### Amazon Aurora
+- Separate the compute layer and storage layer from each other.
+- Aurora uses a **quorum** and **gossip protocol** baked within the storage layer to ensure that the data remains consistent.
+- Aurora in general, regardless of the compute layer setup, always provides 6 way replicated storage across 3 AZs. Aurora is only supported in regions that have 3 or more AZs.
+- There are 4 different connection endpoint types:
+  - Cluster endpoint
+  - Reader endpoint
+  - Custom endpoint
+  - Instance endpoint
+- Connection endpoint load balancing is implemented internally using Route 53 DNS.
+- Be careful in the client layer **not to cache** the connection endpoint lookups longer than their specified TTLs.
+- A single master instance can be configured with up to 15 read replicas when using Aurora.
+- Multi-Master cluster:
+  - An Aurora multi master setup leverages 2 compute instances configured in active-active read write configuration.
+  - If an instance outage occurs in one AZ, all database writes can be redirected to the remaining active instance (all without the need to perform a failover). 
+  - A maximum of 2 compute instances can be configured as masters in a multi-master cluster. 
+  - You can not add read replicas to a multi master cluster.
+  - Incoming database connections to an Aurora multi master cluster are not load balanced by the service. Load balancing connection logic must be implemented and performed within the client.
+- Aurora Serverless
+  - An Aurora Serverless database is configured with a **single connection endpoint** which makes sense (given that it it designed to be serverless) this endpoint is obviously used for all read and writes.
+  - An option to consider is the **Web Service Data API feature** which is available only on Aurora Serverless databases. It makes implementing Lambda functions which need to perform data lookups and/or mutations within an Aurora serverless database a breeze. The AWS CLI has been updated to allow you to execute queries through it from the command line.
+  - Aurora Serverless performs a **continuous automatic backup** of the database with a default retention period of 1 day - which can be manually increased to a maximum retention period of 35 days. This style of backup gives you the capability of **restoring to a point in time** within the currently configured backup retention period. Restores are performed to a **new serverless database cluster**.
 
 <br />
 
@@ -166,7 +189,7 @@ Amazon Redshift integrates with Amazon CloudWatch which generate query/load perf
 
 # Amazon RDS Costs
 
-Currently, only the Oracle database engine uses the BYOL purchase options, all other DB engines only use on-demand instances and reserved instances, with the added exception of Aurora also using serverless as an additional purchasing option. 
+Currently, only the Oracle database engine uses the BYOL (Bring Your Own License) purchase options, all other DB engines only use on-demand instances and reserved instances, with the added exception of Aurora also using serverless as an additional purchasing option. 
 
 ### RDS Instance Purchasing Options
 | DB          | On-demand Instances | On-demand Instances (BYOL) | Reserved Instances | Reserved Instances (BYOL) | Serverless |
@@ -177,6 +200,11 @@ Currently, only the Oracle database engine uses the BYOL purchase options, all o
 | Aurora      | Y                   |                            | Y                  |                           | Y          |
 | Oracle      | Y                   | Y                          | Y                  | Y                         |            |
 | SQL Server  | Y                   |                            | Y                  |                           |            |
+
+Amazon Aurora Serverless:
+- No instances to manage
+- On-demand pricing not applicable; Serverless pricing is measured in **Aurora Capacity Units (ACU)**
+- Each ACU consists of 2GB of memory & any associated CPU and networking requirements
 
 
 <br />
