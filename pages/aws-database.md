@@ -1,9 +1,9 @@
 # AWS Database
 
 - [Amazon RDS (Relational Database Service)](#amazon-rds-relational-database-service)
-- [Amazon DynamoDB](#amazon-dynamodb)
+- [Amazon DynamoDB (NoSQL Database)](#amazon-dynamodb)
 - [Amazon ElasticCache](#amazon-elasticcache)
-- [Amazon Neptune](#amazon-neptune)
+- [Amazon Neptune (Graph Database)](#amazon-neptune)
 - [Amazon Redshift](#amazon-redshift)
 - [Amazon QLDB](#amazon-quantum-ledger-database-qldb)
 - [Amazon DocumentDB](#amazon-documentdb)
@@ -22,22 +22,13 @@ Available database engines for Amazon **Relational** Database Service:
 - SQL Server (EBS)
 
 ### RDS Multi-AZ
-
 - It is used to help with resilience and business continuity.
-- Multi-AZ configures a secondary RDS instance (replica) within a different AZ in the same region as the primary
-instance.
-- The only purpose of Multi-AZ is to provide a failover option for a primary RDS instance. It's not to be used
-as a secondary replica to offload read-only traffic to.
+- Multi-AZ configures a secondary RDS instance (replica) within a different AZ in the same region as the primary instance.
+- The only purpose of Multi-AZ is to provide a failover option for a primary RDS instance. It's not to be used as a secondary replica to offload read-only traffic to.
 - The replication of data happens synchronously.
-- RDS uses a Failover mechanism on Oracle, MySQL, MariaDB and PostgreSQL instances. The failover process
-happens automatically and is managed by AWS. RDS updates the DNS record to point to the secondary instance
-within 60-120 seconds.
+- RDS uses a Failover mechanism on Oracle, MySQL, MariaDB and PostgreSQL instances. The failover process happens automatically and is managed by AWS. RDS updates the DNS record to point to the secondary instance within 60-120 seconds.
 - SQL Server Multi-AZ is achieved through the use of **SQL Server Mirroring**.
-- Amazon Aurora DB clusters are fault tolerant by default and it is achieved within the cluster by replicating
-the data across different instances in different AZs. The automatic provision launches a new primary instance
-in the event of a failure which can take up to 10 minutes. This time can be reduced when you enable Multi-AZ on
-Aurora cluster which allows RDS to provision a replica within a different AZ automatically. 
-
+- Amazon Aurora DB clusters are fault tolerant by default and it is achieved within the cluster by replicating the data across different instances in different AZs. The automatic provision launches a new primary instance in the event of a failure which can take up to 10 minutes. This time can be reduced when you enable Multi-AZ on Aurora cluster which allows RDS to provision a replica within a different AZ automatically. 
 
 <br />
 
@@ -62,7 +53,6 @@ PITR operates at the table level and provides you with the ability to perform a 
 ### Scan And Query
 DynamoDB provides two commands for searching data on the table: scan and query. A scan operation examines every item on the table and returns all the data attributes for each one of them. When you initially navigate to the Items tab for a table, a scan is performed by default.
 
-
 ### Downside of DynamoDB:
 - Your data is automatically replicated to different AZs and that replication usually happens quickly in milliseconds. But sometimes it can take longer. This is known as **eventual consistency**.
 - There are certain kinds of queries and table scans that may return older versions of data before the most recent copy.
@@ -85,10 +75,7 @@ DAX does not process any requests relating to table operations and management, f
 
 # Amazon ElasticCache
 
-Amazon ElastiCache is a service that makes it easy to deploy, operate, and scale open-source, 
-**in-memory** data stores in the cloud. This service improves the performance through caching, 
-where web applications allow you to retrieve information from fast managed in-memory data stores 
-instead of relying entirely on slower disk-based solutions.
+Amazon ElastiCache is a service that makes it easy to deploy, operate, and scale open-source, **in-memory** data stores in the cloud. This service improves the performance through caching, where web applications allow you to retrieve information from fast managed in-memory data stores instead of relying entirely on slower disk-based solutions.
 
 ### Cache Engines
 - Amazon ElastiCache for **Memcached**: 
@@ -127,35 +114,38 @@ instead of relying entirely on slower disk-based solutions.
 
 # Amazon Neptune
 
-Amazon Neptune is a fast, reliable, secure, and fully-managed **graph database** service. It is used to help you 
-both store and navigate relationships between highly connected data which could contain billions of separate 
-relationships. Graph databases are ideal if their focus is on being able to identify these relationships of 
-interconnected data, rather than the actual data itself.
+Amazon Neptune is a fast, reliable, secure, and fully-managed **graph database** service. It is used to help you both store and navigate relationships between highly connected data which could contain billions of separate relationships. Graph databases are ideal if their focus is on being able to identify these relationships of interconnected data, rather than the actual data itself.
 
-Use Cases:
-- Social Media
+### Use Cases:
+- Social Networking
 - Fraud Detection
 - Recommendation Engines
 
-Query Languages:
+### Query Languages:
 - Apache Tinkerpop Gremlin
 - World Wide Web Consortium SPASQL
 
-Connect to Neptune Database:
-- Cluster endpoints
+### Connect to Neptune Database:
+- Cluster endpoints:
+  - Points directly to the current primary DB instance of a cluster.
+  - Should be used by applications that require both read and write access to the database.
+  - When Primary DB instance fails, will point to the new primary instance without any changes required by your applications accessing the database.
 - Reader endpoints
+  - Used to connect to read replicas.
+  - Allows applications to access your database on a read only basis for queries.
+  - A single reader endpoint exists, even if you have multiple read replicas.
+  - Connections served by the read replicas will be performed on a round-robin basis.
+  - The endpoint does not load balance your traffic in any way across the available replicas in your cluster.
 - Instance endpoints
+  - Every instance within your cluster will have a unique instance endpoint.
+  - Allows you to direct certian traffic to specific instances within the cluster.
+  - You might want to do this for load balancing reasons across your applications reading from your replicas.
 
 <br />
 
 # Amazon Redshift
 
-Amazon Redshift is a fast, fully-managed, petabyte-scale **data warehouse**. And it's designed for 
-high performance and **analysis** of information capable of storing and processing petabytes of data and 
-provide access to this data, using your existing **business intelligence tools**, using standard SQL. 
-It operates as a relational database management system, and therefore is compatible with other 
-RDBMS applications. Redshift itself is based upon PostgreSQL 8.0.2, but it contains a number of 
-differences from PostgreSQL.
+Amazon Redshift is a fast, fully-managed, petabyte-scale **data warehouse**. And it's designed for high performance and **analysis** of information capable of storing and processing petabytes of data and provide access to this data, using your existing **business intelligence tools**, using standard SQL. It operates as a relational database management system, and therefore is compatible with other RDBMS applications. Redshift itself is based upon PostgreSQL 8.0.2, but it contains a number of differences from PostgreSQL.
 
 Relational Database Management System
 
@@ -181,75 +171,3 @@ ODBC and JDBC drivers
 
 <br />
 
-# Amazon Quantum Ledger Database (QLDB)
-
-Amazon QLDB is a fully managed and serverless database service, which has been designed as a **ledger** database.
-One quick example of the use cases would be for recording financial data over a period of time. QLDB would 
-allow to maintain a complete history of accounting and transactional data between multiple parties in an 
-**immutable, transparent and cryptographic** way through the use of the cryptographic algorithm, SHA-256, making 
-it highly secure. (Other use cases: audit, insurance, etc.) It acts as a central and trusted authority.
-
-This may sound similar to **blockchain** technology where a ledger is also used. However, in blockchain, 
-that ledger is distributed across multiple hosts in a decentralized environment, whereas QLDB is owned and 
-managed by a central and trusted authority.
-
-Amazon QLDB is maintaining an immutable ledger with cryptographic abilities to enable the verifiable tracking
-of changes over time.
-
-Data for your QLDB database is placed into tables of **Amazon Ion documents** (a superset of JSON) Tables 
-are comprised of a group of Amazon Ion documents and their revisions and QLDB by design maintains an audit
-history of all changes in addition to all previous revisions of the same Ion document. This creates a journal 
-of transactional changes. And the journal acts as an append-only transactional log and maintain the source
-of truth of that document an dthe entire history of changes.
-
-Amazon QLDB uses Journal Storage and Indexed Storage
-- Journal Storage is the storage that is used to hold the history of changes made within the ledger database.
-- Indexed Storage is used to provision the tables and indexes within your ledger database.
-
-Amazon QLDB integrated with Amazon Kinesis.
-
-<br />
-
-# Amazon DocumentDB
-
-DocumentDB is a **document** database, which provides the ability to quickly and easily store any 
-**JSON-like document data** which can then be queried and indexed. It is fully managed and runs in a VPC.
-**Indexing** enhances the speed of retrieving data within a database thanks to an indexing data 
-structure stored within the database.
-
-DocumentDB has the ability to scale both its **compute and storage separately** from each other.
-
-Amazon DocumentDB has full compatibility with **MongoDB**, which again is another document database, 
-meaning that if required, you can easily migrate any existing MongoDB databases you might have into 
-Amazon DocumentDB using the **Database Migration Service (DMS)**.
-
-Components: 
-- Cluster
-- DB Instance (read only)
-- Primary DB instance (read and write)
-- Endpoints
-
-An endpoint is a URL address with an identified port that points to your infrastructure. There are three 
-types of endpoints:
-- cluster endpoint: points directly to the current primary DB instance of a cluster. It should be used
-by applications that require both read and write access to the database.
-- Reader endpoint: used to connect to read replicas and allows applications to access your databaes for 
-read requests. Only a single reader endpoint exists, even if you have multiple read replicas
-- Instance endpoint: every instance within your cluster will have a unique instance endpoint. It allows
-you to direct certain traffic to specific instances within the cluster. You might want to do this
-for load balancing reasons across your applications reading from your replicas.
-
-Automatic backup (Amazon S3)and retention policy.
-
-<br />
-
-# Amazon Keyspaces for Apache Cassandra
-
-Keyspace is a grouping of tables Keyspaces offers two different throughput capacity modes when 
-working with your read and writes to and from your tables:
-- On-demand throughput (default)
-- Provisioned throughput
-
-CQL - Cassandra Query Language
-
-<br />
