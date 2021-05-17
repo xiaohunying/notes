@@ -166,5 +166,18 @@ Amazon Redshift integrates with Amazon CloudWatch which generate query/load perf
 
 # Amazon RDS Costs
 
+Currently, only the Oracle database engine uses the BYOL purchase options, all other DB engines only use on-demand instances and reserved instances, with the added exception of Aurora also using serverless as an additional purchasing option. 
+
+### RDS Instance Purchasing Options
+| DB          | On-demand Instances | On-demand Instances (BYOL) | Reserved Instances | Reserved Instances (BYOL) | Serverless |
+|-------------|:-------------------:|---------------------------:|-------------------:|--------------------------:|-----------:|
+| MySQL       | Y                   |                            | Y                  |                           |            |
+| PostgresSQL | Y                   |                            | Y                  |                           |            |
+| MariaDB     | Y                   |                            | Y                  |                           |            |
+| Aurora      | Y                   |                            | Y                  |                           | Y          |
+| Oracle      | Y                   | Y                          | Y                  | Y                         |            |
+| SQL Server  | Y                   |                            | Y                  |                           |            |
+
+
 <br />
 
