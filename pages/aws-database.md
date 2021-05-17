@@ -145,27 +145,22 @@ Amazon Neptune is a fast, reliable, secure, and fully-managed **graph database**
 
 Amazon Redshift is a fast, fully-managed, petabyte-scale **data warehouse**. And it's designed for high performance and **analysis** of information capable of storing and processing petabytes of data and provide access to this data, using your existing **business intelligence tools**, using standard SQL. It operates as a relational database management system, and therefore is compatible with other RDBMS applications. Redshift itself is based upon PostgreSQL 8.0.2, but it contains a number of differences from PostgreSQL.
 
-Relational Database Management System
+A data warehouse is used to consolidate data from multiple sources to allow you to run business intelligent tools, across your data, to help you identify actionable business information, which can then be used to direct and drive your organization to make effective data-driven decisions to the benefit of your company. As a result, using a data warehouse is a very effective way to manage your reporting and data analysis at scale.
 
-### ETL
-
-Extract, Transform and Load data.
-
-### Cluster, Compute Node, Leader Node, Node Slice
-
-- A Cluster is a grouping of Compute Nodes.
-- A Node Slice is a partition of a Compute Node where the node memory and disk space split.
+### Redshift Componnets
+- **Cluster**: A Cluster is a grouping of Compute Nodes.
+- **Compute Node**
+- **Leader Node**: The leader node of the cluster has the role of coordinating communication between your compute nodes in your cluster and your external applications accessing your Redshift data warehouse. So the leader node is essentially gateway into your cluster from your applications. When external applications are querying the data in your warehouse, the leader node will create execution plans, containing code to return the required results from the database.
+- **Node Slice**: A Node Slice is a partition of a Compute Node where the node memory and disk space split.
 
 ### Connection
-
-ODBC and JDBC drivers
+Communication between your BI applications and Redshift, will use industry standard open database connectivity, **ODBC**. And Java database conductivity, **JDBC** drivers for PostgreSQL.
 
 ### Performance Features
-
+Amazon Redshift integrates with Amazon CloudWatch which generate query/load performance data
 - Massively Parallel Processing (MPP)
 - Columnar Data Storage
 - Result Caching
-- Integrates with Amazon CloudWatch
 
 <br />
 
