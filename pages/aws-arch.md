@@ -72,36 +72,9 @@ Some data is valuable only when it is being accessed and processed. Time-critica
 
 # Amazon Kinesis
 
-Amazon Kinesis was designed to address the complexity and costs of streaming data into the AWS Cloud. The data includes (1) Event logs (2) Social media feeds (3) Clickstream data (4) Application data (5) IoT sensor data. Amazon Kinesis is composed of four services:
-- Amazon Kinesis Video Streams
-  - is used to do stream processing on binary-encoded data. ex. audio, video.
-  - supports the open-source project WebRTC, which allows you for two-way real-time media streaming between web browsers, mobile applications, and connected devices.
-  - highly-customizable: all parts involved with stream processing (data ingestion, monitoring, scaling, elasticity and consumption) are done programmatically when creating a stream.
-  - AWS will provision resources only when requested.
-  - does not have the ability to do Auto Scaling.
-  - To facilitate the development, management and usage of Kinesis Data Streams, AWS provides APIs, the AWS SDKs, the AWS CLI, the Kinesis Agent for Linux, and the Kinesis Agent for windows.
-- Amazon Kinesis Data Streams
-  - Kinesis Data Streams is used to do stream processing on base64 text-encoded data
-  - A Kinesis Data Stream is a set of Shards. A shard contains a sequence of Data Records. Data Records are composed of a Sequence Number, a Partition Key and a Data Blob.
-  - Two types of consumers
-    - classic: pulls data from stream (polling mechanism)
-    - Enhanced Fan Out: data being pushed automatically from the shard into a consumer application
-- Amazon Kinesis Data Firehose
-  - Kinesis Data Firehose is used to do stream processing on base64 text-encoded data
-  - Kinesis Data Firehose is fully managed and a streaming delivery service for data. Ingested data can be dynamically transformed, scaled automatically, and is automatically delivered to a data store.
-  - Kinesis Data Firehose is NOT a streaming storage layer in the way that Kinesis Data Streams is.
-  - Kinesis Data Firehose uses producers to load data into streams in batches. Once inside the stream, the data is delivered to a data store.
-  - Kinesis Data Firehose buffers incoming streaming data before delivering it to its destination. It is considered a near real-time streaming solution.
-  - Kinesis Data Firehose will automatically scale as needed
-  - Kinesis Data Firehose can convert the format of your input data from JSON to Apache Parquet or Apache ORC before storing data in Amazon S3.
-  - Kinesis Data Firehose can also invoke Lambda functions to transform incoming source-data and deliver the transformed data to its destination.
-  - There is no free tier for using Kinesis Data Firehose. However, costs are incurred when data is inside a Firehose stream. There is no bill for provisioned capacity, only used capacity.
-- Amazon Kinesis Data Analytics
-  - Kinesis Data Analytics is used to do stream processing on base64 text-encoded data
-  - Kinesis Data Analytics has the ability to read from the stream in real time and do aggregation and analysis on data while it is in motion.
-  - Kinesis Data Analytics charges an hourly rate based on the number of Amazon Kinesis Processing Units (KPUs) used to run a streaming application.
+Amazon Kinesis was designed to address the complexity and costs of streaming data into the AWS Cloud. The data includes (1) Event logs (2) Social media feeds (3) Clickstream data (4) Application data (5) IoT sensor data. Amazon Kinesis is composed of four services: Kinesis Video Streams, Kinesis Data Streams, Kinesis Data Firehose and Kinesis Data Analytics.
 
-### Layers of Streaming
+Layers of Streaming
 - Source
 - Stream Ingestion
   - The producer
@@ -116,7 +89,36 @@ Amazon Kinesis was designed to address the complexity and costs of streaming dat
 - Destination
   - Amazon S3, Amazon Redshift, Amazon Elasticsearch Service, Splunk
 
-Amazon Kinesis does not store persistent data itself, unlike many of the other amazon big data services. As a result, Amazon Kinesis needs to be deployed as part of a larger event-driven solution. Amazon Kinesis provides three different solution capabilities:
+### Amazon Kinesis Video Streams
+- is used to do stream processing on binary-encoded data. ex. audio, video.
+- supports the open-source project WebRTC, which allows you for two-way real-time media streaming between web browsers, mobile applications, and connected devices.
+- highly-customizable: all parts involved with stream processing (data ingestion, monitoring, scaling, elasticity and consumption) are done programmatically when creating a stream.
+- AWS will provision resources only when requested.
+- does not have the ability to do Auto Scaling.
+- To facilitate the development, management and usage of Kinesis Data Streams, AWS provides APIs, the AWS SDKs, the AWS CLI, the Kinesis Agent for Linux, and the Kinesis Agent for windows.
+
+### Amazon Kinesis Data Streams
+- Kinesis Data Streams is used to do stream processing on base64 text-encoded data
+- A Kinesis Data Stream is a set of Shards. A shard contains a sequence of Data Records. Data Records are composed of a Sequence Number, a Partition Key and a Data Blob.
+- Two types of consumers
+  - classic: pulls data from stream (polling mechanism)
+  - Enhanced Fan Out: data being pushed automatically from the shard into a consumer application
+
+### Amazon Kinesis Data Firehose
+- Kinesis Data Firehose is used to do stream processing on base64 text-encoded data
+- Kinesis Data Firehose is fully managed and a streaming delivery service for data. Ingested data can be dynamically transformed, scaled automatically, and is automatically delivered to a data store.
+- Kinesis Data Firehose is NOT a streaming storage layer in the way that Kinesis Data Streams is.
+- Kinesis Data Firehose uses producers to load data into streams in batches. Once inside the stream, the data is delivered to a data store.
+- Kinesis Data Firehose buffers incoming streaming data before delivering it to its destination. It is considered a near real-time streaming solution.
+- Kinesis Data Firehose will automatically scale as needed
+- Kinesis Data Firehose can convert the format of your input data from JSON to Apache Parquet or Apache ORC before storing data in Amazon S3.
+- Kinesis Data Firehose can also invoke Lambda functions to transform incoming source-data and deliver the transformed data to its destination.
+- There is no free tier for using Kinesis Data Firehose. However, costs are incurred when data is inside a Firehose stream. There is no bill for provisioned capacity, only used capacity.
+
+### Amazon Kinesis Data Analytics
+- Kinesis Data Analytics is used to do stream processing on base64 text-encoded data
+- Kinesis Data Analytics has the ability to read from the stream in real time and do aggregation and analysis on data while it is in motion.
+- Kinesis Data Analytics charges an hourly rate based on the number of Amazon Kinesis Processing Units (KPUs) used to run a streaming application.
 
 <br />
 
