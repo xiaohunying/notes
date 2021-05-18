@@ -33,6 +33,7 @@
   - [Amazon Redshift](./aws-database.md#amazon-redshift)
   - [Amazon RDS Costs](./aws-database.md#amazon-rds-costs)
 - [AWS High Availability](aws-ha.md)
+- [AWS Architecture](aws-arch.md)
 - [AWS Security](aws-security.md)
   - [Identity And Access Management (IAM)](./aws-security.md#identity-and-access-management-iam)
   - [AWS Organization](./aws-security.md#aws-organization)
