@@ -32,9 +32,25 @@ SQS is a fully managed service that works with serverless systems, microservices
 
 # Simple Notification Service (SNS)
 
-SNS offers methods of controlling specific access to your topics through a topic policy. For example, you can restrict which protocol subscribers can use, such as SMS or HTTPS, or only allow access to this topic for a specific user. The topic policy follows the same format as IAM policies. To configure an SNS, start from creating a topic.
+SNS is used as a publish/subscribe messaging service. It is centred around topics. Users or endpoints can then subscribe to this topic, where messages or events are published. When a message is published, ALL subscribers to that topic receive a notification of that message. SNS is a managed service and highly scalable, allowing you to distribute messages automatically to all subscribers across your environment, including mobile devices. It can be configured with the AWS management console the CLI or with the AWS SDK.
 
-Use SNS as a producer for an SQS queue: SNS and SQS by working together, a solution can be designed to send messages to subscribers through a push method, while SQS handles incoming messages and waits for consumers to pull data.
+### SNS Topics
+- Publisher --> SNS Topic --> Subscribers
+  - Subscribers:
+    - HTTPS
+    - EMAIL
+    - EMAIL-JSON
+    - SQS
+    - APPLICATION
+    - LAMBDA
+    - SMS
+- SNS offers methods of controlling specific access to your topics through a topic policy. 
+  - For example, you can restrict which protocol subscribers can use, such as SMS or HTTPS, or only allow access to this topic for a specific user.
+  - The topic policy follows the same format as IAM policies. 
+  - To configure an SNS, start from creating a topic.
+
+### SNS and SQS
+SNS and SQS by working together, a solution can be designed to send messages to subscribers through a push method, while SQS handles incoming messages and waits for consumers to pull data. - Use SNS as a producer for an SQS queue.
 
 <br />
 
