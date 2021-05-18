@@ -20,13 +20,24 @@ Available database engines for Amazon **Relational** Database Service:
 - SQL Server (EBS)
 
 ### RDS Multi-AZ
-- It is used to help with resilience and business continuity.
-- Multi-AZ configures a secondary RDS instance (replica) within a different AZ in the same region as the primary instance.
-- The only purpose of Multi-AZ is to provide a failover option for a primary RDS instance. It's not to be used as a secondary replica to offload read-only traffic to.
-- The replication of data happens synchronously.
-- RDS uses a Failover mechanism on Oracle, MySQL, MariaDB and PostgreSQL instances. The failover process happens automatically and is managed by AWS. RDS updates the DNS record to point to the secondary instance within 60-120 seconds.
-- SQL Server Multi-AZ is achieved through the use of **SQL Server Mirroring**.
-- Amazon Aurora DB clusters are fault tolerant by default and it is achieved within the cluster by replicating the data across different instances in different AZs. The automatic provision launches a new primary instance in the event of a failure which can take up to 10 minutes. This time can be reduced when you enable Multi-AZ on Aurora cluster which allows RDS to provision a replica within a different AZ automatically.
+It is used to help with resilience and business continuity. The only purpose of Multi-AZ is to provide a failover option for a primary RDS instance. It's not to be used as a secondary replica to offload read-only traffic to. Multi-AZ configures a secondary RDS instance (replica) within a different AZ in the same region as the primary instance. The replication of data happens synchronously.
+
+- RDS uses a Failover mechanism on **Oracle**, **MySQL**, **MariaDB** and **PostgreSQL** instances. The failover process happens automatically and is managed by AWS. RDS updates the DNS record to point to the secondary instance within 60-120 seconds. The failover process happens in the following scnarios on the primary instance:
+  - Patching maintenance
+  - Host failure
+  - Availability zone failure
+  - Instance rebooted with failover
+  - DB instance class is modified
+- **SQL Server** Multi-AZ is achieved through the use of **SQL Server Mirroring**. You need to ensure you have your environment configured correctly:
+  - A DB subnet group must be configured with a minimum of 2 different AZ's within it.
+  - You can specify which availability zone the standby mirrored instance will reside in.
+- **Amazon Aurora** DB clusters are fault tolerant by default
+  - This is achieved within the cluster by replicating the data across different instances in different AZs. 
+  - Aurora can automatically provision and launch a new primary instance in the event of a failure which can take up to 10 minutes.
+  - This time can be reduced when you **enable Multi-AZ** on Aurora cluster which allows RDS to provision a replica within a different AZ automatically.
+    - Should a failure occur, the replica instance is promoted to the new primary instance without having to wait 10 minutes
+    - This creates a highly available and resilient database solution
+    - It is possible to create up to 15 replicas if required, each with a different priority
 
 ### Amazon Aurora
 - Separate the compute layer and storage layer from each other.
