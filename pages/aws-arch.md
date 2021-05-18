@@ -18,13 +18,15 @@ SQS is a fully managed service that works with serverless systems, microservices
   - They provide almost unlimited number of transactions per second.
 - FIFO Queues
   - The order of messages is maintained and there are no duplicates.
+  - Exactly-once processing
   - Limited number of transaction per second (defaulted to 300 TPS).
   - Batching allows you to perform actions against 10 messages at once with a single action.
 - Dead-Letter Queues
   - The dead-letter queue sends messages that fail to be processed
   - this could be the result of code within your application, corruption within the message or simply missing information.
   - If the message can't be processed by a consumer after a maximum number of tries specified, the queue will send the message to a DLQ.
-  - By viewing and analysing the content of the message it might be possible to identify the problem and ascertain the source of the issue. 
+  - By viewing and analysing the content of the message it might be possible to identify the problem and ascertain the source of the issue.
+  - The DLQ must have the same queue type (standard or FIFO) as the source its used against
 
 <br />
 
