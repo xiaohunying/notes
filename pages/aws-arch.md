@@ -4,6 +4,8 @@
 
 - [Simple Queue Service (SQS)](#simple-queue-service-sqs)
 - [Simple Notification Service (SNS)](#simple-notification-service-sns)
+- [Fundamentals of Stream Processing](#fundamentals-of-stream-processing)
+- [Amazon Kinesis](#amazon-kinesis)
 
 <br />
 
@@ -100,7 +102,6 @@ Amazon Kinesis was designed to address the complexity and costs of streaming dat
   - Kinesis Data Analytics charges an hourly rate based on the number of Amazon Kinesis Processing Units (KPUs) used to run a streaming application.
 
 ### Layers of Streaming
-
 - Source
 - Stream Ingestion
   - The producer
@@ -115,35 +116,9 @@ Amazon Kinesis was designed to address the complexity and costs of streaming dat
 - Destination
   - Amazon S3, Amazon Redshift, Amazon Elasticsearch Service, Splunk
 
-
-
 Amazon Kinesis does not store persistent data itself, unlike many of the other amazon big data services. As a result, Amazon Kinesis needs to be deployed as part of a larger event-driven solution. Amazon Kinesis provides three different solution capabilities:
 
-### Amazon Kinesis Streams
+<br />
 
-Amazon Kinesis Streams enables you to build custom applications that process or analyze streaming data for specialized needs.
-
-- Data streams: A data streaming service capable of elastically scaling to support thousands of data feeds.
-- Video streams: Designed to securely elastically scale and ingest video streams on a massive scale.
-
-An Amazon Kinesis stream is an ordered sequence of data records. A record is the unit of data in an Amazon Kinesis stream. Each record in the stream is composed of **a sequence number**, **a partition key** and **a data blob**.
-
-A consumer receives records from Amazon Kinesis Streams and processes them in real-time. You need to build your applications using either the Amazon Kinesis API, or the Amazon Kinesis Client Library.
-
-### Amazon Kinesis Data Firehose
-
-Amazon Kinesis Firehose is a fully namaged service for delivering real-time streaming data to destinations such as Amazon S3, Amazon RedShift, and Amazon Elastic Search and Splunk.
-
-With Kinesis Firehose, you do not need to write applications as your consumers. You can also configure Amazon Kinesis Firehose to transform your data before data delivery.
-
-Firehose is limited to S3, Redshift, Elasticsearch and Splunk as the data destinations.
-
-### Amazon Kinesis Analytics
-
-Amazon Kinesis Analytics enables you to quickly author SQL code that continuously reads, processes and stores data. You can ingest in real-time billions of small data points. Each individual data point can then be aggregated to provide intelligent business insights, which in turn can be used to continually optimize and improve business processes.
-
-- Create an input stream: Typically come from streaming data sources such as Kinesis streams
-- Create SQL processing logic
-- Create an output stream: to hold intermediate results that are used to feed into other queries or be used to stream out the final results.
 
 
