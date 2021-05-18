@@ -8,7 +8,7 @@
 - RTO (Recovery Time Objective): Defined as the maximum amount of time in which a service can remain unavailable before it's classed as damaging to the business.
 - RPO (Recovery Point Objective): Defined as the maximum amount of time for which data could be lost for a service.
 
-### Large Data Transfer
+### Data Backups
 
 - AWS Snowball
   - Physical appliance sent to customer site
@@ -17,7 +17,14 @@
 - Snowmobile
   - Exabyte-scale transfer service
   - Transfer up to 100 PB per snowmobile (45-foot shipping container) pulled by a semi-trailer truck
+- AWS Storage Gateway
+  - File Gateway
+  - Stored Volume Gateway
+  - Cached Volume Gateway
+  - Tape Gateway (Virtual Tape Library)
 
 
+### High Availability In RDS
+- RDS Multi-AZ
 
 
