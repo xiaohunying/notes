@@ -22,9 +22,3 @@
   - Stored Volume Gateway
   - Cached Volume Gateway
   - Tape Gateway (Virtual Tape Library)
-
-
-### High Availability In RDS
-- RDS Multi-AZ
-
-
