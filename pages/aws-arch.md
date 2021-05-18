@@ -6,6 +6,7 @@
 - [Simple Notification Service (SNS)](#simple-notification-service-sns)
 - [Fundamentals of Stream Processing](#fundamentals-of-stream-processing)
 - [Amazon Kinesis](#amazon-kinesis)
+- [Architecture Basics](#architecture-basics)
 
 <br />
 
