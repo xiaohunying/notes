@@ -54,6 +54,20 @@ SNS and SQS by working together, a solution can be designed to send messages to 
 
 <br />
 
+# Fundamentals of Stream Processing
+
+Some data is valuable only when it is being accessed and processed. Time-critical data is used for preventative maintenance or to react to one or more events in real time. **Stream Processing** is created to address issues of latency, session boundaries, and inconsistent load. The term streaming is used to describe information as it flows continuously without a beginning or an end.
+
+### Stream Application
+- Producer
+  - Collects events and transactions and put into the Data Stream
+- Data Stream
+  - Stores the data itself
+- Consumer
+  - Access the Data Stream, read the data and then act on it
+
+<br />
+
 # Amazon Kinesis
 
 Amazon Kinesis does not store persistent data itself, unlike many of the other amazon big data services. As a result, Amazon Kinesis needs to be deployed as part of a larger event-driven solution. Amazon Kinesis provides three different solution capabilities:
