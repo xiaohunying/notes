@@ -39,29 +39,6 @@ It is used to help with resilience and business continuity. **The only purpose o
     - This creates a highly available and resilient database solution
     - It is possible to create up to 15 replicas if required, each with a different priority
 
-### Amazon Aurora
-- Separate the compute layer and storage layer from each other.
-- Aurora uses a **quorum** and **gossip protocol** baked within the storage layer to ensure that the data remains consistent.
-- Aurora in general, regardless of the compute layer setup, always provides 6 way replicated storage across 3 AZs. Aurora is only supported in regions that have 3 or more AZs.
-- There are 4 different connection endpoint types:
-  - Cluster endpoint
-  - Reader endpoint
-  - Custom endpoint
-  - Instance endpoint
-- Connection endpoint load balancing is implemented internally using Route 53 DNS.
-- Be careful in the client layer **not to cache** the connection endpoint lookups longer than their specified TTLs.
-- A single master instance can be configured with up to 15 read replicas when using Aurora.
-- Multi-Master cluster:
-  - An Aurora multi master setup leverages 2 compute instances configured in active-active read write configuration.
-  - If an instance outage occurs in one AZ, all database writes can be redirected to the remaining active instance (all without the need to perform a failover). 
-  - A maximum of 2 compute instances can be configured as masters in a multi-master cluster. 
-  - You can not add read replicas to a multi master cluster.
-  - Incoming database connections to an Aurora multi master cluster are not load balanced by the service. Load balancing connection logic must be implemented and performed within the client.
-- Aurora Serverless
-  - An Aurora Serverless database is configured with a **single connection endpoint** which makes sense (given that it it designed to be serverless) this endpoint is obviously used for all read and writes.
-  - An option to consider is the **Web Service Data API feature** which is available only on Aurora Serverless databases. It makes implementing Lambda functions which need to perform data lookups and/or mutations within an Aurora serverless database a breeze. The AWS CLI has been updated to allow you to execute queries through it from the command line.
-  - Aurora Serverless performs a **continuous automatic backup** of the database with a default retention period of 1 day - which can be manually increased to a maximum retention period of 35 days. This style of backup gives you the capability of **restoring to a point in time** within the currently configured backup retention period. Restores are performed to a **new serverless database cluster**.
-
 ### Read Replicas
 Read Replicas are NOT used for resiliency or as secondary instance in the event of a failover. They are used to serve read-only access to your database data via a separate instance.
 - Read Replicas are available for MySQL, MariaDB, PostgreSQL, Amazon Aurora, Oracle, and SQL Server.
@@ -93,6 +70,34 @@ Read Replicas for PostgreSQL
 - A role is used to manage replication when using PostgreSQL.
 - PostgreSQL allows you to create a Multi-AZ read replica instance.
 - PostgreSQL does not allow nested read replicas.
+
+### Amazon Aurora
+Aurora separate the compute layer (EC2) and storage layer from each other. It uses a **quorum and gossip protocol** baked within the storage layer to ensure that the data remains consistent. Aurora in general, regardless of the compute layer setup, always provides **6 way replicated storage across 3 AZs**. Aurora is only supported in regions that have 3 or more AZs.
+- Aurora provides both automatic and manual failover of the master either of which takes approximately 30 seconds to complete.
+- **Connection endpoint** load balancing is implemented internally using Route 53 DNS. Be careful in the client layer **not to cache** the connection endpoint lookups longer than their specified TTLs. There are 4 different connection endpoint types:
+  - Cluster endpoint
+    - The cluster endpoint points to the current master database instance. using the Cluster endpoint allows your application to perform read and writes against the master instance.
+  - Reader endpoint
+    - The reader endpoint load balancers connections across the read replica fleet within the cluster.
+  - Custom endpoint
+    - Cutom endpoint can be used to group instances based on instance size or maybe group them on a particular DB parameter group. You can then dedicate the custom endpoint for a specific role or task within your organisation.
+  - Instance endpoint
+    - An instance endpoint maps directly to a cluster instance. Each and every cluster instance has its own instance endpoint. You can use an instance endpoint when you want fine-grained control over which instance you need to service your requests.
+- Single master - Multiple Read Replicas
+  - Single master instance can be configured with up to 15 read replicas when using Aurora.
+  - This type of cluster supports being stopped and started manually in its entirety. When you stop and start a cluster, all underlying compute instances are either stopped or started. When stopped the cluster remains stopped for up to 7 days, after which it will automatically restart.
+  - Daily bakups are automatically performed with a default retention period of 1 day and for which can be adjusted up to a maximum retention period of 35 days.
+  - On-demand manual snapshots can be performed on the database at any time. The manual snapshots are stored indefinitely until you explicitly choose to delete them. Restores are performed into a new databse.
+- Multi-Master cluster:
+  - An Aurora multi master setup leverages 2 compute instances configured in active-active read write configuration.
+  - If an instance outage occurs in one AZ, all database writes can be redirected to the remaining active instance (all without the need to perform a failover). 
+  - A maximum of 2 compute instances can be configured as masters in a multi-master cluster. 
+  - You can not add read replicas to a multi master cluster.
+  - Incoming database connections to an Aurora multi master cluster are not load balanced by the service. Load balancing connection logic must be implemented and performed within the client.
+- Aurora Serverless
+  - An Aurora Serverless database is configured with a **single connection endpoint** which makes sense (given that it it designed to be serverless) this endpoint is obviously used for all read and writes.
+  - An option to consider is the **Web Service Data API feature** which is available only on Aurora Serverless databases. It makes implementing Lambda functions which need to perform data lookups and/or mutations within an Aurora serverless database a breeze. The AWS CLI has been updated to allow you to execute queries through it from the command line.
+  - Aurora Serverless performs a **continuous automatic backup** of the database with a default retention period of 1 day - which can be manually increased to a maximum retention period of 35 days. This style of backup gives you the capability of **restoring to a point in time** within the currently configured backup retention period. Restores are performed to a **new serverless database cluster**.
 
 <br />
 
