@@ -20,7 +20,7 @@ Available database engines for Amazon **Relational** Database Service:
 - SQL Server (EBS)
 
 ### RDS Multi-AZ
-It is used to help with resilience and business continuity. The only purpose of Multi-AZ is to provide a failover option for a primary RDS instance. It's not to be used as a secondary replica to offload read-only traffic to. Multi-AZ configures a secondary RDS instance (replica) within a different AZ in the same region as the primary instance. The replication of data happens synchronously.
+It is used to help with resilience and business continuity. **The only purpose of Multi-AZ is to provide a failover option for a primary RDS instance.** It's NOT to be used as a secondary replica to offload read-only traffic to. Multi-AZ configures a secondary RDS instance (replica) within a different AZ in the same region as the primary instance. The replication of data happens synchronously.
 
 - RDS uses a Failover mechanism on **Oracle**, **MySQL**, **MariaDB** and **PostgreSQL** instances. The failover process happens automatically and is managed by AWS. RDS updates the DNS record to point to the secondary instance within 60-120 seconds. The failover process happens in the following scnarios on the primary instance:
   - Patching maintenance
@@ -63,16 +63,36 @@ It is used to help with resilience and business continuity. The only purpose of 
   - Aurora Serverless performs a **continuous automatic backup** of the database with a default retention period of 1 day - which can be manually increased to a maximum retention period of 35 days. This style of backup gives you the capability of **restoring to a point in time** within the currently configured backup retention period. Restores are performed to a **new serverless database cluster**.
 
 ### Read Replicas
+Read Replicas are NOT used for resiliency or as secondary instance in the event of a failover. They are used to serve read-only access to your database data via a separate instance.
 - Read Replicas are available for MySQL, MariaDB, PostgreSQL, Amazon Aurora, Oracle, and SQL Server.
-- Read Replicas are NOT used for resiliency or as secondary instance in the event of a failover.
-- Read Replicas are used to serve read-only access to your database data via a separate instance.
 - It is possible to deploy more than one read replica for a primary DB.
 - Adding more replicas allows you to scale your read performance to a wider range of applications.
 - You are able to deploy read replicas in different regions.
 - It is also possible to promote an existing read replica to replace the primary DB in the event of an incident.
 - During any maintenance of the primary instance, read traffic can be served via your read replicas.
+
+Read Replicas for MySQL
 - Amazon RDS for MySQL Read Replicas require a transactional storage engine and are only supported for the InnoDB storage engine. (**InnoDB** is a storage engine for the database management system MySQL and MariaDB. Since the release of MySQL 5.5.5 in 2010, it replaced MyISAM as MySQL's default table type. InnoDB is transactional storage engine. MyISAM is non-transactional storage engine.)
-- Read Replicas can be promoted to "standalone" DB instances.
+- It is also possible to have nested read replica chains
+  - A read replica replicates from your source DB and can then act as a source DB for another read replica
+  - This chain can only be maximum of 4 layers deep
+  - The same prerequisites must also apply to the source read replica
+  - You can have up to a maximum of 5 read replicas per each source DB
+- If an outage occurs with the primary instance, RDS automatically redirects the read replica source to the secondary DB. Amazon Cloudwatch can monitor the synchronisation between the source DB and the read replica through a metric known as ReplicaLag.
+
+Read Replicas for MariaDB
+- You still need to have the backup retention period greater than 0, and you can only have 5 read replicas per source DB.
+- The same read replicas nesting rules apply and you also have the same monitoring metric for CloudWatch.
+- You can be running ANY version of MariaDB for read replicas.
+
+Read Replicas for PostgreSQL
+- The automatic backup retention value needs to be greater than 0 and the limitation of read replicas is 5 per source DB.
+- When using PostgreSQL, you need to run version 9.3.5 or later for read replicas.
+- The native PostgreSQL streaming replication is used to handle the replication and creation of the read replica.
+- The connection between the master and the read replica instance replicates data asynchronously between the 2 instances.
+- A role is used to manage replication when using PostgreSQL.
+- PostgreSQL allows you to create a Multi-AZ read replica instance.
+- PostgreSQL does not allow nested read replicas.
 
 <br />
 
