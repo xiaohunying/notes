@@ -122,5 +122,15 @@ Layers of Streaming
 
 <br />
 
+# Architecture Basics
+
+- LAMP: Linux operation system, Apache web server, MySQL database, PHP programming language)
+- MEAN: Mongo DB, ExpressJS, AngularJS, NodeJS)
+- Serverless: generally use Amazon API Gateway, AWS Lambda to replaces logic tier.
+- Microservice
+
+
+
+
 
 
