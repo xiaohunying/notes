@@ -6,6 +6,9 @@
 - [Simple Notification Service (SNS)](#simple-notification-service-sns)
 - [Fundamentals of Stream Processing](#fundamentals-of-stream-processing)
 - [Amazon Kinesis](#amazon-kinesis)
+- [Amazon Cloudfront](#amazon-cloudfront)
+- [Amazon Cloudtrail](#amazon-cloudtrail)
+- [AWS Config](#aws-config)
 - [Architecture Basics](#architecture-basics)
 
 <br />
@@ -120,6 +123,28 @@ Layers of Streaming
 - Kinesis Data Analytics is used to do stream processing on base64 text-encoded data
 - Kinesis Data Analytics has the ability to read from the stream in real time and do aggregation and analysis on data while it is in motion.
 - Kinesis Data Analytics charges an hourly rate based on the number of Amazon Kinesis Processing Units (KPUs) used to run a streaming application.
+- Can also block bad actors/IP addresses; but this is where WAF (Web Access Firewall) might be better to manage that type of granular access.
+  - If you don't have WAF or Cloudfront to restrict access, NACL can block a range of IP addresses in the same CIDR range.
+
+<br />
+
+# Amazon Cloudfront
+
+- Can deliver an application or content globally or to new regions
+- Can also geoblock or restrict access
+- Enables sharing content to a finite group of people, another team, or group (use Cloudfront signed URL with a one-time token created)
+
+<br />
+
+# Amazon Cloudtrail
+
+Amazon Cloudtrail is to record API calls. This is useful for audit.
+
+<br />
+
+# AWS Config
+
+AWS config is to track configuration changes inside your VPC and into your account. This is useful for audit.
 
 <br />
 
