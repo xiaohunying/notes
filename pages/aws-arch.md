@@ -3,9 +3,14 @@
 # AWS Architecture
 
 - [Simple Queue Service (SQS)](#simple-queue-service-sqs)
+  - [SQS Queue Types](#sqs-queue-types)
 - [Simple Notification Service (SNS)](#simple-notification-service-sns)
 - [Fundamentals of Stream Processing](#fundamentals-of-stream-processing)
 - [Amazon Kinesis](#amazon-kinesis)
+  - [Amazon Kinesis Video Streams](#amazon-kinesis-video-streams)
+  - [Amazon Kinesis Data Streams](#amazon-kinesis-data-streams)
+  - [Amazon Kinesis Data Firehose](#amazon-kinesis-data-firehose)
+  - [Amazon Kinesis Data Analytics](#amazon-kinesis-data-analytics)
 - [Amazon Cloudfront](#amazon-cloudfront)
 - [Amazon Cloudtrail](#amazon-cloudtrail)
 - [AWS Config](#aws-config)
