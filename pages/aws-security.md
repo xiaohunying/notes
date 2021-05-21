@@ -3,6 +3,8 @@
 # AWS Security
 
 - [IAM (Identity And Access Management)](#identity-and-access-management-iam)
+  - [Users, Groups & Roles](#users-groups-roles)
+  - [IAM Policies](#iam-policies)
 - [AWS Organization](#aws-organization)
 - [AWS Web Application Firewall (WAF)](#aws-web-application-firewall-waf)
 - [AWS Firewall Manager](#aws-firewall-manager)
