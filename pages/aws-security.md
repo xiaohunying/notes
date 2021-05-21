@@ -115,25 +115,24 @@ Identity federation allows you to access and manage AWS resources even if you do
 within IAM. Identity providers (IdP) allow users to access AWS resources securely. There must be a trust 
 relationship between the IdP and your AWS account. AWS supports two types of IdP:
 - **OpenID** - such as Facebook, Google, Amazon. Amazon Cognito
-- **SAML (Security Assertion Markup Language)** - allows your existing MS-AD users to authenticate to your AWS
+- **SAML2 (Security Assertion Markup Language)** - allows your existing MS-AD users to authenticate to your AWS
 resources on a SSO approach.
 
 An example:
 
 1. The user initiates a request to authenticate against the **ADFS server** via a web browser using a **SSO URL**.
-2. If the authentication is successful by the AD credentials, SAML will then issues a **Successful Authentication
-Assertion** back to the users' client requesting federated access.
-3. The **SAML Assertion** is sent to the **AWS STS** to assume a role within IAM using the **AssumeRoleWithSAML API**.
-4. **STS** responds to the user requesting federated access with **temporary security credentials** with an assumed
-role and associated permissions.
+2. If the authentication is successful by the AD credentials, SAML will then issues a **Successful Authentication Assertion** back to the users' client requesting federated access.
+3. The **SAML Assertion** is sent to the `AWS STS` to assume a role within IAM using the **AssumeRoleWithSAML API**.
+4. **STS** responds to the user requesting federated access with **temporary security credentials** with an assumed role and associated permissions.
 5. The user then has **federated access** to the necessary AWS services as per the role permissions.
 
 > **Security Token Service (STS)** allows you to gain temporary security credentials for federated users via IAM.
 
 ### Features of IAM
-
-- Account settings - password policy and security token service regions.
-- Credential Report - a list of all your IAM users and credentials. The report will only be generated once in 4 hours.
+- Account settings
+  - Account Settings contains information related to your IAM Password policy and Security Token Service Regions. 
+- Credential Report
+  - Credential report is a list of all your IAM users and credentials. The report will only be generated once in 4 hours.
 - Key Management Service (KMS)
 
 <br />
