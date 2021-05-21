@@ -72,8 +72,7 @@ IAM is to manage, control and govern authentication, authorization and access co
 
 ### IAM Policies
 
-IAM Policies are used to assign permissions. They are formatted as a JSON document and have at least one 
-statement with this structure:
+IAM Policies are used to assign permissions. They are formatted as a JSON document and have at least one `statement` with this structure: (By default, `effect` is set to `Deny`.
 
 ~~~json
 {
