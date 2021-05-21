@@ -66,8 +66,6 @@ IAM is to manage, control and govern authentication, authorization and access co
       - Grant API access to SAML Providers - Allows access from SAML provider via the AWS CLI, SDKs or API calls.
 - Policy Permissions
   - These are JSON policies that define what resources can or can't be accessed
-  - AWS managed policies
-  - Customer managed policies
 - Access Control Mechanisms
   - username and password 
   - multi-factor authentication (MFA)
