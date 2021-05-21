@@ -21,7 +21,7 @@
 
 IAM is to manage, control and govern authentication, authorization and access control mechanisms of identities of your resources within your AWS Account. Identities are required to authenticate AWS accounts. Access Management relates to **authorization** and **access control**. IAM is a **global service**.
 
-### IAM components
+### Users, Groups & Roles
 - Users
   - A user can represent a real person who requires access to operate and maintain your AWS environment 
   - Or an account used by an application that requires permissions to access your AWS resources programmatically
@@ -64,13 +64,11 @@ IAM is to manage, control and govern authentication, authorization and access co
   - AWS managed policies
   - Customer managed policies
 - Access Control Mechanisms
-  - These are mechanisms that govern how a resource is accessed.
-    - username and password 
-    - multi-factor authentication (MFA)
-    - federated access
+  - username and password 
+  - multi-factor authentication (MFA)
+  - federated access
 
-
-### Policies
+### IAM Policies
 
 IAM Policies are used to assign permissions. They are formatted as a JSON document and have at least one 
 statement with this structure:
