@@ -21,8 +21,17 @@ IAM is to manage, control and govern authentication, authorization and access co
 
 ### IAM components
 - Users
+  - A user can represent a real person who requires access to operate and maintain your AWS environment 
+  - Or an account used by an application that requires permissions to access your AWS resources programmatically
+    - Access Key ID
+    - Secret Access Key ID
+      - It's not possible to retrieve lost Secret Access Key IDs
+    - These keys must be applied and associated with your application
 - Groups
-  - contain multiple users
+  - IAM Groups contain multiple users
+  - IAM Groups are not used in authentication process. They are used to authorize access through AWS Policies.
+  - IAM Groups contain IAM Users and have IAM policies associated. (AWS managed policies and/or Customer managed
+policies)
 - Roles
   - different identities can adopt to assume a new set of permissions
 - Policy Permissions
@@ -32,29 +41,6 @@ IAM is to manage, control and govern authentication, authorization and access co
     - username and password 
     - multi-factor authentication (MFA)
     - federated access
-
-### Users
-
-A user can represent a real person who requires access to operate and maintain your AWS environment or
-it can be an account used by an application that requires permissions to access your AWS resources
-programmatically.
-
-Access keys are required for programmatic access for authentication. These keys must be applied and
-associated with your application. If you're using the AWS CLI to access a resource, you first have 
-to instruct the AWS CLI to use these Access Keys. this association ensures that all API request
-are signed with this digital signature.
-- Access Key ID - Made up of 20 random uppercase alphanumeric characters.
-- Secret Access Key ID - Made up of 40 random upper and lowercase characters. 
-It's notpossible to retrieve lost Secret Access Key IDs!
-
-**AWS CodeCommit** is a managed source control service. It allows you to host secure and scalable 
-private Git repositories.
-
-### Groups
-
-IAM Groups are not used in authentication process. They are used to authorize access through AWS Policies.
-IAM Groups contain IAM Users and have IAM policies associated. (AWS managed policies and/or Customer managed
-policies)
 
 ### Roles
 
