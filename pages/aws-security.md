@@ -8,8 +8,8 @@
   - [MFA (Multi-Factor Authentication)](#mfa-multi-factor-authentication)
   - [Identity Federation](#identity-federation)
   - [Features of IAM](#features-of-iam)
+- [WAF (AWS Web Application Firewall)](#aws-web-application-firewall-waf)
 - [AWS Organization](#aws-organization)
-- [AWS Web Application Firewall (WAF)](#aws-web-application-firewall-waf)
 - [AWS Firewall Manager](#aws-firewall-manager)
 - [AWS Shield](#aws-shield)
 - [AWS CloudTrail](#aws-cloudtrail)
@@ -134,29 +134,7 @@ An example:
 - Credential Report
   - Credential report is a list of all your IAM users and credentials. The report will only be generated once in 4 hours.
 - Key Management Service (KMS)
-
-<br />
-
-# AWS Organization
-
-AWS Organizations uses the following components to help you manage your accounts.
-- Organizations
-- Root
-- Organizational Units
-- Accounts
-- Service Control Policies (SCPs)
-
-**Master account** is a standard AWS account that you have chosen to create the AWS organization. The best 
-practice to use this account solely as a master account and not to use it to provision any other resources.
-This allows you to restrict to the master account at a greater level. The fewer users who need access to it,
-the better. The master account carries certain administrative level capabilities, such as being able to
-create additional AWS accounts within your organization, invite other accounts to join your organization,
-remove AWS accounts from your organization and apply security features via policies to different levels within 
-your organization.
-
-An **Security Control Policies (SCP)** does NOT grant access, they add a **guardrail** to define what is allowed. You will still need to configure
-your identity-based or resource-based policies to identities granting permission to carry out actions
-within your accounts.
+  - The KMS enables you to easily manage encryption keys to secure your data.
 
 <br />
 
@@ -478,4 +456,25 @@ Client-Side Encryption
 - with Customer Provided Keys (CSE-C)
 
 <br />
+
+# AWS Organization
+
+AWS Organizations uses the following components to help you manage your accounts.
+- Organizations
+- Root
+- Organizational Units
+- Accounts
+- Service Control Policies (SCPs)
+
+**Master account** is a standard AWS account that you have chosen to create the AWS organization. The best 
+practice to use this account solely as a master account and not to use it to provision any other resources.
+This allows you to restrict to the master account at a greater level. The fewer users who need access to it,
+the better. The master account carries certain administrative level capabilities, such as being able to
+create additional AWS accounts within your organization, invite other accounts to join your organization,
+remove AWS accounts from your organization and apply security features via policies to different levels within 
+your organization.
+
+An **Security Control Policies (SCP)** does NOT grant access, they add a **guardrail** to define what is allowed. You will still need to configure
+your identity-based or resource-based policies to identities granting permission to carry out actions
+within your accounts.
 
