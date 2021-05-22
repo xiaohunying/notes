@@ -9,6 +9,8 @@
   - [Identity Federation](#identity-federation)
   - [Features of IAM](#features-of-iam)
 - [WAF (AWS Web Application Firewall)](#aws-web-application-firewall-waf)
+  - [AWS WAF Componnets](#aws-waf-componnets)
+  - [When And Why WAF](#when-and-why-waf)
 - [AWS Organization](#aws-organization)
 - [AWS Firewall Manager](#aws-firewall-manager)
 - [AWS Shield](#aws-shield)
@@ -142,9 +144,9 @@ An example:
 
 AWS WAF helps to prevent web sites and web applications from being maliciously attacked by common web attack patterns such as SQL injection and cross-site scripting. It is also used to identify how **Amazon CloudFront** distributions and **application load balancers** respond to web requests based upon specific conditions. It filters both HTTP and HTTPS request distinguishing between legitimate and harmful inbound requests.
 
-AWS WAF integrated with **CloudWatch** allowing you to monitor set metrics for the service. **WAF CloudWatch metrics** are **reported in one minute intervals** by default and are **kept for a 2 week period**. The metrics monitored are: _AllowedRequests_, _BlockedRequests_, _CountedRequests_, _PassedRequests_.
+AWS WAF integrated with **CloudWatch** allowing you to monitor set metrics for the service. WAF CloudWatch metrics are reported in one minute intervals by default and are kept for a 2 week period. The metrics monitored are: _AllowedRequests_, _BlockedRequests_, _CountedRequests_, _PassedRequests_.
 
-AWS WAF relies heavily on **AWS CloudFront distributions**. It also **supports custom origins** allowing you to apply the same level of security to **web infrastructure managed outside of AWS**. The association between the Web ACL and a CloudFront distribution can take approximately 15 minutes for the Web ACL and associated rules to be propagated. When a request is blocked by WAF, CloudFront is notified that the request was forbidden and returns a **403 error** to their browser. You can create your own custom 403 error to guide the user to other useful links and provide a polite reason as to why they may have experienced the error. 
+AWS WAF relies heavily on AWS CloudFront distributions. It also supports custom origins allowing you to apply the same level of security to web infrastructure managed outside of AWS. The association between the Web ACL and a CloudFront distribution can take approximately 15 minutes for the Web ACL and associated rules to be propagated. When a request is blocked by WAF, CloudFront is notified that the request was forbidden and returns a **403 error** to their browser. You can create your own custom 403 error to guide the user to other useful links and provide a polite reason as to why they may have experienced the error. 
 
 ### AWS WAF Componnets
 - **Conditions**
@@ -169,6 +171,21 @@ AWS WAF relies heavily on **AWS CloudFront distributions**. It also **supports c
     - WhiteListedIP (Allow)
     - BlackListedIP (Block)
     - BadSignatures (Block)
+
+### When And Why WAF
+If you are delivering web content via a CloudFront distribution or through an application load balancer, then you should implement the AWS Web Application Firewall service as an additional layer of security.
+
+OWASP Top 10:
+- Injections
+- Broken Authentication and Session Management
+- Cross-Site Scripting (XSS)
+- Insecure Direct Object references
+- Security Misconfiguration
+- Sensitive Data Exposure
+- Missing Function level access control
+- Cross-Site request forgery (CSRF)
+- Using known vulnerable components
+- Unvalidated redirects and forwards
 
 ### AWS WAF Limitations
 - 100 conditions of each type except Regex which allows only 10 conditions
