@@ -1,6 +1,39 @@
 <sub>[Amazon Web Services](../pages/aws.md)</sub>
 
+ -[CloudWatch](#cloudwatch)
+
 # AWS Management
+
+# CloudWatch
+
+CloudWatch is a comprehensive monitoring tool that allows you to monitor your services and applications
+in the cloud. It also allows you to react to events and even prevent service interruptions and outages.
+CloudWatch will monitor and create trend reports for services and resources you're probably already using.
+CloudWatch also provides a repository for logging.
+
+- Basic Monitoring - Included with all resources in all regions. 3 dashboard / 50 metrics / 5 minute refresh rate
+- Enhanced Monitoring - Priced per resource by region. 1 minute refresh rate 
+
+<br />
+
+# Logging in AWS
+
+The Unified CloudWatch Agent allows the collection of logs from EC2 instances as well from on-premise server.
+
+### CloudWatch Agent Installation
+- Create a role and attach it to the instance with permissions to collect data from the instances in
+addition to interacting with **AWS systems manager SSM**.
+- Download and install the agent onto the EC2 instance.
+- Configure and start the CloudWatch agent. (Configuration file is copied to **the SSM parameter store**.)
+
+
+### Amazon CloudFront Access Logs
+
+Log files capture data over a period of time and the amount of log files generated depend on 
+the amount of requests received. CloudFront retains logs until they are ready to be delivered to S3.
+This delivery can take between 1 and 24h.
+
+<br />
 
 # AWS CloudTrail
 
@@ -65,37 +98,6 @@ which notify you the non-compliant changes.
 - S3 Bucket - is used to store all the Configuration History files and Snapshots.
 - AWS Config Permissions - The IAM role is required to allow AWS Config to obtain the correct permissions
 to interact with other services.
-
-<br />
-
-# CloudWatch
-
-CloudWatch is a comprehensive monitoring tool that allows you to monitor your services and applications
-in the cloud. It also allows you to react to events and even prevent service interruptions and outages.
-CloudWatch will monitor and create trend reports for services and resources you're probably already using.
-CloudWatch also provides a repository for logging.
-
-- Basic Monitoring - Included with all resources in all regions. 3 dashboard / 50 metrics / 5 minute refresh rate
-- Enhanced Monitoring - Priced per resource by region. 1 minute refresh rate 
-
-<br />
-
-# Logging in AWS
-
-The Unified CloudWatch Agent allows the collection of logs from EC2 instances as well from on-premise server.
-
-### CloudWatch Agent Installation
-- Create a role and attach it to the instance with permissions to collect data from the instances in
-addition to interacting with **AWS systems manager SSM**.
-- Download and install the agent onto the EC2 instance.
-- Configure and start the CloudWatch agent. (Configuration file is copied to **the SSM parameter store**.)
-
-
-### Amazon CloudFront Access Logs
-
-Log files capture data over a period of time and the amount of log files generated depend on 
-the amount of requests received. CloudFront retains logs until they are ready to be delivered to S3.
-This delivery can take between 1 and 24h.
 
 <br />
 
