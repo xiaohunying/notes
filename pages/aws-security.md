@@ -140,37 +140,35 @@ An example:
 
 # AWS Web Application Firewall (WAF)
 
-AWS WAF helps to prevent web sites and web applications from being maliciously attacked by common web
-attack patterns. It is used to identify how **Amazon CloudFront distributions** and **application load
-balancers** respond to **web requests**. It filters both HTTP and HTTPS request distinguishing between
-legitimate and harmful inbound requests.
+AWS WAF helps to prevent web sites and web applications from being maliciously attacked by common web attack patterns such as SQL injection and cross-site scripting. It is also used to identify how **Amazon CloudFront** distributions and **application load balancers** respond to web requests based upon specific conditions. It filters both HTTP and HTTPS request distinguishing between legitimate and harmful inbound requests.
 
-AWS WAF integrated with **CloudWatch** allowing you to monitor set metrics for the service. 
-**WAF CloudWatch metrics** are **reported in one minute intervals** by default and are **kept for a 2 week period**. 
-The metrics monitored are: _AllowedRequests_, _BlockedRequests_, _CountedRequests_, _PassedRequests_.
+AWS WAF integrated with **CloudWatch** allowing you to monitor set metrics for the service. **WAF CloudWatch metrics** are **reported in one minute intervals** by default and are **kept for a 2 week period**. The metrics monitored are: _AllowedRequests_, _BlockedRequests_, _CountedRequests_, _PassedRequests_.
 
-AWS WAF relies heavily on **AWS CloudFront distributions**. It also **supports custom origins** allowing you to 
-apply the same level of security to **web infrastructure managed outside of AWS**. The association between 
-the Web ACL and a CloudFront distribution can take approximately 15 minutes for the Web ACL and associated
-rules to be propagated. When a request is blocked by WAF, CloudFront is notified that the request was 
-forbidden and returns a **403 error** to their browser. You can create your own custom 403 error to guide 
-the user to other useful links and provide a polite reason as to why they may have experienced the error. 
+AWS WAF relies heavily on **AWS CloudFront distributions**. It also **supports custom origins** allowing you to apply the same level of security to **web infrastructure managed outside of AWS**. The association between the Web ACL and a CloudFront distribution can take approximately 15 minutes for the Web ACL and associated rules to be propagated. When a request is blocked by WAF, CloudFront is notified that the request was forbidden and returns a **403 error** to their browser. You can create your own custom 403 error to guide the user to other useful links and provide a polite reason as to why they may have experienced the error. 
 
 ### AWS WAF Componnets
-- **Conditions** - conditions allow you to specify what elements of the incoming HTTP or HTTPS request you want WAF to be 
-  monitoring for.
-  - Cross-site scripting
-  - Geo match
-  - IP addresses
-  - Size constraints
-  - SQL injection attacks
-  - String and regex matching
-- **Rules** - a WAF rule allows you to compile one or more of these conditions into a list which acts as a rule
-where each condition is ANDed to form the complete rule.
-- **Web ACLs** - rules can be added to Web ACLs. Within the web ACL, an action is applied for each rule. These
-actions can either be Allow, Block or Count. **Rules are executed in the order** that they are listed within a 
-Web ACL. As soon as the request matches all the conditions within a rule it will be associated with that rule
-regardless of if there is another rule further down that would also be a match.
+- **Conditions**
+  - conditions allow you to specify what elements of the incoming HTTP or HTTPS request you want WAF to be monitoring for.
+    - Cross-site scripting
+    - Geo match
+    - IP addresses
+    - Size constraints
+    - SQL injection attacks
+    - String and regex matching
+- **Rules**
+  - a WAF rule allows you to compile one or more of these conditions into a list which acts as a rule where each condition is ANDed to form the complete rule.
+  - You must specify if the rule is associated to CloudFront or an ALB, and in which region.
+  - Rule types:
+    - Regular Rule
+      - count the number of requests that are being received from a particular IP address over a time period of five minutes.
+    - Rate-based Rule
+      - You will be asked the maximum number of requests from a single IP within a five minute time frame. When the count is reached, all the following requests from that same IP address is then blocked. If the request rate falls back below the rate limit specified the traffic is then allowed to pass through and is no longer blocked. When you set the limit, it must be above 2000. Any request under this limit is considered a **regular rule**.
+- **Web ACLs** 
+  - Rules can be added to Web ACLs. Within the web ACL, an action is applied for each rule. These actions can either be Allow, Block or Count. 
+  - **Rules are executed in the order** that they are listed within a Web ACL. As soon as the request matches all the conditions within a rule it will be associated with that rule regardless of if there is another rule further down that would also be a match.
+    - WhiteListedIP (Allow)
+    - BlackListedIP (Block)
+    - BadSignatures (Block)
 
 ### AWS WAF Limitations
 - 100 conditions of each type except Regex which allows only 10 conditions
