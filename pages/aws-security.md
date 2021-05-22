@@ -12,7 +12,6 @@
   - [AWS WAF Componnets](#aws-waf-componnets)
   - [When And Why WAF](#when-and-why-waf)
   - [AWS Firewall Manager](#aws-firewall-manager)
-  - [AWS WAF Limitations](#aws-waf-limitations)
   - [AWS WAF Pricing](#aws-waf-pricing)
 - [AWS Shield](#aws-shield)
 - [AWS Cognito](#aws-cognito)
@@ -197,12 +196,6 @@ AWS Firewall Manager has been designed to help you manage WAF in a multi-account
     - allow you to group together one or more WAF rules that will have the same action applied. You can create your own rule group and add your own WAF rules, or purchase existing rule groups via the AWS Marketplace. Rule Groups can only contain 1 of 2 actions, these being either Block or Count. You can only have 10 rules per group which can not be increased.
   - Firewall Manager Policies
     - contain the rule groups that you want to assign to your AWS resources. You can only have 2 rule groups per policy: one customer created rule group, one AWS Marketplace rule group.
-
-### AWS WAF Limitations
-- 100 conditions of each type except Regex which allows only 10 conditions
-- 100 rules and 50 Web ACLs per account
-- 5 rate-based-rules per account
-- 10,000 requests per second for WAF with your ALB 
 
 ### AWS WAF Pricing 
 There are three chargeable elements of AWS WAF. You will not be charged extra for assigning the 
