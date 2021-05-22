@@ -44,6 +44,8 @@
   - [WAF (AWS Web Application Firewall)](./aws-security.md#aws-web-application-firewall-waf)
   - [AWS Shield](./aws-security.md#aws-shield)
   - [AWS Cognito](./aws-security.md#aws-cognito)
+- [AWS Management](aws-management.md)
+
 
 <br />
 
