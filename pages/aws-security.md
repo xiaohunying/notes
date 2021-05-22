@@ -14,7 +14,7 @@
   - [AWS Firewall Manager](#aws-firewall-manager)
   - [AWS WAF Pricing](#aws-waf-pricing)
 - [AWS Shield](#aws-shield)
-- [AWS Cognito](#aws-cognito)
+- [Amazon Cognito](#amazon-cognito)
 
 <br />
 
@@ -226,7 +226,19 @@ DDoS attack target a web host and it receives a huge number of requests simultan
 
 <br />
 
-# AWS Cognito
+# Amazon Cognito
+Amazon Cognito is an authentication and user management service used commonly with web and mobile applications. It offers full integration with external identity providers (Apple, Facebook, Google and Amazon, etc). It integrates with your own Active Directory using SAML. It uses Users Pools and Identity Pools for governing authentication and verification access. The main is that User pools provide a method of authentication through identity verification allowing them to sign into your web or mobile application using an identity provider or the local Cognito user directory. Where as Identity pools are typically used to help control access using temporary credentials to access AWS services on your applications behalf.
+
+### User Pools
+- Used to creat and maintain a directory of your users for your mobile or web application
+- Manges sign up, and signing in for your users
+- Utilise external Identity providers.
+
+### Identity Pools
+- Provide temporary access AWS Credentials for your authenticated users or unauthenticated guests
+- Operates in conjunction with User Pools
+- Allows your users to access AWS services sitting outside of your application
+- Ability to federate using external identity providers
 
 <br />
 
