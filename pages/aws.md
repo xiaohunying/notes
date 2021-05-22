@@ -40,18 +40,9 @@
   - [Amazon Kinesis](./aws-arch.md#amazon-kinesis)
   - [Architecture Basics](./aws-arch.md#architecture-basics)
 - [AWS Security](aws-security.md)
-  - [Identity And Access Management (IAM)](./aws-security.md#identity-and-access-management-iam)
-  - [AWS Organization](./aws-security.md#aws-organization)
-  - [AWS Web Application Firewall (WAF)](./aws-security.md#aws-web-application-firewall-waf)
-  - [AWS Firewall Manager](./aws-security.md#aws-firewall-manager)
+  - [IAM (Identity And Access Management)](./aws-security.md#identity-and-access-management-iam)
+  - [WAF (AWS Web Application Firewall)](./aws-security.md#aws-web-application-firewall-waf)
   - [AWS Shield](./aws-security.md#aws-shield)
-  - [AWS CloudTrail](./aws-security.md#aws-cloudtrail)
-  - [AWS Config](./aws-security.md#aws-config)
-  - [CloudWatch](./aws-security.md#cloudwatch)
-  - [Logging in AWS](./aws-security.md#logging-in-aws)
-  - [VPC Flow Logs](./aws-security.md#vpc-flow-logs)
-  - [Key Management Service (KMS)](./aws-security.md#key-management-service-kms)
-  - [S3 Encryption Mechanisms](./aws-security.md#s3-encryption-mechanisms)
 
 <br />
 
