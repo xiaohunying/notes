@@ -14,16 +14,6 @@
   - [AWS Firewall Manager](#aws-firewall-manager)
   - [AWS WAF Limitations](#aws-waf-limitations)
   - [AWS WAF Pricing](#aws-waf-pricing)
-- [AWS Organization](#aws-organization)
-- [AWS Firewall Manager](#aws-firewall-manager)
-- [AWS Shield](#aws-shield)
-- [AWS CloudTrail](#aws-cloudtrail)
-- [AWS Config](#aws-config)
-- [CloudWatch](#cloudwatch)
-- [Logging in AWS](#logging-in-aws)
-- [VPC Flow Logs](#vpc-flow-logs)
-- [Key Management Service (KMS)](#key-management-service-kms)
-- [S3 Encryption Mechanisms](#s3-encryption-mechanisms)
 
 <br />
 
