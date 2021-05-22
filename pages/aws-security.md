@@ -11,6 +11,9 @@
 - [WAF (AWS Web Application Firewall)](#aws-web-application-firewall-waf)
   - [AWS WAF Componnets](#aws-waf-componnets)
   - [When And Why WAF](#when-and-why-waf)
+  - [AWS Firewall Manager](#aws-firewall-manager)
+  - [AWS WAF Limitations](#aws-waf-limitations)
+  - [AWS WAF Pricing](#aws-waf-pricing)
 - [AWS Organization](#aws-organization)
 - [AWS Firewall Manager](#aws-firewall-manager)
 - [AWS Shield](#aws-shield)
@@ -187,6 +190,22 @@ OWASP Top 10:
 - Using known vulnerable components
 - Unvalidated redirects and forwards
 
+<br />
+
+### AWS Firewall Manager
+AWS Firewall Manager has been designed to help you manage WAF in a multi-account environment with simplicity and control. It allows you to protect your vulnerable resources across all of your AWS accounts within your AWS Organization. It can group and protect specific resources together, e.g. all resources with a particular tag or all of your CloudFront distributions. It automatically protects certain resources that are added to your account as they become active. 
+
+- Prerequisites of Using Firewall Manager
+  - ensure your AWS account is a part of an AWS Organization which much have been configured with all features.
+  - define which AWS account will act as the **Firewall Manager Admin**.
+  - ensure you have **AWS Config** enabled.
+- Components of AWS Firewall Manager
+  - WAF Rules
+  - Rule Groups
+    - allow you to group together one or more WAF rules that will have the same action applied. You can create your own rule group and add your own WAF rules, or purchase existing rule groups via the AWS Marketplace. Rule Groups can only contain 1 of 2 actions, these being either Block or Count. You can only have 10 rules per group which can not be increased.
+  - Firewall Manager Policies
+    - contain the rule groups that you want to assign to your AWS resources. You can only have 2 rule groups per policy: one customer created rule group, one AWS Marketplace rule group.
+
 ### AWS WAF Limitations
 - 100 conditions of each type except Regex which allows only 10 conditions
 - 100 rules and 50 Web ACLs per account
@@ -199,30 +218,6 @@ same Web ACL to multiple distributions.
 - the number of incoming requests
 - the number of web ACLs that you have
 - the number of Rules within each of the Web ACL
-
-<br />
-
-# AWS Firewall Manager
-
-AWS Firewall Manager has been designed to help you manage WAF in a **multi-account** environment with simplicity
-and control. It allows you to protect your vulnerable resources across all of your AWS accounts within your 
-AWS Organization. It can group and protect specific resources together, e.g. all resources with a particular
-tag or all of your CloudFront distributions. It automatically protects certain resources that are
-added to your account as they become active. 
-
-### Prerequisites of Using Firewall Manager
-- ensure your AWS account is a part of an AWS Organization which much have been configured with all features.
-- define which AWS account will act as the **Firewall Manager Admin**.
-- ensure you have **AWS Config** enabled.
-
-### Components of AWS Firewall Manager
-- **WAF Rules** - contain conditions.
-- Rule Groups **- allow you to group together one or more WAF rules that will have the same action applied. You 
-ca**n create your own rule group and add your own WAF rules, or purchase existing rule groups via the AWS
-Marketplace. Rule Groups can only contain 1 of 2 actions, these being either Block or Count. You can only have 
-10 rules per group which can not be increased.
-- **Firewall Manager Policies** - contain the rule groups that you want to assign to your AWS resources. You can
-only have 2 rule groups per policy: one customer created rule group, one AWS Marketplace rule group.
 
 <br />
 
