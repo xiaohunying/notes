@@ -15,6 +15,7 @@
   - [AWS WAF Limitations](#aws-waf-limitations)
   - [AWS WAF Pricing](#aws-waf-pricing)
 - [AWS Shield](#aws-shield)
+- [AWS Cognito](#aws-cognito)
 
 <br />
 
@@ -231,4 +232,9 @@ DDoS attack target a web host and it receives a huge number of requests simultan
 - you may or may not authorize the AWS DRT (the AWS DDoS Response Team) to review, update and modify your Web ACLs and Shield configurations during an attack. If you want the assistance of the DRT team, you must be subscribed to either the business or enterprise support plans.
 
 <br />
+
+# AWS Cognito
+
+<br />
+
 
