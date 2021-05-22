@@ -14,6 +14,7 @@
   - [AWS Firewall Manager](#aws-firewall-manager)
   - [AWS WAF Limitations](#aws-waf-limitations)
   - [AWS WAF Pricing](#aws-waf-pricing)
+- [AWS Shield](#aws-shield)
 
 <br />
 
