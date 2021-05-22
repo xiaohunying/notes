@@ -43,6 +43,7 @@
   - [IAM (Identity And Access Management)](./aws-security.md#identity-and-access-management-iam)
   - [WAF (AWS Web Application Firewall)](./aws-security.md#aws-web-application-firewall-waf)
   - [AWS Shield](./aws-security.md#aws-shield)
+  - [AWS Cognito](./aws-security.md#aws-cognito)
 
 <br />
 
