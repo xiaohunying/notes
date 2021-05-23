@@ -146,10 +146,9 @@ AWS Organizations uses the following components to help you manage your accounts
   - Accounts. These are your AWS accounts that you use and create to be able to configure and provision AWS resources. Each of your AWS accounts has a 12 digit account number.
 - Service Control Policies (SCPs)
   - Service control policies, or SCPs, allow you to control what services and features are accessible from within an AWS account. These SCPs can either be associated with the Root, Organizational Units, or individual accounts. When an SCP is applied to any of these objects, its associated controls are fed down to all child objects.
+  - An Security Control Policies (SCP) does NOT grant access, they add a **guardrail** to define what is allowed. You will still need to configure your identity-based or resource-based policies to identities granting permission to carry out actions within your accounts.
 
 **Master account** is a standard AWS account that you have chosen to create the AWS organization. The best practice to use this account solely as a master account and not to use it to provision any other resources. This allows you to restrict to the master account at a greater level. The fewer users who need access to it, the better. The master account carries certain administrative level capabilities, such as being able to create additional AWS accounts within your organization, invite other accounts to join your organization, remove AWS accounts from your organization and apply security features via policies to different levels within your organization.
-
-An **Security Control Policies (SCP)** does NOT grant access, they add a **guardrail** to define what is allowed. You will still need to configure your identity-based or resource-based policies to identities granting permission to carry out actions within your accounts.
 
 <br />
 
