@@ -68,7 +68,7 @@ Insights provide the ability to get more information from the data that CloudWat
 
 # AWS CloudTrail
 
-AWS CloudTrail records and tracks all API requests in your AWS account. These requests can be initiated from SDKs, AWS CLI, AWS management console or another AWS service. CloudTrail is a **global** service supporting all regions.
+AWS CloudTrail records and tracks **all API requests** in your AWS account. These requests can be initiated from SDKs, AWS CLI, AWS management console or another AWS service. CloudTrail is a **global** service supporting all regions.
 
 ### CloudTrail Events
 - Every API request captured is recorded as an **event**.
@@ -77,7 +77,7 @@ AWS CloudTrail records and tracks all API requests in your AWS account. These re
 
 ### CloudTrail Logs
 - New log files are created every 5 minutes.
-- Log files are delivered and stored within S3.
+- Log files are delivered and stored within S3. It is in JSON format.
 - Log files can be stored for as long as required allowing you to review the history of all API requests.
 - CloudTrail Log files can also be delivered to CloudWatch Logs for metric monitoring and alerting via SNS.
 
