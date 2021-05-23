@@ -4,7 +4,7 @@
 
 - [CloudWatch](#cloudwatch)
   - [CloudWatch Components](#cloudwatch-components)
-  - [CloudWatch Logs](#cloudwatch-logs)
+  - [CloudWatch Logging Agent](#cloudwatch-logging-agent)
   - [CloudWatch Insights](#cloudwatch-insights)
 - [AWS CloudTrail](#aws-cloudtrail)
   - [CloudTrail Events](#cloudtrail-events)
@@ -41,10 +41,16 @@ CloudWatch is a comprehensive monitoring tool that allows you to monitor your se
 - CloudWatch Logs
 - CloudWatch Insights
 
-### CloudWatch Logs
-CloudWatch Logs gives you a centralized location to house all of your logs from different AWS services that provide logs as an output, such as CloudTrail, EC2, VPC Flow logs, etc. in addition to your own applications. CloudWatch Logs acts as a central repository for real-time monitoring of log data.
+### CloudWatch Logging Agent
+CloudWatch Logs gives you a centralized location to house all of your logs from different AWS services that provide logs as an output, such as CloudTrail, EC2, VPC Flow logs, etc. in addition to your own applications. CloudWatch Logs acts as a central repository for real-time monitoring of log data. `Unified CloudWatch Agent` can collect logs and additional metric data from EC2 instances as well from on-premise services running either a Linux or Windows operating system. This metric data is in addition to the default EC2 metrics that CloudWatch automatically configures for you.
 
-`Unified CloudWatch Agent` can collect logs and additional metric data from EC2 instances as well from on-premise services running either a Linux or Windows operating system. This metric data is in addition to the default EC2 metrics that CloudWatch automatically configures for you.
+CloudWatch Agent Installation
+- Create a role and attach it to the instance with permissions to collect data from instances in addition to interacting with AWS system manager SSM.
+  - You will need to create two roles:
+    - used to install the agent and also to send the additional metrics gathered to CloudWatch
+    - used to communicate with the Parameter store within SSM, to store a configuration information file of the Agent
+- Download and install the agent onto the EC2 instance.
+- Configure and start the CloudWatch agent.
 
 ### CloudWatch Insights
 Insights provide the ability to get more information from the data that CloudWatch is collecting. There are now 3 different types of insights within CloudWatch:
