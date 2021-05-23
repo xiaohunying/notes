@@ -12,7 +12,8 @@
   - [CloudTrail Use Cases](#use-cases)
   - [CloudTrail Core Features and Services](#core-features-and-services)
 - [AWS Config](#aws-config)
-
+  - [AWS Config Key Components](#aws-config-key-components)
+- [AWS Organization](#aws-organization)
 
 <br />
 
@@ -129,6 +130,21 @@ What Can AWS Config Do:
 - SNS Topic - is used as a Configuration Stream for notifications.
 - S3 Bucket - is used to store all the Configuration History files and Snapshots.
 - AWS Config Permissions - The IAM role is required to allow AWS Config to obtain the correct permissions to interact with other services.
+
+<br />
+
+# AWS Organization
+
+AWS Organizations uses the following components to help you manage your accounts.
+- Organizations
+- Root
+- Organizational Units
+- Accounts
+- Service Control Policies (SCPs)
+
+**Master account** is a standard AWS account that you have chosen to create the AWS organization. The best practice to use this account solely as a master account and not to use it to provision any other resources. This allows you to restrict to the master account at a greater level. The fewer users who need access to it, the better. The master account carries certain administrative level capabilities, such as being able to create additional AWS accounts within your organization, invite other accounts to join your organization, remove AWS accounts from your organization and apply security features via policies to different levels within your organization.
+
+An **Security Control Policies (SCP)** does NOT grant access, they add a **guardrail** to define what is allowed. You will still need to configure your identity-based or resource-based policies to identities granting permission to carry out actions within your accounts.
 
 <br />
 
@@ -249,29 +265,6 @@ Server-Side Encryption
 Client-Side Encryption
 - with KMS Managed Keys (CSE-KMS)
 - with Customer Provided Keys (CSE-C)
-
-<br />
-
-# AWS Organization
-
-AWS Organizations uses the following components to help you manage your accounts.
-- Organizations
-- Root
-- Organizational Units
-- Accounts
-- Service Control Policies (SCPs)
-
-**Master account** is a standard AWS account that you have chosen to create the AWS organization. The best 
-practice to use this account solely as a master account and not to use it to provision any other resources.
-This allows you to restrict to the master account at a greater level. The fewer users who need access to it,
-the better. The master account carries certain administrative level capabilities, such as being able to
-create additional AWS accounts within your organization, invite other accounts to join your organization,
-remove AWS accounts from your organization and apply security features via policies to different levels within 
-your organization.
-
-An **Security Control Policies (SCP)** does NOT grant access, they add a **guardrail** to define what is allowed. You will still need to configure
-your identity-based or resource-based policies to identities granting permission to carry out actions
-within your accounts.
 
 <br />
 
