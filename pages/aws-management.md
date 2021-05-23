@@ -8,18 +8,42 @@
 
 CloudWatch is a comprehensive monitoring tool that allows you to monitor your services and applications in the cloud. It also allows you to react to events and even prevent service interruptions and outages. CloudWatch will monitor and create trend reports for services and resources you're probably already using. CloudWatch also provides a repository for logging.
 
+- Basic Monitoring - Included with all resources in all regions. 3 dashboard / 50 metrics / 5 minute refresh rate
+- Enhanced Monitoring - Priced per resource by region. 1 minute refresh rate 
+
 ### CloudWatch Components
 - CloudWatch Dashboards
 - CloudWatch Metrics and Anomaly Detection
 - CloudWatch Alarms
 - CloudWatch EventBridge
+  - Rules
+    - A rule acts as filter for incoming streams of event traffic and then routes these events to the appropriate target defined within the rule.
+    - The rule itself can route traffic to multiple targets. The targets must be in the same region.
+  - Targets
+    - Targes are where the events are sent by the rules. 
+    - All events received by the target are in a JSON format.
+  - Event Buses
+    - An event bus is the component that actually receives the event from your applications and your rules are associated with a specific event bus.
+    - CloudWatch EventBridge uses a default event bus that is used to receive events from AWS services.
 - CloudWatch Logs
 - CloudWatch Insights
 
-### b
+### CloudWatch Logs
+CloudWatch Logs gives you a centralized location to house all of your logs from different AWS services that provide logs as an output, such as CloudTrail, EC2, VPC Flow logs, etc. in addition to your own applications. CloudWatch Logs acts as a central repository for real-time monitoring of log data.
 
-- Basic Monitoring - Included with all resources in all regions. 3 dashboard / 50 metrics / 5 minute refresh rate
-- Enhanced Monitoring - Priced per resource by region. 1 minute refresh rate 
+`Unified CloudWatch Agent` can collect logs and additional metric data from EC2 instances as well from on-premise services running either a Linux or Windows operating system. This metric data is in addition to the default EC2 metrics that CloudWatch automatically configures for you.
+
+### CloudWatch Insights
+Insights provide the ability to get more information from the data that CloudWatch is collecting. There are now 3 different types of insights within CloudWatch:
+- Log Insights
+  - This is a feature that can analyze your logs that are captured by CloudWatch Logs at scale in seconds using interactive queries delivering visualizations.
+- Container Insights
+  - Container insights allow you to collate and group different metric data from different container services and applications within AWS.
+  - Container insights also allows you to capture and monitor diagnostic data giving you additional insights into how to resolve issues that arise within your container architecture.
+  - This monitoring and insight data can be analysed at the cluster, node, pod and task level making it a valuable tool to help you understand your container applications and services.
+- Lambda Insights
+  - This feature provides you the opportunity to gain a deeper understanding of your applications using AWS Lambda.
+  - It gathers and aggregates system and diagnostic metrics related to AWS Lambda to help you monitor and troubleshoot your serverless applications.
 
 <br />
 
