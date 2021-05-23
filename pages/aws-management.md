@@ -105,7 +105,7 @@ AWS CloudTrail records and tracks all API requests in your AWS account. These re
 
 # AWS Config
 
-### What Can AWS Config Do
+What Can AWS Config Do:
 - Capture resource changes
 - Act as a resource inventory
 - Store configuration history
@@ -124,13 +124,11 @@ AWS CloudTrail records and tracks all API requests in your AWS account. These re
 - Configuration History - delivered every 6 hours.
 - Configuration Snapshot
 - Configuration Recorder - is responsible for recording all the changes and generating the CIs
-- Config Rules - a great way to help you **enforce specific compliance controls**. Each rule is a Lambda function 
-which notify you the non-compliant changes. 
+- Config Rules - a great way to help you **enforce specific compliance controls**. Each rule is a Lambda function which notify you the non-compliant changes. 
 - Resource Relationship - identifies relationships between resources.
 - SNS Topic - is used as a Configuration Stream for notifications.
 - S3 Bucket - is used to store all the Configuration History files and Snapshots.
-- AWS Config Permissions - The IAM role is required to allow AWS Config to obtain the correct permissions
-to interact with other services.
+- AWS Config Permissions - The IAM role is required to allow AWS Config to obtain the correct permissions to interact with other services.
 
 <br />
 
