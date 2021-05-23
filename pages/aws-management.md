@@ -3,6 +3,10 @@
 # AWS Management
 
 - [CloudWatch](#cloudwatch)
+  - [CloudWatch Components](#cloudwatch-components)
+  - [CloudWatch Logs](#cloudwatch-logs)
+  - [CloudWatch Insights](#cloudwatch-insights)
+- [AWS CloudTrail](#aws-cloudtrail)
 
 <br />
 
@@ -49,30 +53,9 @@ Insights provide the ability to get more information from the data that CloudWat
 
 <br />
 
-# Logging in AWS
-
-The Unified CloudWatch Agent allows the collection of logs from EC2 instances as well from on-premise server.
-
-### CloudWatch Agent Installation
-- Create a role and attach it to the instance with permissions to collect data from the instances in
-addition to interacting with **AWS systems manager SSM**.
-- Download and install the agent onto the EC2 instance.
-- Configure and start the CloudWatch agent. (Configuration file is copied to **the SSM parameter store**.)
-
-
-### Amazon CloudFront Access Logs
-
-Log files capture data over a period of time and the amount of log files generated depend on 
-the amount of requests received. CloudFront retains logs until they are ready to be delivered to S3.
-This delivery can take between 1 and 24h.
-
-<br />
-
 # AWS CloudTrail
 
-AWS CloudTrail **records and tracks all API requests in your AWS account**. These requests can be initiated 
-from SDKs, AWS CLI, AWS management console or another AWS service. CloudTrail is a **global** service supporting
-all regions.
+AWS CloudTrail records and tracks all API requests in your AWS account. These requests can be initiated from SDKs, AWS CLI, AWS management console or another AWS service. CloudTrail is a **global** service supporting all regions.
 
 ### Use Cases
 - effective for security analysis
@@ -100,6 +83,26 @@ all regions.
 - Tags
 - Events
 - API Activity Filters
+
+
+<br />
+
+# Logging in AWS
+
+The Unified CloudWatch Agent allows the collection of logs from EC2 instances as well from on-premise server.
+
+### CloudWatch Agent Installation
+- Create a role and attach it to the instance with permissions to collect data from the instances in
+addition to interacting with **AWS systems manager SSM**.
+- Download and install the agent onto the EC2 instance.
+- Configure and start the CloudWatch agent. (Configuration file is copied to **the SSM parameter store**.)
+
+
+### Amazon CloudFront Access Logs
+
+Log files capture data over a period of time and the amount of log files generated depend on 
+the amount of requests received. CloudFront retains logs until they are ready to be delivered to S3.
+This delivery can take between 1 and 24h.
 
 <br />
 
