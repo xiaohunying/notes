@@ -45,7 +45,11 @@
   - [AWS Shield](./aws-security.md#aws-shield)
   - [AWS Cognito](./aws-security.md#aws-cognito)
 - [AWS Management](aws-management.md)
-
+  - [CloudWatch](./aws-management.md#cloudwatch)
+  - [AWS CloudTrail](./aws-management.md#aws-cloudtrail)
+  - [AWS Config](./aws-management.md#aws-config)
+  - [AWS Organization](./aws-management.md#aws-organization)
+  - [VPC Flow Logs](./aws-management.md#vpc-flow-logs)
 
 <br />
 
