@@ -1,8 +1,10 @@
 <sub>[Amazon Web Services](../pages/aws.md)</sub>
 
- - [CloudWatch](#cloudwatch)
-
 # AWS Management
+
+- [CloudWatch](#cloudwatch)
+
+<br />
 
 # CloudWatch
 
