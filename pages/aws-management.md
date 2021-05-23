@@ -184,18 +184,3 @@ You can set up and create a Flow Log against these resources:
   - Traffic between a Network Load Balancer Network Interface and an Endpoint Network Interface.
 
 <br />
-
-# Logging in AWS
-
-The Unified CloudWatch Agent allows the collection of logs from EC2 instances as well from on-premise server.
-
-### CloudWatch Agent Installation
-- Create a role and attach it to the instance with permissions to collect data from the instances in
-addition to interacting with **AWS systems manager SSM**.
-- Download and install the agent onto the EC2 instance.
-- Configure and start the CloudWatch agent. (Configuration file is copied to **the SSM parameter store**.)
-
-### Amazon CloudFront Access Logs
-Log files capture data over a period of time and the amount of log files generated depend on the amount of requests received. CloudFront retains logs until they are ready to be delivered to S3. This delivery can take between 1 and 24h.
-
-<br />
