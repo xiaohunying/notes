@@ -50,6 +50,7 @@
   - [AWS Config](./aws-management.md#aws-config)
   - [AWS Organization](./aws-management.md#aws-organization)
   - [VPC Flow Logs](./aws-management.md#vpc-flow-logs)
+- [AWS Encryption](aws-encryption.md)
 
 <br />
 
