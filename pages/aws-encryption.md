@@ -8,6 +8,8 @@
   - [Using Key Policies with Grants](#using-key-policies-with-grants)
   - [Key Management](#key-management)
 - [AWS CloudHSM](#aws-cloudhsm)
+  - [Using CloudHSM as a Custom Key Store in KMS](#using-cloudhsm-as-a-custom-key-store-in-kms)
+- [S3 Encryption Mechanisms](#s3-encryption-mechanisms)
 
 <br />
 
@@ -76,18 +78,27 @@ You can also assign permission using Grants alongside key policies.
 
 # AWS CloudHSM
 
+HSM (Hardware Security Module) is a physical tamper-resistant hardware applicance that is used to protect and safeguard cryptographic material and encryption keys. CloudHSM is used for secure encryption key management and storage which can be used as a root of trust for an enterprise when it comes to data protection allowing you to deploy secure and compliant workloads within AWS. There are a number of different operations that CloudHSM can help you provide:
+- Creation, storage and management of cryptographic keys.
+- The ability to use cryptographic hash functions.
+- The ability to generate cryptographic secure random data.
+
+### Using CloudHSM as a Custom Key Store in KMS
+
+When working with AWS KMS, you are able to create custom key stores.  A key store is effectively a storage location which can store and protect your cryptographic keys used to encrypt and decrypt your data in AWS.  When working with AWS KMS, the default key stores are managed by KMS and are stored on HSMs managed by AWS, and so as a user of KMS you have no control over these HSMs which underpin the cryptographic storage of KMS.
+
+However, if you have specific compliance controls that you need to adhere to, where you might require a greater level of control of your key stores.  By creating a custom key store you can leverage the power of your CloudHSM cluster which you have full management of
 
 <br />
 
 # S3 Encryption Mechanisms
 
-Server-Side Encryption
-- with S3 Managed Keys (SSE-S3)
-- with KMS Managed Keys (SSe-KMS)
-- with Customer Provided Keys (SSE-C)
-
-Client-Side Encryption
-- with KMS Managed Keys (CSE-KMS)
-- with Customer Provided Keys (CSE-C)
+- Server-Side Encryption
+  - with S3 Managed Keys (SSE-S3)
+  - with KMS Managed Keys (SSE-KMS)
+  - with Customer Provided Keys (SSE-C)
+- Client-Side Encryption
+  - with KMS Managed Keys (CSE-KMS)
+  - with Customer Provided Keys (CSE-C)
 
 <br />
