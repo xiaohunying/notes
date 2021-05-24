@@ -78,7 +78,7 @@ You can also assign permission using Grants alongside key policies.
 
 # AWS CloudHSM
 
-HSM (Hardware Security Module) is a physical tamper-resistant hardware applicance that is used to protect and safeguard cryptographic material and encryption keys. CloudHSM is used for secure encryption key management and storage which can be used as a root of trust for an enterprise when it comes to data protection allowing you to deploy secure and compliant workloads within AWS. There are a number of different operations that CloudHSM can help you provide:
+HSM (Hardware Security Module) is a physical tamper-resistant hardware applicance that is used to protect and safeguard cryptographic material and encryption keys. CloudHSM is used for secure encryption key management and storage which can be used as a root of trust for an enterprise when it comes to data protection allowing you to deploy secure and compliant workloads within AWS. CloudHSM must be provisioned inside a VPC. There are a number of different operations that CloudHSM can help you provide:
 - Creation, storage and management of cryptographic keys.
 - The ability to use cryptographic hash functions.
 - The ability to generate cryptographic secure random data.
