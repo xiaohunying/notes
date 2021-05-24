@@ -6,6 +6,8 @@
   - [Key Components of KMS](#key-components-of-kms)
   - [Using Key Policies with IAM](#using-key-policies-with-iam)
   - [Using Key Policies with Grants](#using-key-policies-with-grants)
+  - [Key Management](#key-management)
+- [AWS CloudHSM](#aws-cloudhsm)
 
 <br />
 
@@ -57,19 +59,23 @@ You can also assign permission using Grants alongside key policies.
 - GrantTokens allow the grantee to perform the operations with immediate effect.
 
 ### Key Management
-
-- **Rotation of CMKs** 
-  - All existing backing keys are retained during and after rotation.
-  - Automatic key rotation is not possible with imported key material.
+- Rotation of CMKs
+  - Automatic key rotation happens every 365 days and there is no way to alter that time frame. But you can perform a manual key rotation.
+  - Key rotation simply creates a new backing key and retains the older backing keys to allow you to continue to decrypt existing data encrypted by the original backing key.
+  - Automatic key rotation is not possible with imported key material. But you can perform a manual key rotation.
   - CMKs in the state of disabled or pending deletion will not be rotated.
   - It's not possible to manage the key rotation for any **AWS managed CMKs**, these are rotated every **3 years**.
   - Manual key rotation is the process of replacing the current CMK with a new CMK.
 - Import key material from an existing KMS outside of AWS
+  - key material is essentially the backing key.
+  - backing key is the cryptographic element that is used in the encryption process.
 - Deletion of CMKs
+  - KMS enforces a scheduled deletion process, which can range from 7-30 days.
 
-> backing key: it is the cryptographic element that is used in the encryption process.
->
-> key material: it is essentially the backing key.
+<br />
+
+# AWS CloudHSM
+
 
 <br />
 
