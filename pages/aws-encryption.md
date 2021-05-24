@@ -4,6 +4,8 @@
 
 - [KMS (Key Management Service)](#key-management-service-kms)
   - [Key Components of KMS](#key-components-of-kms)
+  - [Using Key Policies with IAM](#using-key-policies-with-iam)
+  - [Using Key Policies with Grants](#using-key-policies-with-grants)
 
 <br />
 
@@ -31,7 +33,7 @@ KMS is a managed service used to store and generate encryption keys that are use
   - Grants are another method of controlling access and use of the CMKs held within KMS. They allow you to delegate a subset of your own access to a CMK for principals. There is less risk of someone altering the access control permissions for that CMK. Grants eliminates the possibility of anyone using the permission _kms:PutKeyPolicy_.
 
 ### Using Key Policies with IAM
-You must have the following entry within the Key policy allowing the root full KMS access to the CMK.
+When the root account has full access to the key policy, access to the CMK can be given by normal IAM policies for users and roles. Without the root account having full access in the key policy, IAM can't be used to manage access for other users. You must have the following entry within the Key policy allowing the root full KMS access to the CMK.
 ~~~json
 {
   "Sid": "Enable IAM User Permissions",
@@ -42,7 +44,7 @@ You must have the following entry within the Key policy allowing the root full K
 }
 ~~~
 
-### Using key Policies with Grants
+### Using Key Policies with Grants
 
 You can also assign permission using Grants alongside key policies.
 - Grants allow you to delegate your permissions to another AWS principal within your AWS account.
