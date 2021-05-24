@@ -52,6 +52,8 @@
   - [VPC Flow Logs](./aws-management.md#vpc-flow-logs)
 - [AWS Encryption](aws-encryption.md)
   - [KMS (Key Management Service)](./aws-encryption.md#key-management-service-kms)
+  - [AWS CloudHSM](./aws-encryption.md#aws-cloudhsm)
+  - [S3 Encryption Mechanisms](./aws-encryption.md#s3-encryption-mechanisms)
 
 <br />
 
